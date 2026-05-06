@@ -1,8 +1,8 @@
-# Anonymous GitHub repo for From Behavioral Systematicity to Causal Use: An Evaluation Protocol for Representational Systematicity
+# Anonymous GitHub repo for BOUNDED-RS: A Bounded Evaluation Protocol and Testbed for Representational Systematicity
 
 ## Overview
 
-This repository contains the code, configuration, and frozen result artifacts for the ED Track submission *From Behavioral Systematicity to Causal Use: An Evaluation Protocol for Representational Systematicity*.
+This repository contains the code, configuration, and frozen result artifacts for the ED Track submission *BOUNDED-RS: A Bounded Evaluation Protocol and Testbed for Representational Systematicity*.
 
 The repository is organized around a small number of reproducible workflow layers:
 
@@ -63,12 +63,32 @@ The strongest supported result in this codebase remains:
 
 The detector competition does not upgrade the project to ontology-final; instead, it sharpens the detector-side diagnosis by showing that no detector ontology truth-validates under the frozen outer protocol.
 
+## Artifact Contents
+
+This artifact includes the main release components described in the paper appendix:
+
+- environment files: `pyproject.toml`, `requirements.txt`
+- protocol runners: `scripts/run/`
+- rerun shortcuts: `Makefile`
+- frozen generated reports: `reports/`
+- frozen intermediate artifacts used by the final branches: `artifacts/`
+- dataset, evaluation, and experiment metadata: `data/`, `configs/`
+- workflow and design documentation: `docs/`
+- workflow regression tests: `tests/`
+- hardware and runtime notes: this `README` plus the final status files in `reports/`
+
 ## Environment Setup
 
-### 1. Clone the repository
+### 1. Download the repository
+
+Download the repository archive from the anonymous mirror:
+
+- repository landing page: `https://anonymous.4open.science/r/AERS-BEB1/`
+- README landing page: `https://anonymous.4open.science/r/AERS-BEB1/README.md`
+
+After extracting the archive, enter the repository root:
 
 ```bash
-git clone <REPO_URL>
 cd An-Evaluation-Protocol-for-Representational-Systematicity
 ```
 
@@ -95,11 +115,29 @@ make install
 
 ## How To Use
 
-### Run tests
+### Smoke test
+
+Run the focused workflow checks that exercise the three main public workflow branches:
+
+```bash
+make smoke
+```
+
+### Full test suite
 
 ```bash
 make test
 ```
+
+### Workflow -> report output
+
+The table below maps the main rerun workflows to their command sequences and principal report outputs.
+
+| Workflow | Commands | Main outputs | What it reproduces |
+| --- | --- | --- | --- |
+| Family closure | `make family-closure-observability`<br>`make family-closure-catalogs`<br>`make family-closure-h2`<br>`make family-closure-h1`<br>`make family-closure-finalize` | `reports/FAMILY_CLOSURE_STATUS.md`<br>`reports/family_closure/family_closure_summary.json` | The family-level closure result used for the strongest `G2` claim |
+| Detector truthfulness | `make detector-truthfulness-build`<br>`make detector-truthfulness-train`<br>`make detector-truthfulness-run` | `reports/DETECTOR_TRUTHFULNESS_STATUS.md`<br>`reports/detector_truthfulness/detector_truthfulness_summary.json` | The detector-truthfulness diagnosis showing why ontology-final upgrade fails |
+| Detector competition | `make detector-competition-build`<br>`make detector-competition-train`<br>`make detector-competition-run` | `reports/DETECTOR_COMPETITION_STATUS.md`<br>`reports/detector_competition/detector_ontology_competition_summary.json` | The ontology-competition branch comparing `argument_locus`, `predicate_conditioned_relation`, and `cross_step_bridge` detectors |
 
 ### Rebuild detector competition benchmarks
 
@@ -139,6 +177,13 @@ If you want to reproduce the long-running branches end to end, you should expect
 - a working local or remote GPU environment
 - enough disk space for cached reports and artifacts
 
+Reference runtime notes for the final branches:
+
+- the long-running detector branches were executed on a single remote GPU host
+- the full detector-competition run used parallel materialization with `--materialize-max-parallel 4`
+- observed GPU utilization during the main detector-competition protocol/materialization window was approximately `82-90%`
+- these long-running branches are hour-scale reruns rather than short smoke tests
+
 ## Key Entry Points
 
 - `scripts/run/run_observability_audit.py`
@@ -146,7 +191,11 @@ If you want to reproduce the long-running branches end to end, you should expect
 - `scripts/run/gate_family_h2.py`
 - `scripts/run/gate_direct_h1.py`
 - `scripts/run/run_family_closure.py`
+- `scripts/run/build_truthfulness_benchmarks.py`
+- `scripts/run/train_truthfulness_families.py`
 - `scripts/run/run_detector_truthfulness.py`
+- `scripts/run/build_detector_competition_benchmarks.py`
+- `scripts/run/train_detector_competition.py`
 - `scripts/run/run_detector_competition.py`
 - `scripts/run/run_discovery.py`
 - `scripts/run/run_protocol.py`
