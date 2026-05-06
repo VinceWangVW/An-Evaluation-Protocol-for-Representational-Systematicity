@@ -1,0 +1,156 @@
+{
+  "aligners": {
+    "A1": {
+      "aligned_step_rates": {
+        "predicate_value": 1.0,
+        "agent_value": 0.0,
+        "theme_value": 0.0
+      },
+      "per_control_coverage": {
+        "phase12_geometry_h2_full_seed11": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        },
+        "phase12_geometry_h0_permuted_seed11": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        },
+        "phase12_geometry_h2_full_seed29": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        },
+        "phase12_geometry_h0_permuted_seed29": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        }
+      },
+      "row_count": 1536,
+      "unaligned_count": 384,
+      "disagreement_matrix": {
+        "A1": {
+          "A1": 1.0,
+          "A2": 1.0,
+          "A3": 1.0
+        },
+        "A2": {
+          "A1": 1.0,
+          "A2": 1.0,
+          "A3": 1.0
+        },
+        "A3": {
+          "A1": 1.0,
+          "A2": 1.0,
+          "A3": 1.0
+        }
+      }
+    },
+    "A2": {
+      "aligned_step_rates": {
+        "predicate_value": 1.0,
+        "agent_value": 0.0,
+        "theme_value": 0.0
+      },
+      "per_control_coverage": {
+        "phase12_geometry_h2_full_seed11": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        },
+        "phase12_geometry_h0_permuted_seed11": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        },
+        "phase12_geometry_h2_full_seed29": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        },
+        "phase12_geometry_h0_permuted_seed29": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        }
+      },
+      "row_count": 1536,
+      "unaligned_count": 384,
+      "disagreement_matrix": {
+        "A1": {
+          "A1": 1.0,
+          "A2": 1.0,
+          "A3": 1.0
+        },
+        "A2": {
+          "A1": 1.0,
+          "A2": 1.0,
+          "A3": 1.0
+        },
+        "A3": {
+          "A1": 1.0,
+          "A2": 1.0,
+          "A3": 1.0
+        }
+      }
+    },
+    "A3": {
+      "aligned_step_rates": {
+        "predicate_value": 1.0,
+        "agent_value": 0.0,
+        "theme_value": 0.0
+      },
+      "per_control_coverage": {
+        "phase12_geometry_h2_full_seed11": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        },
+        "phase12_geometry_h0_permuted_seed11": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        },
+        "phase12_geometry_h2_full_seed29": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        },
+        "phase12_geometry_h0_permuted_seed29": {
+          "predicate_value": 1.0,
+          "agent_value": 0.0,
+          "theme_value": 0.0
+        }
+      },
+      "row_count": 1536,
+      "unaligned_count": 384,
+      "disagreement_matrix": {
+        "A1": {
+          "A1": 1.0,
+          "A2": 1.0,
+          "A3": 1.0
+        },
+        "A2": {
+          "A1": 1.0,
+          "A2": 1.0,
+          "A3": 1.0
+        },
+        "A3": {
+          "A1": 1.0,
+          "A2": 1.0,
+          "A3": 1.0
+        }
+      }
+    }
+  },
+  "selected_aligner": "A1",
+  "decision": "predicate_dominant",
+  "sealed": true,
+  "trace_paths": {
+    "A1": "artifacts/phase18/phase18_g2_control_traces_a1.jsonl",
+    "A2": "artifacts/phase18/phase18_g2_control_traces_a2.jsonl",
+    "A3": "artifacts/phase18/phase18_g2_control_traces_a3.jsonl"
+  }
+}

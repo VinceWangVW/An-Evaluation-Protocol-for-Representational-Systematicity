@@ -1,0 +1,230 @@
+{
+  "benchmark_name": "phase12_systematicity_p3_template_longest",
+  "behavior_run_name": "phase12_binding_target_surface_nuwa_raw_e8_seed71",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
+  "behavior_summary": {
+    "overall": {
+      "count": 112,
+      "exact_match": 0.5,
+      "normalized_exact_match": 0.5,
+      "clause_exact_match": 0.5,
+      "clause_f1": 0.5
+    },
+    "by_split": {
+      "dev": {
+        "count": 64,
+        "exact_match": 0.546875,
+        "normalized_exact_match": 0.546875,
+        "clause_exact_match": 0.546875,
+        "clause_f1": 0.546875
+      },
+      "gen": {
+        "count": 48,
+        "exact_match": 0.4375,
+        "normalized_exact_match": 0.4375,
+        "clause_exact_match": 0.4375,
+        "clause_f1": 0.4375
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 35,
+        "exact_match": 0.771429,
+        "normalized_exact_match": 0.771429,
+        "clause_exact_match": 0.771429,
+        "clause_f1": 0.771429
+      },
+      "passive_depth0": {
+        "count": 35,
+        "exact_match": 0.285714,
+        "normalized_exact_match": 0.285714,
+        "clause_exact_match": 0.285714,
+        "clause_f1": 0.285714
+      },
+      "active_depth0": {
+        "count": 21,
+        "exact_match": 0.380952,
+        "normalized_exact_match": 0.380952,
+        "clause_exact_match": 0.380952,
+        "clause_f1": 0.380952
+      },
+      "passive_depth1": {
+        "count": 21,
+        "exact_match": 0.52381,
+        "normalized_exact_match": 0.52381,
+        "clause_exact_match": 0.52381,
+        "clause_f1": 0.52381
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 64,
+        "exact_match": 0.546875,
+        "normalized_exact_match": 0.546875,
+        "clause_exact_match": 0.546875,
+        "clause_f1": 0.546875
+      },
+      "fail": {
+        "count": 27,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "pass": {
+        "count": 21,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      }
+    },
+    "failure_categories": [
+      [
+        "no_clause_overlap",
+        56
+      ],
+      [
+        "exact_match",
+        56
+      ]
+    ]
+  },
+  "available_behavior_strata": {
+    "control": 64,
+    "fail": 27,
+    "pass": 21
+  },
+  "candidate_strata": [
+    "pass",
+    "fail",
+    "control"
+  ],
+  "match_required_strata": [
+    "pass",
+    "fail"
+  ],
+  "layers_requested": [
+    -1
+  ],
+  "matched_set_count": 7,
+  "precision": "auto",
+  "num_beams": 1,
+  "decoder_cross_attention_scale": null,
+  "encoder_geometry_transform": null,
+  "encoder_geometry_seed": null,
+  "encoder_geometry_keep_ratio": null,
+  "encoder_geometry_noise_std": null,
+  "model": {
+    "name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
+    "family": "seq2seq_lm",
+    "device": "cuda",
+    "prompt_style": "raw"
+  },
+  "candidate_counts": {
+    "selected": 69,
+    "by_stratum": {
+      "control": 24,
+      "fail": 24,
+      "pass": 21
+    }
+  },
+  "span_coverage": {
+    "requested": 483,
+    "found": 483,
+    "coverage_rate": 1.0,
+    "by_namespace": {
+      "filler_identity": 138,
+      "predicate_identity": 69,
+      "semantic_role": 138,
+      "surface_position": 138
+    }
+  },
+  "layers": {
+    "6": {
+      "vector_count": 483,
+      "avg_vector_norm": 3.279611,
+      "semantic_role": {
+        "count": 138,
+        "label_counts": {
+          "agent": 69,
+          "theme": 69
+        },
+        "loo_centroid_accuracy": 0.978261
+      },
+      "semantic_role_by_stratum": {
+        "control": {
+          "count": 48,
+          "label_counts": {
+            "agent": 24,
+            "theme": 24
+          },
+          "loo_centroid_accuracy": 0.958333
+        },
+        "fail": {
+          "count": 48,
+          "label_counts": {
+            "agent": 24,
+            "theme": 24
+          },
+          "loo_centroid_accuracy": 0.8125
+        },
+        "pass": {
+          "count": 42,
+          "label_counts": {
+            "agent": 21,
+            "theme": 21
+          },
+          "loo_centroid_accuracy": 0.952381
+        }
+      },
+      "surface_position": {
+        "count": 138,
+        "label_counts": {
+          "surface_object": 69,
+          "surface_subject": 69
+        },
+        "loo_centroid_accuracy": 1.0
+      },
+      "surface_control_gap": -0.021739,
+      "filler_identity": {
+        "count": 138,
+        "eligible_count": 138,
+        "label_counts": {
+          "aiden": 5,
+          "bianca": 14,
+          "caleb": 6,
+          "diana": 9,
+          "ethan": 9,
+          "freya": 8,
+          "gavin": 6,
+          "hazel": 16,
+          "iris": 11,
+          "jonah": 9,
+          "kira": 4,
+          "luca": 9,
+          "nolan": 7,
+          "opal": 14,
+          "piper": 11
+        },
+        "avg_within_cosine": 0.822402,
+        "avg_between_cosine": 0.423105,
+        "within_between_gap": 0.399298
+      },
+      "predicate_identity": {
+        "count": 69,
+        "eligible_count": 69,
+        "label_counts": {
+          "admire": 19,
+          "contact": 13,
+          "follow": 11,
+          "help": 20,
+          "support": 6
+        },
+        "avg_within_cosine": 0.864558,
+        "avg_between_cosine": 0.426047,
+        "within_between_gap": 0.43851
+      }
+    }
+  }
+}

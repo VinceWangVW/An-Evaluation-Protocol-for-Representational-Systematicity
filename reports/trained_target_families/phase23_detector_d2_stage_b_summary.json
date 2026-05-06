@@ -1,0 +1,15 @@
+{
+  "panel_name": "phase23_detector_d2_stage_b",
+  "benchmark_name": "phase23_detector_d2",
+  "target_count": 6,
+  "target_ids": [
+    "phase23_detector_d2_detector_h2_stageb_seed1",
+    "phase23_detector_d2_detector_h1_stageb_seed1",
+    "phase23_detector_d2_detector_null_stageb_seed1",
+    "phase23_detector_d2_detector_h2_stageb_seed2",
+    "phase23_detector_d2_detector_h1_stageb_seed2",
+    "phase23_detector_d2_detector_null_stageb_seed2"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": []
+}

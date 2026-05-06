@@ -1,0 +1,18 @@
+{
+  "panel_name": "phase12_geometry_target_panel_p4_candidates",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 6,
+  "target_ids": [
+    "geometry_target_strong_p4_source_seed41",
+    "geometry_target_weak_train64_seed47",
+    "geometry_target_h1_decoder_scale040_seed41",
+    "geometry_target_h1_decoder_scale050_seed41",
+    "geometry_target_h1_trained_scale025_seed57",
+    "geometry_target_h1_trained_scale025_seed67"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 12 P4 candidate sweep for thickening the geometry weak/H1 target manifold.",
+    "Focuses on one weaker audit-ready candidate, two decoder-scale reuse candidates, and two trained H1-like candidates."
+  ]
+}

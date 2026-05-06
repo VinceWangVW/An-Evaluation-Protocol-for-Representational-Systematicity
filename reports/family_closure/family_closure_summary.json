@@ -1,0 +1,5 @@
+{
+  "decision": "T-supported",
+  "decision_status": "family-final",
+  "explanation": "Observability was sealed, all three object classes failed H2, and direct H1 failed globally and slice-locally."
+}

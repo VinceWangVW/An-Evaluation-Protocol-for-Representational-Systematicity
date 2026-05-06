@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "behavioral-systematicity-to-causal-use"
+version = "0.1.0"
+description = "Anonymous evaluation-protocol repository for bounded representational systematicity experiments."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "datasets>=2.18.0",
+  "openai>=1.0.0",
+  "torch>=2.2.0",
+  "transformers>=4.40.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,222 @@
+{
+  "panel_name": "phase11_control_panel_t5small_v1",
+  "benchmark_name": "phase11_systematicity_v1",
+  "control_id": "binding_h0_permuted",
+  "run_name": "phase11_binding_h0_permuted",
+  "expected_states": {
+    "G1_binding": "H0"
+  },
+  "model_name_or_path": "google-t5/t5-small",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h0_permuted",
+  "family": "seq2seq_lm",
+  "prompt_style": "raw",
+  "hf_endpoint": "https://hf-mirror.com",
+  "training": {
+    "trained": true,
+    "epochs": 2,
+    "learning_rate": 5e-05,
+    "train_example_count": 320,
+    "train_limit": null,
+    "train_target_permutation_seed": 101,
+    "steps_per_epoch": 40,
+    "mean_epoch_loss": 3.849433,
+    "epoch_losses": [
+      4.844157,
+      2.854709
+    ],
+    "precision": "bf16",
+    "num_beams": 1,
+    "decoder_cross_attention_scale": null,
+    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h0_permuted"
+  },
+  "training_filter_summary": {
+    "panel_benchmark": "phase11_systematicity_v1",
+    "control_id": "binding_h0_permuted",
+    "run_name": "phase11_binding_h0_permuted",
+    "model_name_or_path": "google-t5/t5-small",
+    "expected_states": {
+      "G1_binding": "H0"
+    },
+    "train_example_count": 320,
+    "eval_example_count": 160,
+    "train_generalization_case_allowlist": [],
+    "train_generalization_case_denylist": [],
+    "train_case_counts": {
+      "active_depth0": 110,
+      "passive_depth0": 105,
+      "active_depth1": 105
+    },
+    "eval_split_counts": {
+      "dev": 96,
+      "gen": 64
+    },
+    "train_target_permutation_seed": 101,
+    "decoder_cross_attention_scale": null,
+    "num_train_epochs": 2,
+    "seed": 13,
+    "notes": "Binding-negative control via target permutation.",
+    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h0_permuted",
+    "evaluation": {
+      "overall": {
+        "count": 160,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "by_split": {
+        "dev": {
+          "count": 96,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        },
+        "gen": {
+          "count": 64,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        }
+      },
+      "by_generalization_case_top25": {
+        "active_depth1": {
+          "count": 50,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        },
+        "passive_depth0": {
+          "count": 50,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        },
+        "active_depth0": {
+          "count": 30,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        },
+        "passive_depth1": {
+          "count": 30,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        }
+      },
+      "by_stratum": {
+        "control": {
+          "count": 96,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        },
+        "fail": {
+          "count": 64,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        }
+      },
+      "failure_categories": [
+        [
+          "no_clause_overlap",
+          158
+        ],
+        [
+          "empty_prediction",
+          2
+        ]
+      ]
+    }
+  },
+  "evaluation": {
+    "overall": {
+      "count": 160,
+      "exact_match": 0.0,
+      "normalized_exact_match": 0.0,
+      "clause_exact_match": 0.0,
+      "clause_f1": 0.0
+    },
+    "by_split": {
+      "dev": {
+        "count": 96,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "gen": {
+        "count": 64,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 50,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "passive_depth0": {
+        "count": 50,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "active_depth0": {
+        "count": 30,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "passive_depth1": {
+        "count": 30,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 96,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "fail": {
+        "count": 64,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "failure_categories": [
+      [
+        "no_clause_overlap",
+        158
+      ],
+      [
+        "empty_prediction",
+        2
+      ]
+    ]
+  }
+}

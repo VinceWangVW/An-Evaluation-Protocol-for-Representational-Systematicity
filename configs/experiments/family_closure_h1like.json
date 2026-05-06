@@ -1,0 +1,26 @@
+{
+  "panel_name": "family_closure_h1like",
+  "top_objects_per_class": 2,
+  "probe_runs": [
+    {
+      "run_id": "geometry_family1_scale025_seed11",
+      "physical_family": "geometry_family1_scale025",
+      "protocol_summary": "reports/protocol_runs/phase12_geometry_h1_decoder_scale025_seed11__geometryp2_lm1_p24__geomops__pathp1_summary.json"
+    },
+    {
+      "run_id": "geometry_family1_trained_scale025_seed57",
+      "physical_family": "trained_scale025",
+      "protocol_summary": "reports/protocol_runs/phase12_geometry_target_h1_trained_scale025_e8_seed57__geometryp4_lm1_p24__geomops__pathp1_summary.json"
+    },
+    {
+      "run_id": "geometry_family3_readout_seed29_keep035",
+      "physical_family": "geometry_family3_readout",
+      "protocol_summary": "reports/protocol_runs/phase12_geometry_h1_family3_readout_seed29_keep035__geometryp8alt_lm1_p24__geomops__pathp1_summary.json"
+    },
+    {
+      "run_id": "geometry_family3_readout_seed41_keep045",
+      "physical_family": "geometry_family3_readout",
+      "protocol_summary": "reports/protocol_runs/phase12_geometry_h1_family3_readout_seed41_keep045__geometryp8alt_lm1_p24__geomops__pathp1_summary.json"
+    }
+  ]
+}

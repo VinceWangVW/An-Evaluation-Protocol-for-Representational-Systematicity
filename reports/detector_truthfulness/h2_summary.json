@@ -1,0 +1,32 @@
+{
+  "class_rows": [
+    {
+      "object_class": "interaction",
+      "passed": false,
+      "stage": "stage_b",
+      "null_passed_count": 0,
+      "failure_reason": "observability_failed",
+      "positive_rows": [],
+      "null_rows": []
+    },
+    {
+      "object_class": "cross_step_bridge",
+      "passed": false,
+      "stage": "stage_b",
+      "null_passed_count": 0,
+      "failure_reason": "observability_failed",
+      "positive_rows": [],
+      "null_rows": []
+    },
+    {
+      "object_class": "query_source_relation",
+      "passed": false,
+      "stage": "stage_b",
+      "null_passed_count": 0,
+      "failure_reason": "observability_failed",
+      "positive_rows": [],
+      "null_rows": []
+    }
+  ],
+  "passed_count": 0
+}

@@ -1,0 +1,40 @@
+{
+  "phase": "phase13",
+  "status": "frozen_scope",
+  "closed_family": [
+    "G1_binding",
+    "G2_distributed_geometry"
+  ],
+  "excluded_families": [
+    "G3_shortcut"
+  ],
+  "target_claim": "Within the closed family {G1_binding, G2_distributed_geometry}, the protocol can use state-validating controls to distinguish H0/H1/H2/underdetermined on held-out controls and heterogeneous held-out target panels, without assuming that any target family must pass H2.",
+  "non_goals": [
+    "Final adjudication for G3_shortcut",
+    "Broader major-hypotheses closure",
+    "Architecture-general claims about neural models",
+    "Assuming any target family must contain an H2"
+  ],
+  "behavior_role": [
+    "audit_gate",
+    "regime_anchor",
+    "weak_prior"
+  ],
+  "success_gate": {
+    "g2_heldout_accuracy_min": 0.8,
+    "g2_heldout_macro_f1_min": 0.8,
+    "g2_h1_recall_min": 0.67,
+    "g2_h0_recall_min": 0.8,
+    "g2_h2_recall_min": 0.8,
+    "g2_underdetermined_rate_max": 0.2,
+    "g2_target_min_distinct_states": 3,
+    "behavior_accuracy_delta_max": 0.1
+  },
+  "stop_conditions": [
+    "Two consecutive new G2-H1 physical families fail to produce held-out H1 recall >= 0.67",
+    "Expanded G2 state distributions still collapse most H1 runs into H0 or underdetermined",
+    "Second-architecture replication reproduces ambiguity without improving G2 state stability",
+    "Target diversity improves while held-out H1 stability remains unresolved"
+  ],
+  "fallback_claim": "bounded protocol + partial adjudication"
+}

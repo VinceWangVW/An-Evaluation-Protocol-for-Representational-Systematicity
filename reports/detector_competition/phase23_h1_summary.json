@@ -1,0 +1,789 @@
+{
+  "detector_rows": [
+    {
+      "detector_family": "argument_locus",
+      "object_class": "interaction",
+      "positive_passed": false,
+      "stage": "stage_b",
+      "null_false_positive_rate": 0.0,
+      "failure_reason": "observability_failed",
+      "positive_rows": [],
+      "null_rows": []
+    },
+    {
+      "detector_family": "predicate_conditioned_relation",
+      "object_class": "query_source_relation",
+      "stage": "stage_b",
+      "positive_passed": false,
+      "null_passed": false,
+      "null_false_positive_rate": 0,
+      "positive_rows": [
+        {
+          "run_name": "phase23_detector_d2_detector_h1_stageb_seed1",
+          "truthfulness_seed": 1,
+          "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+          "row_count": 16,
+          "run_recovered": false,
+          "mean_rescue_gap": -0.023438,
+          "aggregated_exact_match_rate": 0,
+          "generic_advantage": -0.001953,
+          "rows": [
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:agent_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.0625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:agent_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.0625,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:agent_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:agent_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:filler_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:filler_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.0625,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.0625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:filler_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.0625,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:filler_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:rescue_target",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:rescue_target",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:rescue_target",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:rescue_target",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0625,
+              "strongest_control_gain": 0.0625,
+              "rescue_gap": -0.0625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:theme_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.09375,
+              "strongest_control_gain": 0.09375,
+              "rescue_gap": -0.09375,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:theme_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:theme_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:theme_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_h1_stageb_seed2",
+          "truthfulness_seed": 2,
+          "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+          "row_count": 16,
+          "run_recovered": false,
+          "mean_rescue_gap": -0.048828,
+          "aggregated_exact_match_rate": 0,
+          "generic_advantage": -0.027344,
+          "rows": [
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:agent_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.09375,
+              "strongest_control_gain": 0.09375,
+              "rescue_gap": -0.09375,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:agent_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.15625,
+              "strongest_control_gain": 0.15625,
+              "rescue_gap": -0.15625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:agent_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": -0.0625,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:agent_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.0625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:filler_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:filler_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.1875,
+              "strongest_control_gain": 0.1875,
+              "rescue_gap": -0.1875,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:filler_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:filler_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:rescue_target",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:rescue_target",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:rescue_target",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:rescue_target",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:theme_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:theme_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:theme_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.0625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:theme_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            }
+          ]
+        }
+      ],
+      "null_rows": [
+        {
+          "run_name": "phase23_detector_d2_detector_null_stageb_seed1",
+          "truthfulness_seed": 1,
+          "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+          "row_count": 16,
+          "run_recovered": false,
+          "mean_rescue_gap": -0.015625,
+          "aggregated_exact_match_rate": 0,
+          "generic_advantage": 0.0,
+          "rows": [
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:agent_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:agent_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:agent_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.0625,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:agent_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:filler_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:filler_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:filler_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:filler_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:rescue_target",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:rescue_target",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:rescue_target",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:rescue_target",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:theme_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:theme_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:theme_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.0625,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:theme_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed1",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_null_stageb_seed2",
+          "truthfulness_seed": 2,
+          "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+          "row_count": 16,
+          "run_recovered": false,
+          "mean_rescue_gap": -0.017578,
+          "aggregated_exact_match_rate": 0,
+          "generic_advantage": -0.011718,
+          "rows": [
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:agent_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:agent_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:agent_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.0625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:agent_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:filler_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.03125,
+              "strongest_control_gain": 0.03125,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:filler_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:filler_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0625,
+              "strongest_control_gain": 0.0625,
+              "rescue_gap": -0.0625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:filler_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:rescue_target",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.015625,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.015625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:rescue_target",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:rescue_target",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:rescue_target",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": 0.0,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:theme_swap",
+              "generalization_case": "d2_detector_h1",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.015625,
+              "strongest_control_gain": 0.015625,
+              "rescue_gap": -0.015625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:theme_swap",
+              "generalization_case": "d2_detector_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.015625,
+              "generic_decoder_gain": 0.0,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.015625,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:theme_swap",
+              "generalization_case": "d2_detector_null",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": -0.03125,
+              "generic_decoder_gain": -0.03125,
+              "strongest_control_gain": 0.0,
+              "rescue_gap": -0.03125,
+              "object_exact_match": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:theme_swap",
+              "generalization_case": "d2_predicate_sanity_h2",
+              "physical_family": "phase23_detector_d2_detector_null_stageb_seed2",
+              "object_class": "query_source_relation",
+              "best_object_actual_gain": 0.0,
+              "generic_decoder_gain": 0.015625,
+              "strongest_control_gain": 0.015625,
+              "rescue_gap": -0.015625,
+              "object_exact_match": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "detector_family": "cross_step_bridge",
+      "object_class": "cross_step_bridge",
+      "positive_passed": false,
+      "stage": "stage_b",
+      "null_false_positive_rate": 0.0,
+      "failure_reason": "observability_failed",
+      "positive_rows": [],
+      "null_rows": []
+    }
+  ],
+  "positive_passed_count": 0
+}

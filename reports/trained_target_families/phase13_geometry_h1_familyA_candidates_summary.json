@@ -1,0 +1,18 @@
+{
+  "panel_name": "phase13_geometry_h1_familyA_candidates",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 6,
+  "target_ids": [
+    "geometry_h1_familyA_access_seed29_keep034",
+    "geometry_h1_familyA_access_seed29_keep050",
+    "geometry_h1_familyA_access_seed29_keep067",
+    "geometry_h1_familyA_access_seed41_keep034",
+    "geometry_h1_familyA_access_seed41_keep050",
+    "geometry_h1_familyA_access_seed41_keep067"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 13 R1 candidate sweep for a new geometry H1 family.",
+    "This family preserves encoder geometry while blocking decoder access through a subset of cross-attention layers."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "benchmark_name": "slog_local",
+  "loader_type": "local_tsv_dir",
+  "required": false,
+  "data_dir": "data/raw/slog",
+  "split_files": {
+    "train": "train.tsv",
+    "dev": "dev.tsv",
+    "test": "test.tsv",
+    "gen": "gen.tsv"
+  },
+  "has_header": false,
+  "columns": [
+    "input_text",
+    "target_form",
+    "generalization_case"
+  ],
+  "metadata": {
+    "source": "local"
+  }
+}

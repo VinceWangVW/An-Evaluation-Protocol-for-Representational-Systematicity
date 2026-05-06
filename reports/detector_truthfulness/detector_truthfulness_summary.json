@@ -1,0 +1,23 @@
+{
+  "detectability_validated": false,
+  "decision": "retain_phase18",
+  "decision_status": "final",
+  "failure_reasons": [
+    "interaction:family_construction_failed",
+    "interaction:observability_failed",
+    "interaction:argument_specific_observability_failure",
+    "interaction:argument_h2_failed",
+    "interaction:argument_h1_failed",
+    "cross_step_bridge:family_construction_failed",
+    "cross_step_bridge:observability_failed",
+    "cross_step_bridge:argument_specific_observability_failure",
+    "cross_step_bridge:argument_h2_failed",
+    "cross_step_bridge:argument_h1_failed",
+    "query_source_relation:family_construction_failed",
+    "query_source_relation:observability_failed",
+    "query_source_relation:argument_specific_observability_failure",
+    "query_source_relation:argument_h2_failed",
+    "query_source_relation:argument_h1_failed"
+  ],
+  "upgraded_strongest_claim": false
+}

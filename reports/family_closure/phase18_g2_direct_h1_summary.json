@@ -1,0 +1,91 @@
+{
+  "passed_count": 0,
+  "rows": [
+    {
+      "object_class": "cross_step_bridge",
+      "object_id": "cross_step_bridge_predicate_to_agent_top1_head_top1_basis_no_store",
+      "passed": false,
+      "passing_families": [],
+      "aggregated_exact_match_rate": 0.0,
+      "generic_advantages": [],
+      "row_count": 0
+    },
+    {
+      "object_class": "cross_step_bridge",
+      "object_id": "cross_step_bridge_predicate_to_agent_top2_head_bundle_top1_basis_no_store",
+      "passed": false,
+      "passing_families": [],
+      "aggregated_exact_match_rate": 0.0,
+      "generic_advantages": [],
+      "row_count": 0
+    }
+  ],
+  "decision": "global_h1_failed",
+  "object_rows": [
+    {
+      "object_id": "cross_step_bridge_predicate_to_agent_top1_head_top1_basis_no_store",
+      "object_class": "cross_step_bridge",
+      "physical_family": "geometry_family1_scale025",
+      "row_count": 0,
+      "rows": []
+    },
+    {
+      "object_id": "cross_step_bridge_predicate_to_agent_top2_head_bundle_top1_basis_no_store",
+      "object_class": "cross_step_bridge",
+      "physical_family": "geometry_family1_scale025",
+      "row_count": 0,
+      "rows": []
+    },
+    {
+      "object_id": "cross_step_bridge_predicate_to_agent_top1_head_top1_basis_no_store",
+      "object_class": "cross_step_bridge",
+      "physical_family": "trained_scale025",
+      "row_count": 0,
+      "rows": []
+    },
+    {
+      "object_id": "cross_step_bridge_predicate_to_agent_top2_head_bundle_top1_basis_no_store",
+      "object_class": "cross_step_bridge",
+      "physical_family": "trained_scale025",
+      "row_count": 0,
+      "rows": []
+    },
+    {
+      "object_id": "cross_step_bridge_predicate_to_agent_top1_head_top1_basis_no_store",
+      "object_class": "cross_step_bridge",
+      "physical_family": "geometry_family3_readout",
+      "row_count": 0,
+      "rows": []
+    },
+    {
+      "object_id": "cross_step_bridge_predicate_to_agent_top2_head_bundle_top1_basis_no_store",
+      "object_class": "cross_step_bridge",
+      "physical_family": "geometry_family3_readout",
+      "row_count": 0,
+      "rows": []
+    },
+    {
+      "object_id": "cross_step_bridge_predicate_to_agent_top1_head_top1_basis_no_store",
+      "object_class": "cross_step_bridge",
+      "physical_family": "geometry_family3_readout",
+      "row_count": 0,
+      "rows": []
+    },
+    {
+      "object_id": "cross_step_bridge_predicate_to_agent_top2_head_bundle_top1_basis_no_store",
+      "object_class": "cross_step_bridge",
+      "physical_family": "geometry_family3_readout",
+      "row_count": 0,
+      "rows": []
+    }
+  ],
+  "selected_aligner": "A1",
+  "catalog_object_ids": {
+    "interaction": [],
+    "cross_step_bridge": [
+      "cross_step_bridge_predicate_to_agent_top1_head_top1_basis_no_store",
+      "cross_step_bridge_predicate_to_agent_top2_head_bundle_top1_basis_no_store"
+    ],
+    "query_source_relation": []
+  }
+}

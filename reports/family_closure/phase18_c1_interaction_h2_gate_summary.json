@@ -1,0 +1,40 @@
+{
+  "gate_ready_candidate_count": 0,
+  "passed_count": 0,
+  "rows": [],
+  "decision": "T-supported",
+  "decision_status": "final",
+  "blocked": true,
+  "blocked_reason": "discovery_rejected",
+  "object_class": "interaction",
+  "discovery_summary": {
+    "object_count": 12,
+    "interaction_step_counts": {
+      "predicate_value": 4,
+      "agent_value": 4,
+      "theme_value": 4
+    },
+    "surviving_candidate_count": 4,
+    "surviving_candidate_ids": [
+      "interaction_predicate_value_top1_head_top1_basis_no_store",
+      "interaction_predicate_value_top2_head_bundle_top1_basis_no_store",
+      "interaction_predicate_value_top1_head_top1_basis_matched_store",
+      "interaction_predicate_value_top2_head_bundle_top2_basis_bundle_matched_store"
+    ],
+    "surviving_step_keys": [
+      "predicate_value"
+    ],
+    "surviving_template_families": [
+      "top1_head_top1_basis_matched_store",
+      "top1_head_top1_basis_no_store",
+      "top2_head_bundle_top1_basis_no_store",
+      "top2_head_bundle_top2_basis_bundle_matched_store"
+    ],
+    "accepted": false,
+    "decision": "T-supported",
+    "decision_status": "final",
+    "object_class": "interaction",
+    "aligner_used": "A1",
+    "reused_phase17": true
+  }
+}

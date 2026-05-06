@@ -1,0 +1,64 @@
+{
+  "phase": "phase14",
+  "status": "reopened_scope_frozen",
+  "reopened_from": "phase13_d2",
+  "default_fallback": "phase13_d2",
+  "closed_family": [
+    "G1_binding",
+    "G2_distributed_geometry"
+  ],
+  "excluded_families": [
+    "G3_shortcut"
+  ],
+  "target_claim": "Within the closed family {G1_binding, G2_distributed_geometry}, the protocol can use state-validating controls to distinguish H0/H1/H2/underdetermined on held-out controls and heterogeneous held-out target panels, without assuming that any target family must pass H2.",
+  "default_repository_claim": "bounded protocol + partial adjudication",
+  "behavior_role": [
+    "audit_gate",
+    "regime_anchor",
+    "weak_prior"
+  ],
+  "g2_h1_design_goal": [
+    "presence_strong",
+    "rescue_centered",
+    "necessity_weak",
+    "realism_passing"
+  ],
+  "success_gate": {
+    "g1_must_remain_bounded_stable": true,
+    "g2_heldout_accuracy_min": 0.8,
+    "g2_heldout_macro_f1_min": 0.8,
+    "g2_h1_recall_min": 0.67,
+    "g2_h0_recall_min": 0.8,
+    "g2_h2_recall_min": 0.8,
+    "g2_underdetermined_rate_max": 0.2,
+    "g2_target_min_distinct_states": 3,
+    "g2_target_min_h1_families": 2,
+    "g2_state_dev_runs_min": 4,
+    "g2_state_heldout_runs_min": 3,
+    "g2_h1_max_single_family_share": 0.6,
+    "behavior_accuracy_delta_max": 0.05
+  },
+  "stop_gates": {
+    "s1_behavior_accuracy_delta_max": 0.05,
+    "s2_h1_candidate_min": 4,
+    "s2_h1_family_min": 2,
+    "s2_h1_seed_min": 2,
+    "s3_h1_max_single_family_share": 0.6,
+    "s5_h1_recall_min": 0.67,
+    "s5_accuracy_min": 0.8,
+    "s5_macro_f1_min": 0.8,
+    "s6_min_distinct_states": 3,
+    "s6_min_h1_families": 2
+  },
+  "stop_conditions": [
+    "G2-H1 still depends on behavior as the main H1/H2 separator",
+    "Across Family A + E + F, fewer than 4 H1 candidates appear from at least 2 families and 2 seeds",
+    "G2-H1 state volume collapses back to a single family",
+    "G2 held-out H1 recall remains below 0.67",
+    "G2 target-panel H1 still depends on a single family",
+    "Second-architecture replication reproduces ambiguity without improving G2 state stability"
+  ],
+  "fallback_claim": "bounded protocol + partial adjudication",
+  "acceptance_standard_doc": "docs/PHASE_14_ACCEPTANCE_STANDARD.md",
+  "design_plan_doc": "docs/PHASE_14_G2_STATE_REDESIGN_PLAN.md"
+}

@@ -1,0 +1,299 @@
+{
+  "detector_rows": [
+    {
+      "detector_family": "argument_locus",
+      "object_class": "interaction",
+      "stage": "stage_b",
+      "passed": false,
+      "failure_reasons": [
+        "predicate_sanity_h2:seed1",
+        "detector_h2:seed1",
+        "detector_h1:seed1",
+        "detector_h1:not_weaker_than_h2:seed1",
+        "predicate_sanity_h2:seed2",
+        "detector_h2:seed2",
+        "detector_h1:seed2",
+        "detector_h1:not_weaker_than_h2:seed2"
+      ],
+      "family_rows": [
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "phase23_detector_d1_predicate_sanity_h2_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d1_predicate_sanity_h2",
+          "detector_family": "argument_locus"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "phase23_detector_d1_predicate_sanity_h2_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d1_predicate_sanity_h2",
+          "detector_family": "argument_locus"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h2",
+          "run_name": "phase23_detector_d1_detector_h2_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d1_detector_h2",
+          "detector_family": "argument_locus"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h1",
+          "run_name": "phase23_detector_d1_detector_h1_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d1_detector_h1",
+          "detector_family": "argument_locus"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_null",
+          "run_name": "phase23_detector_d1_detector_null_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d1_detector_null",
+          "detector_family": "argument_locus"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h2",
+          "run_name": "phase23_detector_d1_detector_h2_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d1_detector_h2",
+          "detector_family": "argument_locus"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h1",
+          "run_name": "phase23_detector_d1_detector_h1_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d1_detector_h1",
+          "detector_family": "argument_locus"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_null",
+          "run_name": "phase23_detector_d1_detector_null_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d1_detector_null",
+          "detector_family": "argument_locus"
+        }
+      ]
+    },
+    {
+      "detector_family": "predicate_conditioned_relation",
+      "object_class": "query_source_relation",
+      "stage": "stage_b",
+      "passed": false,
+      "failure_reasons": [
+        "predicate_sanity_h2:seed1",
+        "detector_h2:seed1",
+        "detector_h1:seed1",
+        "detector_h1:not_weaker_than_h2:seed1",
+        "predicate_sanity_h2:seed2",
+        "detector_h2:seed2",
+        "detector_h1:seed2",
+        "detector_h1:not_weaker_than_h2:seed2"
+      ],
+      "family_rows": [
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "phase23_detector_d2_predicate_sanity_h2_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d2_predicate_sanity_h2",
+          "detector_family": "predicate_conditioned_relation"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "phase23_detector_d2_predicate_sanity_h2_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d2_predicate_sanity_h2",
+          "detector_family": "predicate_conditioned_relation"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h2",
+          "run_name": "phase23_detector_d2_detector_h2_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d2_detector_h2",
+          "detector_family": "predicate_conditioned_relation"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h1",
+          "run_name": "phase23_detector_d2_detector_h1_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d2_detector_h1",
+          "detector_family": "predicate_conditioned_relation"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_null",
+          "run_name": "phase23_detector_d2_detector_null_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d2_detector_null",
+          "detector_family": "predicate_conditioned_relation"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h2",
+          "run_name": "phase23_detector_d2_detector_h2_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d2_detector_h2",
+          "detector_family": "predicate_conditioned_relation"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h1",
+          "run_name": "phase23_detector_d2_detector_h1_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d2_detector_h1",
+          "detector_family": "predicate_conditioned_relation"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_null",
+          "run_name": "phase23_detector_d2_detector_null_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d2_detector_null",
+          "detector_family": "predicate_conditioned_relation"
+        }
+      ]
+    },
+    {
+      "detector_family": "cross_step_bridge",
+      "object_class": "cross_step_bridge",
+      "stage": "stage_b",
+      "passed": false,
+      "failure_reasons": [
+        "predicate_sanity_h2:seed1",
+        "detector_h2:seed1",
+        "detector_h1:seed1",
+        "detector_h1:not_weaker_than_h2:seed1",
+        "predicate_sanity_h2:seed2",
+        "detector_h2:seed2",
+        "detector_h1:seed2",
+        "detector_h1:not_weaker_than_h2:seed2"
+      ],
+      "family_rows": [
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "phase23_detector_d3_predicate_sanity_h2_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d3_predicate_sanity_h2",
+          "detector_family": "cross_step_bridge"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "phase23_detector_d3_predicate_sanity_h2_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d3_predicate_sanity_h2",
+          "detector_family": "cross_step_bridge"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h2",
+          "run_name": "phase23_detector_d3_detector_h2_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d3_detector_h2",
+          "detector_family": "cross_step_bridge"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h1",
+          "run_name": "phase23_detector_d3_detector_h1_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d3_detector_h1",
+          "detector_family": "cross_step_bridge"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_null",
+          "run_name": "phase23_detector_d3_detector_null_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "d3_detector_null",
+          "detector_family": "cross_step_bridge"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h2",
+          "run_name": "phase23_detector_d3_detector_h2_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d3_detector_h2",
+          "detector_family": "cross_step_bridge"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_h1",
+          "run_name": "phase23_detector_d3_detector_h1_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d3_detector_h1",
+          "detector_family": "cross_step_bridge"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "detector_null",
+          "run_name": "phase23_detector_d3_detector_null_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "d3_detector_null",
+          "detector_family": "cross_step_bridge"
+        }
+      ]
+    }
+  ],
+  "passed_count": 0
+}

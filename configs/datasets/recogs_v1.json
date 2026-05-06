@@ -1,0 +1,21 @@
+{
+  "benchmark_name": "recogs_v1",
+  "loader_type": "local_tsv_dir",
+  "required": false,
+  "data_dir": "data/raw/recogs_official/recogs_v1",
+  "split_files": {
+    "train": "train.tsv",
+    "dev": "dev.tsv",
+    "test": "test.tsv",
+    "gen": "gen.tsv"
+  },
+  "has_header": false,
+  "columns": [
+    "input_text",
+    "target_form",
+    "generalization_case"
+  ],
+  "metadata": {
+    "source": "frankaging/ReCOGS"
+  }
+}

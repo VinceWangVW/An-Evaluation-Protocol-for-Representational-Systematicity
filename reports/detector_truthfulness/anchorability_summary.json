@@ -1,0 +1,32 @@
+{
+  "class_rows": [
+    {
+      "object_class": "interaction",
+      "passed": true,
+      "usable_anchor_count": 2,
+      "anchor_ids": [
+        "interaction_predicate_anchor_a",
+        "interaction_agent_anchor_b"
+      ]
+    },
+    {
+      "object_class": "cross_step_bridge",
+      "passed": true,
+      "usable_anchor_count": 2,
+      "anchor_ids": [
+        "cross_step_bridge_predicate_to_agent_anchor_a",
+        "cross_step_bridge_predicate_to_theme_anchor_b"
+      ]
+    },
+    {
+      "object_class": "query_source_relation",
+      "passed": true,
+      "usable_anchor_count": 2,
+      "anchor_ids": [
+        "query_source_relation_predicate_anchor_a",
+        "query_source_relation_agent_anchor_b"
+      ]
+    }
+  ],
+  "passed_count": 3
+}

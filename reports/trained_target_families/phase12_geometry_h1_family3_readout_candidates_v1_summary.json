@@ -1,0 +1,18 @@
+{
+  "panel_name": "phase12_geometry_h1_family3_readout_candidates_v1",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 6,
+  "target_ids": [
+    "geometry_h1_family3_readout_seed29_keep025",
+    "geometry_h1_family3_readout_seed29_keep035",
+    "geometry_h1_family3_readout_seed29_keep045",
+    "geometry_h1_family3_readout_seed41_keep025",
+    "geometry_h1_family3_readout_seed41_keep035",
+    "geometry_h1_family3_readout_seed41_keep045"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 12 P8-alt candidate sweep for a third geometry-specific H1 family.",
+    "This family preserves encoder geometry while degrading the decoder readout head with a feature mask applied just before lm_head."
+  ]
+}

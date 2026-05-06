@@ -1,0 +1,227 @@
+{
+  "benchmark_count": 3,
+  "benchmark_rows": [
+    {
+      "benchmark_name": "detector_truthfulness_c1",
+      "record_count": 336,
+      "family_count": 48,
+      "required_counterpart_types": [
+        "rescue_donor",
+        "rescue_target",
+        "agent_swap",
+        "theme_swap",
+        "role_swap",
+        "filler_swap",
+        "modifier_swap"
+      ],
+      "split_counts": {
+        "train": 224,
+        "dev": 64,
+        "gen": 48
+      },
+      "counterpart_type_counts": {
+        "rescue_donor": 48,
+        "rescue_target": 48,
+        "role_swap": 48,
+        "agent_swap": 48,
+        "theme_swap": 48,
+        "filler_swap": 48,
+        "modifier_swap": 48
+      },
+      "construction_family_counts": {
+        "c1_predicate_sanity_h2": 84,
+        "c1_argument_h2": 84,
+        "c1_argument_h1": 84,
+        "c1_argument_null": 84
+      },
+      "exact_counterpart_coverage_rate": 1.0,
+      "donor_target_lf_match_rate": 1.0,
+      "object_class": "interaction",
+      "canonical_example_count": 336,
+      "selection": {
+        "schema_record_count": 336,
+        "surface_candidate_count": 336,
+        "valid_candidate_count": 336,
+        "invalid_candidate_count": 0,
+        "primary_selected_count": 336,
+        "canonical_example_count": 336,
+        "selection_strategy": "shortest",
+        "family_count": 48,
+        "fully_validated_family_count": 48,
+        "exact_counterpart_coverage_rate": 1.0,
+        "usable_m2_pair_count": 96,
+        "usable_m4_pair_count": 48,
+        "validated_family_counts_by_construction": {
+          "c1_argument_h1": 12,
+          "c1_argument_h2": 12,
+          "c1_argument_null": 12,
+          "c1_predicate_sanity_h2": 12
+        }
+      },
+      "candidate_validation": {
+        "candidate_count": 336,
+        "valid_count": 336,
+        "valid_rate": 1.0,
+        "check_pass_rates": {
+          "context_requirement_valid": 1.0,
+          "has_agent": 1.0,
+          "has_agent_modifier": 1.0,
+          "has_no_pronouns": 1.0,
+          "has_predicate_surface": 1.0,
+          "has_theme": 1.0,
+          "has_theme_modifier": 1.0,
+          "voice_order_valid": 1.0
+        }
+      },
+      "processed_path": "data/processed/detector_truthfulness_c1.jsonl"
+    },
+    {
+      "benchmark_name": "detector_truthfulness_c2",
+      "record_count": 336,
+      "family_count": 48,
+      "required_counterpart_types": [
+        "rescue_donor",
+        "rescue_target",
+        "agent_swap",
+        "theme_swap",
+        "role_swap",
+        "filler_swap",
+        "modifier_swap"
+      ],
+      "split_counts": {
+        "train": 224,
+        "dev": 64,
+        "gen": 48
+      },
+      "counterpart_type_counts": {
+        "rescue_donor": 48,
+        "rescue_target": 48,
+        "role_swap": 48,
+        "agent_swap": 48,
+        "theme_swap": 48,
+        "filler_swap": 48,
+        "modifier_swap": 48
+      },
+      "construction_family_counts": {
+        "c2_predicate_sanity_h2": 84,
+        "c2_argument_h2": 84,
+        "c2_argument_h1": 84,
+        "c2_argument_null": 84
+      },
+      "exact_counterpart_coverage_rate": 1.0,
+      "donor_target_lf_match_rate": 1.0,
+      "object_class": "cross_step_bridge",
+      "canonical_example_count": 336,
+      "selection": {
+        "schema_record_count": 336,
+        "surface_candidate_count": 336,
+        "valid_candidate_count": 336,
+        "invalid_candidate_count": 0,
+        "primary_selected_count": 336,
+        "canonical_example_count": 336,
+        "selection_strategy": "shortest",
+        "family_count": 48,
+        "fully_validated_family_count": 48,
+        "exact_counterpart_coverage_rate": 1.0,
+        "usable_m2_pair_count": 96,
+        "usable_m4_pair_count": 48,
+        "validated_family_counts_by_construction": {
+          "c2_argument_h1": 12,
+          "c2_argument_h2": 12,
+          "c2_argument_null": 12,
+          "c2_predicate_sanity_h2": 12
+        }
+      },
+      "candidate_validation": {
+        "candidate_count": 336,
+        "valid_count": 336,
+        "valid_rate": 1.0,
+        "check_pass_rates": {
+          "context_requirement_valid": 1.0,
+          "has_agent": 1.0,
+          "has_agent_modifier": 1.0,
+          "has_no_pronouns": 1.0,
+          "has_predicate_surface": 1.0,
+          "has_theme": 1.0,
+          "has_theme_modifier": 1.0,
+          "voice_order_valid": 1.0
+        }
+      },
+      "processed_path": "data/processed/detector_truthfulness_c2.jsonl"
+    },
+    {
+      "benchmark_name": "detector_truthfulness_c3",
+      "record_count": 336,
+      "family_count": 48,
+      "required_counterpart_types": [
+        "rescue_donor",
+        "rescue_target",
+        "agent_swap",
+        "theme_swap",
+        "role_swap",
+        "filler_swap",
+        "modifier_swap"
+      ],
+      "split_counts": {
+        "train": 224,
+        "dev": 64,
+        "gen": 48
+      },
+      "counterpart_type_counts": {
+        "rescue_donor": 48,
+        "rescue_target": 48,
+        "role_swap": 48,
+        "agent_swap": 48,
+        "theme_swap": 48,
+        "filler_swap": 48,
+        "modifier_swap": 48
+      },
+      "construction_family_counts": {
+        "c3_predicate_sanity_h2": 84,
+        "c3_argument_h2": 84,
+        "c3_argument_h1": 84,
+        "c3_argument_null": 84
+      },
+      "exact_counterpart_coverage_rate": 1.0,
+      "donor_target_lf_match_rate": 1.0,
+      "object_class": "query_source_relation",
+      "canonical_example_count": 336,
+      "selection": {
+        "schema_record_count": 336,
+        "surface_candidate_count": 336,
+        "valid_candidate_count": 336,
+        "invalid_candidate_count": 0,
+        "primary_selected_count": 336,
+        "canonical_example_count": 336,
+        "selection_strategy": "shortest",
+        "family_count": 48,
+        "fully_validated_family_count": 48,
+        "exact_counterpart_coverage_rate": 1.0,
+        "usable_m2_pair_count": 96,
+        "usable_m4_pair_count": 48,
+        "validated_family_counts_by_construction": {
+          "c3_argument_h1": 12,
+          "c3_argument_h2": 12,
+          "c3_argument_null": 12,
+          "c3_predicate_sanity_h2": 12
+        }
+      },
+      "candidate_validation": {
+        "candidate_count": 336,
+        "valid_count": 336,
+        "valid_rate": 1.0,
+        "check_pass_rates": {
+          "context_requirement_valid": 1.0,
+          "has_agent": 1.0,
+          "has_agent_modifier": 1.0,
+          "has_no_pronouns": 1.0,
+          "has_predicate_surface": 1.0,
+          "has_theme": 1.0,
+          "has_theme_modifier": 1.0,
+          "voice_order_valid": 1.0
+        }
+      },
+      "processed_path": "data/processed/detector_truthfulness_c3.jsonl"
+    }
+  ]
+}

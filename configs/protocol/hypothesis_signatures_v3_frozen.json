@@ -1,0 +1,849 @@
+{
+  "version": "v2_generation_strongest_control_phase9_frozen",
+  "audit_preconditions": [
+    {
+      "signal": "behavior_anchor_ready",
+      "op": "==",
+      "value": true,
+      "description": "The audited model must provide its own balanced behavior anchor."
+    },
+    {
+      "signal": "m0_matched_set_count",
+      "op": ">=",
+      "value": 6,
+      "description": "The protocol requires at least six matched case-level pass/fail sets."
+    },
+    {
+      "signal": "b0_control_clause_f1",
+      "op": ">=",
+      "value": 0.5,
+      "description": "Control items must be solved above a non-trivial clause-F1 floor."
+    },
+    {
+      "signal": "m1_surface_control_gap_observed",
+      "op": "==",
+      "value": true,
+      "description": "Surface-control signals must be measurable in the current run."
+    },
+    {
+      "signal": "m1_predicate_gap_observed",
+      "op": "==",
+      "value": true,
+      "description": "Predicate identity signals must be measurable in the current run."
+    }
+  ],
+  "signal_definitions": {
+    "behavior_anchor_ready": {
+      "module": "M0",
+      "description": "Audited-model behavior strata exist and are balanced."
+    },
+    "b0_control_clause_f1": {
+      "module": "B0",
+      "description": "Average control split clause F1."
+    },
+    "b0_control_minus_gen_clause_gap": {
+      "module": "B0",
+      "description": "Control minus generalization clause-F1 gap."
+    },
+    "b0_gen_clause_f1": {
+      "module": "B0",
+      "description": "Generalization split clause F1."
+    },
+    "m0_matched_set_count": {
+      "module": "M0",
+      "description": "Number of matched behavior-anchored audit sets."
+    },
+    "m1_filler_gap": {
+      "module": "M1",
+      "description": "Within-minus-between cosine gap for filler identity."
+    },
+    "m1_predicate_gap": {
+      "module": "M1",
+      "description": "Within-minus-between cosine gap for predicate identity."
+    },
+    "m1_predicate_gap_observed": {
+      "module": "M1",
+      "description": "Predicate-identity signal is measurable."
+    },
+    "m1_semantic_role_accuracy": {
+      "module": "M1",
+      "description": "Leave-one-out centroid accuracy for semantic roles."
+    },
+    "m1_surface_control_gap": {
+      "module": "M1",
+      "description": "Semantic-role accuracy minus surface-position accuracy."
+    },
+    "m1_surface_control_gap_observed": {
+      "module": "M1",
+      "description": "Surface-control signal is measurable."
+    },
+    "m2_actual_vs_non_role_advantage_mean": {
+      "module": "M2",
+      "description": "Actual minus non-role counterfactual clause-F1 advantage."
+    },
+    "m2_actual_vs_strongest_control_advantage_mean": {
+      "module": "M2",
+      "description": "Actual minus strongest-control counterfactual clause-F1 advantage."
+    },
+    "m2_actual_vs_strongest_control_permutation_p_value": {
+      "module": "M2",
+      "description": "Permutation p-value for actual versus strongest-control M2 effect."
+    },
+    "m2_actual_vs_wrong_role_advantage_mean": {
+      "module": "M2",
+      "description": "Actual minus wrong-role counterfactual clause-F1 advantage."
+    },
+    "m3_role_vs_non_role_gap_clause_f1": {
+      "module": "M3",
+      "description": "Role-ablation minus non-role clause-F1 drop."
+    },
+    "m3_role_vs_strongest_control_gap_clause_f1": {
+      "module": "M3",
+      "description": "Role-ablation minus strongest-control clause-F1 drop."
+    },
+    "m3_role_vs_strongest_control_permutation_p_value": {
+      "module": "M3",
+      "description": "Permutation p-value for role-ablation versus strongest-control gap."
+    },
+    "m3_role_vs_wrong_role_gap_clause_f1": {
+      "module": "M3",
+      "description": "Role-ablation minus wrong-role clause-F1 drop."
+    },
+    "m4_actual_vs_non_role_advantage_mean": {
+      "module": "M4",
+      "description": "Actual minus non-role rescue clause-F1 advantage."
+    },
+    "m4_actual_vs_strongest_control_advantage_mean": {
+      "module": "M4",
+      "description": "Actual minus strongest-control rescue clause-F1 advantage."
+    },
+    "m4_actual_vs_strongest_control_permutation_p_value": {
+      "module": "M4",
+      "description": "Permutation p-value for actual versus strongest-control rescue effect."
+    },
+    "m4_actual_vs_wrong_role_advantage_mean": {
+      "module": "M4",
+      "description": "Actual minus wrong-role rescue clause-F1 advantage."
+    },
+    "m5_fail_item_rescue_advantage_coverage": {
+      "module": "M5",
+      "description": "Fail-item coverage with positive rescue-over-control advantage."
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "G1_binding",
+      "label": "Binding Hypothesis",
+      "description": "Role-filler bindings are present and can be causally recruited for generation behavior.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "Binding-like structure is present and causally used for behavior.",
+          "support": {
+            "all": [
+              {
+                "signal": "behavior_anchor_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "b0_gen_clause_f1",
+                "op": ">=",
+                "value": 0.25
+              },
+              {
+                "signal": "m1_semantic_role_accuracy",
+                "op": ">=",
+                "value": 0.55
+              },
+              {
+                "signal": "m2_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.05
+              },
+              {
+                "signal": "m2_actual_vs_strongest_control_permutation_p_value",
+                "op": "<=",
+                "value": 0.1
+              },
+              {
+                "signal": "m3_role_vs_strongest_control_gap_clause_f1",
+                "op": ">=",
+                "value": 0.05
+              },
+              {
+                "signal": "m3_role_vs_strongest_control_permutation_p_value",
+                "op": "<=",
+                "value": 0.1
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.03
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_permutation_p_value",
+                "op": "<=",
+                "value": 0.1
+              }
+            ]
+          },
+          "falsifiers": {
+            "any": [
+              {
+                "signal": "m2_actual_vs_strongest_control_advantage_mean",
+                "op": "<=",
+                "value": 0.02
+              },
+              {
+                "signal": "m3_role_vs_strongest_control_gap_clause_f1",
+                "op": "<=",
+                "value": 0.02
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_advantage_mean",
+                "op": "<=",
+                "value": 0.01
+              }
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "Binding-like structure is present, but generation-level causal use remains incomplete.",
+          "support": {
+            "all": [
+              {
+                "signal": "behavior_anchor_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "m1_semantic_role_accuracy",
+                "op": ">=",
+                "value": 0.55
+              }
+            ],
+            "any": [
+              {
+                "signal": "m2_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.02
+              },
+              {
+                "signal": "m3_role_vs_strongest_control_gap_clause_f1",
+                "op": ">=",
+                "value": 0.02
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.01
+              }
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "No reliable evidence for behavior-relevant binding-like structure.",
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "G2_distributed_geometry",
+      "label": "Distributed Geometry Hypothesis",
+      "description": "Task-relevant role/filler information is carried by distributed representational geometry.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "Distributed geometry is present and causally used for behavior.",
+          "support": {
+            "all": [
+              {
+                "signal": "behavior_anchor_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": ">=",
+                "value": 0.05
+              },
+              {
+                "signal": "m1_predicate_gap",
+                "op": ">=",
+                "value": 0.02
+              },
+              {
+                "signal": "m2_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.05
+              },
+              {
+                "signal": "m3_role_vs_strongest_control_gap_clause_f1",
+                "op": ">=",
+                "value": 0.05
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.03
+              }
+            ]
+          },
+          "falsifiers": {
+            "any": [
+              {
+                "signal": "m1_filler_gap",
+                "op": "<=",
+                "value": 0.01
+              },
+              {
+                "signal": "m2_actual_vs_strongest_control_advantage_mean",
+                "op": "<=",
+                "value": 0.02
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_advantage_mean",
+                "op": "<=",
+                "value": 0.01
+              }
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "Distributed geometry is detectable, but causal recruitment is partial or weak.",
+          "support": {
+            "all": [
+              {
+                "signal": "behavior_anchor_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": ">=",
+                "value": 0.05
+              },
+              {
+                "signal": "m1_predicate_gap",
+                "op": ">=",
+                "value": 0.01
+              }
+            ],
+            "any": [
+              {
+                "signal": "m2_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.02
+              },
+              {
+                "signal": "m3_role_vs_strongest_control_gap_clause_f1",
+                "op": ">=",
+                "value": 0.02
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.01
+              }
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "No reliable evidence for task-relevant distributed geometry.",
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "G3_shortcut",
+      "label": "Shortcut Hypothesis",
+      "description": "Observed task success is dominated by shortcut behavior rather than the targeted structural mechanism.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "Shortcut behavior dominates and targeted structural interventions barely matter.",
+          "support": {
+            "all": [
+              {
+                "signal": "behavior_anchor_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "b0_control_minus_gen_clause_gap",
+                "op": ">=",
+                "value": 0.25
+              },
+              {
+                "signal": "m2_actual_vs_strongest_control_advantage_mean",
+                "op": "<=",
+                "value": 0.02
+              },
+              {
+                "signal": "m3_role_vs_strongest_control_gap_clause_f1",
+                "op": "<=",
+                "value": 0.02
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_advantage_mean",
+                "op": "<=",
+                "value": 0.01
+              }
+            ]
+          },
+          "falsifiers": {
+            "any": [
+              {
+                "signal": "m2_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.05
+              },
+              {
+                "signal": "m3_role_vs_strongest_control_gap_clause_f1",
+                "op": ">=",
+                "value": 0.05
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_advantage_mean",
+                "op": ">=",
+                "value": 0.03
+              }
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "Shortcut behavior remains plausible, but the targeted structural mechanism still leaves a weak trace.",
+          "support": {
+            "all": [
+              {
+                "signal": "behavior_anchor_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "b0_control_minus_gen_clause_gap",
+                "op": ">=",
+                "value": 0.1
+              }
+            ],
+            "any": [
+              {
+                "signal": "m2_actual_vs_strongest_control_advantage_mean",
+                "op": "<=",
+                "value": 0.03
+              },
+              {
+                "signal": "m4_actual_vs_strongest_control_advantage_mean",
+                "op": "<=",
+                "value": 0.02
+              }
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "No reliable evidence that shortcut behavior dominates.",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "registration": {
+    "freeze_method": "copy_with_dev_panel_manifest",
+    "development_prefixes": [
+      "slog_local__t5-small__raw_e1__root_autodl-tmp_systematicity-project_runs_phase8_models_slog_local__t5-small__raw_e1__layers_m1__per_32",
+      "slog_local__t5-small__raw_underfit_1k__root_autodl-tmp_systematicity-project_runs_phase8_models_slog_local__t5-small__raw_underfit_1k__layers_m1__per_32"
+    ],
+    "heldout_prefixes": [
+      "slog_local__t5-small__raw_e3__root_autodl-tmp_systematicity-project_runs_phase8_models_slog_local__t5-small__raw_e3__layers_m1__per_32"
+    ],
+    "development_run_count": 2,
+    "heldout_run_count": 1,
+    "development_audit_ready_runs": 1,
+    "heldout_audit_ready_runs": 1,
+    "development_signal_ranges": {
+      "b0_control_clause_f1": {
+        "min": 0.0,
+        "max": 0.878889,
+        "mean": 0.439445
+      },
+      "b0_control_exact_match": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "b0_control_minus_gen_clause_gap": {
+        "min": 0.0,
+        "max": 0.473146,
+        "mean": 0.236573
+      },
+      "b0_control_minus_gen_exact_gap": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "b0_gen_clause_f1": {
+        "min": 0.0,
+        "max": 0.405743,
+        "mean": 0.202872
+      },
+      "b0_gen_exact_match": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "b0_overall_clause_f1": {
+        "min": 0.0,
+        "max": 0.55833,
+        "mean": 0.279165
+      },
+      "b0_overall_exact_match": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "m0_control_candidates": {
+        "min": 32.0,
+        "max": 32.0,
+        "mean": 32.0
+      },
+      "m0_fail_candidates": {
+        "min": 32.0,
+        "max": 32.0,
+        "mean": 32.0
+      },
+      "m0_matched_set_count": {
+        "min": 0.0,
+        "max": 32.0,
+        "mean": 16.0
+      },
+      "m0_pass_candidates": {
+        "min": 0.0,
+        "max": 32.0,
+        "mean": 16.0
+      },
+      "m0_selected_candidates": {
+        "min": 64.0,
+        "max": 96.0,
+        "mean": 80.0
+      },
+      "m1_filler_gap": {
+        "min": 0.572183,
+        "max": 0.601671,
+        "mean": 0.586927
+      },
+      "m1_predicate_gap": {
+        "min": 0.306837,
+        "max": 0.366888,
+        "mean": 0.336863
+      },
+      "m1_semantic_fail_accuracy": {
+        "min": 0.921875,
+        "max": 0.9375,
+        "mean": 0.929688
+      },
+      "m1_semantic_pass_accuracy": {
+        "min": 0.859375,
+        "max": 0.859375,
+        "mean": 0.859375
+      },
+      "m1_semantic_role_accuracy": {
+        "min": 0.9375,
+        "max": 0.947917,
+        "mean": 0.942708
+      },
+      "m1_surface_control_gap": {
+        "min": 0.125,
+        "max": 0.135417,
+        "mean": 0.130209
+      },
+      "m1_surface_position_accuracy": {
+        "min": 0.8125,
+        "max": 0.8125,
+        "mean": 0.8125
+      },
+      "m2_actual_binary_rate": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "m2_actual_mean": {
+        "min": 0.0,
+        "max": 0.75,
+        "mean": 0.375
+      },
+      "m2_actual_vs_non_role_advantage_mean": {
+        "min": 0.0,
+        "max": 0.4,
+        "mean": 0.2
+      },
+      "m2_actual_vs_non_role_permutation_p_value": {
+        "min": 0.35964,
+        "max": 1.0,
+        "mean": 0.67982
+      },
+      "m2_actual_vs_shuffled_advantage_mean": {
+        "min": 0.0,
+        "max": 0.410714,
+        "mean": 0.205357
+      },
+      "m2_actual_vs_shuffled_permutation_p_value": {
+        "min": 0.271728,
+        "max": 1.0,
+        "mean": 0.635864
+      },
+      "m2_actual_vs_strongest_control_advantage_mean": {
+        "min": 0.0,
+        "max": 0.333333,
+        "mean": 0.166666
+      },
+      "m2_actual_vs_strongest_control_permutation_p_value": {
+        "min": 0.385614,
+        "max": 1.0,
+        "mean": 0.692807
+      },
+      "m2_actual_vs_wrong_role_advantage_mean": {
+        "min": 0.0,
+        "max": 0.333333,
+        "mean": 0.166666
+      },
+      "m2_actual_vs_wrong_role_permutation_p_value": {
+        "min": 0.381618,
+        "max": 1.0,
+        "mean": 0.690809
+      },
+      "m2_advantage_mean": {
+        "min": 0.0,
+        "max": 0.333333,
+        "mean": 0.166666
+      },
+      "m2_count": {
+        "min": 4.0,
+        "max": 5.0,
+        "mean": 4.5
+      },
+      "m2_non_role_mean": {
+        "min": 0.0,
+        "max": 0.35,
+        "mean": 0.175
+      },
+      "m2_permutation_p_value": {
+        "min": 0.385614,
+        "max": 1.0,
+        "mean": 0.692807
+      },
+      "m2_shuffled_mean": {
+        "min": 0.0,
+        "max": 0.339286,
+        "mean": 0.169643
+      },
+      "m2_strongest_control_binary_rate": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "m2_strongest_control_mean": {
+        "min": 0.0,
+        "max": 0.416667,
+        "mean": 0.208334
+      },
+      "m2_wrong_role_mean": {
+        "min": 0.0,
+        "max": 0.416667,
+        "mean": 0.208334
+      },
+      "m3_count": {
+        "min": 124.0,
+        "max": 188.0,
+        "mean": 156.0
+      },
+      "m3_non_role_clause_f1_drop": {
+        "min": 0.0,
+        "max": 0.200754,
+        "mean": 0.100377
+      },
+      "m3_permutation_p_value": {
+        "min": 0.001998,
+        "max": 1.0,
+        "mean": 0.500999
+      },
+      "m3_role_ablation_clause_f1_drop": {
+        "min": 0.0,
+        "max": 0.27835,
+        "mean": 0.139175
+      },
+      "m3_role_vs_non_role_gap_clause_f1": {
+        "min": 0.0,
+        "max": 0.077597,
+        "mean": 0.038798
+      },
+      "m3_role_vs_non_role_permutation_p_value": {
+        "min": 0.00999,
+        "max": 1.0,
+        "mean": 0.504995
+      },
+      "m3_role_vs_strongest_control_gap_clause_f1": {
+        "min": -0.091707,
+        "max": 0.0,
+        "mean": -0.045853
+      },
+      "m3_role_vs_strongest_control_permutation_p_value": {
+        "min": 0.001998,
+        "max": 1.0,
+        "mean": 0.500999
+      },
+      "m3_role_vs_wrong_role_gap_clause_f1": {
+        "min": -0.001646,
+        "max": 0.0,
+        "mean": -0.000823
+      },
+      "m3_role_vs_wrong_role_permutation_p_value": {
+        "min": 0.964036,
+        "max": 1.0,
+        "mean": 0.982018
+      },
+      "m3_selective_impairment_clause_f1": {
+        "min": -0.091707,
+        "max": 0.0,
+        "mean": -0.045853
+      },
+      "m3_strongest_control_clause_f1_drop": {
+        "min": 0.0,
+        "max": 0.370057,
+        "mean": 0.185029
+      },
+      "m3_wrong_role_clause_f1_drop": {
+        "min": 0.0,
+        "max": 0.279997,
+        "mean": 0.139998
+      },
+      "m4_actual_binary_rate": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "m4_actual_mean": {
+        "min": -0.486742,
+        "max": 0.0,
+        "mean": -0.243371
+      },
+      "m4_actual_vs_non_role_advantage_mean": {
+        "min": -0.2625,
+        "max": 0.0,
+        "mean": -0.13125
+      },
+      "m4_actual_vs_non_role_permutation_p_value": {
+        "min": 0.506494,
+        "max": 1.0,
+        "mean": 0.753247
+      },
+      "m4_actual_vs_shuffled_advantage_mean": {
+        "min": -0.118056,
+        "max": 0.0,
+        "mean": -0.059028
+      },
+      "m4_actual_vs_shuffled_permutation_p_value": {
+        "min": 0.496503,
+        "max": 1.0,
+        "mean": 0.748252
+      },
+      "m4_actual_vs_strongest_control_advantage_mean": {
+        "min": -0.284722,
+        "max": 0.0,
+        "mean": -0.142361
+      },
+      "m4_actual_vs_strongest_control_permutation_p_value": {
+        "min": 0.503497,
+        "max": 1.0,
+        "mean": 0.751748
+      },
+      "m4_actual_vs_wrong_role_advantage_mean": {
+        "min": -0.284722,
+        "max": 0.0,
+        "mean": -0.142361
+      },
+      "m4_actual_vs_wrong_role_permutation_p_value": {
+        "min": 0.488511,
+        "max": 1.0,
+        "mean": 0.744255
+      },
+      "m4_advantage_mean": {
+        "min": -0.284722,
+        "max": 0.0,
+        "mean": -0.142361
+      },
+      "m4_count": {
+        "min": 4.0,
+        "max": 5.0,
+        "mean": 4.5
+      },
+      "m4_non_role_mean": {
+        "min": -0.224242,
+        "max": 0.0,
+        "mean": -0.112121
+      },
+      "m4_permutation_p_value": {
+        "min": 0.503497,
+        "max": 1.0,
+        "mean": 0.751748
+      },
+      "m4_shuffled_mean": {
+        "min": -0.368687,
+        "max": 0.0,
+        "mean": -0.184343
+      },
+      "m4_strongest_control_binary_rate": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "m4_strongest_control_mean": {
+        "min": -0.20202,
+        "max": 0.0,
+        "mean": -0.10101
+      },
+      "m4_wrong_role_mean": {
+        "min": -0.20202,
+        "max": 0.0,
+        "mean": -0.10101
+      },
+      "m5_count": {
+        "min": 124.0,
+        "max": 188.0,
+        "mean": 156.0
+      },
+      "m5_fail_item_rescue_advantage_coverage": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "m5_fail_items_with_rescue_advantage": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      }
+    },
+    "development_selected_states": {
+      "slog_local__t5-small__raw_e1__root_autodl-tmp_systematicity-project_runs_phase8_models_slog_local__t5-small__raw_e1__layers_m1__per_32": {
+        "G1_binding": "H1",
+        "G2_distributed_geometry": "H1",
+        "G3_shortcut": "H1"
+      },
+      "slog_local__t5-small__raw_underfit_1k__root_autodl-tmp_systematicity-project_runs_phase8_models_slog_local__t5-small__raw_underfit_1k__layers_m1__per_32": {
+        "G1_binding": "H0",
+        "G2_distributed_geometry": "H0",
+        "G3_shortcut": "H0"
+      }
+    },
+    "notes": [
+      "Freeze the registry using the development panel before interpreting the held-out regime.",
+      "Use the development panel to document threshold provenance, then inspect held-out verdict stability separately."
+    ]
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "benchmark_name": "phase11_systematicity_v2",
+  "behavior_run_name": "phase13_geometry_h1_familyA_access_seed29_keep050",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "behavior_summary": {
+    "overall": {
+      "count": 224,
+      "exact_match": 0.625,
+      "normalized_exact_match": 0.625,
+      "clause_exact_match": 0.629464,
+      "clause_f1": 0.629464
+    },
+    "by_split": {
+      "dev": {
+        "count": 128,
+        "exact_match": 0.65625,
+        "normalized_exact_match": 0.65625,
+        "clause_exact_match": 0.65625,
+        "clause_f1": 0.65625
+      },
+      "gen": {
+        "count": 96,
+        "exact_match": 0.583333,
+        "normalized_exact_match": 0.583333,
+        "clause_exact_match": 0.59375,
+        "clause_f1": 0.59375
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 70,
+        "exact_match": 0.7,
+        "normalized_exact_match": 0.7,
+        "clause_exact_match": 0.714286,
+        "clause_f1": 0.714286
+      },
+      "passive_depth0": {
+        "count": 70,
+        "exact_match": 0.728571,
+        "normalized_exact_match": 0.728571,
+        "clause_exact_match": 0.728571,
+        "clause_f1": 0.728571
+      },
+      "active_depth0": {
+        "count": 42,
+        "exact_match": 0.404762,
+        "normalized_exact_match": 0.404762,
+        "clause_exact_match": 0.404762,
+        "clause_f1": 0.404762
+      },
+      "passive_depth1": {
+        "count": 42,
+        "exact_match": 0.547619,
+        "normalized_exact_match": 0.547619,
+        "clause_exact_match": 0.547619,
+        "clause_f1": 0.547619
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 128,
+        "exact_match": 0.65625,
+        "normalized_exact_match": 0.65625,
+        "clause_exact_match": 0.65625,
+        "clause_f1": 0.65625
+      },
+      "pass": {
+        "count": 57,
+        "exact_match": 0.982456,
+        "normalized_exact_match": 0.982456,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      },
+      "fail": {
+        "count": 39,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "failure_categories": [
+      [
+        "exact_match",
+        140
+      ],
+      [
+        "no_clause_overlap",
+        83
+      ],
+      [
+        "clause_exact_only",
+        1
+      ]
+    ]
+  },
+  "available_behavior_strata": {
+    "control": 128,
+    "fail": 39,
+    "pass": 57
+  },
+  "candidate_strata": [
+    "pass",
+    "fail",
+    "control"
+  ],
+  "match_required_strata": [
+    "pass",
+    "fail"
+  ],
+  "layers_requested": [
+    -1
+  ],
+  "matched_set_count": 11,
+  "precision": "auto",
+  "num_beams": 1,
+  "decoder_cross_attention_scale": null,
+  "decoder_cross_attention_keep_ratio": null,
+  "decoder_cross_attention_layer_keep_ratio": 0.5,
+  "decoder_cross_attention_layer_seed": 129,
+  "decoder_readout_keep_ratio": null,
+  "decoder_readout_subspace_keep_ratio": null,
+  "decoder_readout_subspace_seed": 0,
+  "decoder_readout_subspace_mode": "remove",
+  "encoder_geometry_transform": "feature_mask",
+  "encoder_geometry_seed": 129,
+  "encoder_geometry_keep_ratio": 0.75,
+  "encoder_geometry_noise_std": null,
+  "model": {
+    "name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+    "family": "seq2seq_lm",
+    "device": "cuda",
+    "prompt_style": "parser_instruction"
+  },
+  "candidate_counts": {
+    "selected": 72,
+    "by_stratum": {
+      "control": 24,
+      "fail": 24,
+      "pass": 24
+    }
+  },
+  "span_coverage": {
+    "requested": 504,
+    "found": 504,
+    "coverage_rate": 1.0,
+    "by_namespace": {
+      "filler_identity": 144,
+      "predicate_identity": 72,
+      "semantic_role": 144,
+      "surface_position": 144
+    }
+  },
+  "layers": {
+    "6": {
+      "vector_count": 504,
+      "avg_vector_norm": 3.451856,
+      "semantic_role": {
+        "count": 144,
+        "label_counts": {
+          "agent": 72,
+          "theme": 72
+        },
+        "loo_centroid_accuracy": 1.0
+      },
+      "semantic_role_by_stratum": {
+        "control": {
+          "count": 48,
+          "label_counts": {
+            "agent": 24,
+            "theme": 24
+          },
+          "loo_centroid_accuracy": 1.0
+        },
+        "fail": {
+          "count": 48,
+          "label_counts": {
+            "agent": 24,
+            "theme": 24
+          },
+          "loo_centroid_accuracy": 1.0
+        },
+        "pass": {
+          "count": 48,
+          "label_counts": {
+            "agent": 24,
+            "theme": 24
+          },
+          "loo_centroid_accuracy": 1.0
+        }
+      },
+      "surface_position": {
+        "count": 144,
+        "label_counts": {
+          "surface_object": 72,
+          "surface_subject": 72
+        },
+        "loo_centroid_accuracy": 1.0
+      },
+      "surface_control_gap": 0.0,
+      "filler_identity": {
+        "count": 144,
+        "eligible_count": 144,
+        "label_counts": {
+          "aiden": 6,
+          "bianca": 9,
+          "caleb": 15,
+          "diana": 8,
+          "ethan": 3,
+          "freya": 8,
+          "gavin": 16,
+          "hazel": 12,
+          "iris": 9,
+          "jonah": 7,
+          "kira": 2,
+          "luca": 9,
+          "maya": 18,
+          "nolan": 8,
+          "opal": 6,
+          "piper": 8
+        },
+        "avg_within_cosine": 0.795255,
+        "avg_between_cosine": 0.478014,
+        "within_between_gap": 0.317241
+      },
+      "predicate_identity": {
+        "count": 72,
+        "eligible_count": 72,
+        "label_counts": {
+          "admire": 19,
+          "contact": 18,
+          "follow": 7,
+          "help": 6,
+          "support": 22
+        },
+        "avg_within_cosine": 0.909755,
+        "avg_between_cosine": 0.448673,
+        "within_between_gap": 0.461082
+      }
+    }
+  }
+}

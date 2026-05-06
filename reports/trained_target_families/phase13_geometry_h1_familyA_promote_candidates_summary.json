@@ -1,0 +1,18 @@
+{
+  "panel_name": "phase13_geometry_h1_familyA_promote_candidates",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 6,
+  "target_ids": [
+    "geometry_h1_familyA_promote_seed29_random034",
+    "geometry_h1_familyA_promote_seed29_top034",
+    "geometry_h1_familyA_promote_seed29_alt034",
+    "geometry_h1_familyA_promote_seed41_random034",
+    "geometry_h1_familyA_promote_seed41_top034",
+    "geometry_h1_familyA_promote_seed41_alt034"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 13 R2 promotion sweep for Family A.",
+    "This panel thickens the low-access Family A corridor with deterministic layer policies rather than another keep-ratio micro-sweep."
+  ]
+}

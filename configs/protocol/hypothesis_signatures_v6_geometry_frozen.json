@@ -1,0 +1,48 @@
+{
+  "version": "v6_geometry_dev_v1",
+  "family": "G2_distributed_geometry",
+  "kind": "prototype_distance_adjudicator",
+  "features": [
+    "b0_gen_clause_f1",
+    "m1_semantic_role_accuracy",
+    "m1_filler_gap",
+    "m2_advantage_mean"
+  ],
+  "min_posterior_for_decision": 0.55,
+  "state_prototypes": {
+    "H0": {
+      "b0_gen_clause_f1": 0.0,
+      "m1_semantic_role_accuracy": 0.760417,
+      "m1_filler_gap": 0.302137,
+      "m2_advantage_mean": 0.0
+    },
+    "H1": {
+      "b0_gen_clause_f1": 0.135417,
+      "m1_semantic_role_accuracy": 1.0,
+      "m1_filler_gap": 0.373993,
+      "m2_advantage_mean": 0.634615
+    },
+    "H2": {
+      "b0_gen_clause_f1": 1.0,
+      "m1_semantic_role_accuracy": 1.0,
+      "m1_filler_gap": 0.369494,
+      "m2_advantage_mean": 0.583333
+    }
+  },
+  "feature_scales": {
+    "b0_gen_clause_f1": 0.067709,
+    "m1_semantic_role_accuracy": 0.119791,
+    "m1_filler_gap": 0.05,
+    "m2_advantage_mean": 0.05
+  },
+  "state_counts": {
+    "H0": 1,
+    "H1": 1,
+    "H2": 1
+  },
+  "notes": [
+    "Step 6 extends Phase 11 to the bounded distributed-geometry family.",
+    "This first geometry panel reuses the already-trained Phase 11 v2 controls as shared physical runs.",
+    "No forced H2 winner is assumed beyond the bounded G2 family."
+  ]
+}

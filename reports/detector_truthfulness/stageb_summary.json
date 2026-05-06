@@ -1,0 +1,9 @@
+{
+  "triggered": true,
+  "failed_classes": [
+    "interaction",
+    "cross_step_bridge",
+    "query_source_relation"
+  ],
+  "stage_b_executed": true
+}

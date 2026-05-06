@@ -1,0 +1,18 @@
+{
+  "panel_name": "phase12_geometry_h1_family2_mask_candidates_v2",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 6,
+  "target_ids": [
+    "geometry_h1_family2_mask_seed29_keep035",
+    "geometry_h1_family2_mask_seed29_keep040",
+    "geometry_h1_family2_mask_seed29_keep045",
+    "geometry_h1_family2_mask_seed41_keep035",
+    "geometry_h1_family2_mask_seed41_keep040",
+    "geometry_h1_family2_mask_seed41_keep045"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 12 P8 v2 candidate sweep for a genuinely new geometry-specific H1 family.",
+    "This family preserves encoder geometry while masking decoder cross-attention features at inference time, instead of scaling the entire decoder routing path."
+  ]
+}

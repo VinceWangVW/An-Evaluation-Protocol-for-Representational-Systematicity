@@ -1,0 +1,9 @@
+{
+  "triggered": true,
+  "failed_detectors": [
+    "argument_locus",
+    "predicate_conditioned_relation",
+    "cross_step_bridge"
+  ],
+  "stage_b_executed": true
+}

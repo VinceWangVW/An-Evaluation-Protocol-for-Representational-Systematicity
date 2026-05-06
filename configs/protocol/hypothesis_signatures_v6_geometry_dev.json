@@ -1,0 +1,313 @@
+{
+  "version": "v6_geometry_dev_v1",
+  "metadata": {
+    "family": "G2_distributed_geometry",
+    "development_controls": [
+      {
+        "control_id": "geometry_h2_full",
+        "phase11_prefix": "phase11_binding_h2_full_p11v2_parser_e8__bindingdev_lm1_p24",
+        "expected_state": "H2"
+      },
+      {
+        "control_id": "geometry_h1_routed",
+        "phase11_prefix": "phase11_binding_h1_routed_p11v2_parser_e8__bindingdev_lm1_p24",
+        "expected_state": "H1"
+      },
+      {
+        "control_id": "geometry_h0_permuted",
+        "phase11_prefix": "phase11_binding_h0_permuted_p11v2_parser_e8__bindingdev_lm1_p24",
+        "expected_state": "H0"
+      }
+    ],
+    "thresholds": {
+      "gen_h0_h1_boundary": 0.067709,
+      "gen_h1_h2_boundary": 0.567708,
+      "role_presence_boundary": 0.880208,
+      "filler_geometry_boundary": 0.335815,
+      "surface_geometry_boundary": -0.119791,
+      "m2_positive_boundary": 0.291666
+    },
+    "notes": [
+      "Step 6 extends Phase 11 to the bounded distributed-geometry family.",
+      "This first geometry panel reuses the already-trained Phase 11 v2 controls as shared physical runs.",
+      "No forced H2 winner is assumed beyond the bounded G2 family."
+    ],
+    "no_forced_h2": true,
+    "shared_physical_controls": true,
+    "calibration_strategy": "Geometry Step 6 uses generalization behavior to separate H2 from H1, while role/filler geometry plus a positive M2 floor distinguish {H1,H2} from H0."
+  },
+  "audit_preconditions": [
+    {
+      "signal": "geometry_dev_audit_ready",
+      "op": "==",
+      "value": true,
+      "description": "Step 6 requires observable role/filler geometry plus generation-level protocol modules."
+    }
+  ],
+  "signal_definitions": {
+    "geometry_dev_audit_ready": {
+      "module": "P0",
+      "description": "Step 6 geometry-development preconditions are jointly satisfied."
+    },
+    "state_anchor_ready": {
+      "module": "B0",
+      "description": "The current run exposes control items and at least one non-control target stratum."
+    },
+    "geometry_signal_ready": {
+      "module": "M1",
+      "description": "Role and filler geometry signals are observable for the current run."
+    },
+    "b0_gen_clause_f1": {
+      "module": "B0",
+      "description": "Generalization split clause F1."
+    },
+    "m1_semantic_role_accuracy": {
+      "module": "M1",
+      "description": "Leave-one-out centroid accuracy for semantic roles."
+    },
+    "m1_filler_gap": {
+      "module": "M1",
+      "description": "Within-versus-between cosine gap for filler identity."
+    },
+    "m1_surface_control_gap": {
+      "module": "M1",
+      "description": "Semantic-role accuracy minus surface-position accuracy."
+    },
+    "m2_observed": {
+      "module": "M2",
+      "description": "At least one generation-level interchange record was observed."
+    },
+    "m2_advantage_mean": {
+      "module": "M2",
+      "description": "Actual minus strongest-control interchange advantage."
+    },
+    "m3_observed": {
+      "module": "M3",
+      "description": "At least one generation-level necessity record was observed."
+    },
+    "m3_selective_impairment_clause_f1": {
+      "module": "M3",
+      "description": "Role-ablation minus strongest-control clause-F1 drop."
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "G2_distributed_geometry",
+      "label": "Distributed Geometry Hypothesis",
+      "description": "Role/filler information lives in a stable distributed subspace that can be absent, present-but-unused, or present-and-used.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "A stable distributed geometry is present and causally used for generation.",
+          "support": {
+            "all": [
+              {
+                "signal": "state_anchor_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "geometry_signal_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "m2_observed",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "b0_gen_clause_f1",
+                "op": ">=",
+                "value": 0.567708
+              },
+              {
+                "signal": "m1_semantic_role_accuracy",
+                "op": ">=",
+                "value": 0.880208
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": ">=",
+                "value": 0.335815
+              },
+              {
+                "signal": "m1_surface_control_gap",
+                "op": ">=",
+                "value": -0.119791
+              },
+              {
+                "signal": "m2_advantage_mean",
+                "op": ">=",
+                "value": 0.291666
+              }
+            ]
+          },
+          "falsifiers": {
+            "any": [
+              {
+                "signal": "geometry_signal_ready",
+                "op": "==",
+                "value": false
+              },
+              {
+                "signal": "m2_observed",
+                "op": "==",
+                "value": false
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": "<",
+                "value": 0.335815
+              },
+              {
+                "signal": "m2_advantage_mean",
+                "op": "<",
+                "value": 0.291666
+              }
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "A stable distributed geometry is present but not cleanly used for generation.",
+          "support": {
+            "all": [
+              {
+                "signal": "state_anchor_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "geometry_signal_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "m2_observed",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "b0_gen_clause_f1",
+                "op": "<",
+                "value": 0.567708
+              },
+              {
+                "signal": "m1_semantic_role_accuracy",
+                "op": ">=",
+                "value": 0.880208
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": ">=",
+                "value": 0.335815
+              },
+              {
+                "signal": "m1_surface_control_gap",
+                "op": ">=",
+                "value": -0.119791
+              },
+              {
+                "signal": "m2_advantage_mean",
+                "op": ">=",
+                "value": 0.291666
+              }
+            ]
+          },
+          "falsifiers": {
+            "any": [
+              {
+                "signal": "geometry_signal_ready",
+                "op": "==",
+                "value": false
+              },
+              {
+                "signal": "m2_observed",
+                "op": "==",
+                "value": false
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": "<",
+                "value": 0.335815
+              },
+              {
+                "signal": "m2_advantage_mean",
+                "op": "<",
+                "value": 0.291666
+              }
+            ],
+            "all": [
+              {
+                "signal": "b0_gen_clause_f1",
+                "op": ">=",
+                "value": 0.567708
+              },
+              {
+                "signal": "m2_observed",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "m2_advantage_mean",
+                "op": ">=",
+                "value": 0.291666
+              }
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "No stable task-relevant distributed geometry is available.",
+          "support": {
+            "all": [
+              {
+                "signal": "state_anchor_ready",
+                "op": "==",
+                "value": true
+              },
+              {
+                "signal": "b0_gen_clause_f1",
+                "op": "<=",
+                "value": 0.067709
+              }
+            ],
+            "any": [
+              {
+                "signal": "geometry_signal_ready",
+                "op": "==",
+                "value": false
+              },
+              {
+                "signal": "m1_semantic_role_accuracy",
+                "op": "<",
+                "value": 0.880208
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": "<",
+                "value": 0.335815
+              },
+              {
+                "signal": "m1_surface_control_gap",
+                "op": "<",
+                "value": -0.119791
+              },
+              {
+                "signal": "m2_observed",
+                "op": "==",
+                "value": false
+              },
+              {
+                "signal": "m2_advantage_mean",
+                "op": "<",
+                "value": 0.291666
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "panel_name": "phase12_geometry_target_panel_p4_candidates",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_id": "geometry_target_h1_trained_scale025_seed57",
+  "run_name": "phase12_geometry_target_h1_trained_scale025_e8_seed57",
+  "phase11_prefix": "phase12_geometry_target_h1_trained_scale025_e8_seed57__geometryp4_lm1_p24",
+  "model_name_or_path": "google-t5/t5-small",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_h1_trained_scale025_e8_seed57",
+  "family": "seq2seq_lm",
+  "prompt_style": "parser_instruction",
+  "hf_endpoint": "https://hf-mirror.com",
+  "training": {
+    "trained": true,
+    "epochs": 8,
+    "learning_rate": 5e-05,
+    "train_example_count": 448,
+    "train_limit": null,
+    "train_target_permutation_seed": null,
+    "steps_per_epoch": 56,
+    "mean_epoch_loss": 0.691023,
+    "epoch_losses": [
+      3.396752,
+      1.112073,
+      0.484771,
+      0.242615,
+      0.133436,
+      0.071629,
+      0.050174,
+      0.036736
+    ],
+    "precision": "bf16",
+    "num_beams": 1,
+    "decoder_cross_attention_scale": 0.25,
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 157,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null,
+    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_h1_trained_scale025_e8_seed57"
+  },
+  "training_filter_summary": {
+    "panel_benchmark": "phase11_systematicity_v2",
+    "target_id": "geometry_target_h1_trained_scale025_seed57",
+    "run_name": "phase12_geometry_target_h1_trained_scale025_e8_seed57",
+    "phase11_prefix": "phase12_geometry_target_h1_trained_scale025_e8_seed57__geometryp4_lm1_p24",
+    "model_name_or_path": "google-t5/t5-small",
+    "reuse_checkpoint_from": null,
+    "train_example_count": 448,
+    "eval_example_count": 224,
+    "benchmark_override": null,
+    "panel_regime": "h1_trained_candidate",
+    "surface_backend": "template",
+    "train_case_counts": {
+      "active_depth0": 154,
+      "passive_depth0": 147,
+      "active_depth1": 147
+    },
+    "eval_split_counts": {
+      "dev": 128,
+      "gen": 96
+    },
+    "num_train_epochs": 8,
+    "train_limit": null,
+    "train_target_permutation_seed": null,
+    "train_generalization_case_allowlist": [],
+    "train_generalization_case_denylist": [],
+    "decoder_cross_attention_scale": 0.25,
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 157,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null,
+    "seed": 57,
+    "analysis_family": "seq2seq_lm",
+    "layers": [
+      -1
+    ],
+    "per_stratum": 24,
+    "match_set_limit": 24,
+    "include_in_adjudication": true,
+    "tags": [
+      "target",
+      "h1_like",
+      "trained",
+      "geometry",
+      "template",
+      "p4_candidate"
+    ],
+    "notes": "Train a fresh geometry target under the H1-style decoder scale rather than applying the scale only at reuse time.",
+    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_h1_trained_scale025_e8_seed57",
+    "evaluation": {
+      "overall": {
+        "count": 224,
+        "exact_match": 0.089286,
+        "normalized_exact_match": 0.089286,
+        "clause_exact_match": 0.089286,
+        "clause_f1": 0.089286
+      },
+      "by_split": {
+        "dev": {
+          "count": 128,
+          "exact_match": 0.070312,
+          "normalized_exact_match": 0.070312,
+          "clause_exact_match": 0.070312,
+          "clause_f1": 0.070312
+        },
+        "gen": {
+          "count": 96,
+          "exact_match": 0.114583,
+          "normalized_exact_match": 0.114583,
+          "clause_exact_match": 0.114583,
+          "clause_f1": 0.114583
+        }
+      },
+      "by_generalization_case_top25": {
+        "active_depth1": {
+          "count": 70,
+          "exact_match": 0.2,
+          "normalized_exact_match": 0.2,
+          "clause_exact_match": 0.2,
+          "clause_f1": 0.2
+        },
+        "passive_depth0": {
+          "count": 70,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        },
+        "active_depth0": {
+          "count": 42,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        },
+        "passive_depth1": {
+          "count": 42,
+          "exact_match": 0.142857,
+          "normalized_exact_match": 0.142857,
+          "clause_exact_match": 0.142857,
+          "clause_f1": 0.142857
+        }
+      },
+      "by_stratum": {
+        "control": {
+          "count": 128,
+          "exact_match": 0.070312,
+          "normalized_exact_match": 0.070312,
+          "clause_exact_match": 0.070312,
+          "clause_f1": 0.070312
+        },
+        "fail": {
+          "count": 85,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        },
+        "pass": {
+          "count": 11,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        }
+      },
+      "failure_categories": [
+        [
+          "no_clause_overlap",
+          204
+        ],
+        [
+          "exact_match",
+          20
+        ]
+      ]
+    }
+  },
+  "evaluation": {
+    "overall": {
+      "count": 224,
+      "exact_match": 0.089286,
+      "normalized_exact_match": 0.089286,
+      "clause_exact_match": 0.089286,
+      "clause_f1": 0.089286
+    },
+    "by_split": {
+      "dev": {
+        "count": 128,
+        "exact_match": 0.070312,
+        "normalized_exact_match": 0.070312,
+        "clause_exact_match": 0.070312,
+        "clause_f1": 0.070312
+      },
+      "gen": {
+        "count": 96,
+        "exact_match": 0.114583,
+        "normalized_exact_match": 0.114583,
+        "clause_exact_match": 0.114583,
+        "clause_f1": 0.114583
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 70,
+        "exact_match": 0.2,
+        "normalized_exact_match": 0.2,
+        "clause_exact_match": 0.2,
+        "clause_f1": 0.2
+      },
+      "passive_depth0": {
+        "count": 70,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "active_depth0": {
+        "count": 42,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "passive_depth1": {
+        "count": 42,
+        "exact_match": 0.142857,
+        "normalized_exact_match": 0.142857,
+        "clause_exact_match": 0.142857,
+        "clause_f1": 0.142857
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 128,
+        "exact_match": 0.070312,
+        "normalized_exact_match": 0.070312,
+        "clause_exact_match": 0.070312,
+        "clause_f1": 0.070312
+      },
+      "fail": {
+        "count": 85,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "pass": {
+        "count": 11,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      }
+    },
+    "failure_categories": [
+      [
+        "no_clause_overlap",
+        204
+      ],
+      [
+        "exact_match",
+        20
+      ]
+    ]
+  },
+  "panel_regime": "h1_trained_candidate",
+  "surface_backend": "template",
+  "include_in_adjudication": true,
+  "tags": [
+    "target",
+    "h1_like",
+    "trained",
+    "geometry",
+    "template",
+    "p4_candidate"
+  ],
+  "notes": "Train a fresh geometry target under the H1-style decoder scale rather than applying the scale only at reuse time."
+}

@@ -1,0 +1,208 @@
+{
+  "benchmark_name": "phase11_systematicity_v1",
+  "behavior_run_name": "phase11_binding_h1_routed_parser_e8",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h2_full_parser_e8",
+  "behavior_summary": {
+    "overall": {
+      "count": 160,
+      "exact_match": 0.0125,
+      "normalized_exact_match": 0.0125,
+      "clause_exact_match": 0.0125,
+      "clause_f1": 0.0125
+    },
+    "by_split": {
+      "dev": {
+        "count": 96,
+        "exact_match": 0.020833,
+        "normalized_exact_match": 0.020833,
+        "clause_exact_match": 0.020833,
+        "clause_f1": 0.020833
+      },
+      "gen": {
+        "count": 64,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 50,
+        "exact_match": 0.04,
+        "normalized_exact_match": 0.04,
+        "clause_exact_match": 0.04,
+        "clause_f1": 0.04
+      },
+      "passive_depth0": {
+        "count": 50,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "active_depth0": {
+        "count": 30,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "passive_depth1": {
+        "count": 30,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 96,
+        "exact_match": 0.020833,
+        "normalized_exact_match": 0.020833,
+        "clause_exact_match": 0.020833,
+        "clause_f1": 0.020833
+      },
+      "fail": {
+        "count": 64,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "failure_categories": [
+      [
+        "no_clause_overlap",
+        158
+      ],
+      [
+        "exact_match",
+        2
+      ]
+    ]
+  },
+  "available_behavior_strata": {
+    "control": 96,
+    "fail": 64
+  },
+  "candidate_strata": [
+    "fail",
+    "control"
+  ],
+  "match_required_strata": [
+    "fail"
+  ],
+  "layers_requested": [
+    -1
+  ],
+  "matched_set_count": 13,
+  "precision": null,
+  "num_beams": null,
+  "decoder_cross_attention_scale": null,
+  "model": {
+    "name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h2_full_parser_e8",
+    "family": "seq2seq_lm",
+    "device": "cuda",
+    "prompt_style": "raw"
+  },
+  "candidate_counts": {
+    "selected": 48,
+    "by_stratum": {
+      "control": 24,
+      "fail": 24
+    }
+  },
+  "span_coverage": {
+    "requested": 336,
+    "found": 336,
+    "coverage_rate": 1.0,
+    "by_namespace": {
+      "filler_identity": 96,
+      "predicate_identity": 48,
+      "semantic_role": 96,
+      "surface_position": 96
+    }
+  },
+  "layers": {
+    "6": {
+      "vector_count": 336,
+      "avg_vector_norm": 3.216456,
+      "semantic_role": {
+        "count": 96,
+        "label_counts": {
+          "agent": 48,
+          "theme": 48
+        },
+        "loo_centroid_accuracy": 1.0
+      },
+      "semantic_role_by_stratum": {
+        "control": {
+          "count": 48,
+          "label_counts": {
+            "agent": 24,
+            "theme": 24
+          },
+          "loo_centroid_accuracy": 0.958333
+        },
+        "fail": {
+          "count": 48,
+          "label_counts": {
+            "agent": 24,
+            "theme": 24
+          },
+          "loo_centroid_accuracy": 1.0
+        }
+      },
+      "surface_position": {
+        "count": 96,
+        "label_counts": {
+          "surface_object": 48,
+          "surface_subject": 48
+        },
+        "loo_centroid_accuracy": 1.0
+      },
+      "surface_control_gap": 0.0,
+      "filler_identity": {
+        "count": 96,
+        "eligible_count": 95,
+        "label_counts": {
+          "aiden": 4,
+          "bianca": 6,
+          "caleb": 11,
+          "diana": 4,
+          "ethan": 2,
+          "freya": 3,
+          "gavin": 14,
+          "hazel": 7,
+          "iris": 6,
+          "jonah": 4,
+          "kira": 1,
+          "luca": 7,
+          "maya": 13,
+          "nolan": 6,
+          "opal": 3,
+          "piper": 5
+        },
+        "avg_within_cosine": 0.780297,
+        "avg_between_cosine": 0.427708,
+        "within_between_gap": 0.352589
+      },
+      "predicate_identity": {
+        "count": 48,
+        "eligible_count": 48,
+        "label_counts": {
+          "admire": 10,
+          "contact": 10,
+          "follow": 7,
+          "help": 5,
+          "support": 16
+        },
+        "avg_within_cosine": 0.868954,
+        "avg_between_cosine": 0.381635,
+        "within_between_gap": 0.48732
+      }
+    }
+  }
+}

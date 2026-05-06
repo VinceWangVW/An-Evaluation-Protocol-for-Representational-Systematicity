@@ -1,0 +1,301 @@
+{
+  "panel_name": "phase13_geometry_h1_familyA_candidates",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_id": "geometry_h1_familyA_access_seed29_keep050",
+  "run_name": "phase13_geometry_h1_familyA_access_seed29_keep050",
+  "phase11_prefix": "phase13_geometry_h1_familyA_access_seed29_keep050__geometryr1_lm1_p24",
+  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "family": "seq2seq_lm",
+  "prompt_style": "parser_instruction",
+  "hf_endpoint": "https://hf-mirror.com",
+  "precision": "auto",
+  "num_beams": 1,
+  "decoder_cross_attention_scale": null,
+  "decoder_cross_attention_keep_ratio": null,
+  "decoder_cross_attention_layer_keep_ratio": 0.5,
+  "decoder_cross_attention_layer_seed": 129,
+  "decoder_readout_keep_ratio": null,
+  "decoder_readout_subspace_keep_ratio": null,
+  "decoder_readout_subspace_seed": 0,
+  "decoder_readout_subspace_mode": "remove",
+  "encoder_geometry_transform": "feature_mask",
+  "encoder_geometry_seed": 129,
+  "encoder_geometry_keep_ratio": 0.75,
+  "encoder_geometry_noise_std": null,
+  "training": {
+    "trained": false,
+    "epochs": 0,
+    "learning_rate": 5e-05,
+    "train_example_count": 0,
+    "train_limit": null,
+    "train_target_permutation_seed": null,
+    "precision": "bf16",
+    "num_beams": 1,
+    "decoder_cross_attention_scale": null,
+    "decoder_cross_attention_keep_ratio": null,
+    "decoder_cross_attention_layer_keep_ratio": 0.5,
+    "decoder_cross_attention_layer_seed": 129,
+    "decoder_readout_keep_ratio": null,
+    "decoder_readout_subspace_keep_ratio": null,
+    "decoder_readout_subspace_seed": 0,
+    "decoder_readout_subspace_mode": "remove",
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 129,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null
+  },
+  "training_filter_summary": {
+    "panel_benchmark": "phase11_systematicity_v2",
+    "target_id": "geometry_h1_familyA_access_seed29_keep050",
+    "run_name": "phase13_geometry_h1_familyA_access_seed29_keep050",
+    "phase11_prefix": "phase13_geometry_h1_familyA_access_seed29_keep050__geometryr1_lm1_p24",
+    "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+    "reuse_checkpoint_from": null,
+    "train_example_count": 448,
+    "eval_example_count": 224,
+    "benchmark_override": null,
+    "panel_regime": "h1_familyA_access_block",
+    "surface_backend": "template",
+    "train_case_counts": {
+      "active_depth0": 154,
+      "passive_depth0": 147,
+      "active_depth1": 147
+    },
+    "eval_split_counts": {
+      "dev": 128,
+      "gen": 96
+    },
+    "num_train_epochs": 0,
+    "train_limit": null,
+    "train_target_permutation_seed": null,
+    "train_generalization_case_allowlist": [],
+    "train_generalization_case_denylist": [],
+    "decoder_cross_attention_scale": null,
+    "decoder_cross_attention_keep_ratio": null,
+    "decoder_cross_attention_layer_keep_ratio": 0.5,
+    "decoder_cross_attention_layer_seed": 129,
+    "decoder_readout_keep_ratio": null,
+    "decoder_readout_subspace_keep_ratio": null,
+    "decoder_readout_subspace_seed": 0,
+    "decoder_readout_subspace_mode": "remove",
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 129,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null,
+    "seed": 29,
+    "analysis_family": "seq2seq_lm",
+    "layers": [
+      -1
+    ],
+    "per_stratum": 24,
+    "match_set_limit": 24,
+    "include_in_adjudication": true,
+    "tags": [
+      "target",
+      "h1_like",
+      "geometry_familyA",
+      "cross_attention_access_block",
+      "template",
+      "phase13"
+    ],
+    "notes": null,
+    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+    "evaluation": {
+      "overall": {
+        "count": 224,
+        "exact_match": 0.625,
+        "normalized_exact_match": 0.625,
+        "clause_exact_match": 0.629464,
+        "clause_f1": 0.629464
+      },
+      "by_split": {
+        "dev": {
+          "count": 128,
+          "exact_match": 0.65625,
+          "normalized_exact_match": 0.65625,
+          "clause_exact_match": 0.65625,
+          "clause_f1": 0.65625
+        },
+        "gen": {
+          "count": 96,
+          "exact_match": 0.583333,
+          "normalized_exact_match": 0.583333,
+          "clause_exact_match": 0.59375,
+          "clause_f1": 0.59375
+        }
+      },
+      "by_generalization_case_top25": {
+        "active_depth1": {
+          "count": 70,
+          "exact_match": 0.7,
+          "normalized_exact_match": 0.7,
+          "clause_exact_match": 0.714286,
+          "clause_f1": 0.714286
+        },
+        "passive_depth0": {
+          "count": 70,
+          "exact_match": 0.728571,
+          "normalized_exact_match": 0.728571,
+          "clause_exact_match": 0.728571,
+          "clause_f1": 0.728571
+        },
+        "active_depth0": {
+          "count": 42,
+          "exact_match": 0.404762,
+          "normalized_exact_match": 0.404762,
+          "clause_exact_match": 0.404762,
+          "clause_f1": 0.404762
+        },
+        "passive_depth1": {
+          "count": 42,
+          "exact_match": 0.547619,
+          "normalized_exact_match": 0.547619,
+          "clause_exact_match": 0.547619,
+          "clause_f1": 0.547619
+        }
+      },
+      "by_stratum": {
+        "control": {
+          "count": 128,
+          "exact_match": 0.65625,
+          "normalized_exact_match": 0.65625,
+          "clause_exact_match": 0.65625,
+          "clause_f1": 0.65625
+        },
+        "pass": {
+          "count": 57,
+          "exact_match": 0.982456,
+          "normalized_exact_match": 0.982456,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        },
+        "fail": {
+          "count": 39,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        }
+      },
+      "failure_categories": [
+        [
+          "exact_match",
+          140
+        ],
+        [
+          "no_clause_overlap",
+          83
+        ],
+        [
+          "clause_exact_only",
+          1
+        ]
+      ]
+    }
+  },
+  "evaluation": {
+    "overall": {
+      "count": 224,
+      "exact_match": 0.625,
+      "normalized_exact_match": 0.625,
+      "clause_exact_match": 0.629464,
+      "clause_f1": 0.629464
+    },
+    "by_split": {
+      "dev": {
+        "count": 128,
+        "exact_match": 0.65625,
+        "normalized_exact_match": 0.65625,
+        "clause_exact_match": 0.65625,
+        "clause_f1": 0.65625
+      },
+      "gen": {
+        "count": 96,
+        "exact_match": 0.583333,
+        "normalized_exact_match": 0.583333,
+        "clause_exact_match": 0.59375,
+        "clause_f1": 0.59375
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 70,
+        "exact_match": 0.7,
+        "normalized_exact_match": 0.7,
+        "clause_exact_match": 0.714286,
+        "clause_f1": 0.714286
+      },
+      "passive_depth0": {
+        "count": 70,
+        "exact_match": 0.728571,
+        "normalized_exact_match": 0.728571,
+        "clause_exact_match": 0.728571,
+        "clause_f1": 0.728571
+      },
+      "active_depth0": {
+        "count": 42,
+        "exact_match": 0.404762,
+        "normalized_exact_match": 0.404762,
+        "clause_exact_match": 0.404762,
+        "clause_f1": 0.404762
+      },
+      "passive_depth1": {
+        "count": 42,
+        "exact_match": 0.547619,
+        "normalized_exact_match": 0.547619,
+        "clause_exact_match": 0.547619,
+        "clause_f1": 0.547619
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 128,
+        "exact_match": 0.65625,
+        "normalized_exact_match": 0.65625,
+        "clause_exact_match": 0.65625,
+        "clause_f1": 0.65625
+      },
+      "pass": {
+        "count": 57,
+        "exact_match": 0.982456,
+        "normalized_exact_match": 0.982456,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      },
+      "fail": {
+        "count": 39,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "failure_categories": [
+      [
+        "exact_match",
+        140
+      ],
+      [
+        "no_clause_overlap",
+        83
+      ],
+      [
+        "clause_exact_only",
+        1
+      ]
+    ]
+  },
+  "panel_regime": "h1_familyA_access_block",
+  "surface_backend": "template",
+  "include_in_adjudication": true,
+  "tags": [
+    "target",
+    "h1_like",
+    "geometry_familyA",
+    "cross_attention_access_block",
+    "template",
+    "phase13"
+  ],
+  "notes": null
+}

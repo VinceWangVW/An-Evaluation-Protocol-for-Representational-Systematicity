@@ -1,0 +1,111 @@
+{
+  "phase11_prefix": "phase12_geometry_h1_family2_mask_seed41_keep035__geometryp8_lm1_p24",
+  "discovery_prefix": "phase12_geometry_h1_family2_mask_seed41_keep035__geometryp8_lm1_p24",
+  "behavior_run_name": "phase12_geometry_h1_family2_mask_seed41_keep035",
+  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
+  "family": "seq2seq_lm",
+  "prompt_style": "parser_instruction",
+  "layer_index": 6,
+  "hf_endpoint": "https://hf-mirror.com",
+  "num_beams": 1,
+  "precision": "auto",
+  "decoder_cross_attention_scale": null,
+  "decoder_cross_attention_keep_ratio": 0.35,
+  "encoder_geometry_transform": "feature_mask",
+  "encoder_geometry_seed": 141,
+  "encoder_geometry_keep_ratio": 0.75,
+  "encoder_geometry_noise_std": null,
+  "protocol_config": {
+    "non_role_policy": "contentful_first",
+    "strongest_control_aggregation": "max",
+    "strongest_control_priority": [
+      "wrong_role",
+      "non_role",
+      "shuffled"
+    ],
+    "preferred_counterpart_strata": [
+      "pass",
+      "control"
+    ],
+    "counterpart_same_split_only": false,
+    "interchange_target_strata": [
+      "pass",
+      "fail"
+    ],
+    "rescue_target_strata": [
+      "fail"
+    ]
+  },
+  "candidate_counts_by_stratum": {
+    "control": 24,
+    "fail": 24,
+    "pass": 24
+  },
+  "modules": {
+    "M2_generation_interchange": {
+      "count": 66,
+      "actual_mean": 0.136364,
+      "wrong_role_mean": 0.0,
+      "non_role_mean": 0.0,
+      "shuffled_mean": 0.0,
+      "strongest_control_mean": 0.0,
+      "actual_binary_rate": 0.136364,
+      "strongest_control_binary_rate": 0.0,
+      "actual_vs_wrong_role_advantage_mean": 0.136364,
+      "actual_vs_non_role_advantage_mean": 0.136364,
+      "actual_vs_shuffled_advantage_mean": 0.136364,
+      "actual_vs_strongest_control_advantage_mean": 0.136364,
+      "bootstrap_ci": {
+        "low": 0.060606,
+        "high": 0.227273
+      },
+      "actual_vs_strongest_control_permutation_p_value": 0.006993,
+      "actual_vs_wrong_role_permutation_p_value": 0.005994,
+      "actual_vs_non_role_permutation_p_value": 0.000999,
+      "actual_vs_shuffled_permutation_p_value": 0.003996
+    },
+    "M3_generation_necessity": {
+      "count": 143,
+      "role_ablation_clause_f1_drop": 0.377622,
+      "wrong_role_clause_f1_drop": 0.377622,
+      "non_role_clause_f1_drop": 0.370629,
+      "strongest_control_clause_f1_drop": 0.377622,
+      "role_vs_wrong_role_gap_clause_f1": 0.0,
+      "role_vs_non_role_gap_clause_f1": 0.006993,
+      "role_vs_strongest_control_gap_clause_f1": 0.0,
+      "bootstrap_ci": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "role_vs_strongest_control_permutation_p_value": 1.0,
+      "role_vs_wrong_role_permutation_p_value": 1.0,
+      "role_vs_non_role_permutation_p_value": 1.0
+    },
+    "M4_generation_rescue": {
+      "count": 28,
+      "actual_mean": 0.0,
+      "wrong_role_mean": 0.0,
+      "non_role_mean": 0.0,
+      "shuffled_mean": 0.0,
+      "strongest_control_mean": 0.0,
+      "actual_binary_rate": 0.0,
+      "strongest_control_binary_rate": 0.0,
+      "actual_vs_wrong_role_advantage_mean": 0.0,
+      "actual_vs_non_role_advantage_mean": 0.0,
+      "actual_vs_shuffled_advantage_mean": 0.0,
+      "actual_vs_strongest_control_advantage_mean": 0.0,
+      "bootstrap_ci": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "actual_vs_strongest_control_permutation_p_value": 1.0,
+      "actual_vs_wrong_role_permutation_p_value": 1.0,
+      "actual_vs_non_role_permutation_p_value": 1.0,
+      "actual_vs_shuffled_permutation_p_value": 1.0
+    },
+    "M5_item_level_linkage": {
+      "count": 143,
+      "fail_items_with_rescue_advantage": 0
+    }
+  }
+}

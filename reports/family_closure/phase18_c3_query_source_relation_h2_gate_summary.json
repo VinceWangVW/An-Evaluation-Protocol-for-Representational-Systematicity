@@ -1,0 +1,35 @@
+{
+  "object_class": "query_source_relation",
+  "gate_ready_candidate_count": 0,
+  "passed_count": 0,
+  "passed_candidate_ids": [],
+  "rows": [],
+  "decision": "T-supported",
+  "decision_status": "final",
+  "blocked": true,
+  "blocked_reason": "discovery_rejected",
+  "discovery_summary": {
+    "object_class": "query_source_relation",
+    "object_count": 12,
+    "surviving_candidate_count": 4,
+    "surviving_candidate_ids": [
+      "query_source_relation_predicate_value_top1_head_top1_basis_no_store",
+      "query_source_relation_predicate_value_top2_head_bundle_top1_basis_no_store",
+      "query_source_relation_predicate_value_top1_head_top1_basis_matched_store",
+      "query_source_relation_predicate_value_top2_head_bundle_top2_basis_bundle_matched_store"
+    ],
+    "surviving_coverages": [
+      "predicate_value"
+    ],
+    "surviving_template_families": [
+      "top1_head_top1_basis_matched_store",
+      "top1_head_top1_basis_no_store",
+      "top2_head_bundle_top1_basis_no_store",
+      "top2_head_bundle_top2_basis_bundle_matched_store"
+    ],
+    "accepted": false,
+    "decision": "T-supported",
+    "decision_status": "final",
+    "aligner_used": "A1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "panel_name": "phase12_geometry_target_panel_v1",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 4,
+  "target_ids": [
+    "geometry_target_strong_seed41",
+    "geometry_target_weak_train128_seed47",
+    "geometry_target_h1_decoder_scale025_seed41",
+    "geometry_target_surface_nuwa_seed53"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 12 P3 heterogeneous geometry target panel.",
+    "Uses the independent geometry-specialized family from P2 as the target anchor."
+  ]
+}

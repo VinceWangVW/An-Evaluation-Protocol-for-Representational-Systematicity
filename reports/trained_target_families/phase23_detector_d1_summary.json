@@ -1,0 +1,17 @@
+{
+  "panel_name": "phase23_detector_d1",
+  "benchmark_name": "phase23_detector_d1",
+  "target_count": 8,
+  "target_ids": [
+    "phase23_detector_d1_predicate_sanity_h2_seed1",
+    "phase23_detector_d1_detector_h2_seed1",
+    "phase23_detector_d1_detector_h1_seed1",
+    "phase23_detector_d1_detector_null_seed1",
+    "phase23_detector_d1_predicate_sanity_h2_seed2",
+    "phase23_detector_d1_detector_h2_seed2",
+    "phase23_detector_d1_detector_h1_seed2",
+    "phase23_detector_d1_detector_null_seed2"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": []
+}

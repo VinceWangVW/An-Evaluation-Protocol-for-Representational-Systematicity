@@ -1,0 +1,13 @@
+{
+  "panel_name": "phase12_binding_target_surface_template_longest_v1",
+  "benchmark_name": "phase12_systematicity_p3_template_longest",
+  "target_count": 1,
+  "target_ids": [
+    "binding_target_surface_nuwa_raw_seed71"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Surface-shift-only Phase 12 P3 binding target panel.",
+    "Used to rerun the held-out surface target on the stable template_longest benchmark while the rest of the panel is reused from prior runs."
+  ]
+}

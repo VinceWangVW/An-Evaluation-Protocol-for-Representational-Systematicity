@@ -1,0 +1,14 @@
+{
+  "panel_name": "phase12_geometry_h1_candidate_panel_v2",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 2,
+  "target_ids": [
+    "geometry_target_h1_trained_scale025_seed79",
+    "geometry_target_h1_trained_scale025_seed83"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 12 P7 targeted continuation of the geometry H1 manifold thickening.",
+    "This panel resumes the previously unmaterialized trained_scale025 candidates so the frozen P5/P6 geometry semantics can be stress-tested on a thicker intermediate family."
+  ]
+}

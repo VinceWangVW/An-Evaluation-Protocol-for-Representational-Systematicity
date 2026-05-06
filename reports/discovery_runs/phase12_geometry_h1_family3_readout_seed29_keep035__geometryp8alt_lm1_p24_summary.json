@@ -1,0 +1,233 @@
+{
+  "benchmark_name": "phase11_systematicity_v2",
+  "behavior_run_name": "phase12_geometry_h1_family3_readout_seed29_keep035",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "behavior_summary": {
+    "overall": {
+      "count": 224,
+      "exact_match": 0.165179,
+      "normalized_exact_match": 0.165179,
+      "clause_exact_match": 0.165179,
+      "clause_f1": 0.165179
+    },
+    "by_split": {
+      "dev": {
+        "count": 128,
+        "exact_match": 0.195312,
+        "normalized_exact_match": 0.195312,
+        "clause_exact_match": 0.195312,
+        "clause_f1": 0.195312
+      },
+      "gen": {
+        "count": 96,
+        "exact_match": 0.125,
+        "normalized_exact_match": 0.125,
+        "clause_exact_match": 0.125,
+        "clause_f1": 0.125
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 70,
+        "exact_match": 0.071429,
+        "normalized_exact_match": 0.071429,
+        "clause_exact_match": 0.071429,
+        "clause_f1": 0.071429
+      },
+      "passive_depth0": {
+        "count": 70,
+        "exact_match": 0.071429,
+        "normalized_exact_match": 0.071429,
+        "clause_exact_match": 0.071429,
+        "clause_f1": 0.071429
+      },
+      "active_depth0": {
+        "count": 42,
+        "exact_match": 0.452381,
+        "normalized_exact_match": 0.452381,
+        "clause_exact_match": 0.452381,
+        "clause_f1": 0.452381
+      },
+      "passive_depth1": {
+        "count": 42,
+        "exact_match": 0.190476,
+        "normalized_exact_match": 0.190476,
+        "clause_exact_match": 0.190476,
+        "clause_f1": 0.190476
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 128,
+        "exact_match": 0.195312,
+        "normalized_exact_match": 0.195312,
+        "clause_exact_match": 0.195312,
+        "clause_f1": 0.195312
+      },
+      "fail": {
+        "count": 84,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "pass": {
+        "count": 12,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      }
+    },
+    "failure_categories": [
+      [
+        "no_clause_overlap",
+        187
+      ],
+      [
+        "exact_match",
+        37
+      ]
+    ]
+  },
+  "available_behavior_strata": {
+    "control": 128,
+    "fail": 84,
+    "pass": 12
+  },
+  "candidate_strata": [
+    "pass",
+    "fail",
+    "control"
+  ],
+  "match_required_strata": [
+    "pass",
+    "fail"
+  ],
+  "layers_requested": [
+    -1
+  ],
+  "matched_set_count": 7,
+  "precision": "auto",
+  "num_beams": 1,
+  "decoder_cross_attention_scale": null,
+  "decoder_cross_attention_keep_ratio": null,
+  "decoder_readout_keep_ratio": 0.35,
+  "encoder_geometry_transform": "feature_mask",
+  "encoder_geometry_seed": 129,
+  "encoder_geometry_keep_ratio": 0.75,
+  "encoder_geometry_noise_std": null,
+  "model": {
+    "name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+    "family": "seq2seq_lm",
+    "device": "cuda",
+    "prompt_style": "parser_instruction"
+  },
+  "candidate_counts": {
+    "selected": 60,
+    "by_stratum": {
+      "control": 24,
+      "fail": 24,
+      "pass": 12
+    }
+  },
+  "span_coverage": {
+    "requested": 420,
+    "found": 420,
+    "coverage_rate": 1.0,
+    "by_namespace": {
+      "filler_identity": 120,
+      "predicate_identity": 60,
+      "semantic_role": 120,
+      "surface_position": 120
+    }
+  },
+  "layers": {
+    "6": {
+      "vector_count": 420,
+      "avg_vector_norm": 3.44124,
+      "semantic_role": {
+        "count": 120,
+        "label_counts": {
+          "agent": 60,
+          "theme": 60
+        },
+        "loo_centroid_accuracy": 1.0
+      },
+      "semantic_role_by_stratum": {
+        "control": {
+          "count": 48,
+          "label_counts": {
+            "agent": 24,
+            "theme": 24
+          },
+          "loo_centroid_accuracy": 1.0
+        },
+        "fail": {
+          "count": 48,
+          "label_counts": {
+            "agent": 24,
+            "theme": 24
+          },
+          "loo_centroid_accuracy": 1.0
+        },
+        "pass": {
+          "count": 24,
+          "label_counts": {
+            "agent": 12,
+            "theme": 12
+          },
+          "loo_centroid_accuracy": 1.0
+        }
+      },
+      "surface_position": {
+        "count": 120,
+        "label_counts": {
+          "surface_object": 60,
+          "surface_subject": 60
+        },
+        "loo_centroid_accuracy": 1.0
+      },
+      "surface_control_gap": 0.0,
+      "filler_identity": {
+        "count": 120,
+        "eligible_count": 120,
+        "label_counts": {
+          "aiden": 6,
+          "bianca": 8,
+          "caleb": 16,
+          "diana": 4,
+          "ethan": 3,
+          "freya": 4,
+          "gavin": 16,
+          "hazel": 6,
+          "iris": 8,
+          "jonah": 6,
+          "kira": 3,
+          "luca": 9,
+          "maya": 13,
+          "nolan": 6,
+          "opal": 4,
+          "piper": 8
+        },
+        "avg_within_cosine": 0.802011,
+        "avg_between_cosine": 0.481569,
+        "within_between_gap": 0.320442
+      },
+      "predicate_identity": {
+        "count": 60,
+        "eligible_count": 60,
+        "label_counts": {
+          "admire": 15,
+          "contact": 12,
+          "follow": 7,
+          "help": 6,
+          "support": 20
+        },
+        "avg_within_cosine": 0.916767,
+        "avg_between_cosine": 0.45029,
+        "within_between_gap": 0.466477
+      }
+    }
+  }
+}

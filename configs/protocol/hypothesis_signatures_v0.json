@@ -1,0 +1,356 @@
+{
+  "version": "v0",
+  "description": "First-pass machine-readable rules for mapping Phase 3 and Phase 4 signatures to H0/H1/H2 hypothesis states.",
+  "signal_definitions": {
+    "audit_ready": {
+      "module": "M0-M5",
+      "description": "All minimum coverage checks needed for a hypothesis audit are satisfied."
+    },
+    "m0_balanced_strata": {
+      "module": "M0",
+      "description": "Pass, fail, and control strata are all present in the candidate set."
+    },
+    "m0_matched_set_count": {
+      "module": "M0",
+      "description": "Number of pass/fail/control matched audit sets carried forward into causal testing."
+    },
+    "m1_semantic_role_accuracy": {
+      "module": "M1",
+      "description": "Leave-one-out centroid accuracy for semantic-role probes at the traced layer."
+    },
+    "m1_surface_control_gap": {
+      "module": "M1",
+      "description": "Semantic-role accuracy minus surface-position accuracy; negative values mean surface cues are easier to decode."
+    },
+    "m1_filler_gap": {
+      "module": "M1",
+      "description": "Within-vs-between cosine gap for filler identity stability."
+    },
+    "m1_predicate_gap": {
+      "module": "M1",
+      "description": "Within-vs-between cosine gap for predicate identity stability."
+    },
+    "m2_joint_success_rate": {
+      "module": "M2",
+      "description": "Rate at which interchange both transfers donor filler identity and preserves the target role."
+    },
+    "m2_role_preservation_rate": {
+      "module": "M2",
+      "description": "Rate at which role readout survives structure-preserving interchange."
+    },
+    "m2_donor_transfer_rate": {
+      "module": "M2",
+      "description": "Rate at which donor filler identity transfers under interchange."
+    },
+    "m3_selective_impairment": {
+      "module": "M3",
+      "description": "Semantic-role impairment beyond predicate-control impairment under targeted ablation."
+    },
+    "m4_rescue_rate": {
+      "module": "M4",
+      "description": "Rate at which donor patching rescues an incorrect fail-item role readout."
+    },
+    "m5_fail_item_rescue_coverage": {
+      "module": "M5",
+      "description": "Fraction of fail candidates that exhibit at least one rescue signal in item-level linkage."
+    }
+  },
+  "audit_preconditions": [
+    {
+      "signal": "audit_ready",
+      "op": "==",
+      "value": true,
+      "description": "Phase 3 and Phase 4 provide enough coverage to support an H0/H1/H2 audit."
+    },
+    {
+      "signal": "m0_matched_set_count",
+      "op": ">=",
+      "value": 8,
+      "description": "The run contains enough matched audit sets for causal comparisons."
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "G1_binding",
+      "label": "Binding hypothesis",
+      "description": "Role-filler binding is a primary mechanism for systematic behaviour.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "Claimed binding structure exists and is causally used.",
+          "rule": {
+            "all": [
+              {
+                "signal": "m1_semantic_role_accuracy",
+                "op": ">=",
+                "value": 0.55,
+                "description": "A role-carrying representation is decodable above a minimal floor."
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": ">=",
+                "value": 0.4,
+                "description": "Filler identity is stably represented."
+              },
+              {
+                "signal": "m2_role_preservation_rate",
+                "op": ">=",
+                "value": 0.65,
+                "description": "Interchange preserves target roles at a strong rate."
+              },
+              {
+                "signal": "m2_donor_transfer_rate",
+                "op": ">=",
+                "value": 0.15,
+                "description": "Interchange transfers donor filler identity at a non-trivial rate."
+              },
+              {
+                "signal": "m3_selective_impairment",
+                "op": ">=",
+                "value": 0.08,
+                "description": "Targeted ablation selectively impairs semantic-role readout."
+              },
+              {
+                "signal": "m4_rescue_rate",
+                "op": ">=",
+                "value": 0.1,
+                "description": "Binding-compatible patching rescues fail items at a meaningful rate."
+              },
+              {
+                "signal": "m5_fail_item_rescue_coverage",
+                "op": ">=",
+                "value": 0.2,
+                "description": "Rescue is distributed across enough fail items to matter."
+              }
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "Claimed binding structure exists but is not effectively used.",
+          "rule": {
+            "all": [
+              {
+                "signal": "m1_semantic_role_accuracy",
+                "op": ">=",
+                "value": 0.5,
+                "description": "A role-carrying representation is present."
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": ">=",
+                "value": 0.35,
+                "description": "Filler identity remains at least moderately stable."
+              },
+              {
+                "signal": "m3_selective_impairment",
+                "op": ">=",
+                "value": 0.05,
+                "description": "Targeted ablation still shows some selective semantic damage."
+              }
+            ],
+            "any": [
+              {
+                "signal": "m2_role_preservation_rate",
+                "op": ">=",
+                "value": 0.55,
+                "description": "Interchange preserves the role even if donor transfer is weak."
+              },
+              {
+                "signal": "m4_rescue_rate",
+                "op": ">=",
+                "value": 0.04,
+                "description": "Failure rescue exists but remains sparse."
+              },
+              {
+                "signal": "m5_fail_item_rescue_coverage",
+                "op": ">=",
+                "value": 0.1,
+                "description": "Some fail items do show rescue-linked evidence."
+              }
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "Claimed binding structure is absent or behaviourally irrelevant.",
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "G2_distributed_geometry",
+      "label": "Distributed geometry hypothesis",
+      "description": "Systematicity is carried by distributed subspaces or stable geometry.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "Stable geometry exists and is causally used for behaviour.",
+          "rule": {
+            "all": [
+              {
+                "signal": "m1_semantic_role_accuracy",
+                "op": ">=",
+                "value": 0.55,
+                "description": "Semantic-role information is cleanly decodable."
+              },
+              {
+                "signal": "m1_filler_gap",
+                "op": ">=",
+                "value": 0.45,
+                "description": "Filler geometry is stable."
+              },
+              {
+                "signal": "m1_predicate_gap",
+                "op": ">=",
+                "value": 0.25,
+                "description": "Predicate geometry is also stable."
+              },
+              {
+                "signal": "m3_selective_impairment",
+                "op": ">=",
+                "value": 0.08,
+                "description": "Targeted ablation causes selective semantic impairment."
+              }
+            ],
+            "any": [
+              {
+                "signal": "m4_rescue_rate",
+                "op": ">=",
+                "value": 0.04,
+                "description": "Geometry-aware patching recovers some incorrect items."
+              },
+              {
+                "signal": "m5_fail_item_rescue_coverage",
+                "op": ">=",
+                "value": 0.1,
+                "description": "Rescue evidence generalizes to a non-trivial subset of fail items."
+              }
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "Stable geometry exists but is weakly or inconsistently used.",
+          "rule": {
+            "all": [
+              {
+                "signal": "m1_semantic_role_accuracy",
+                "op": ">=",
+                "value": 0.5,
+                "description": "Semantic-role information is present."
+              }
+            ],
+            "any": [
+              {
+                "signal": "m1_filler_gap",
+                "op": ">=",
+                "value": 0.3,
+                "description": "Filler geometry is at least somewhat stable."
+              },
+              {
+                "signal": "m1_predicate_gap",
+                "op": ">=",
+                "value": 0.2,
+                "description": "Predicate geometry is at least somewhat stable."
+              }
+            ],
+            "none": [
+              {
+                "signal": "m3_selective_impairment",
+                "op": "<",
+                "value": 0.03,
+                "description": "There is essentially no causal effect under targeted ablation."
+              }
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "No stable geometry relevant to behaviour is present.",
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "G3_shortcut",
+      "label": "Shortcut hypothesis",
+      "description": "Behaviour is mostly supported by surface heuristics or direct routes.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "Shortcut route is the dominant mechanism behind behaviour.",
+          "rule": {
+            "all": [
+              {
+                "signal": "m1_surface_control_gap",
+                "op": "<=",
+                "value": -0.03,
+                "description": "Surface cues are easier to decode than semantic roles."
+              },
+              {
+                "signal": "m2_joint_success_rate",
+                "op": "<=",
+                "value": 0.06,
+                "description": "Structure-preserving interchange rarely succeeds end to end."
+              },
+              {
+                "signal": "m4_rescue_rate",
+                "op": "<=",
+                "value": 0.08,
+                "description": "Failure rescue remains weak."
+              }
+            ],
+            "any": [
+              {
+                "signal": "m2_donor_transfer_rate",
+                "op": "<=",
+                "value": 0.08,
+                "description": "Donor transfer remains weak under interchange."
+              },
+              {
+                "signal": "m5_fail_item_rescue_coverage",
+                "op": "<=",
+                "value": 0.2,
+                "description": "Rescue signals cover only a minority of fail items."
+              }
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "Shortcut signals exist but are not dominant.",
+          "rule": {
+            "all": [
+              {
+                "signal": "m1_surface_control_gap",
+                "op": "<=",
+                "value": 0.0,
+                "description": "Surface cues are at least competitive with semantic-role signals."
+              }
+            ],
+            "any": [
+              {
+                "signal": "m2_joint_success_rate",
+                "op": "<=",
+                "value": 0.1,
+                "description": "Interchange evidence remains limited."
+              },
+              {
+                "signal": "m4_rescue_rate",
+                "op": "<=",
+                "value": 0.1,
+                "description": "Rescue evidence remains limited."
+              }
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "No meaningful shortcut route exists.",
+          "default": true
+        }
+      ]
+    }
+  ]
+}

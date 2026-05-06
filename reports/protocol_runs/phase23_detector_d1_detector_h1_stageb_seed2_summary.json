@@ -1,0 +1,150 @@
+{
+  "phase11_prefix": "phase23_detector_d1_detector_h1_stageb_seed2",
+  "discovery_prefix": "phase23_detector_d1_detector_h1_stageb_seed2",
+  "behavior_run_name": "phase23_detector_d1_detector_h1_stageb_seed2",
+  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase23_detector_d1_detector_h1_stageb_seed2",
+  "family": "seq2seq_lm",
+  "prompt_style": "parser_instruction",
+  "layer_index": 6,
+  "hf_endpoint": "https://hf-mirror.com",
+  "num_beams": 1,
+  "precision": "auto",
+  "decoder_cross_attention_scale": 1.5,
+  "decoder_cross_attention_keep_ratio": null,
+  "decoder_cross_attention_layer_keep_ratio": null,
+  "decoder_cross_attention_layer_seed": 0,
+  "decoder_cross_attention_layer_policy": "random",
+  "decoder_cross_attention_bottleneck_keep_ratio": null,
+  "decoder_cross_attention_bottleneck_seed": 0,
+  "decoder_cross_attention_bottleneck_mode": "keep",
+  "decoder_cross_attention_relation_barrier_keep_ratio": 0.3,
+  "decoder_cross_attention_relation_barrier_seed": 0,
+  "decoder_cross_attention_relation_barrier_scale": 0.65,
+  "decoder_readout_keep_ratio": null,
+  "decoder_readout_subspace_keep_ratio": 0.35,
+  "decoder_readout_subspace_seed": 33,
+  "decoder_readout_subspace_mode": "keep",
+  "encoder_geometry_transform": null,
+  "encoder_geometry_seed": 0,
+  "encoder_geometry_keep_ratio": null,
+  "encoder_geometry_noise_std": null,
+  "protocol_config": {
+    "non_role_policy": "contentful_first",
+    "strongest_control_aggregation": "max",
+    "strongest_control_priority": [
+      "wrong_role",
+      "non_role",
+      "shuffled"
+    ],
+    "preferred_counterpart_strata": [
+      "pass",
+      "control"
+    ],
+    "counterpart_same_split_only": false,
+    "interchange_target_strata": [
+      "fail"
+    ],
+    "rescue_target_strata": [
+      "fail"
+    ],
+    "operationalization_family": "geometry",
+    "geometry_unit_class": "routing",
+    "geometry_object_class": "auto",
+    "geometry_object_spec": null,
+    "geometry_plant_kind": "off",
+    "geometry_plant_spec": null
+  },
+  "candidate_counts_by_stratum": {
+    "control": 24,
+    "fail": 24
+  },
+  "operationalization_family": "geometry",
+  "geometry_unit_class": "routing",
+  "geometry_object_class": null,
+  "geometry_object_spec": null,
+  "geometry_plant_kind": "off",
+  "geometry_plant_spec": null,
+  "modules": {
+    "M2_generation_interchange": {
+      "count": 30,
+      "actual_mean": 0.0,
+      "wrong_role_mean": 0.0,
+      "non_role_mean": 0.0,
+      "shuffled_mean": 0.0,
+      "strongest_control_mean": 0.0,
+      "actual_binary_rate": 0.0,
+      "strongest_control_binary_rate": 0.0,
+      "actual_vs_wrong_role_advantage_mean": 0.0,
+      "actual_vs_non_role_advantage_mean": 0.0,
+      "actual_vs_shuffled_advantage_mean": 0.0,
+      "actual_vs_strongest_control_advantage_mean": 0.0,
+      "bootstrap_ci": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "actual_vs_strongest_control_permutation_p_value": 1.0,
+      "actual_vs_wrong_role_permutation_p_value": 1.0,
+      "actual_vs_non_role_permutation_p_value": 1.0,
+      "actual_vs_shuffled_permutation_p_value": 1.0
+    },
+    "M3_generation_necessity": {
+      "count": 96,
+      "operationalization_counts": {
+        "geometry_routing": 96
+      },
+      "role_ablation_clause_f1_drop": 0.0,
+      "wrong_role_clause_f1_drop": 0.0,
+      "non_role_clause_f1_drop": 0.0,
+      "strongest_control_clause_f1_drop": 0.0,
+      "role_vs_wrong_role_gap_clause_f1": 0.0,
+      "role_vs_non_role_gap_clause_f1": 0.0,
+      "role_vs_strongest_control_gap_clause_f1": 0.0,
+      "bootstrap_ci": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "role_vs_strongest_control_permutation_p_value": 1.0,
+      "role_vs_wrong_role_permutation_p_value": 1.0,
+      "role_vs_non_role_permutation_p_value": 1.0
+    },
+    "M4_generation_rescue": {
+      "count": 30,
+      "operationalization_counts": {
+        "geometry_routing": 30
+      },
+      "actual_mean": 0.0,
+      "alignment_only_mean": 0.0,
+      "wrong_role_mean": 0.0,
+      "non_role_mean": 0.0,
+      "shuffled_mean": 0.0,
+      "shuffled_alignment_mean": 0.0,
+      "wrong_path_mean": 0.0,
+      "generic_decoder_gain_mean": 0.0,
+      "path_only_mean": 0.0,
+      "strongest_control_mean": 0.0,
+      "actual_binary_rate": 0.0,
+      "strongest_control_binary_rate": 0.0,
+      "actual_vs_alignment_only_advantage_mean": 0.0,
+      "actual_vs_wrong_role_advantage_mean": 0.0,
+      "actual_vs_non_role_advantage_mean": 0.0,
+      "actual_vs_shuffled_advantage_mean": 0.0,
+      "actual_vs_shuffled_alignment_advantage_mean": 0.0,
+      "actual_vs_wrong_path_advantage_mean": 0.0,
+      "actual_vs_generic_decoder_gain_advantage_mean": 0.0,
+      "actual_vs_path_only_advantage_mean": 0.0,
+      "actual_vs_strongest_control_advantage_mean": 0.0,
+      "bootstrap_ci": {
+        "low": 0.0,
+        "high": 0.0
+      },
+      "actual_vs_strongest_control_permutation_p_value": 1.0,
+      "actual_vs_wrong_role_permutation_p_value": 1.0,
+      "actual_vs_non_role_permutation_p_value": 1.0,
+      "actual_vs_shuffled_permutation_p_value": 1.0
+    },
+    "M5_item_level_linkage": {
+      "count": 96,
+      "fail_items_with_rescue_advantage": 0
+    }
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "panel_name": "phase12_binding_target_panel_v2",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_id": "binding_target_weak_raw_train128_seed61",
+  "run_name": "phase12_binding_target_weak_raw_train128_e8_seed61",
+  "phase11_prefix": "phase12_binding_target_weak_raw_train128_e8_seed61__bindingp3_lm1_p24",
+  "model_name_or_path": "google-t5/t5-small",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_weak_raw_train128_e8_seed61",
+  "family": "seq2seq_lm",
+  "prompt_style": "raw",
+  "hf_endpoint": "https://hf-mirror.com",
+  "training": {
+    "trained": true,
+    "epochs": 8,
+    "learning_rate": 5e-05,
+    "train_example_count": 128,
+    "train_limit": 128,
+    "train_target_permutation_seed": null,
+    "steps_per_epoch": 16,
+    "mean_epoch_loss": 2.495013,
+    "epoch_losses": [
+      5.491204,
+      3.990112,
+      3.142099,
+      2.379893,
+      1.804511,
+      1.343133,
+      1.010529,
+      0.798624
+    ],
+    "precision": "bf16",
+    "num_beams": 1,
+    "decoder_cross_attention_scale": null,
+    "encoder_geometry_transform": null,
+    "encoder_geometry_seed": 0,
+    "encoder_geometry_keep_ratio": null,
+    "encoder_geometry_noise_std": null,
+    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_weak_raw_train128_e8_seed61"
+  },
+  "training_filter_summary": {
+    "panel_benchmark": "phase11_systematicity_v2",
+    "target_id": "binding_target_weak_raw_train128_seed61",
+    "run_name": "phase12_binding_target_weak_raw_train128_e8_seed61",
+    "phase11_prefix": "phase12_binding_target_weak_raw_train128_e8_seed61__bindingp3_lm1_p24",
+    "model_name_or_path": "google-t5/t5-small",
+    "reuse_checkpoint_from": null,
+    "train_example_count": 448,
+    "eval_example_count": 224,
+    "benchmark_override": null,
+    "panel_regime": "weak_audit_ready",
+    "surface_backend": "template",
+    "train_case_counts": {
+      "active_depth0": 154,
+      "passive_depth0": 147,
+      "active_depth1": 147
+    },
+    "eval_split_counts": {
+      "dev": 128,
+      "gen": 96
+    },
+    "num_train_epochs": 8,
+    "train_limit": 128,
+    "train_target_permutation_seed": null,
+    "train_generalization_case_allowlist": [],
+    "train_generalization_case_denylist": [],
+    "decoder_cross_attention_scale": null,
+    "encoder_geometry_transform": null,
+    "encoder_geometry_seed": 0,
+    "encoder_geometry_keep_ratio": null,
+    "encoder_geometry_noise_std": null,
+    "seed": 61,
+    "analysis_family": "seq2seq_lm",
+    "layers": [
+      -1
+    ],
+    "per_stratum": 24,
+    "match_set_limit": 24,
+    "include_in_adjudication": true,
+    "tags": [
+      "target",
+      "weak_audit_ready",
+      "template"
+    ],
+    "notes": "Subsampled raw target intended to remain audit-ready while degrading behavior.",
+    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_weak_raw_train128_e8_seed61",
+    "evaluation": {
+      "overall": {
+        "count": 224,
+        "exact_match": 0.053571,
+        "normalized_exact_match": 0.053571,
+        "clause_exact_match": 0.058036,
+        "clause_f1": 0.058036
+      },
+      "by_split": {
+        "dev": {
+          "count": 128,
+          "exact_match": 0.09375,
+          "normalized_exact_match": 0.09375,
+          "clause_exact_match": 0.101562,
+          "clause_f1": 0.101562
+        },
+        "gen": {
+          "count": 96,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        }
+      },
+      "by_generalization_case_top25": {
+        "active_depth1": {
+          "count": 70,
+          "exact_match": 0.071429,
+          "normalized_exact_match": 0.071429,
+          "clause_exact_match": 0.071429,
+          "clause_f1": 0.071429
+        },
+        "passive_depth0": {
+          "count": 70,
+          "exact_match": 0.042857,
+          "normalized_exact_match": 0.042857,
+          "clause_exact_match": 0.042857,
+          "clause_f1": 0.042857
+        },
+        "active_depth0": {
+          "count": 42,
+          "exact_match": 0.071429,
+          "normalized_exact_match": 0.071429,
+          "clause_exact_match": 0.095238,
+          "clause_f1": 0.095238
+        },
+        "passive_depth1": {
+          "count": 42,
+          "exact_match": 0.02381,
+          "normalized_exact_match": 0.02381,
+          "clause_exact_match": 0.02381,
+          "clause_f1": 0.02381
+        }
+      },
+      "by_stratum": {
+        "control": {
+          "count": 128,
+          "exact_match": 0.09375,
+          "normalized_exact_match": 0.09375,
+          "clause_exact_match": 0.101562,
+          "clause_f1": 0.101562
+        },
+        "fail": {
+          "count": 96,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        }
+      },
+      "failure_categories": [
+        [
+          "no_clause_overlap",
+          211
+        ],
+        [
+          "exact_match",
+          12
+        ],
+        [
+          "clause_exact_only",
+          1
+        ]
+      ]
+    }
+  },
+  "evaluation": {
+    "overall": {
+      "count": 224,
+      "exact_match": 0.053571,
+      "normalized_exact_match": 0.053571,
+      "clause_exact_match": 0.058036,
+      "clause_f1": 0.058036
+    },
+    "by_split": {
+      "dev": {
+        "count": 128,
+        "exact_match": 0.09375,
+        "normalized_exact_match": 0.09375,
+        "clause_exact_match": 0.101562,
+        "clause_f1": 0.101562
+      },
+      "gen": {
+        "count": 96,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 70,
+        "exact_match": 0.071429,
+        "normalized_exact_match": 0.071429,
+        "clause_exact_match": 0.071429,
+        "clause_f1": 0.071429
+      },
+      "passive_depth0": {
+        "count": 70,
+        "exact_match": 0.042857,
+        "normalized_exact_match": 0.042857,
+        "clause_exact_match": 0.042857,
+        "clause_f1": 0.042857
+      },
+      "active_depth0": {
+        "count": 42,
+        "exact_match": 0.071429,
+        "normalized_exact_match": 0.071429,
+        "clause_exact_match": 0.095238,
+        "clause_f1": 0.095238
+      },
+      "passive_depth1": {
+        "count": 42,
+        "exact_match": 0.02381,
+        "normalized_exact_match": 0.02381,
+        "clause_exact_match": 0.02381,
+        "clause_f1": 0.02381
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 128,
+        "exact_match": 0.09375,
+        "normalized_exact_match": 0.09375,
+        "clause_exact_match": 0.101562,
+        "clause_f1": 0.101562
+      },
+      "fail": {
+        "count": 96,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "failure_categories": [
+      [
+        "no_clause_overlap",
+        211
+      ],
+      [
+        "exact_match",
+        12
+      ],
+      [
+        "clause_exact_only",
+        1
+      ]
+    ]
+  },
+  "panel_regime": "weak_audit_ready",
+  "surface_backend": "template",
+  "include_in_adjudication": true,
+  "tags": [
+    "target",
+    "weak_audit_ready",
+    "template"
+  ],
+  "notes": "Subsampled raw target intended to remain audit-ready while degrading behavior."
+}

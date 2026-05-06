@@ -1,0 +1,17 @@
+{
+  "panel_name": "detector_truthfulness_c2",
+  "benchmark_name": "detector_truthfulness_c2",
+  "target_count": 8,
+  "target_ids": [
+    "detector_truthfulness_c2_predicate_sanity_h2_seed1",
+    "detector_truthfulness_c2_argument_h2_seed1",
+    "detector_truthfulness_c2_argument_h1_seed1",
+    "detector_truthfulness_c2_argument_null_seed1",
+    "detector_truthfulness_c2_predicate_sanity_h2_seed2",
+    "detector_truthfulness_c2_argument_h2_seed2",
+    "detector_truthfulness_c2_argument_h1_seed2",
+    "detector_truthfulness_c2_argument_null_seed2"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": []
+}

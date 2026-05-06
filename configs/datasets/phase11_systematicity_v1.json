@@ -1,0 +1,9 @@
+{
+  "benchmark_name": "phase11_systematicity_v1",
+  "loader_type": "local_jsonl",
+  "required": false,
+  "data_file": "data/processed/phase11_systematicity_v1.jsonl",
+  "metadata": {
+    "source": "programmatic_phase11"
+  }
+}

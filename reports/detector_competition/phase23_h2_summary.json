@@ -1,0 +1,1032 @@
+{
+  "detector_rows": [
+    {
+      "detector_family": "argument_locus",
+      "object_class": "interaction",
+      "passed": false,
+      "stage": "stage_b",
+      "null_passed_count": 0,
+      "failure_reason": "observability_failed",
+      "positive_rows": [],
+      "null_rows": []
+    },
+    {
+      "detector_family": "predicate_conditioned_relation",
+      "object_class": "query_source_relation",
+      "stage": "stage_b",
+      "passed": false,
+      "null_passed_count": 1,
+      "positive_rows": [
+        {
+          "run_name": "phase23_detector_d2_detector_h2_stageb_seed1",
+          "truthfulness_seed": 1,
+          "row_count": 48,
+          "item_recovery_recall": 0,
+          "passed": false,
+          "rows": [
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:agent_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:agent_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:agent_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:agent_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:filler_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:filler_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:filler_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:filler_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:modifier_swap",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:modifier_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:modifier_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:modifier_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:rescue_target",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:rescue_target",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:rescue_target",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:rescue_target",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:role_swap",
+              "necessity_gap": -0.375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:role_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:role_swap",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:role_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:theme_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:theme_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:theme_swap",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:theme_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:agent_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:agent_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:agent_swap",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:agent_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:filler_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:filler_swap",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:filler_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:filler_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:modifier_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:modifier_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:modifier_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:modifier_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:rescue_donor",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:rescue_donor",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:rescue_donor",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:rescue_donor",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:rescue_target",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:rescue_target",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:rescue_target",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:rescue_target",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:role_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:role_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:role_swap",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:role_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_h2_stageb_seed2",
+          "truthfulness_seed": 2,
+          "row_count": 48,
+          "item_recovery_recall": 0.104167,
+          "passed": false,
+          "rows": [
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:agent_swap",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:agent_swap",
+              "necessity_gap": -1.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:agent_swap",
+              "necessity_gap": -0.4375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:agent_swap",
+              "necessity_gap": 0.0625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:filler_swap",
+              "necessity_gap": -0.8125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:filler_swap",
+              "necessity_gap": -1.3125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:filler_swap",
+              "necessity_gap": -0.6875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:filler_swap",
+              "necessity_gap": 0.125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:modifier_swap",
+              "necessity_gap": -1.75,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:modifier_swap",
+              "necessity_gap": -2.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:modifier_swap",
+              "necessity_gap": -0.3125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:modifier_swap",
+              "necessity_gap": -1.375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:rescue_target",
+              "necessity_gap": -1.4375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:rescue_target",
+              "necessity_gap": -1.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:rescue_target",
+              "necessity_gap": -0.375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:rescue_target",
+              "necessity_gap": -0.5625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:role_swap",
+              "necessity_gap": -1.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:role_swap",
+              "necessity_gap": -0.5625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:role_swap",
+              "necessity_gap": -0.5625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:role_swap",
+              "necessity_gap": -0.9375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:theme_swap",
+              "necessity_gap": -2.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:theme_swap",
+              "necessity_gap": -1.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:theme_swap",
+              "necessity_gap": -0.5,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:theme_swap",
+              "necessity_gap": -0.8125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:agent_swap",
+              "necessity_gap": 0.1875,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:agent_swap",
+              "necessity_gap": 0.0625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:agent_swap",
+              "necessity_gap": -0.25,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:agent_swap",
+              "necessity_gap": -0.9375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:filler_swap",
+              "necessity_gap": 0.0625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:filler_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:filler_swap",
+              "necessity_gap": -0.75,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:filler_swap",
+              "necessity_gap": -0.875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:modifier_swap",
+              "necessity_gap": -0.3125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:modifier_swap",
+              "necessity_gap": -0.75,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:modifier_swap",
+              "necessity_gap": -0.1875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:modifier_swap",
+              "necessity_gap": -0.3125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:rescue_donor",
+              "necessity_gap": -0.3125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:rescue_donor",
+              "necessity_gap": -0.6875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:rescue_donor",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:rescue_donor",
+              "necessity_gap": -0.375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:rescue_target",
+              "necessity_gap": -0.3125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:rescue_target",
+              "necessity_gap": -0.6875,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:rescue_target",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:rescue_target",
+              "necessity_gap": -0.375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:role_swap",
+              "necessity_gap": -0.3125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:role_swap",
+              "necessity_gap": -0.5625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:role_swap",
+              "necessity_gap": -0.3125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:role_swap",
+              "necessity_gap": -1.625,
+              "passed_item": false
+            }
+          ]
+        }
+      ],
+      "null_rows": [
+        {
+          "run_name": "phase23_detector_d2_detector_null_stageb_seed1",
+          "truthfulness_seed": 1,
+          "row_count": 48,
+          "item_recovery_recall": 0,
+          "passed": false,
+          "rows": [
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:agent_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:agent_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:agent_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:agent_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:filler_swap",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:filler_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:filler_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:filler_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:modifier_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:modifier_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:modifier_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:modifier_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:rescue_target",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:rescue_target",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:rescue_target",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:rescue_target",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:role_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:role_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:role_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:role_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:theme_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:theme_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:theme_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:theme_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:agent_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:agent_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:agent_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:agent_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:filler_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:filler_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:filler_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:filler_swap",
+              "necessity_gap": -0.09375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:modifier_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:modifier_swap",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:modifier_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:modifier_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:rescue_donor",
+              "necessity_gap": -0.09375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:rescue_donor",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:rescue_donor",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:rescue_donor",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:rescue_target",
+              "necessity_gap": -0.09375,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:rescue_target",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:rescue_target",
+              "necessity_gap": 0.0,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:rescue_target",
+              "necessity_gap": -0.125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:role_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:role_swap",
+              "necessity_gap": -0.03125,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:role_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:role_swap",
+              "necessity_gap": -0.0625,
+              "passed_item": false
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_null_stageb_seed2",
+          "truthfulness_seed": 2,
+          "row_count": 48,
+          "item_recovery_recall": 1,
+          "passed": true,
+          "rows": [
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:agent_swap",
+              "necessity_gap": 1.21875,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:agent_swap",
+              "necessity_gap": 1.53125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:agent_swap",
+              "necessity_gap": 1.53125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:agent_swap",
+              "necessity_gap": 1.75,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:filler_swap",
+              "necessity_gap": 1.0,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:filler_swap",
+              "necessity_gap": 1.375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:filler_swap",
+              "necessity_gap": 1.6875,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:filler_swap",
+              "necessity_gap": 1.78125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:modifier_swap",
+              "necessity_gap": 0.9375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:modifier_swap",
+              "necessity_gap": 1.359375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:modifier_swap",
+              "necessity_gap": 1.78125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:modifier_swap",
+              "necessity_gap": 2.25,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:rescue_target",
+              "necessity_gap": 0.84375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:rescue_target",
+              "necessity_gap": 1.875,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:rescue_target",
+              "necessity_gap": 1.78125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:rescue_target",
+              "necessity_gap": 1.15625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:role_swap",
+              "necessity_gap": 0.625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:role_swap",
+              "necessity_gap": 1.40625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:role_swap",
+              "necessity_gap": 2.15625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:role_swap",
+              "necessity_gap": 1.140625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h1:0000:theme_swap",
+              "necessity_gap": 0.765625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_h2:0000:theme_swap",
+              "necessity_gap": 1.109375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:argument_null:0000:theme_swap",
+              "necessity_gap": 1.78125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:gen:predicate_sanity_h2:0000:theme_swap",
+              "necessity_gap": 1.40625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:agent_swap",
+              "necessity_gap": 2.0,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:agent_swap",
+              "necessity_gap": 2.25,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:agent_swap",
+              "necessity_gap": 1.359375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:agent_swap",
+              "necessity_gap": 1.46875,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:filler_swap",
+              "necessity_gap": 1.53125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:filler_swap",
+              "necessity_gap": 2.09375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:filler_swap",
+              "necessity_gap": 1.546875,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:filler_swap",
+              "necessity_gap": 1.640625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:modifier_swap",
+              "necessity_gap": 1.78125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:modifier_swap",
+              "necessity_gap": 2.28125,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:modifier_swap",
+              "necessity_gap": 2.0625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:modifier_swap",
+              "necessity_gap": 1.765625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:rescue_donor",
+              "necessity_gap": 1.5625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:rescue_donor",
+              "necessity_gap": 2.09375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:rescue_donor",
+              "necessity_gap": 1.9375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:rescue_donor",
+              "necessity_gap": 1.75,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:rescue_target",
+              "necessity_gap": 1.5625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:rescue_target",
+              "necessity_gap": 2.09375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:rescue_target",
+              "necessity_gap": 1.9375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:rescue_target",
+              "necessity_gap": 1.75,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h1:0000:role_swap",
+              "necessity_gap": 1.84375,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_h2:0000:role_swap",
+              "necessity_gap": 2.75,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:argument_null:0000:role_swap",
+              "necessity_gap": 2.140625,
+              "passed_item": true
+            },
+            {
+              "item_id": "phase23_detector_d2:dev:predicate_sanity_h2:0000:role_swap",
+              "necessity_gap": 1.625,
+              "passed_item": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "detector_family": "cross_step_bridge",
+      "object_class": "cross_step_bridge",
+      "passed": false,
+      "stage": "stage_b",
+      "null_passed_count": 0,
+      "failure_reason": "observability_failed",
+      "positive_rows": [],
+      "null_rows": []
+    }
+  ],
+  "passed_count": 0
+}

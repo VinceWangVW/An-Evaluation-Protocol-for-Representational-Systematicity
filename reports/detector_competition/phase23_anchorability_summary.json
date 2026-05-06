@@ -1,0 +1,35 @@
+{
+  "detector_rows": [
+    {
+      "detector_family": "argument_locus",
+      "object_class": "interaction",
+      "passed": true,
+      "usable_anchor_count": 2,
+      "anchor_ids": [
+        "d1_interaction_agent_anchor_a",
+        "d1_interaction_theme_anchor_b"
+      ]
+    },
+    {
+      "detector_family": "predicate_conditioned_relation",
+      "object_class": "query_source_relation",
+      "passed": true,
+      "usable_anchor_count": 2,
+      "anchor_ids": [
+        "d2_predicate_relation_anchor_a",
+        "d2_predicate_relation_anchor_b"
+      ]
+    },
+    {
+      "detector_family": "cross_step_bridge",
+      "object_class": "cross_step_bridge",
+      "passed": true,
+      "usable_anchor_count": 2,
+      "anchor_ids": [
+        "d3_bridge_predicate_to_agent_anchor_a",
+        "d3_bridge_predicate_to_theme_anchor_b"
+      ]
+    }
+  ],
+  "passed_count": 3
+}

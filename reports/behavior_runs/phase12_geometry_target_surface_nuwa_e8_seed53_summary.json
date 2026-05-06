@@ -1,0 +1,274 @@
+{
+  "panel_name": "phase12_geometry_target_panel_v1",
+  "benchmark_name": "phase12_systematicity_p3_template_longest",
+  "target_id": "geometry_target_surface_nuwa_seed53",
+  "run_name": "phase12_geometry_target_surface_nuwa_e8_seed53",
+  "phase11_prefix": "phase12_geometry_target_surface_nuwa_e8_seed53__geometryp3_lm1_p24",
+  "model_name_or_path": "google-t5/t5-small",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_surface_nuwa_e8_seed53",
+  "family": "seq2seq_lm",
+  "prompt_style": "parser_instruction",
+  "hf_endpoint": "https://hf-mirror.com",
+  "training": {
+    "trained": true,
+    "epochs": 8,
+    "learning_rate": 5e-05,
+    "train_example_count": 224,
+    "train_limit": null,
+    "train_target_permutation_seed": null,
+    "steps_per_epoch": 28,
+    "mean_epoch_loss": 1.178629,
+    "epoch_losses": [
+      4.125925,
+      2.19627,
+      1.170583,
+      0.699857,
+      0.48189,
+      0.339587,
+      0.246233,
+      0.168686
+    ],
+    "precision": "bf16",
+    "num_beams": 1,
+    "decoder_cross_attention_scale": null,
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 153,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null,
+    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_surface_nuwa_e8_seed53"
+  },
+  "training_filter_summary": {
+    "panel_benchmark": "phase12_systematicity_p3_template_longest",
+    "target_id": "geometry_target_surface_nuwa_seed53",
+    "run_name": "phase12_geometry_target_surface_nuwa_e8_seed53",
+    "phase11_prefix": "phase12_geometry_target_surface_nuwa_e8_seed53__geometryp3_lm1_p24",
+    "model_name_or_path": "google-t5/t5-small",
+    "reuse_checkpoint_from": null,
+    "train_example_count": 224,
+    "eval_example_count": 112,
+    "benchmark_override": "phase12_systematicity_p3_template_longest",
+    "panel_regime": "surface_shifted",
+    "surface_backend": "template_longest",
+    "train_case_counts": {
+      "active_depth0": 77,
+      "passive_depth0": 77,
+      "active_depth1": 70
+    },
+    "eval_split_counts": {
+      "dev": 64,
+      "gen": 48
+    },
+    "num_train_epochs": 8,
+    "train_limit": null,
+    "train_target_permutation_seed": null,
+    "train_generalization_case_allowlist": [],
+    "train_generalization_case_denylist": [],
+    "decoder_cross_attention_scale": null,
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 153,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null,
+    "seed": 53,
+    "analysis_family": "seq2seq_lm",
+    "layers": [
+      -1
+    ],
+    "per_stratum": 24,
+    "match_set_limit": 24,
+    "include_in_adjudication": true,
+    "tags": [
+      "target",
+      "surface_shifted",
+      "geometry",
+      "template_longest"
+    ],
+    "notes": "Held-out surface-backend geometry target trained on the longest-variant template benchmark.",
+    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_surface_nuwa_e8_seed53",
+    "evaluation": {
+      "overall": {
+        "count": 112,
+        "exact_match": 0.607143,
+        "normalized_exact_match": 0.607143,
+        "clause_exact_match": 0.607143,
+        "clause_f1": 0.607143
+      },
+      "by_split": {
+        "dev": {
+          "count": 64,
+          "exact_match": 0.609375,
+          "normalized_exact_match": 0.609375,
+          "clause_exact_match": 0.609375,
+          "clause_f1": 0.609375
+        },
+        "gen": {
+          "count": 48,
+          "exact_match": 0.604167,
+          "normalized_exact_match": 0.604167,
+          "clause_exact_match": 0.604167,
+          "clause_f1": 0.604167
+        }
+      },
+      "by_generalization_case_top25": {
+        "active_depth1": {
+          "count": 35,
+          "exact_match": 0.914286,
+          "normalized_exact_match": 0.914286,
+          "clause_exact_match": 0.914286,
+          "clause_f1": 0.914286
+        },
+        "passive_depth0": {
+          "count": 35,
+          "exact_match": 0.314286,
+          "normalized_exact_match": 0.314286,
+          "clause_exact_match": 0.314286,
+          "clause_f1": 0.314286
+        },
+        "active_depth0": {
+          "count": 21,
+          "exact_match": 0.428571,
+          "normalized_exact_match": 0.428571,
+          "clause_exact_match": 0.428571,
+          "clause_f1": 0.428571
+        },
+        "passive_depth1": {
+          "count": 21,
+          "exact_match": 0.761905,
+          "normalized_exact_match": 0.761905,
+          "clause_exact_match": 0.761905,
+          "clause_f1": 0.761905
+        }
+      },
+      "by_stratum": {
+        "control": {
+          "count": 64,
+          "exact_match": 0.609375,
+          "normalized_exact_match": 0.609375,
+          "clause_exact_match": 0.609375,
+          "clause_f1": 0.609375
+        },
+        "pass": {
+          "count": 29,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        },
+        "fail": {
+          "count": 19,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        }
+      },
+      "failure_categories": [
+        [
+          "exact_match",
+          68
+        ],
+        [
+          "no_clause_overlap",
+          44
+        ]
+      ]
+    }
+  },
+  "evaluation": {
+    "overall": {
+      "count": 112,
+      "exact_match": 0.607143,
+      "normalized_exact_match": 0.607143,
+      "clause_exact_match": 0.607143,
+      "clause_f1": 0.607143
+    },
+    "by_split": {
+      "dev": {
+        "count": 64,
+        "exact_match": 0.609375,
+        "normalized_exact_match": 0.609375,
+        "clause_exact_match": 0.609375,
+        "clause_f1": 0.609375
+      },
+      "gen": {
+        "count": 48,
+        "exact_match": 0.604167,
+        "normalized_exact_match": 0.604167,
+        "clause_exact_match": 0.604167,
+        "clause_f1": 0.604167
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 35,
+        "exact_match": 0.914286,
+        "normalized_exact_match": 0.914286,
+        "clause_exact_match": 0.914286,
+        "clause_f1": 0.914286
+      },
+      "passive_depth0": {
+        "count": 35,
+        "exact_match": 0.314286,
+        "normalized_exact_match": 0.314286,
+        "clause_exact_match": 0.314286,
+        "clause_f1": 0.314286
+      },
+      "active_depth0": {
+        "count": 21,
+        "exact_match": 0.428571,
+        "normalized_exact_match": 0.428571,
+        "clause_exact_match": 0.428571,
+        "clause_f1": 0.428571
+      },
+      "passive_depth1": {
+        "count": 21,
+        "exact_match": 0.761905,
+        "normalized_exact_match": 0.761905,
+        "clause_exact_match": 0.761905,
+        "clause_f1": 0.761905
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 64,
+        "exact_match": 0.609375,
+        "normalized_exact_match": 0.609375,
+        "clause_exact_match": 0.609375,
+        "clause_f1": 0.609375
+      },
+      "pass": {
+        "count": 29,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      },
+      "fail": {
+        "count": 19,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      }
+    },
+    "failure_categories": [
+      [
+        "exact_match",
+        68
+      ],
+      [
+        "no_clause_overlap",
+        44
+      ]
+    ]
+  },
+  "panel_regime": "surface_shifted",
+  "surface_backend": "template_longest",
+  "include_in_adjudication": true,
+  "tags": [
+    "target",
+    "surface_shifted",
+    "geometry",
+    "template_longest"
+  ],
+  "notes": "Held-out surface-backend geometry target trained on the longest-variant template benchmark."
+}

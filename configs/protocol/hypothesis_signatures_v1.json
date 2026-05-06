@@ -1,0 +1,190 @@
+{
+  "version": "v1_generation_discriminative",
+  "audit_preconditions": [
+    {
+      "signal": "behavior_anchor_ready",
+      "op": "==",
+      "value": true,
+      "description": "The audited model must provide its own balanced behavior anchor."
+    },
+    {
+      "signal": "m0_matched_set_count",
+      "op": ">=",
+      "value": 6,
+      "description": "The protocol requires at least six matched pass/fail/control sets."
+    },
+    {
+      "signal": "b0_control_clause_f1",
+      "op": ">=",
+      "value": 0.5,
+      "description": "The audited model must solve control items at a non-trivial clause-level accuracy."
+    }
+  ],
+  "signal_definitions": {
+    "behavior_anchor_ready": {"module": "M0", "description": "Audited-model behavior strata exist and are balanced."},
+    "b0_control_clause_f1": {"module": "B0", "description": "Average control split clause F1."},
+    "b0_control_exact_match": {"module": "B0", "description": "Average control split exact match."},
+    "b0_control_minus_gen_clause_gap": {"module": "B0", "description": "Control minus generalization clause F1 gap."},
+    "b0_control_minus_gen_exact_gap": {"module": "B0", "description": "Control minus generalization exact-match gap."},
+    "b0_gen_clause_f1": {"module": "B0", "description": "Generalization split clause F1."},
+    "b0_gen_exact_match": {"module": "B0", "description": "Generalization split exact match."},
+    "m0_balanced_strata": {"module": "M0", "description": "Balanced pass/fail/control strata in selected candidates."},
+    "m0_matched_set_count": {"module": "M0", "description": "Number of matched pass/fail/control audit sets."},
+    "m1_filler_gap": {"module": "M1", "description": "Within-minus-between cosine gap for filler identity."},
+    "m1_predicate_gap": {"module": "M1", "description": "Within-minus-between cosine gap for predicate identity."},
+    "m1_semantic_role_accuracy": {"module": "M1", "description": "Leave-one-out centroid accuracy for semantic roles."},
+    "m2_advantage_mean": {"module": "M2", "description": "Actual-minus-null counterfactual clause-F1 advantage."},
+    "m2_permutation_p_value": {"module": "M2", "description": "Paired sign-permutation p-value for M2 advantage."},
+    "m3_selective_impairment_clause_f1": {"module": "M3", "description": "Role-ablation minus predicate-control clause-F1 drop."},
+    "m3_permutation_p_value": {"module": "M3", "description": "Paired sign-permutation p-value for M3 selective impairment."},
+    "m4_advantage_mean": {"module": "M4", "description": "Actual-minus-null rescue clause-F1 advantage."},
+    "m4_permutation_p_value": {"module": "M4", "description": "Paired sign-permutation p-value for M4 rescue advantage."},
+    "m5_fail_item_rescue_advantage_coverage": {"module": "M5", "description": "Fail-item coverage with positive rescue advantage."}
+  },
+  "hypotheses": [
+    {
+      "id": "G1_binding",
+      "label": "Binding Hypothesis",
+      "description": "Role-filler bindings are present and can be causally recruited for task behavior.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "Binding-like structure is present and causally used for behavior.",
+          "support": {
+            "all": [
+              {"signal": "behavior_anchor_ready", "op": "==", "value": true},
+              {"signal": "b0_gen_clause_f1", "op": ">=", "value": 0.15},
+              {"signal": "m1_semantic_role_accuracy", "op": ">=", "value": 0.55},
+              {"signal": "m2_advantage_mean", "op": ">=", "value": 0.05},
+              {"signal": "m2_permutation_p_value", "op": "<=", "value": 0.1},
+              {"signal": "m3_selective_impairment_clause_f1", "op": ">=", "value": 0.05},
+              {"signal": "m3_permutation_p_value", "op": "<=", "value": 0.1},
+              {"signal": "m4_advantage_mean", "op": ">=", "value": 0.03},
+              {"signal": "m4_permutation_p_value", "op": "<=", "value": 0.1}
+            ]
+          },
+          "falsifiers": {
+            "any": [
+              {"signal": "m2_advantage_mean", "op": "<=", "value": 0.02},
+              {"signal": "m3_selective_impairment_clause_f1", "op": "<=", "value": 0.02},
+              {"signal": "m4_advantage_mean", "op": "<=", "value": 0.01}
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "Binding-like structure is present, but causal behavioral use remains incomplete.",
+          "support": {
+            "all": [
+              {"signal": "behavior_anchor_ready", "op": "==", "value": true},
+              {"signal": "m1_semantic_role_accuracy", "op": ">=", "value": 0.55}
+            ],
+            "any": [
+              {"signal": "m2_advantage_mean", "op": ">=", "value": 0.02},
+              {"signal": "m3_selective_impairment_clause_f1", "op": ">=", "value": 0.02},
+              {"signal": "m4_advantage_mean", "op": ">=", "value": 0.01}
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "No reliable evidence for behavior-relevant binding-like structure.",
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "G2_distributed_geometry",
+      "label": "Distributed Geometry Hypothesis",
+      "description": "Task-relevant role/filler information is carried by distributed representational geometry.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "Distributed geometry is present and causally used for behavior.",
+          "support": {
+            "all": [
+              {"signal": "behavior_anchor_ready", "op": "==", "value": true},
+              {"signal": "m1_filler_gap", "op": ">=", "value": 0.05},
+              {"signal": "m1_predicate_gap", "op": ">=", "value": 0.02},
+              {"signal": "m2_advantage_mean", "op": ">=", "value": 0.05},
+              {"signal": "m3_selective_impairment_clause_f1", "op": ">=", "value": 0.05},
+              {"signal": "m4_advantage_mean", "op": ">=", "value": 0.03}
+            ]
+          },
+          "falsifiers": {
+            "any": [
+              {"signal": "m1_filler_gap", "op": "<=", "value": 0.01},
+              {"signal": "m2_advantage_mean", "op": "<=", "value": 0.02},
+              {"signal": "m4_advantage_mean", "op": "<=", "value": 0.01}
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "Distributed geometry is detectable, but causal recruitment is partial or weak.",
+          "support": {
+            "all": [
+              {"signal": "behavior_anchor_ready", "op": "==", "value": true},
+              {"signal": "m1_filler_gap", "op": ">=", "value": 0.05}
+            ],
+            "any": [
+              {"signal": "m2_advantage_mean", "op": ">=", "value": 0.02},
+              {"signal": "m3_selective_impairment_clause_f1", "op": ">=", "value": 0.02}
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "No reliable evidence for task-relevant distributed geometry.",
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "G3_shortcut",
+      "label": "Shortcut Hypothesis",
+      "description": "Observed task success is dominated by shortcut behavior rather than the targeted structural mechanism.",
+      "states": [
+        {
+          "id": "H2",
+          "meaning": "Shortcut behavior dominates and targeted structural interventions barely matter.",
+          "support": {
+            "all": [
+              {"signal": "behavior_anchor_ready", "op": "==", "value": true},
+              {"signal": "b0_control_minus_gen_clause_gap", "op": ">=", "value": 0.25},
+              {"signal": "m2_advantage_mean", "op": "<=", "value": 0.02},
+              {"signal": "m3_selective_impairment_clause_f1", "op": "<=", "value": 0.02},
+              {"signal": "m4_advantage_mean", "op": "<=", "value": 0.01}
+            ]
+          },
+          "falsifiers": {
+            "any": [
+              {"signal": "m2_advantage_mean", "op": ">=", "value": 0.05},
+              {"signal": "m3_selective_impairment_clause_f1", "op": ">=", "value": 0.05},
+              {"signal": "m4_advantage_mean", "op": ">=", "value": 0.03}
+            ]
+          }
+        },
+        {
+          "id": "H1",
+          "meaning": "Shortcut behavior is plausible, but the targeted structural mechanism still has some effect.",
+          "support": {
+            "all": [
+              {"signal": "behavior_anchor_ready", "op": "==", "value": true},
+              {"signal": "b0_control_minus_gen_clause_gap", "op": ">=", "value": 0.1}
+            ],
+            "any": [
+              {"signal": "m2_advantage_mean", "op": "<=", "value": 0.03},
+              {"signal": "m4_advantage_mean", "op": "<=", "value": 0.02}
+            ]
+          }
+        },
+        {
+          "id": "H0",
+          "meaning": "No reliable evidence that shortcut behavior dominates.",
+          "default": true
+        }
+      ]
+    }
+  ]
+}

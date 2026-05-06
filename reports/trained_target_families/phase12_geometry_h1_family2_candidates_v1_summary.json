@@ -1,0 +1,16 @@
+{
+  "panel_name": "phase12_geometry_h1_family2_candidates_v1",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 4,
+  "target_ids": [
+    "geometry_h1_family2_seed29_scale020",
+    "geometry_h1_family2_seed29_scale025",
+    "geometry_h1_family2_seed41_scale020",
+    "geometry_h1_family2_seed41_scale025"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 12 P8 candidate sweep for a second geometry-specific H1 construction family.",
+    "This family keeps encoder geometry intact and weakens decoder access through inference-time cross-attention routing controls rather than the trained_scale025 construction used in P6/P7."
+  ]
+}

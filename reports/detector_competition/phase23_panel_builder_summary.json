@@ -1,0 +1,26 @@
+{
+  "panel_rows": [
+    {
+      "detector_family": "argument_locus",
+      "stage_a_panel_path": "configs/experiments/phase23_detector_d1.json",
+      "stage_b_panel_path": "configs/experiments/phase23_detector_d1_stage_b.json",
+      "stage_a_target_count": 8,
+      "stage_b_target_count": 6
+    },
+    {
+      "detector_family": "predicate_conditioned_relation",
+      "stage_a_panel_path": "configs/experiments/phase23_detector_d2.json",
+      "stage_b_panel_path": "configs/experiments/phase23_detector_d2_stage_b.json",
+      "stage_a_target_count": 8,
+      "stage_b_target_count": 6
+    },
+    {
+      "detector_family": "cross_step_bridge",
+      "stage_a_panel_path": "configs/experiments/phase23_detector_d3.json",
+      "stage_b_panel_path": "configs/experiments/phase23_detector_d3_stage_b.json",
+      "stage_a_target_count": 8,
+      "stage_b_target_count": 6
+    }
+  ],
+  "panel_count": 3
+}

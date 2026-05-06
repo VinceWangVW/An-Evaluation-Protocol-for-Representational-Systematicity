@@ -1,0 +1,41 @@
+{
+  "detector_rows": [
+    {
+      "detector_family": "argument_locus",
+      "truthfulness_validated": false,
+      "failure_reasons": [
+        "family_construction_failed",
+        "observability_failed",
+        "detector_specific_observability_failure",
+        "detector_h2_failed",
+        "detector_h1_failed"
+      ]
+    },
+    {
+      "detector_family": "predicate_conditioned_relation",
+      "truthfulness_validated": false,
+      "failure_reasons": [
+        "family_construction_failed",
+        "detector_h2_failed",
+        "detector_h1_failed"
+      ]
+    },
+    {
+      "detector_family": "cross_step_bridge",
+      "truthfulness_validated": false,
+      "failure_reasons": [
+        "family_construction_failed",
+        "observability_failed",
+        "detector_specific_observability_failure",
+        "detector_h2_failed",
+        "detector_h1_failed"
+      ]
+    }
+  ],
+  "validated_detector_count": 0,
+  "validated_detectors": [],
+  "decision": "retain_phase18",
+  "strongest_claim_decision": "retain_phase18",
+  "decision_status": "final",
+  "supports_ontology_final_upgrade": false
+}

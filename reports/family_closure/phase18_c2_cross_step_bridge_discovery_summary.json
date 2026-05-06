@@ -1,0 +1,29 @@
+{
+  "object_class": "cross_step_bridge",
+  "object_count": 12,
+  "surviving_candidate_count": 8,
+  "surviving_candidate_ids": [
+    "cross_step_bridge_predicate_to_agent_top1_head_top1_basis_no_store",
+    "cross_step_bridge_predicate_to_agent_top2_head_bundle_top1_basis_no_store",
+    "cross_step_bridge_predicate_to_agent_top1_head_top1_basis_matched_store",
+    "cross_step_bridge_predicate_to_agent_top2_head_bundle_top2_basis_bundle_matched_store",
+    "cross_step_bridge_predicate_to_theme_top1_head_top1_basis_no_store",
+    "cross_step_bridge_predicate_to_theme_top2_head_bundle_top1_basis_no_store",
+    "cross_step_bridge_predicate_to_theme_top1_head_top1_basis_matched_store",
+    "cross_step_bridge_predicate_to_theme_top2_head_bundle_top2_basis_bundle_matched_store"
+  ],
+  "surviving_coverages": [
+    "predicate_to_agent",
+    "predicate_to_theme"
+  ],
+  "surviving_template_families": [
+    "top1_head_top1_basis_matched_store",
+    "top1_head_top1_basis_no_store",
+    "top2_head_bundle_top1_basis_no_store",
+    "top2_head_bundle_top2_basis_bundle_matched_store"
+  ],
+  "accepted": true,
+  "decision": "continue_to_h2_gate",
+  "decision_status": "preliminary",
+  "aligner_used": "A1"
+}

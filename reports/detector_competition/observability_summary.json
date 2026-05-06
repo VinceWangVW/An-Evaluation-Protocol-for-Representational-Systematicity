@@ -1,0 +1,1310 @@
+{
+  "detector_rows": [
+    {
+      "detector_family": "argument_locus",
+      "object_class": "interaction",
+      "stage": "stage_b",
+      "passed": false,
+      "predicate_sanity_passed": true,
+      "detector_families_passed": false,
+      "detector_specific_observability_failure": true,
+      "target_rows": [
+        {
+          "run_name": "phase23_detector_d1_predicate_sanity_h2_seed1",
+          "panel_regime": "predicate_sanity_h2",
+          "truthfulness_seed": 1,
+          "detector_family": "argument_locus",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_sanity"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d1_predicate_sanity_h2_seed2",
+          "panel_regime": "predicate_sanity_h2",
+          "truthfulness_seed": 2,
+          "detector_family": "argument_locus",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_sanity"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d1_detector_h2_stageb_seed1",
+          "panel_regime": "detector_h2",
+          "truthfulness_seed": 1,
+          "detector_family": "argument_locus",
+          "intended_observable": "agent_value",
+          "source_step_key": "agent_value",
+          "target_step_key": "agent_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 0,
+            "unintended_step_alignment_rate": 1,
+            "passed": false,
+            "observable_locus": "agent_value",
+            "observability_mode": "step_local"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "agent_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "agent_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "agent_value",
+              "observability_mode": "step_local"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d1_detector_h1_stageb_seed1",
+          "panel_regime": "detector_h1",
+          "truthfulness_seed": 1,
+          "detector_family": "argument_locus",
+          "intended_observable": "agent_value",
+          "source_step_key": "agent_value",
+          "target_step_key": "agent_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 0,
+            "unintended_step_alignment_rate": 1,
+            "passed": false,
+            "observable_locus": "agent_value",
+            "observability_mode": "step_local"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "agent_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "agent_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "agent_value",
+              "observability_mode": "step_local"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d1_detector_null_stageb_seed1",
+          "panel_regime": "detector_null",
+          "truthfulness_seed": 1,
+          "detector_family": "argument_locus",
+          "intended_observable": "agent_value",
+          "source_step_key": "agent_value",
+          "target_step_key": "agent_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 0,
+            "unintended_step_alignment_rate": 1,
+            "passed": false,
+            "observable_locus": "agent_value",
+            "observability_mode": "step_local"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "agent_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "agent_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "agent_value",
+              "observability_mode": "step_local"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d1_detector_h2_stageb_seed2",
+          "panel_regime": "detector_h2",
+          "truthfulness_seed": 2,
+          "detector_family": "argument_locus",
+          "intended_observable": "theme_value",
+          "source_step_key": "theme_value",
+          "target_step_key": "theme_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 0,
+            "unintended_step_alignment_rate": 1,
+            "passed": false,
+            "observable_locus": "theme_value",
+            "observability_mode": "step_local"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "theme_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "theme_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "theme_value",
+              "observability_mode": "step_local"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d1_detector_h1_stageb_seed2",
+          "panel_regime": "detector_h1",
+          "truthfulness_seed": 2,
+          "detector_family": "argument_locus",
+          "intended_observable": "theme_value",
+          "source_step_key": "theme_value",
+          "target_step_key": "theme_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 0,
+            "unintended_step_alignment_rate": 1,
+            "passed": false,
+            "observable_locus": "theme_value",
+            "observability_mode": "step_local"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "theme_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "theme_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "theme_value",
+              "observability_mode": "step_local"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d1_detector_null_stageb_seed2",
+          "panel_regime": "detector_null",
+          "truthfulness_seed": 2,
+          "detector_family": "argument_locus",
+          "intended_observable": "theme_value",
+          "source_step_key": "theme_value",
+          "target_step_key": "theme_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 0,
+            "unintended_step_alignment_rate": 1,
+            "passed": false,
+            "observable_locus": "theme_value",
+            "observability_mode": "step_local"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "theme_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "theme_value",
+              "observability_mode": "step_local"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 0,
+              "unintended_step_alignment_rate": 1,
+              "passed": false,
+              "observable_locus": "theme_value",
+              "observability_mode": "step_local"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "detector_family": "predicate_conditioned_relation",
+      "object_class": "query_source_relation",
+      "stage": "stage_b",
+      "passed": true,
+      "predicate_sanity_passed": true,
+      "detector_families_passed": true,
+      "detector_specific_observability_failure": false,
+      "target_rows": [
+        {
+          "run_name": "phase23_detector_d2_predicate_sanity_h2_seed1",
+          "panel_regime": "predicate_sanity_h2",
+          "truthfulness_seed": 1,
+          "detector_family": "predicate_conditioned_relation",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_sanity"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_predicate_sanity_h2_seed2",
+          "panel_regime": "predicate_sanity_h2",
+          "truthfulness_seed": 2,
+          "detector_family": "predicate_conditioned_relation",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_sanity"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_h2_stageb_seed1",
+          "panel_regime": "detector_h2",
+          "truthfulness_seed": 1,
+          "detector_family": "predicate_conditioned_relation",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_conditioned",
+            "predicate_value_alignment_rate": 1.0
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_h1_stageb_seed1",
+          "panel_regime": "detector_h1",
+          "truthfulness_seed": 1,
+          "detector_family": "predicate_conditioned_relation",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_conditioned",
+            "predicate_value_alignment_rate": 1.0
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_null_stageb_seed1",
+          "panel_regime": "detector_null",
+          "truthfulness_seed": 1,
+          "detector_family": "predicate_conditioned_relation",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_conditioned",
+            "predicate_value_alignment_rate": 1.0
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_h2_stageb_seed2",
+          "panel_regime": "detector_h2",
+          "truthfulness_seed": 2,
+          "detector_family": "predicate_conditioned_relation",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_conditioned",
+            "predicate_value_alignment_rate": 1.0
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_h1_stageb_seed2",
+          "panel_regime": "detector_h1",
+          "truthfulness_seed": 2,
+          "detector_family": "predicate_conditioned_relation",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_conditioned",
+            "predicate_value_alignment_rate": 1.0
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d2_detector_null_stageb_seed2",
+          "panel_regime": "detector_null",
+          "truthfulness_seed": 2,
+          "detector_family": "predicate_conditioned_relation",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_conditioned",
+            "predicate_value_alignment_rate": 1.0
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_conditioned",
+              "predicate_value_alignment_rate": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "detector_family": "cross_step_bridge",
+      "object_class": "cross_step_bridge",
+      "stage": "stage_b",
+      "passed": false,
+      "predicate_sanity_passed": true,
+      "detector_families_passed": false,
+      "detector_specific_observability_failure": true,
+      "target_rows": [
+        {
+          "run_name": "phase23_detector_d3_predicate_sanity_h2_seed1",
+          "panel_regime": "predicate_sanity_h2",
+          "truthfulness_seed": 1,
+          "detector_family": "cross_step_bridge",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_sanity"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d3_predicate_sanity_h2_seed2",
+          "panel_regime": "predicate_sanity_h2",
+          "truthfulness_seed": 2,
+          "detector_family": "cross_step_bridge",
+          "intended_observable": "predicate_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "predicate_value",
+          "passed": true,
+          "passed_aligner_count": 3,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "intended_step_alignment_rate": 1,
+            "unintended_step_alignment_rate": 0,
+            "passed": true,
+            "observable_locus": "predicate_value",
+            "observability_mode": "predicate_sanity"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "intended_step_alignment_rate": 1,
+              "unintended_step_alignment_rate": 0,
+              "passed": true,
+              "observable_locus": "predicate_value",
+              "observability_mode": "predicate_sanity"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d3_detector_h2_stageb_seed1",
+          "panel_regime": "detector_h2",
+          "truthfulness_seed": 1,
+          "detector_family": "cross_step_bridge",
+          "intended_observable": "predicate_value->agent_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "agent_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "source_step_alignment_rate": 1,
+            "target_step_alignment_rate": 0,
+            "bridge_coalignment_rate": 0,
+            "unintended_extra_step_alignment_rate": 0,
+            "passed": false,
+            "observable_locus": "predicate_value->agent_value",
+            "observability_mode": "bridge"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->agent_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->agent_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->agent_value",
+              "observability_mode": "bridge"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d3_detector_h1_stageb_seed1",
+          "panel_regime": "detector_h1",
+          "truthfulness_seed": 1,
+          "detector_family": "cross_step_bridge",
+          "intended_observable": "predicate_value->agent_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "agent_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "source_step_alignment_rate": 1,
+            "target_step_alignment_rate": 0,
+            "bridge_coalignment_rate": 0,
+            "unintended_extra_step_alignment_rate": 0,
+            "passed": false,
+            "observable_locus": "predicate_value->agent_value",
+            "observability_mode": "bridge"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->agent_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->agent_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->agent_value",
+              "observability_mode": "bridge"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d3_detector_null_stageb_seed1",
+          "panel_regime": "detector_null",
+          "truthfulness_seed": 1,
+          "detector_family": "cross_step_bridge",
+          "intended_observable": "predicate_value->agent_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "agent_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "source_step_alignment_rate": 1,
+            "target_step_alignment_rate": 0,
+            "bridge_coalignment_rate": 0,
+            "unintended_extra_step_alignment_rate": 0,
+            "passed": false,
+            "observable_locus": "predicate_value->agent_value",
+            "observability_mode": "bridge"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->agent_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->agent_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->agent_value",
+              "observability_mode": "bridge"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d3_detector_h2_stageb_seed2",
+          "panel_regime": "detector_h2",
+          "truthfulness_seed": 2,
+          "detector_family": "cross_step_bridge",
+          "intended_observable": "predicate_value->theme_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "theme_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "source_step_alignment_rate": 1,
+            "target_step_alignment_rate": 0,
+            "bridge_coalignment_rate": 0,
+            "unintended_extra_step_alignment_rate": 0,
+            "passed": false,
+            "observable_locus": "predicate_value->theme_value",
+            "observability_mode": "bridge"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->theme_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->theme_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->theme_value",
+              "observability_mode": "bridge"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d3_detector_h1_stageb_seed2",
+          "panel_regime": "detector_h1",
+          "truthfulness_seed": 2,
+          "detector_family": "cross_step_bridge",
+          "intended_observable": "predicate_value->theme_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "theme_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "source_step_alignment_rate": 1,
+            "target_step_alignment_rate": 0,
+            "bridge_coalignment_rate": 0,
+            "unintended_extra_step_alignment_rate": 0,
+            "passed": false,
+            "observable_locus": "predicate_value->theme_value",
+            "observability_mode": "bridge"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->theme_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->theme_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->theme_value",
+              "observability_mode": "bridge"
+            }
+          ]
+        },
+        {
+          "run_name": "phase23_detector_d3_detector_null_stageb_seed2",
+          "panel_regime": "detector_null",
+          "truthfulness_seed": 2,
+          "detector_family": "cross_step_bridge",
+          "intended_observable": "predicate_value->theme_value",
+          "source_step_key": "predicate_value",
+          "target_step_key": "theme_value",
+          "passed": false,
+          "passed_aligner_count": 0,
+          "selected_aligner": "A1",
+          "selected_summary": {
+            "aligner": "A1",
+            "row_count": 48,
+            "source_step_alignment_rate": 1,
+            "target_step_alignment_rate": 0,
+            "bridge_coalignment_rate": 0,
+            "unintended_extra_step_alignment_rate": 0,
+            "passed": false,
+            "observable_locus": "predicate_value->theme_value",
+            "observability_mode": "bridge"
+          },
+          "aligner_rows": [
+            {
+              "aligner": "A1",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->theme_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A2",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->theme_value",
+              "observability_mode": "bridge"
+            },
+            {
+              "aligner": "A3",
+              "row_count": 48,
+              "source_step_alignment_rate": 1,
+              "target_step_alignment_rate": 0,
+              "bridge_coalignment_rate": 0,
+              "unintended_extra_step_alignment_rate": 0,
+              "passed": false,
+              "observable_locus": "predicate_value->theme_value",
+              "observability_mode": "bridge"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "passed_count": 1
+}

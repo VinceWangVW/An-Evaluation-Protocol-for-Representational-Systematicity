@@ -1,0 +1,18 @@
+{
+  "panel_name": "phase12_binding_target_panel_v2",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 6,
+  "target_ids": [
+    "binding_target_strong_raw_seed53",
+    "binding_target_weak_raw_train128_seed61",
+    "binding_target_h1_decoder_scale025_seed53",
+    "binding_target_strong_parser_seed59",
+    "binding_target_h1_routed_parser_seed59",
+    "binding_target_surface_nuwa_raw_seed71"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 12 P3 heterogeneous binding target panel.",
+    "Includes strong, weak-but-audit-ready, decoder-scale H1-like, routed-like intermediate, and surface-shifted targets."
+  ]
+}

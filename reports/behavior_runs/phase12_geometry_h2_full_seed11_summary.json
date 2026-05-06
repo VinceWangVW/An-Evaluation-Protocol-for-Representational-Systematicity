@@ -1,0 +1,235 @@
+{
+  "panel_name": "phase12_geometry_control_panel_v1",
+  "benchmark_name": "phase11_systematicity_v2",
+  "control_id": "geometry_h2_full_seed11",
+  "run_name": "phase12_geometry_h2_full_seed11",
+  "expected_states": {
+    "G2_distributed_geometry": "H2"
+  },
+  "model_name_or_path": "google-t5/t5-small",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed11",
+  "family": "seq2seq_lm",
+  "prompt_style": "parser_instruction",
+  "hf_endpoint": "https://hf-mirror.com",
+  "precision": "auto",
+  "num_beams": 1,
+  "decoder_cross_attention_scale": null,
+  "encoder_geometry_transform": "feature_mask",
+  "encoder_geometry_seed": 111,
+  "encoder_geometry_keep_ratio": 0.75,
+  "encoder_geometry_noise_std": null,
+  "training": {
+    "trained": true,
+    "epochs": 8,
+    "learning_rate": 5e-05,
+    "train_example_count": 448,
+    "train_limit": null,
+    "train_target_permutation_seed": null,
+    "steps_per_epoch": 56,
+    "mean_epoch_loss": 0.7355,
+    "epoch_losses": [
+      3.486051,
+      1.230472,
+      0.53941,
+      0.282038,
+      0.153073,
+      0.089014,
+      0.059263,
+      0.044683
+    ],
+    "precision": "bf16",
+    "num_beams": 1,
+    "decoder_cross_attention_scale": null,
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 111,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null,
+    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed11"
+  },
+  "training_filter_summary": {
+    "panel_benchmark": "phase11_systematicity_v2",
+    "control_id": "geometry_h2_full_seed11",
+    "run_name": "phase12_geometry_h2_full_seed11",
+    "model_name_or_path": "google-t5/t5-small",
+    "expected_states": {
+      "G2_distributed_geometry": "H2"
+    },
+    "train_example_count": 448,
+    "eval_example_count": 224,
+    "train_generalization_case_allowlist": [],
+    "train_generalization_case_denylist": [],
+    "train_case_counts": {
+      "active_depth0": 154,
+      "passive_depth0": 147,
+      "active_depth1": 147
+    },
+    "eval_split_counts": {
+      "dev": 128,
+      "gen": 96
+    },
+    "train_target_permutation_seed": null,
+    "decoder_cross_attention_scale": null,
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 111,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null,
+    "num_train_epochs": 8,
+    "seed": 11,
+    "notes": "Development H2 geometry control trained with a fixed orthogonal-preserving encoder transform.",
+    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed11",
+    "evaluation": {
+      "overall": {
+        "count": 224,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      },
+      "by_split": {
+        "dev": {
+          "count": 128,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        },
+        "gen": {
+          "count": 96,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        }
+      },
+      "by_generalization_case_top25": {
+        "active_depth1": {
+          "count": 70,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        },
+        "passive_depth0": {
+          "count": 70,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        },
+        "active_depth0": {
+          "count": 42,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        },
+        "passive_depth1": {
+          "count": 42,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        }
+      },
+      "by_stratum": {
+        "control": {
+          "count": 128,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        },
+        "pass": {
+          "count": 96,
+          "exact_match": 1.0,
+          "normalized_exact_match": 1.0,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        }
+      },
+      "failure_categories": [
+        [
+          "exact_match",
+          224
+        ]
+      ]
+    }
+  },
+  "evaluation": {
+    "overall": {
+      "count": 224,
+      "exact_match": 1.0,
+      "normalized_exact_match": 1.0,
+      "clause_exact_match": 1.0,
+      "clause_f1": 1.0
+    },
+    "by_split": {
+      "dev": {
+        "count": 128,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      },
+      "gen": {
+        "count": 96,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 70,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      },
+      "passive_depth0": {
+        "count": 70,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      },
+      "active_depth0": {
+        "count": 42,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      },
+      "passive_depth1": {
+        "count": 42,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 128,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      },
+      "pass": {
+        "count": 96,
+        "exact_match": 1.0,
+        "normalized_exact_match": 1.0,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      }
+    },
+    "failure_categories": [
+      [
+        "exact_match",
+        224
+      ]
+    ]
+  }
+}

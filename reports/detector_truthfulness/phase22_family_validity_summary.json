@@ -1,0 +1,272 @@
+{
+  "class_rows": [
+    {
+      "object_class": "interaction",
+      "stage": "stage_b",
+      "passed": false,
+      "failure_reasons": [
+        "predicate_sanity_h2:seed1",
+        "argument_h2:seed1",
+        "argument_h1:seed1",
+        "argument_h1:not_weaker_than_h2:seed1",
+        "predicate_sanity_h2:seed2",
+        "argument_h2:seed2",
+        "argument_h1:seed2",
+        "argument_h1:not_weaker_than_h2:seed2"
+      ],
+      "family_rows": [
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "detector_truthfulness_c1_predicate_sanity_h2_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c1_predicate_sanity_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "detector_truthfulness_c1_predicate_sanity_h2_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c1_predicate_sanity_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h2",
+          "run_name": "detector_truthfulness_c1_argument_h2_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c1_argument_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h1",
+          "run_name": "detector_truthfulness_c1_argument_h1_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c1_argument_h1"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_null",
+          "run_name": "detector_truthfulness_c1_argument_null_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c1_argument_null"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h2",
+          "run_name": "detector_truthfulness_c1_argument_h2_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c1_argument_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h1",
+          "run_name": "detector_truthfulness_c1_argument_h1_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c1_argument_h1"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_null",
+          "run_name": "detector_truthfulness_c1_argument_null_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c1_argument_null"
+        }
+      ]
+    },
+    {
+      "object_class": "cross_step_bridge",
+      "stage": "stage_b",
+      "passed": false,
+      "failure_reasons": [
+        "predicate_sanity_h2:seed1",
+        "argument_h2:seed1",
+        "argument_h1:seed1",
+        "argument_h1:not_weaker_than_h2:seed1",
+        "predicate_sanity_h2:seed2",
+        "argument_h2:seed2",
+        "argument_h1:seed2",
+        "argument_h1:not_weaker_than_h2:seed2"
+      ],
+      "family_rows": [
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "detector_truthfulness_c2_predicate_sanity_h2_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c2_predicate_sanity_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "detector_truthfulness_c2_predicate_sanity_h2_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c2_predicate_sanity_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h2",
+          "run_name": "detector_truthfulness_c2_argument_h2_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c2_argument_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h1",
+          "run_name": "detector_truthfulness_c2_argument_h1_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c2_argument_h1"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_null",
+          "run_name": "detector_truthfulness_c2_argument_null_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c2_argument_null"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h2",
+          "run_name": "detector_truthfulness_c2_argument_h2_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c2_argument_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h1",
+          "run_name": "detector_truthfulness_c2_argument_h1_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c2_argument_h1"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_null",
+          "run_name": "detector_truthfulness_c2_argument_null_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c2_argument_null"
+        }
+      ]
+    },
+    {
+      "object_class": "query_source_relation",
+      "stage": "stage_b",
+      "passed": false,
+      "failure_reasons": [
+        "predicate_sanity_h2:seed1",
+        "argument_h2:seed1",
+        "argument_h1:seed1",
+        "argument_h1:not_weaker_than_h2:seed1",
+        "predicate_sanity_h2:seed2",
+        "argument_h2:seed2",
+        "argument_h1:seed2",
+        "argument_h1:not_weaker_than_h2:seed2"
+      ],
+      "family_rows": [
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "detector_truthfulness_c3_predicate_sanity_h2_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c3_predicate_sanity_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "predicate_sanity_h2",
+          "run_name": "detector_truthfulness_c3_predicate_sanity_h2_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c3_predicate_sanity_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h2",
+          "run_name": "detector_truthfulness_c3_argument_h2_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c3_argument_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h1",
+          "run_name": "detector_truthfulness_c3_argument_h1_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c3_argument_h1"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_null",
+          "run_name": "detector_truthfulness_c3_argument_null_stageb_seed1",
+          "truthfulness_seed": 1,
+          "truthfulness_family": "c3_argument_null"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h2",
+          "run_name": "detector_truthfulness_c3_argument_h2_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c3_argument_h2"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_h1",
+          "run_name": "detector_truthfulness_c3_argument_h1_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c3_argument_h1"
+        },
+        {
+          "count": 28,
+          "exact_match": 0.0,
+          "clause_f1": 0.0,
+          "panel_regime": "argument_null",
+          "run_name": "detector_truthfulness_c3_argument_null_stageb_seed2",
+          "truthfulness_seed": 2,
+          "truthfulness_family": "c3_argument_null"
+        }
+      ]
+    }
+  ],
+  "passed_count": 0
+}

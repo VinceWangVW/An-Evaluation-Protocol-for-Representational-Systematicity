@@ -1,0 +1,13 @@
+{
+  "panel_name": "phase12_geometry_h1_family3_readout_refine_seed41_keep0375_v1",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 1,
+  "target_ids": [
+    "geometry_h1_family3_readout_seed41_keep0375"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Single-point refinement for the third geometry family.",
+    "This probes whether keep_ratio 0.375 lands in the narrow H1 window between the observed H0 (0.35) and H2 (0.40)."
+  ]
+}

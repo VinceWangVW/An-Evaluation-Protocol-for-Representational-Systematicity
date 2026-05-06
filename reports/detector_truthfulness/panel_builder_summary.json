@@ -1,0 +1,26 @@
+{
+  "panel_rows": [
+    {
+      "object_class": "interaction",
+      "stage_a_panel_path": "configs/experiments/detector_truthfulness_c1.json",
+      "stage_b_panel_path": "configs/experiments/detector_truthfulness_c1_stage_b.json",
+      "stage_a_target_count": 8,
+      "stage_b_target_count": 6
+    },
+    {
+      "object_class": "cross_step_bridge",
+      "stage_a_panel_path": "configs/experiments/detector_truthfulness_c2.json",
+      "stage_b_panel_path": "configs/experiments/detector_truthfulness_c2_stage_b.json",
+      "stage_a_target_count": 8,
+      "stage_b_target_count": 6
+    },
+    {
+      "object_class": "query_source_relation",
+      "stage_a_panel_path": "configs/experiments/detector_truthfulness_c3.json",
+      "stage_b_panel_path": "configs/experiments/detector_truthfulness_c3_stage_b.json",
+      "stage_a_target_count": 8,
+      "stage_b_target_count": 6
+    }
+  ],
+  "panel_count": 3
+}

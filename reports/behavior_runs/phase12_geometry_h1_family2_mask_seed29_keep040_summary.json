@@ -1,0 +1,283 @@
+{
+  "panel_name": "phase12_geometry_h1_family2_mask_candidates_v2",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_id": "geometry_h1_family2_mask_seed29_keep040",
+  "run_name": "phase12_geometry_h1_family2_mask_seed29_keep040",
+  "phase11_prefix": "phase12_geometry_h1_family2_mask_seed29_keep040__geometryp8_lm1_p24",
+  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "family": "seq2seq_lm",
+  "prompt_style": "parser_instruction",
+  "hf_endpoint": "https://hf-mirror.com",
+  "precision": "auto",
+  "num_beams": 1,
+  "decoder_cross_attention_scale": null,
+  "decoder_cross_attention_keep_ratio": 0.4,
+  "encoder_geometry_transform": "feature_mask",
+  "encoder_geometry_seed": 129,
+  "encoder_geometry_keep_ratio": 0.75,
+  "encoder_geometry_noise_std": null,
+  "training": {
+    "trained": false,
+    "epochs": 0,
+    "learning_rate": 5e-05,
+    "train_example_count": 0,
+    "train_limit": null,
+    "train_target_permutation_seed": null,
+    "precision": "bf16",
+    "num_beams": 1,
+    "decoder_cross_attention_scale": null,
+    "decoder_cross_attention_keep_ratio": 0.4,
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 129,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null
+  },
+  "training_filter_summary": {
+    "panel_benchmark": "phase11_systematicity_v2",
+    "target_id": "geometry_h1_family2_mask_seed29_keep040",
+    "run_name": "phase12_geometry_h1_family2_mask_seed29_keep040",
+    "phase11_prefix": "phase12_geometry_h1_family2_mask_seed29_keep040__geometryp8_lm1_p24",
+    "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+    "reuse_checkpoint_from": null,
+    "train_example_count": 448,
+    "eval_example_count": 224,
+    "benchmark_override": null,
+    "panel_regime": "h1_family2_feature_mask",
+    "surface_backend": "template",
+    "train_case_counts": {
+      "active_depth0": 154,
+      "passive_depth0": 147,
+      "active_depth1": 147
+    },
+    "eval_split_counts": {
+      "dev": 128,
+      "gen": 96
+    },
+    "num_train_epochs": 0,
+    "train_limit": null,
+    "train_target_permutation_seed": null,
+    "train_generalization_case_allowlist": [],
+    "train_generalization_case_denylist": [],
+    "decoder_cross_attention_scale": null,
+    "decoder_cross_attention_keep_ratio": 0.4,
+    "encoder_geometry_transform": "feature_mask",
+    "encoder_geometry_seed": 129,
+    "encoder_geometry_keep_ratio": 0.75,
+    "encoder_geometry_noise_std": null,
+    "seed": 29,
+    "analysis_family": "seq2seq_lm",
+    "layers": [
+      -1
+    ],
+    "per_stratum": 24,
+    "match_set_limit": 24,
+    "include_in_adjudication": true,
+    "tags": [
+      "target",
+      "h1_family2",
+      "decoder_feature_mask",
+      "geometry",
+      "template",
+      "p8"
+    ],
+    "notes": "Feature-mask family candidate derived from the seed29 geometry H2 checkpoint with a 0.40 decoder keep ratio.",
+    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+    "evaluation": {
+      "overall": {
+        "count": 224,
+        "exact_match": 0.473214,
+        "normalized_exact_match": 0.473214,
+        "clause_exact_match": 0.482143,
+        "clause_f1": 0.482143
+      },
+      "by_split": {
+        "dev": {
+          "count": 128,
+          "exact_match": 0.5,
+          "normalized_exact_match": 0.5,
+          "clause_exact_match": 0.5,
+          "clause_f1": 0.5
+        },
+        "gen": {
+          "count": 96,
+          "exact_match": 0.4375,
+          "normalized_exact_match": 0.4375,
+          "clause_exact_match": 0.458333,
+          "clause_f1": 0.458333
+        }
+      },
+      "by_generalization_case_top25": {
+        "active_depth1": {
+          "count": 70,
+          "exact_match": 0.385714,
+          "normalized_exact_match": 0.385714,
+          "clause_exact_match": 0.385714,
+          "clause_f1": 0.385714
+        },
+        "passive_depth0": {
+          "count": 70,
+          "exact_match": 0.442857,
+          "normalized_exact_match": 0.442857,
+          "clause_exact_match": 0.442857,
+          "clause_f1": 0.442857
+        },
+        "active_depth0": {
+          "count": 42,
+          "exact_match": 0.571429,
+          "normalized_exact_match": 0.571429,
+          "clause_exact_match": 0.571429,
+          "clause_f1": 0.571429
+        },
+        "passive_depth1": {
+          "count": 42,
+          "exact_match": 0.571429,
+          "normalized_exact_match": 0.571429,
+          "clause_exact_match": 0.619048,
+          "clause_f1": 0.619048
+        }
+      },
+      "by_stratum": {
+        "control": {
+          "count": 128,
+          "exact_match": 0.5,
+          "normalized_exact_match": 0.5,
+          "clause_exact_match": 0.5,
+          "clause_f1": 0.5
+        },
+        "fail": {
+          "count": 52,
+          "exact_match": 0.0,
+          "normalized_exact_match": 0.0,
+          "clause_exact_match": 0.0,
+          "clause_f1": 0.0
+        },
+        "pass": {
+          "count": 44,
+          "exact_match": 0.954545,
+          "normalized_exact_match": 0.954545,
+          "clause_exact_match": 1.0,
+          "clause_f1": 1.0
+        }
+      },
+      "failure_categories": [
+        [
+          "no_clause_overlap",
+          116
+        ],
+        [
+          "exact_match",
+          106
+        ],
+        [
+          "clause_exact_only",
+          2
+        ]
+      ]
+    }
+  },
+  "evaluation": {
+    "overall": {
+      "count": 224,
+      "exact_match": 0.473214,
+      "normalized_exact_match": 0.473214,
+      "clause_exact_match": 0.482143,
+      "clause_f1": 0.482143
+    },
+    "by_split": {
+      "dev": {
+        "count": 128,
+        "exact_match": 0.5,
+        "normalized_exact_match": 0.5,
+        "clause_exact_match": 0.5,
+        "clause_f1": 0.5
+      },
+      "gen": {
+        "count": 96,
+        "exact_match": 0.4375,
+        "normalized_exact_match": 0.4375,
+        "clause_exact_match": 0.458333,
+        "clause_f1": 0.458333
+      }
+    },
+    "by_generalization_case_top25": {
+      "active_depth1": {
+        "count": 70,
+        "exact_match": 0.385714,
+        "normalized_exact_match": 0.385714,
+        "clause_exact_match": 0.385714,
+        "clause_f1": 0.385714
+      },
+      "passive_depth0": {
+        "count": 70,
+        "exact_match": 0.442857,
+        "normalized_exact_match": 0.442857,
+        "clause_exact_match": 0.442857,
+        "clause_f1": 0.442857
+      },
+      "active_depth0": {
+        "count": 42,
+        "exact_match": 0.571429,
+        "normalized_exact_match": 0.571429,
+        "clause_exact_match": 0.571429,
+        "clause_f1": 0.571429
+      },
+      "passive_depth1": {
+        "count": 42,
+        "exact_match": 0.571429,
+        "normalized_exact_match": 0.571429,
+        "clause_exact_match": 0.619048,
+        "clause_f1": 0.619048
+      }
+    },
+    "by_stratum": {
+      "control": {
+        "count": 128,
+        "exact_match": 0.5,
+        "normalized_exact_match": 0.5,
+        "clause_exact_match": 0.5,
+        "clause_f1": 0.5
+      },
+      "fail": {
+        "count": 52,
+        "exact_match": 0.0,
+        "normalized_exact_match": 0.0,
+        "clause_exact_match": 0.0,
+        "clause_f1": 0.0
+      },
+      "pass": {
+        "count": 44,
+        "exact_match": 0.954545,
+        "normalized_exact_match": 0.954545,
+        "clause_exact_match": 1.0,
+        "clause_f1": 1.0
+      }
+    },
+    "failure_categories": [
+      [
+        "no_clause_overlap",
+        116
+      ],
+      [
+        "exact_match",
+        106
+      ],
+      [
+        "clause_exact_only",
+        2
+      ]
+    ]
+  },
+  "panel_regime": "h1_family2_feature_mask",
+  "surface_backend": "template",
+  "include_in_adjudication": true,
+  "tags": [
+    "target",
+    "h1_family2",
+    "decoder_feature_mask",
+    "geometry",
+    "template",
+    "p8"
+  ],
+  "notes": "Feature-mask family candidate derived from the seed29 geometry H2 checkpoint with a 0.40 decoder keep ratio."
+}

@@ -1,0 +1,13 @@
+{
+  "panel_name": "phase11_geometry_step6_target_panel_v1",
+  "registry_version": "v6_geometry_dev_v1",
+  "run_count": 3,
+  "selected_state_counts": {
+    "H2": 3
+  },
+  "stable_selected_state": true,
+  "selected_state": "H2",
+  "underdetermined_count": 0,
+  "mean_top_posterior": 1.0,
+  "mean_posterior_margin": 1.0
+}

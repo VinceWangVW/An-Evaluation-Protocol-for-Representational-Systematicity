@@ -1,0 +1,217 @@
+{
+  "version": "v7_geometry_state_p0_v1",
+  "family": "G2_distributed_geometry",
+  "kind": "state_evidence_adjudicator",
+  "min_posterior_for_decision": 0.38,
+  "feature_sets": {
+    "presence": [
+      {
+        "feature": "m1_semantic_role_accuracy",
+        "direction": "high",
+        "boundary": 0.880208,
+        "scale": 0.119791,
+        "optional": false
+      },
+      {
+        "feature": "m1_filler_gap",
+        "direction": "high",
+        "boundary": 0.33694,
+        "scale": 0.03,
+        "optional": false
+      },
+      {
+        "feature": "m1_surface_control_gap",
+        "direction": "high",
+        "boundary": -0.119791,
+        "scale": 0.119791,
+        "optional": true
+      }
+    ],
+    "use": [
+      {
+        "feature": "m2_advantage_mean",
+        "direction": "high",
+        "boundary": 0.304487,
+        "scale": 0.05,
+        "optional": false
+      },
+      {
+        "feature": "m2_permutation_p_value",
+        "direction": "low",
+        "boundary": 0.05,
+        "scale": 0.499501,
+        "optional": false
+      },
+      {
+        "feature": "m3_selective_impairment_clause_f1",
+        "direction": "high",
+        "boundary": 0.05,
+        "scale": 0.05,
+        "optional": true
+      },
+      {
+        "feature": "m3_permutation_p_value",
+        "direction": "low",
+        "boundary": 0.05,
+        "scale": 0.02,
+        "optional": true
+      }
+    ],
+    "rescue": [
+      {
+        "feature": "m4_advantage_mean",
+        "direction": "high",
+        "boundary": 0.0,
+        "scale": 0.05,
+        "optional": true
+      },
+      {
+        "feature": "m4_permutation_p_value",
+        "direction": "low",
+        "boundary": 0.05,
+        "scale": 0.02,
+        "optional": true
+      },
+      {
+        "feature": "m5_fail_item_rescue_advantage_coverage",
+        "direction": "high",
+        "boundary": 0.0,
+        "scale": 0.05,
+        "optional": true
+      }
+    ],
+    "realism": [
+      {
+        "feature": "realism_pass_rate",
+        "direction": "high",
+        "boundary": 0.6,
+        "scale": 0.1,
+        "optional": true
+      },
+      {
+        "feature": "realism_cosine_margin_mean",
+        "direction": "high",
+        "boundary": 0.05,
+        "scale": 0.05,
+        "optional": true
+      },
+      {
+        "feature": "realism_bank_distance_margin_mean",
+        "direction": "high",
+        "boundary": 0.05,
+        "scale": 0.05,
+        "optional": true
+      }
+    ]
+  },
+  "behavior_prior": {
+    "feature": "b0_gen_clause_f1",
+    "low_boundary": 0.067709,
+    "high_boundary": 0.567708,
+    "weight": 0.15
+  },
+  "group_weights": {
+    "presence": 1.2,
+    "use": 1.35,
+    "rescue": 1.0,
+    "behavior_prior": 0.15
+  },
+  "group_targets": {
+    "H0": {
+      "presence": 0.15,
+      "use": 0.15,
+      "rescue": 0.15,
+      "behavior_prior": 0.15
+    },
+    "H1": {
+      "presence": 0.85,
+      "use": 0.35,
+      "rescue": 0.3,
+      "behavior_prior": 0.35
+    },
+    "H2": {
+      "presence": 0.85,
+      "use": 0.85,
+      "rescue": 0.25,
+      "behavior_prior": 0.75
+    }
+  },
+  "minimum_groups_for_decision": 2,
+  "minimum_use_score_for_h2": 0.55,
+  "minimum_presence_score_for_nonh0": 0.7,
+  "minimum_realism_score_for_h2": 0.45,
+  "allow_h1_without_rescue": true,
+  "thresholds": {
+    "m1_semantic_role_accuracy": {
+      "boundary": 0.880208,
+      "scale": 0.119791,
+      "direction": "high"
+    },
+    "m1_filler_gap": {
+      "boundary": 0.33694,
+      "scale": 0.03,
+      "direction": "high"
+    },
+    "m1_surface_control_gap": {
+      "boundary": -0.119791,
+      "scale": 0.119791,
+      "direction": "high"
+    },
+    "m2_advantage_mean": {
+      "boundary": 0.304487,
+      "scale": 0.05,
+      "direction": "high"
+    },
+    "m2_permutation_p_value": {
+      "boundary": 0.05,
+      "scale": 0.499501,
+      "direction": "low"
+    },
+    "m3_selective_impairment_clause_f1": {
+      "boundary": 0.05,
+      "scale": 0.05,
+      "direction": "high"
+    },
+    "m3_permutation_p_value": {
+      "boundary": 0.05,
+      "scale": 0.02,
+      "direction": "low"
+    },
+    "m4_advantage_mean": {
+      "boundary": 0.0,
+      "scale": 0.05,
+      "direction": "high"
+    },
+    "m4_permutation_p_value": {
+      "boundary": 0.05,
+      "scale": 0.02,
+      "direction": "low"
+    },
+    "m5_fail_item_rescue_advantage_coverage": {
+      "boundary": 0.0,
+      "scale": 0.05,
+      "direction": "high"
+    },
+    "realism_pass_rate": {
+      "boundary": 0.6,
+      "scale": 0.1,
+      "direction": "high"
+    },
+    "realism_cosine_margin_mean": {
+      "boundary": 0.05,
+      "scale": 0.05,
+      "direction": "high"
+    },
+    "realism_bank_distance_margin_mean": {
+      "boundary": 0.05,
+      "scale": 0.05,
+      "direction": "high"
+    }
+  },
+  "notes": [
+    "P0 refactors the geometry adjudicator away from behavior-dominant H1/H2 separation.",
+    "This still reuses the Phase 11 shared physical suite, so it is a semantic refactor rather than a full geometry-family rebuild.",
+    "Underdetermined outcomes are explicitly allowed when causal-use evidence is insufficient."
+  ],
+  "behavior_feature_share": 0.040541
+}

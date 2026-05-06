@@ -1,0 +1,18 @@
+{
+  "panel_name": "phase13_geometry_h1_familyB_candidates",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 6,
+  "target_ids": [
+    "geometry_h1_familyB_subspace_seed29_keep025",
+    "geometry_h1_familyB_subspace_seed29_keep035",
+    "geometry_h1_familyB_subspace_seed29_keep045",
+    "geometry_h1_familyB_subspace_seed41_keep025",
+    "geometry_h1_familyB_subspace_seed41_keep035",
+    "geometry_h1_familyB_subspace_seed41_keep045"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Phase 13 R1 candidate sweep for a second new geometry H1 family.",
+    "This family preserves encoder geometry while projecting decoder readout states away from a seeded random subspace."
+  ]
+}

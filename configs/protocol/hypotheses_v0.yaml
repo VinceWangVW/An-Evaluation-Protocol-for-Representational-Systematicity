@@ -1,0 +1,45 @@
+hypotheses:
+  - id: G1_binding
+    label: Binding hypothesis
+    description: Role-filler binding is a primary mechanism for systematic behaviour.
+    states:
+      - id: H0
+        meaning: Claimed binding structure is absent or behaviourally irrelevant.
+      - id: H1
+        meaning: Claimed binding structure exists but is not effectively used.
+      - id: H2
+        meaning: Claimed binding structure exists and is causally used.
+  - id: G2_distributed_geometry
+    label: Distributed geometry hypothesis
+    description: Systematicity is carried by distributed subspaces or stable geometry.
+    states:
+      - id: H0
+        meaning: No stable geometry relevant to behaviour is present.
+      - id: H1
+        meaning: Stable geometry exists but is weakly or inconsistently used.
+      - id: H2
+        meaning: Stable geometry exists and is causally used for behaviour.
+  - id: G3_shortcut
+    label: Shortcut hypothesis
+    description: Behaviour is mostly supported by surface heuristics or direct routes.
+    states:
+      - id: H0
+        meaning: No meaningful shortcut route exists.
+      - id: H1
+        meaning: Shortcut signals exist but are not dominant.
+      - id: H2
+        meaning: Shortcut route is the dominant mechanism behind behaviour.
+
+protocol_modules:
+  - id: M0
+    label: behavioural_stratification
+  - id: M1
+    label: presence_and_invariance
+  - id: M2
+    label: structure_preserving_interchange
+  - id: M3
+    label: selective_necessity
+  - id: M4
+    label: failure_rescue
+  - id: M5
+    label: item_level_linkage

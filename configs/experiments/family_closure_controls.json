@@ -1,0 +1,24 @@
+{
+  "panel_name": "family_closure_controls",
+  "layer_index": 6,
+  "dev_controls": {
+    "h2": {
+      "control_id": "phase12_geometry_h2_full_seed11",
+      "discovery_summary": "reports/discovery_runs/phase12_geometry_h2_full_seed11__geometryp2_lm1_p24_summary.json"
+    },
+    "h0": {
+      "control_id": "phase12_geometry_h0_permuted_seed11",
+      "discovery_summary": "reports/discovery_runs/phase12_geometry_h0_permuted_seed11__geometryp2_lm1_p24_summary.json"
+    }
+  },
+  "heldout_controls": {
+    "h2": {
+      "control_id": "phase12_geometry_h2_full_seed29",
+      "discovery_summary": "reports/discovery_runs/phase12_geometry_h2_full_seed29__geometryp2_lm1_p24_summary.json"
+    },
+    "h0": {
+      "control_id": "phase12_geometry_h0_permuted_seed29",
+      "discovery_summary": "reports/discovery_runs/phase12_geometry_h0_permuted_seed29__geometryp2_lm1_p24_summary.json"
+    }
+  }
+}

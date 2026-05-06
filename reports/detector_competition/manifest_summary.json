@@ -1,0 +1,916 @@
+{
+  "detector_count": 3,
+  "detector_rows": [
+    {
+      "detector_family": "argument_locus",
+      "object_class": "interaction",
+      "benchmark_name": "phase23_detector_d1",
+      "anchor_specs": [
+        {
+          "object_id": "d1_interaction_agent_anchor_a",
+          "object_class": "interaction",
+          "layer_index": 6,
+          "source_run": "phase12_geometry_h2_full_seed11",
+          "decoder_step_key": "agent_value",
+          "source_span_keys": [
+            "agent",
+            "filler::agent"
+          ],
+          "head_selector": {
+            "mode": "explicit",
+            "indices": [
+              0,
+              1
+            ]
+          },
+          "read_basis": {
+            "mode": "explicit",
+            "basis_ids": [
+              "prelogit_basis_0",
+              "prelogit_basis_1"
+            ]
+          },
+          "store_condition": {
+            "mode": "matched_role_store",
+            "selector_type": "semantic_role_bundle"
+          },
+          "matched_control_type": "wrong_event_same_step",
+          "generic_basis_ids": [
+            "prelogit_basis_15",
+            "prelogit_basis_16"
+          ],
+          "generic_gain_overlap": 0.0,
+          "non_flat_survivor": true,
+          "template_family": "anchor_a"
+        },
+        {
+          "object_id": "d1_interaction_theme_anchor_b",
+          "object_class": "interaction",
+          "layer_index": 6,
+          "source_run": "phase12_geometry_h2_full_seed11",
+          "decoder_step_key": "theme_value",
+          "source_span_keys": [
+            "theme",
+            "filler::theme"
+          ],
+          "head_selector": {
+            "mode": "explicit",
+            "indices": [
+              0,
+              1
+            ]
+          },
+          "read_basis": {
+            "mode": "explicit",
+            "basis_ids": [
+              "prelogit_basis_0",
+              "prelogit_basis_1"
+            ]
+          },
+          "store_condition": {
+            "mode": "matched_role_store",
+            "selector_type": "semantic_role_bundle"
+          },
+          "matched_control_type": "wrong_event_same_step",
+          "generic_basis_ids": [
+            "prelogit_basis_15",
+            "prelogit_basis_16"
+          ],
+          "generic_gain_overlap": 0.0,
+          "non_flat_survivor": true,
+          "template_family": "anchor_b"
+        }
+      ],
+      "stage_rows": {
+        "stage_a": {
+          "panel_path": "configs/experiments/phase23_detector_d1.json",
+          "target_rows": [
+            {
+              "target_id": "phase23_detector_d1_predicate_sanity_h2_seed1",
+              "run_name": "phase23_detector_d1_predicate_sanity_h2_seed1",
+              "phase11_prefix": "phase23_detector_d1_predicate_sanity_h2_seed1",
+              "panel_regime": "predicate_sanity_h2",
+              "truthfulness_family": "d1_predicate_sanity_h2",
+              "truthfulness_seed": 1,
+              "detector_family": "argument_locus",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_h2_seed1",
+              "run_name": "phase23_detector_d1_detector_h2_seed1",
+              "phase11_prefix": "phase23_detector_d1_detector_h2_seed1",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d1_detector_h2",
+              "truthfulness_seed": 1,
+              "detector_family": "argument_locus",
+              "detector_seed": 1,
+              "intended_observable": "agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "agent_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": "phase23_detector_d1_detector_null_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_h1_seed1",
+              "run_name": "phase23_detector_d1_detector_h1_seed1",
+              "phase11_prefix": "phase23_detector_d1_detector_h1_seed1",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d1_detector_h1",
+              "truthfulness_seed": 1,
+              "detector_family": "argument_locus",
+              "detector_seed": 1,
+              "intended_observable": "agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "agent_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": "phase23_detector_d1_detector_null_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_null_seed1",
+              "run_name": "phase23_detector_d1_detector_null_seed1",
+              "phase11_prefix": "phase23_detector_d1_detector_null_seed1",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d1_detector_null",
+              "truthfulness_seed": 1,
+              "detector_family": "argument_locus",
+              "detector_seed": 1,
+              "intended_observable": "agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "agent_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d1_predicate_sanity_h2_seed2",
+              "run_name": "phase23_detector_d1_predicate_sanity_h2_seed2",
+              "phase11_prefix": "phase23_detector_d1_predicate_sanity_h2_seed2",
+              "panel_regime": "predicate_sanity_h2",
+              "truthfulness_family": "d1_predicate_sanity_h2",
+              "truthfulness_seed": 2,
+              "detector_family": "argument_locus",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_h2_seed2",
+              "run_name": "phase23_detector_d1_detector_h2_seed2",
+              "phase11_prefix": "phase23_detector_d1_detector_h2_seed2",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d1_detector_h2",
+              "truthfulness_seed": 2,
+              "detector_family": "argument_locus",
+              "detector_seed": 2,
+              "intended_observable": "theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "theme_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": "phase23_detector_d1_detector_null_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_h1_seed2",
+              "run_name": "phase23_detector_d1_detector_h1_seed2",
+              "phase11_prefix": "phase23_detector_d1_detector_h1_seed2",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d1_detector_h1",
+              "truthfulness_seed": 2,
+              "detector_family": "argument_locus",
+              "detector_seed": 2,
+              "intended_observable": "theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "theme_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": "phase23_detector_d1_detector_null_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_null_seed2",
+              "run_name": "phase23_detector_d1_detector_null_seed2",
+              "phase11_prefix": "phase23_detector_d1_detector_null_seed2",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d1_detector_null",
+              "truthfulness_seed": 2,
+              "detector_family": "argument_locus",
+              "detector_seed": 2,
+              "intended_observable": "theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "theme_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": null
+            }
+          ]
+        },
+        "stage_b": {
+          "panel_path": "configs/experiments/phase23_detector_d1_stage_b.json",
+          "target_rows": [
+            {
+              "target_id": "phase23_detector_d1_detector_h2_stageb_seed1",
+              "run_name": "phase23_detector_d1_detector_h2_stageb_seed1",
+              "phase11_prefix": "phase23_detector_d1_detector_h2_stageb_seed1",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d1_detector_h2",
+              "truthfulness_seed": 1,
+              "detector_family": "argument_locus",
+              "detector_seed": 1,
+              "intended_observable": "agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "agent_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": "phase23_detector_d1_detector_null_stageb_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_h1_stageb_seed1",
+              "run_name": "phase23_detector_d1_detector_h1_stageb_seed1",
+              "phase11_prefix": "phase23_detector_d1_detector_h1_stageb_seed1",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d1_detector_h1",
+              "truthfulness_seed": 1,
+              "detector_family": "argument_locus",
+              "detector_seed": 1,
+              "intended_observable": "agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "agent_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": "phase23_detector_d1_detector_null_stageb_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_null_stageb_seed1",
+              "run_name": "phase23_detector_d1_detector_null_stageb_seed1",
+              "phase11_prefix": "phase23_detector_d1_detector_null_stageb_seed1",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d1_detector_null",
+              "truthfulness_seed": 1,
+              "detector_family": "argument_locus",
+              "detector_seed": 1,
+              "intended_observable": "agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "agent_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_h2_stageb_seed2",
+              "run_name": "phase23_detector_d1_detector_h2_stageb_seed2",
+              "phase11_prefix": "phase23_detector_d1_detector_h2_stageb_seed2",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d1_detector_h2",
+              "truthfulness_seed": 2,
+              "detector_family": "argument_locus",
+              "detector_seed": 2,
+              "intended_observable": "theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "theme_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": "phase23_detector_d1_detector_null_stageb_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_h1_stageb_seed2",
+              "run_name": "phase23_detector_d1_detector_h1_stageb_seed2",
+              "phase11_prefix": "phase23_detector_d1_detector_h1_stageb_seed2",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d1_detector_h1",
+              "truthfulness_seed": 2,
+              "detector_family": "argument_locus",
+              "detector_seed": 2,
+              "intended_observable": "theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "theme_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": "phase23_detector_d1_detector_null_stageb_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d1_detector_null_stageb_seed2",
+              "run_name": "phase23_detector_d1_detector_null_stageb_seed2",
+              "phase11_prefix": "phase23_detector_d1_detector_null_stageb_seed2",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d1_detector_null",
+              "truthfulness_seed": 2,
+              "detector_family": "argument_locus",
+              "detector_seed": 2,
+              "intended_observable": "theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "theme_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "detector_family": "predicate_conditioned_relation",
+      "object_class": "query_source_relation",
+      "benchmark_name": "phase23_detector_d2",
+      "anchor_specs": [
+        {
+          "object_id": "d2_predicate_relation_anchor_a",
+          "object_class": "query_source_relation",
+          "layer_index": 6,
+          "source_run": "phase12_geometry_h2_full_seed11",
+          "query_step_key": "predicate_value",
+          "source_span_keys": [
+            "predicate"
+          ],
+          "head_selector": {
+            "mode": "explicit",
+            "indices": [
+              0
+            ]
+          },
+          "query_basis": {
+            "mode": "explicit",
+            "basis_ids": [
+              "prelogit_basis_0"
+            ]
+          },
+          "read_basis": {
+            "mode": "explicit",
+            "basis_ids": [
+              "prelogit_basis_1"
+            ]
+          },
+          "store_condition": {
+            "mode": "none"
+          },
+          "matched_control_type": "wrong_event_same_cardinality",
+          "generic_basis_ids": [
+            "prelogit_basis_15"
+          ],
+          "generic_gain_overlap": 0.0,
+          "non_flat_survivor": true,
+          "template_family": "anchor_a"
+        },
+        {
+          "object_id": "d2_predicate_relation_anchor_b",
+          "object_class": "query_source_relation",
+          "layer_index": 6,
+          "source_run": "phase12_geometry_h2_full_seed11",
+          "query_step_key": "predicate_value",
+          "source_span_keys": [
+            "predicate"
+          ],
+          "head_selector": {
+            "mode": "explicit",
+            "indices": [
+              0,
+              1
+            ]
+          },
+          "query_basis": {
+            "mode": "explicit",
+            "basis_ids": [
+              "prelogit_basis_0",
+              "prelogit_basis_1"
+            ]
+          },
+          "read_basis": {
+            "mode": "explicit",
+            "basis_ids": [
+              "prelogit_basis_1",
+              "prelogit_basis_2"
+            ]
+          },
+          "store_condition": {
+            "mode": "matched_role_store",
+            "selector_type": "semantic_role_bundle"
+          },
+          "matched_control_type": "wrong_event_same_cardinality",
+          "generic_basis_ids": [
+            "prelogit_basis_15"
+          ],
+          "generic_gain_overlap": 0.0,
+          "non_flat_survivor": true,
+          "template_family": "anchor_b"
+        }
+      ],
+      "stage_rows": {
+        "stage_a": {
+          "panel_path": "configs/experiments/phase23_detector_d2.json",
+          "target_rows": [
+            {
+              "target_id": "phase23_detector_d2_predicate_sanity_h2_seed1",
+              "run_name": "phase23_detector_d2_predicate_sanity_h2_seed1",
+              "phase11_prefix": "phase23_detector_d2_predicate_sanity_h2_seed1",
+              "panel_regime": "predicate_sanity_h2",
+              "truthfulness_family": "d2_predicate_sanity_h2",
+              "truthfulness_seed": 1,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_h2_seed1",
+              "run_name": "phase23_detector_d2_detector_h2_seed1",
+              "phase11_prefix": "phase23_detector_d2_detector_h2_seed1",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d2_detector_h2",
+              "truthfulness_seed": 1,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": "phase23_detector_d2_detector_null_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_h1_seed1",
+              "run_name": "phase23_detector_d2_detector_h1_seed1",
+              "phase11_prefix": "phase23_detector_d2_detector_h1_seed1",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d2_detector_h1",
+              "truthfulness_seed": 1,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": "phase23_detector_d2_detector_null_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_null_seed1",
+              "run_name": "phase23_detector_d2_detector_null_seed1",
+              "phase11_prefix": "phase23_detector_d2_detector_null_seed1",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d2_detector_null",
+              "truthfulness_seed": 1,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d2_predicate_sanity_h2_seed2",
+              "run_name": "phase23_detector_d2_predicate_sanity_h2_seed2",
+              "phase11_prefix": "phase23_detector_d2_predicate_sanity_h2_seed2",
+              "panel_regime": "predicate_sanity_h2",
+              "truthfulness_family": "d2_predicate_sanity_h2",
+              "truthfulness_seed": 2,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_h2_seed2",
+              "run_name": "phase23_detector_d2_detector_h2_seed2",
+              "phase11_prefix": "phase23_detector_d2_detector_h2_seed2",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d2_detector_h2",
+              "truthfulness_seed": 2,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": "phase23_detector_d2_detector_null_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_h1_seed2",
+              "run_name": "phase23_detector_d2_detector_h1_seed2",
+              "phase11_prefix": "phase23_detector_d2_detector_h1_seed2",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d2_detector_h1",
+              "truthfulness_seed": 2,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": "phase23_detector_d2_detector_null_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_null_seed2",
+              "run_name": "phase23_detector_d2_detector_null_seed2",
+              "phase11_prefix": "phase23_detector_d2_detector_null_seed2",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d2_detector_null",
+              "truthfulness_seed": 2,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            }
+          ]
+        },
+        "stage_b": {
+          "panel_path": "configs/experiments/phase23_detector_d2_stage_b.json",
+          "target_rows": [
+            {
+              "target_id": "phase23_detector_d2_detector_h2_stageb_seed1",
+              "run_name": "phase23_detector_d2_detector_h2_stageb_seed1",
+              "phase11_prefix": "phase23_detector_d2_detector_h2_stageb_seed1",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d2_detector_h2",
+              "truthfulness_seed": 1,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": "phase23_detector_d2_detector_null_stageb_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "run_name": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "phase11_prefix": "phase23_detector_d2_detector_h1_stageb_seed1",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d2_detector_h1",
+              "truthfulness_seed": 1,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": "phase23_detector_d2_detector_null_stageb_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_null_stageb_seed1",
+              "run_name": "phase23_detector_d2_detector_null_stageb_seed1",
+              "phase11_prefix": "phase23_detector_d2_detector_null_stageb_seed1",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d2_detector_null",
+              "truthfulness_seed": 1,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_h2_stageb_seed2",
+              "run_name": "phase23_detector_d2_detector_h2_stageb_seed2",
+              "phase11_prefix": "phase23_detector_d2_detector_h2_stageb_seed2",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d2_detector_h2",
+              "truthfulness_seed": 2,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": "phase23_detector_d2_detector_null_stageb_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "run_name": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "phase11_prefix": "phase23_detector_d2_detector_h1_stageb_seed2",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d2_detector_h1",
+              "truthfulness_seed": 2,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": "phase23_detector_d2_detector_null_stageb_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d2_detector_null_stageb_seed2",
+              "run_name": "phase23_detector_d2_detector_null_stageb_seed2",
+              "phase11_prefix": "phase23_detector_d2_detector_null_stageb_seed2",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d2_detector_null",
+              "truthfulness_seed": 2,
+              "detector_family": "predicate_conditioned_relation",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "detector_family": "cross_step_bridge",
+      "object_class": "cross_step_bridge",
+      "benchmark_name": "phase23_detector_d3",
+      "anchor_specs": [
+        {
+          "object_id": "d3_bridge_predicate_to_agent_anchor_a",
+          "object_class": "cross_step_bridge",
+          "layer_index": 6,
+          "source_run": "phase12_geometry_h2_full_seed11",
+          "source_step_key": "predicate_value",
+          "target_step_key": "agent_value",
+          "source_span_keys": [
+            "predicate"
+          ],
+          "head_selector": {
+            "mode": "explicit",
+            "indices": [
+              0
+            ]
+          },
+          "bridge_basis": {
+            "mode": "explicit",
+            "basis_ids": [
+              "prelogit_basis_0"
+            ]
+          },
+          "store_condition": {
+            "mode": "none"
+          },
+          "matched_control_type": "wrong_event_same_cardinality",
+          "generic_basis_ids": [
+            "prelogit_basis_15"
+          ],
+          "generic_gain_overlap": 0.0,
+          "non_flat_survivor": true,
+          "template_family": "anchor_a"
+        },
+        {
+          "object_id": "d3_bridge_predicate_to_theme_anchor_b",
+          "object_class": "cross_step_bridge",
+          "layer_index": 6,
+          "source_run": "phase12_geometry_h2_full_seed11",
+          "source_step_key": "predicate_value",
+          "target_step_key": "theme_value",
+          "source_span_keys": [
+            "predicate"
+          ],
+          "head_selector": {
+            "mode": "explicit",
+            "indices": [
+              0,
+              1
+            ]
+          },
+          "bridge_basis": {
+            "mode": "explicit",
+            "basis_ids": [
+              "prelogit_basis_0",
+              "prelogit_basis_1"
+            ]
+          },
+          "store_condition": {
+            "mode": "matched_role_store",
+            "selector_type": "semantic_role_bundle"
+          },
+          "matched_control_type": "wrong_event_same_cardinality",
+          "generic_basis_ids": [
+            "prelogit_basis_15",
+            "prelogit_basis_16"
+          ],
+          "generic_gain_overlap": 0.0,
+          "non_flat_survivor": true,
+          "template_family": "anchor_b"
+        }
+      ],
+      "stage_rows": {
+        "stage_a": {
+          "panel_path": "configs/experiments/phase23_detector_d3.json",
+          "target_rows": [
+            {
+              "target_id": "phase23_detector_d3_predicate_sanity_h2_seed1",
+              "run_name": "phase23_detector_d3_predicate_sanity_h2_seed1",
+              "phase11_prefix": "phase23_detector_d3_predicate_sanity_h2_seed1",
+              "panel_regime": "predicate_sanity_h2",
+              "truthfulness_family": "d3_predicate_sanity_h2",
+              "truthfulness_seed": 1,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_h2_seed1",
+              "run_name": "phase23_detector_d3_detector_h2_seed1",
+              "phase11_prefix": "phase23_detector_d3_detector_h2_seed1",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d3_detector_h2",
+              "truthfulness_seed": 1,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value->agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": "phase23_detector_d3_detector_null_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_h1_seed1",
+              "run_name": "phase23_detector_d3_detector_h1_seed1",
+              "phase11_prefix": "phase23_detector_d3_detector_h1_seed1",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d3_detector_h1",
+              "truthfulness_seed": 1,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value->agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": "phase23_detector_d3_detector_null_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_null_seed1",
+              "run_name": "phase23_detector_d3_detector_null_seed1",
+              "phase11_prefix": "phase23_detector_d3_detector_null_seed1",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d3_detector_null",
+              "truthfulness_seed": 1,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value->agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d3_predicate_sanity_h2_seed2",
+              "run_name": "phase23_detector_d3_predicate_sanity_h2_seed2",
+              "phase11_prefix": "phase23_detector_d3_predicate_sanity_h2_seed2",
+              "panel_regime": "predicate_sanity_h2",
+              "truthfulness_family": "d3_predicate_sanity_h2",
+              "truthfulness_seed": 2,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value",
+              "intended_step_key": "predicate_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "predicate_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_h2_seed2",
+              "run_name": "phase23_detector_d3_detector_h2_seed2",
+              "phase11_prefix": "phase23_detector_d3_detector_h2_seed2",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d3_detector_h2",
+              "truthfulness_seed": 2,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value->theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": "phase23_detector_d3_detector_null_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_h1_seed2",
+              "run_name": "phase23_detector_d3_detector_h1_seed2",
+              "phase11_prefix": "phase23_detector_d3_detector_h1_seed2",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d3_detector_h1",
+              "truthfulness_seed": 2,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value->theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": "phase23_detector_d3_detector_null_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_null_seed2",
+              "run_name": "phase23_detector_d3_detector_null_seed2",
+              "phase11_prefix": "phase23_detector_d3_detector_null_seed2",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d3_detector_null",
+              "truthfulness_seed": 2,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value->theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": null
+            }
+          ]
+        },
+        "stage_b": {
+          "panel_path": "configs/experiments/phase23_detector_d3_stage_b.json",
+          "target_rows": [
+            {
+              "target_id": "phase23_detector_d3_detector_h2_stageb_seed1",
+              "run_name": "phase23_detector_d3_detector_h2_stageb_seed1",
+              "phase11_prefix": "phase23_detector_d3_detector_h2_stageb_seed1",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d3_detector_h2",
+              "truthfulness_seed": 1,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value->agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": "phase23_detector_d3_detector_null_stageb_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_h1_stageb_seed1",
+              "run_name": "phase23_detector_d3_detector_h1_stageb_seed1",
+              "phase11_prefix": "phase23_detector_d3_detector_h1_stageb_seed1",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d3_detector_h1",
+              "truthfulness_seed": 1,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value->agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": "phase23_detector_d3_detector_null_stageb_seed1"
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_null_stageb_seed1",
+              "run_name": "phase23_detector_d3_detector_null_stageb_seed1",
+              "phase11_prefix": "phase23_detector_d3_detector_null_stageb_seed1",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d3_detector_null",
+              "truthfulness_seed": 1,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 1,
+              "intended_observable": "predicate_value->agent_value",
+              "intended_step_key": "agent_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "agent_value",
+              "paired_null_id": null
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_h2_stageb_seed2",
+              "run_name": "phase23_detector_d3_detector_h2_stageb_seed2",
+              "phase11_prefix": "phase23_detector_d3_detector_h2_stageb_seed2",
+              "panel_regime": "detector_h2",
+              "truthfulness_family": "d3_detector_h2",
+              "truthfulness_seed": 2,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value->theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": "phase23_detector_d3_detector_null_stageb_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_h1_stageb_seed2",
+              "run_name": "phase23_detector_d3_detector_h1_stageb_seed2",
+              "phase11_prefix": "phase23_detector_d3_detector_h1_stageb_seed2",
+              "panel_regime": "detector_h1",
+              "truthfulness_family": "d3_detector_h1",
+              "truthfulness_seed": 2,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value->theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": "phase23_detector_d3_detector_null_stageb_seed2"
+            },
+            {
+              "target_id": "phase23_detector_d3_detector_null_stageb_seed2",
+              "run_name": "phase23_detector_d3_detector_null_stageb_seed2",
+              "phase11_prefix": "phase23_detector_d3_detector_null_stageb_seed2",
+              "panel_regime": "detector_null",
+              "truthfulness_family": "d3_detector_null",
+              "truthfulness_seed": 2,
+              "detector_family": "cross_step_bridge",
+              "detector_seed": 2,
+              "intended_observable": "predicate_value->theme_value",
+              "intended_step_key": "theme_value",
+              "source_step_key": "predicate_value",
+              "target_step_key": "theme_value",
+              "paired_null_id": null
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

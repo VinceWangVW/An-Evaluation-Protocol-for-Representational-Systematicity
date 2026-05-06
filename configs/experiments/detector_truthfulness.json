@@ -1,0 +1,28 @@
+{
+  "panel_name": "detector_truthfulness",
+  "hf_endpoint": "https://hf-mirror.com",
+  "seed": 22,
+  "materialize_max_parallel": 3,
+  "family_counts": {
+    "train": 8,
+    "dev": 2,
+    "gen": 2
+  },
+  "panel_paths": {
+    "interaction": {
+      "stage_a": "configs/experiments/detector_truthfulness_c1.json",
+      "stage_b": "configs/experiments/detector_truthfulness_c1_stage_b.json"
+    },
+    "cross_step_bridge": {
+      "stage_a": "configs/experiments/detector_truthfulness_c2.json",
+      "stage_b": "configs/experiments/detector_truthfulness_c2_stage_b.json"
+    },
+    "query_source_relation": {
+      "stage_a": "configs/experiments/detector_truthfulness_c3.json",
+      "stage_b": "configs/experiments/detector_truthfulness_c3_stage_b.json"
+    }
+  },
+  "phase18": {
+    "family_closure_summary": "reports/family_closure/family_closure_summary.json"
+  }
+}

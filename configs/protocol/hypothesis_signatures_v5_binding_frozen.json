@@ -1,0 +1,43 @@
+{
+  "version": "v5_binding_dev_v2",
+  "family": "G1_binding",
+  "kind": "prototype_distance_adjudicator",
+  "features": [
+    "b0_gen_clause_f1",
+    "m1_semantic_role_accuracy",
+    "m2_advantage_mean"
+  ],
+  "min_posterior_for_decision": 0.55,
+  "state_prototypes": {
+    "H0": {
+      "b0_gen_clause_f1": 0.0,
+      "m1_semantic_role_accuracy": 0.760417,
+      "m2_advantage_mean": 0.0
+    },
+    "H1": {
+      "b0_gen_clause_f1": 0.135417,
+      "m1_semantic_role_accuracy": 1.0,
+      "m2_advantage_mean": 0.634615
+    },
+    "H2": {
+      "b0_gen_clause_f1": 1.0,
+      "m1_semantic_role_accuracy": 1.0,
+      "m2_advantage_mean": 0.583333
+    }
+  },
+  "feature_scales": {
+    "b0_gen_clause_f1": 0.067709,
+    "m1_semantic_role_accuracy": 0.119791,
+    "m2_advantage_mean": 0.05
+  },
+  "state_counts": {
+    "H0": 1,
+    "H1": 1,
+    "H2": 1
+  },
+  "notes": [
+    "Step 3 v2 recalibration uses the exact-role-swap counterpart design.",
+    "Binding is calibrated first because v1 showed that M2/M4 were structurally unobservable without single-role counterparts.",
+    "No forced H2 winner is assumed beyond the bounded binding family."
+  ]
+}

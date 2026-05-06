@@ -1,0 +1,12 @@
+{
+  "panel_name": "phase20_stageb_c1",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 3,
+  "target_ids": [
+    "phase20_stageb_c1_planted_h2",
+    "phase20_stageb_c1_planted_h1",
+    "phase20_stageb_c1_matched_null"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": []
+}

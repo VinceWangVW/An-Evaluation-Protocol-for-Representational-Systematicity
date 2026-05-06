@@ -1,0 +1,15 @@
+{
+  "panel_name": "phase11_binding_target_panel_v1",
+  "benchmark_name": "phase11_systematicity_v2",
+  "target_count": 3,
+  "target_ids": [
+    "binding_target_t5small_seed41",
+    "binding_target_t5small_seed43",
+    "binding_target_t5small_e12_seed41"
+  ],
+  "hf_endpoint": "https://hf-mirror.com",
+  "notes": [
+    "Minimal Step 5 target panel for the bounded binding family.",
+    "Covers seed stability and a stronger-checkpoint variant before expanding to a second model family."
+  ]
+}

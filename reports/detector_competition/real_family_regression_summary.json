@@ -1,0 +1,7 @@
+{
+  "executed": false,
+  "validated_detector_count": 0,
+  "detector_rows": [],
+  "all_validated_detectors_agree_negative": false,
+  "family_closure_summary": "reports/phase18/phase18_g2_family_closure_summary.json"
+}
