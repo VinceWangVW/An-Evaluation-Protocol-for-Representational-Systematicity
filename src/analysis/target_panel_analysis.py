@@ -6,7 +6,7 @@ from pathlib import Path
 from statistics import mean
 from typing import Any
 
-from models.target_panels import Phase11TargetPanel, Phase11TargetSpec
+from models.target_panels import TargetPanel, TargetSpec
 
 
 def infer_surface_backend(
@@ -26,7 +26,7 @@ def infer_surface_backend(
 
 def build_target_design_rows(
     project_root: str | Path,
-    panel: Phase11TargetPanel,
+    panel: TargetPanel,
 ) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for target in panel.targets:
@@ -60,7 +60,7 @@ def build_target_design_rows(
 
 
 def summarize_target_panel_design(
-    panel: Phase11TargetPanel,
+    panel: TargetPanel,
     rows: list[dict[str, Any]],
 ) -> dict[str, Any]:
     adjudicated_rows = [row for row in rows if row["include_in_adjudication"]]

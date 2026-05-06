@@ -5,7 +5,7 @@ import random
 from typing import Any, Iterable
 
 
-BENCHMARK_NAME = "phase11_systematicity_v1"
+SYSTEMATICITY_BENCHMARK_NAME = "phase11_systematicity_v1"
 REQUIRED_COUNTERPART_TYPES = (
     "rescue_donor",
     "rescue_target",
@@ -87,7 +87,7 @@ CONSTRUCTION_PLANS = {
 
 
 @dataclass(slots=True)
-class Phase11SchemaRecord:
+class SystematicitySchemaRecord:
     item_id: str
     benchmark_name: str
     split: str
@@ -139,10 +139,10 @@ def generate_schema_records(
     dev_families: int,
     gen_families: int,
     seed: int = 13,
-    benchmark_name: str = BENCHMARK_NAME,
-) -> list[Phase11SchemaRecord]:
+    benchmark_name: str = SYSTEMATICITY_BENCHMARK_NAME,
+) -> list[SystematicitySchemaRecord]:
     rng = random.Random(seed)
-    records: list[Phase11SchemaRecord] = []
+    records: list[SystematicitySchemaRecord] = []
     for split_name, family_count in (("train", train_families), ("dev", dev_families), ("gen", gen_families)):
         plans = CONSTRUCTION_PLANS[split_name]
         for family_index in range(family_count):
@@ -160,8 +160,8 @@ def generate_schema_records(
     return records
 
 
-def build_counterpart_families(records: Iterable[Phase11SchemaRecord]) -> list[dict[str, Any]]:
-    grouped: dict[str, list[Phase11SchemaRecord]] = {}
+def build_counterpart_families(records: Iterable[SystematicitySchemaRecord]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[SystematicitySchemaRecord]] = {}
     for record in records:
         grouped.setdefault(record.counterpart_family_id, []).append(record)
 
@@ -201,7 +201,7 @@ def build_counterpart_families(records: Iterable[Phase11SchemaRecord]) -> list[d
     return families
 
 
-def summarize_schema_records(records: Iterable[Phase11SchemaRecord]) -> dict[str, Any]:
+def summarize_schema_records(records: Iterable[SystematicitySchemaRecord]) -> dict[str, Any]:
     records = list(records)
     families = build_counterpart_families(records)
     by_split: dict[str, int] = {}
@@ -214,7 +214,7 @@ def summarize_schema_records(records: Iterable[Phase11SchemaRecord]) -> dict[str
             by_construction_family.get(record.construction_family, 0) + 1
         )
     return {
-        "benchmark_name": records[0].benchmark_name if records else BENCHMARK_NAME,
+        "benchmark_name": records[0].benchmark_name if records else SYSTEMATICITY_BENCHMARK_NAME,
         "record_count": len(records),
         "family_count": len(families),
         "required_counterpart_types": list(REQUIRED_COUNTERPART_TYPES),
@@ -241,7 +241,7 @@ def _build_family_records(
     family_split: str,
     family_plan: dict[str, Any],
     rng: random.Random,
-) -> list[Phase11SchemaRecord]:
+) -> list[SystematicitySchemaRecord]:
     predicate = rng.choice(PREDICATES)
     context_predicate = rng.choice(CONTEXT_PREDICATES)
     filler_pool = rng.sample(FILLERS, 4)
@@ -334,7 +334,7 @@ def _build_family_records(
         },
     )
 
-    records: list[Phase11SchemaRecord] = []
+    records: list[SystematicitySchemaRecord] = []
     for spec in item_specs:
         schema_id = f"{family_id}:{spec['counterpart_type']}"
         target_form = build_target_form(
@@ -345,7 +345,7 @@ def _build_family_records(
             theme_modifier=str(spec["theme_modifier"]),
         )
         records.append(
-            Phase11SchemaRecord(
+            SystematicitySchemaRecord(
                 item_id=schema_id,
                 benchmark_name=benchmark_name,
                 split=str(spec["split"]),
@@ -375,3 +375,8 @@ def _build_family_records(
             )
         )
     return records
+
+
+# Backward-compatible aliases for older internal call sites.
+BENCHMARK_NAME = SYSTEMATICITY_BENCHMARK_NAME
+Phase11SchemaRecord = SystematicitySchemaRecord

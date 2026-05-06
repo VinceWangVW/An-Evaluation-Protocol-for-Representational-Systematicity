@@ -7,19 +7,19 @@ from pathlib import Path
 from statistics import mean
 from typing import Any
 
-from data.phase11_schema import (
+from data.systematicity_schema import (
     CONTEXT_FILLERS,
     CONTEXT_PREDICATES,
     FILLERS,
     MODIFIERS,
     PREDICATES,
-    Phase11SchemaRecord,
+    SystematicitySchemaRecord,
     build_counterpart_families,
     build_target_form,
     summarize_schema_records,
 )
-from data.phase11_surface import render_template_candidates
-from data.phase11_validation import select_primary_candidates, summarize_validated_candidates, validate_surface_candidate
+from data.surface_templates import render_template_candidates
+from data.surface_validation import select_primary_candidates, summarize_validated_candidates, validate_surface_candidate
 from eval.harness import aggregate_metrics
 from interventions.generation import (
     GEOMETRY_CROSS_STEP_BRIDGE_OBJECT_CLASS,
@@ -146,7 +146,7 @@ def _build_truthfulness_family_records(
     family_index: int,
     split_name: str,
     rng: random.Random,
-) -> list[Phase11SchemaRecord]:
+) -> list[SystematicitySchemaRecord]:
     predicate_pool = {row["lemma"]: row for row in PREDICATES}
     blueprint = _class_blueprint(object_class)
     if family_name == FAMILY_PREDICATE_SANITY:
@@ -241,7 +241,7 @@ def _build_truthfulness_family_records(
             "allowed_delta": "modifier_swap",
         },
     )
-    records: list[Phase11SchemaRecord] = []
+    records: list[SystematicitySchemaRecord] = []
     for spec in item_specs:
         target_agent = str(spec["agent"])
         target_theme = str(spec["theme"])
@@ -256,7 +256,7 @@ def _build_truthfulness_family_records(
             theme_modifier=str(spec["theme_modifier"]),
         )
         records.append(
-            Phase11SchemaRecord(
+            SystematicitySchemaRecord(
                 item_id=schema_id,
                 benchmark_name=benchmark_name,
                 split=str(spec["split"]),
@@ -302,7 +302,7 @@ def build_truthfulness_benchmarks(config: dict[str, Any]) -> dict[str, Any]:
     rng = random.Random(int(config.get("seed") or 22))
     for object_class in CLASS_ORDER:
         benchmark_name = _benchmark_name(object_class)
-        schema_records: list[Phase11SchemaRecord] = []
+        schema_records: list[SystematicitySchemaRecord] = []
         for family_name in FAMILY_ORDER:
             for split_name in ("train", "dev", "gen"):
                 for family_index in range(_family_record_count(config, split_name)):

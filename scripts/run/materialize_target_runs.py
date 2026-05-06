@@ -13,7 +13,7 @@ SRC_DIR = PROJECT_ROOT / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-from models.target_panels import load_phase11_target_panel
+from models.target_panels import load_target_panel
 
 
 def parse_args() -> argparse.Namespace:
@@ -149,7 +149,7 @@ def _run_target_materialization(*, env: dict[str, str], discovery_cmd: list[str]
 
 def main() -> None:
     args = parse_args()
-    panel = load_phase11_target_panel(args.panel_config)
+    panel = load_target_panel(args.panel_config)
     env = os.environ.copy()
     hf_endpoint = args.hf_endpoint or panel.hf_endpoint
     operationalization_family = str(panel.metadata.get("operationalization_family") or "").strip()

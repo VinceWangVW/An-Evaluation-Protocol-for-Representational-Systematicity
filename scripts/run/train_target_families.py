@@ -15,7 +15,7 @@ from eval.harness import evaluate_benchmark
 from models.behavior_seq2seq import HfSeq2SeqBehaviorModel, Seq2SeqBehaviorConfig
 from models.control_filters import filter_examples_for_control
 from models.target_panels import (
-    load_phase11_target_panel,
+    load_target_panel,
     resolve_target_model_name_or_path,
     summarize_target_split,
 )
@@ -35,7 +35,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    panel = load_phase11_target_panel(args.panel_config)
+    panel = load_target_panel(args.panel_config)
     benchmark_name = args.benchmark_override or panel.benchmark
     default_model_name_or_path = args.model_name_or_path_override or panel.model_name_or_path
     panel_name = args.panel_name_override or panel.panel_name

@@ -6,16 +6,17 @@ from pathlib import Path
 from typing import Any
 
 from .control_filters import (
-    Phase11ControlPanel,
-    Phase11ControlSpec,
+    ControlPanel,
+    ControlSpec,
     filter_examples_for_control,
+    load_control_panel,
     resolve_model_name_or_path,
     summarize_control_split,
 )
 
 
 @dataclass(slots=True)
-class Phase12StateRunSpec:
+class StateRunSpec:
     control_id: str
     behavior_run: str
     phase11_prefix: str
@@ -50,23 +51,27 @@ class Phase12StateRunSpec:
     encoder_geometry_noise_std: float | None = None
 
 
-def load_phase12_control_panel(path: str | Path) -> Phase11ControlPanel:
-    payload = json.loads(Path(path).read_text(encoding="utf-8"))
-    controls = [Phase11ControlSpec(**control) for control in payload.pop("controls", [])]
-    return Phase11ControlPanel(controls=controls, **payload)
+def load_state_control_panel(path: str | Path) -> ControlPanel:
+    return load_control_panel(path)
 
 
-def load_phase12_state_run_panel(path: str | Path) -> dict[str, Any]:
+def load_state_run_panel(path: str | Path) -> dict[str, Any]:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
-    payload["runs"] = [Phase12StateRunSpec(**run) for run in payload.get("runs") or []]
+    payload["runs"] = [StateRunSpec(**run) for run in payload.get("runs") or []]
     return payload
 
 
 __all__ = [
-    "Phase12StateRunSpec",
+    "StateRunSpec",
     "filter_examples_for_control",
-    "load_phase12_control_panel",
-    "load_phase12_state_run_panel",
+    "load_state_control_panel",
+    "load_state_run_panel",
     "resolve_model_name_or_path",
     "summarize_control_split",
 ]
+
+
+# Backward-compatible aliases for older internal call sites.
+Phase12StateRunSpec = StateRunSpec
+load_phase12_control_panel = load_state_control_panel
+load_phase12_state_run_panel = load_state_run_panel

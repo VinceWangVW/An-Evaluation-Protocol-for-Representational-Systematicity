@@ -3,10 +3,10 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from .phase11_schema import Phase11SchemaRecord
+from .systematicity_schema import SystematicitySchemaRecord
 
 
-def build_realization_prompt(record: Phase11SchemaRecord, num_candidates: int) -> str:
+def build_realization_prompt(record: SystematicitySchemaRecord, num_candidates: int) -> str:
     voice_instruction = (
         "Use active voice so the agent appears before the predicate and the theme appears after it."
         if record.voice == "active"
@@ -33,7 +33,7 @@ def build_realization_prompt(record: Phase11SchemaRecord, num_candidates: int) -
     )
 
 
-def render_template_candidates(record: Phase11SchemaRecord, num_candidates: int = 3) -> list[dict[str, Any]]:
+def render_template_candidates(record: SystematicitySchemaRecord, num_candidates: int = 3) -> list[dict[str, Any]]:
     candidates: list[dict[str, Any]] = []
     for variant_index in range(num_candidates):
         candidates.append(
@@ -50,7 +50,7 @@ def render_template_candidates(record: Phase11SchemaRecord, num_candidates: int 
 
 def realize_with_nuwa(
     *,
-    record: Phase11SchemaRecord,
+    record: SystematicitySchemaRecord,
     client: Any,
     model: str,
     num_candidates: int = 3,
@@ -86,7 +86,7 @@ def realize_with_nuwa(
     return realized
 
 
-def _render_template(record: Phase11SchemaRecord, variant_index: int) -> str:
+def _render_template(record: SystematicitySchemaRecord, variant_index: int) -> str:
     if record.voice == "active":
         base_variants = (
             f"The {record.agent_modifier} {record.agent} {record.predicate_past} the {record.theme_modifier} {record.theme}.",

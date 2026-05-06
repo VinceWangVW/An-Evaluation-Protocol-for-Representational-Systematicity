@@ -7,7 +7,7 @@ from typing import Any
 
 
 @dataclass(slots=True)
-class Phase11ControlSpec:
+class ControlSpec:
     control_id: str
     run_name: str
     expected_states: dict[str, str]
@@ -50,20 +50,20 @@ class Phase11ControlSpec:
 
 
 @dataclass(slots=True)
-class Phase11ControlPanel:
+class ControlPanel:
     panel_name: str
     benchmark: str
     model_name_or_path: str
     prompt_style: str = "raw"
     hf_endpoint: str | None = None
-    controls: list[Phase11ControlSpec] = field(default_factory=list)
+    controls: list[ControlSpec] = field(default_factory=list)
     metadata: dict[str, Any] = field(default_factory=dict)
 
 
-def load_phase11_control_panel(path: str | Path) -> Phase11ControlPanel:
+def load_control_panel(path: str | Path) -> ControlPanel:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
-    controls = [Phase11ControlSpec(**control) for control in payload.pop("controls", [])]
-    return Phase11ControlPanel(controls=controls, **payload)
+    controls = [ControlSpec(**control) for control in payload.pop("controls", [])]
+    return ControlPanel(controls=controls, **payload)
 
 
 def filter_examples_for_control(
@@ -88,7 +88,7 @@ def filter_examples_for_control(
 def summarize_control_split(
     *,
     benchmark: str,
-    control: Phase11ControlSpec,
+    control: ControlSpec,
     train_examples: list[dict[str, Any]],
     eval_examples: list[dict[str, Any]],
     model_name_or_path: str,
@@ -152,3 +152,9 @@ def resolve_model_name_or_path(
             raise KeyError(f"Control {control_id} requested unknown checkpoint source: {reuse_checkpoint_from}")
         return str(trained_runs[reuse_checkpoint_from]["trained_model_path"])
     return str(control_model_name_or_path or default_model_name_or_path)
+
+
+# Backward-compatible aliases for older internal call sites.
+Phase11ControlSpec = ControlSpec
+Phase11ControlPanel = ControlPanel
+load_phase11_control_panel = load_control_panel

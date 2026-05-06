@@ -10,11 +10,11 @@ from .canonicalize import (
     infer_surface_features,
     normalize_whitespace,
 )
-from .phase11_schema import Phase11SchemaRecord, REQUIRED_COUNTERPART_TYPES, build_counterpart_families
+from .systematicity_schema import SystematicitySchemaRecord, REQUIRED_COUNTERPART_TYPES, build_counterpart_families
 from .schema import CanonicalExample
 
 
-def validate_surface_candidate(record: Phase11SchemaRecord, candidate: dict[str, Any]) -> dict[str, Any]:
+def validate_surface_candidate(record: SystematicitySchemaRecord, candidate: dict[str, Any]) -> dict[str, Any]:
     text = normalize_whitespace(str(candidate.get("text", "")))
     lowered = text.lower()
     predicate_surface = record.predicate_past if record.voice == "active" else record.predicate_participle
@@ -39,7 +39,7 @@ def validate_surface_candidate(record: Phase11SchemaRecord, candidate: dict[str,
 
 def select_primary_candidates(
     *,
-    schema_records: Iterable[Phase11SchemaRecord],
+    schema_records: Iterable[SystematicitySchemaRecord],
     validated_candidates: Iterable[dict[str, Any]],
     selection_strategy: str = "shortest",
 ) -> tuple[list[dict[str, Any]], list[CanonicalExample], dict[str, Any]]:
@@ -87,7 +87,7 @@ def select_primary_candidates(
 
 def summarize_counterpart_integrity(
     *,
-    schema_records: Iterable[Phase11SchemaRecord],
+    schema_records: Iterable[SystematicitySchemaRecord],
     selected_item_ids: set[str],
 ) -> dict[str, Any]:
     families = build_counterpart_families(schema_records)
@@ -141,7 +141,7 @@ def summarize_validated_candidates(validated_candidates: Iterable[dict[str, Any]
     }
 
 
-def _build_canonical_example(record: Phase11SchemaRecord, text: str) -> CanonicalExample:
+def _build_canonical_example(record: SystematicitySchemaRecord, text: str) -> CanonicalExample:
     role_signature = infer_role_signature(text, record.target_form)
     metadata = {
         **record.metadata,
@@ -170,7 +170,7 @@ def _build_canonical_example(record: Phase11SchemaRecord, text: str) -> Canonica
     )
 
 
-def _validate_voice_order(text: str, record: Phase11SchemaRecord) -> bool:
+def _validate_voice_order(text: str, record: SystematicitySchemaRecord) -> bool:
     lowered = text.lower()
     agent_index = lowered.find(record.agent.lower())
     theme_index = lowered.find(record.theme.lower())
@@ -185,7 +185,7 @@ def _validate_voice_order(text: str, record: Phase11SchemaRecord) -> bool:
     return theme_index < predicate_index and by_index != -1 and by_index < agent_index
 
 
-def _validate_context_requirement(lowered: str, record: Phase11SchemaRecord) -> bool:
+def _validate_context_requirement(lowered: str, record: SystematicitySchemaRecord) -> bool:
     if record.embedding_depth <= 0:
         return True
     return (

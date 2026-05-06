@@ -7,7 +7,7 @@ from typing import Any
 
 
 @dataclass(slots=True)
-class Phase11TargetSpec:
+class TargetSpec:
     target_id: str
     run_name: str
     phase11_prefix: str | None = None
@@ -69,7 +69,7 @@ class Phase11TargetSpec:
 
 
 @dataclass(slots=True)
-class Phase11TargetPanel:
+class TargetPanel:
     panel_name: str
     benchmark: str
     model_name_or_path: str
@@ -82,20 +82,20 @@ class Phase11TargetPanel:
     match_set_limit: int = 24
     surface_backend: str | None = None
     hf_endpoint: str | None = None
-    targets: list[Phase11TargetSpec] = field(default_factory=list)
+    targets: list[TargetSpec] = field(default_factory=list)
     metadata: dict[str, Any] = field(default_factory=dict)
 
 
-def load_phase11_target_panel(path: str | Path) -> Phase11TargetPanel:
+def load_target_panel(path: str | Path) -> TargetPanel:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
-    targets = [Phase11TargetSpec(**target) for target in payload.pop("targets", [])]
-    return Phase11TargetPanel(targets=targets, **payload)
+    targets = [TargetSpec(**target) for target in payload.pop("targets", [])]
+    return TargetPanel(targets=targets, **payload)
 
 
 def summarize_target_split(
     *,
     benchmark: str,
-    target: Phase11TargetSpec,
+    target: TargetSpec,
     train_examples: list[dict[str, Any]],
     eval_examples: list[dict[str, Any]],
     model_name_or_path: str,
@@ -180,3 +180,9 @@ def resolve_target_model_name_or_path(
             raise KeyError(f"Target {target_id} requested unknown checkpoint source: {reuse_checkpoint_from}")
         return str(trained_runs[reuse_checkpoint_from]["trained_model_path"])
     return str(target_model_name_or_path or default_model_name_or_path)
+
+
+# Backward-compatible aliases for older internal call sites.
+Phase11TargetSpec = TargetSpec
+Phase11TargetPanel = TargetPanel
+load_phase11_target_panel = load_target_panel

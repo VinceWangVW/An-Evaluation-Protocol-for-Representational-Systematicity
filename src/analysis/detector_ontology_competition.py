@@ -6,9 +6,9 @@ from pathlib import Path
 from statistics import mean
 from typing import Any
 
-from data.phase11_schema import Phase11SchemaRecord, summarize_schema_records
-from data.phase11_surface import render_template_candidates
-from data.phase11_validation import (
+from data.systematicity_schema import SystematicitySchemaRecord, summarize_schema_records
+from data.surface_templates import render_template_candidates
+from data.surface_validation import (
     select_primary_candidates,
     summarize_validated_candidates,
     validate_surface_candidate,
@@ -184,18 +184,18 @@ def _record_metadata(
 
 def _retag_records(
     *,
-    base_records: list[Phase11SchemaRecord],
+    base_records: list[SystematicitySchemaRecord],
     detector_family: str,
     family_name: str,
     benchmark_name: str,
-) -> list[Phase11SchemaRecord]:
+) -> list[SystematicitySchemaRecord]:
     family_case = _detector_family_case(detector_family, family_name)
-    records: list[Phase11SchemaRecord] = []
+    records: list[SystematicitySchemaRecord] = []
     for base in base_records:
         metadata = dict(base.metadata)
         metadata.update(_record_metadata(detector_family=detector_family, family_name=family_name))
         records.append(
-            Phase11SchemaRecord(
+            SystematicitySchemaRecord(
                 item_id=base.item_id,
                 benchmark_name=benchmark_name,
                 split=base.split,
@@ -230,7 +230,7 @@ def _build_detector_family_records(
     family_index: int,
     split_name: str,
     rng: random.Random,
-) -> list[Phase11SchemaRecord]:
+) -> list[SystematicitySchemaRecord]:
     registry_row = _detector_registry()[detector_family]
     benchmark_name = str(registry_row["benchmark_name"])
     object_class = str(registry_row["object_class"])
@@ -262,7 +262,7 @@ def build_detector_competition_benchmarks(config: dict[str, Any]) -> dict[str, A
     for detector_family in DETECTOR_ORDER:
         benchmark_name = _benchmark_name(detector_family)
         object_class = str(_detector_registry()[detector_family]["object_class"])
-        schema_records: list[Phase11SchemaRecord] = []
+        schema_records: list[SystematicitySchemaRecord] = []
         for family_name in FAMILY_ORDER:
             for split_name in ("train", "dev", "gen"):
                 for family_index in range(_family_record_count(config, split_name)):
