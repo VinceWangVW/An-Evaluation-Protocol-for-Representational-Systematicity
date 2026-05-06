@@ -2,15 +2,22 @@
 
 ## Overview
 
-This repository contains the cleaned, latest-stage code and frozen result artifacts for the bounded representational systematicity project.
+This repository contains the code, configuration, and frozen result artifacts for the ED Track submission *From Behavioral Systematicity to Causal Use: An Evaluation Protocol for Representational Systematicity*.
 
-It keeps the final mainline and latest detector branches only:
+The repository is organized around a small number of reproducible workflow layers:
+
+- `src/`: core analysis, intervention, evaluation, and data-processing modules
+- `scripts/run/`: command-line entry points for the main experimental workflows
+- `configs/`: frozen experiment and protocol configuration files
+- `data/`: processed benchmark inputs and task metadata
+- `reports/` and `artifacts/`: frozen outputs used to inspect and reproduce the reported conclusions
+- `tests/`: regression and workflow-level validation
+
+The main top-level workflows exposed in this repository are:
 
 - `family closure`: family-level closure for `G2_distributed_geometry`
 - `detector truthfulness`: detector-truthfulness validation
 - `detector competition`: detector ontology competition
-
-Earlier exploratory branches were intentionally excluded from this repository layout so that the codebase reads like a focused, final-stage research repository rather than a full laboratory log.
 
 ## Repository Layout
 
