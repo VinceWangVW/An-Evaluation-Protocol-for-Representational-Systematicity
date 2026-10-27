@@ -116,7 +116,9 @@ scoring formulas and output layout.
 `src/` contains data, model, intervention and decision code. `configs/` declares
 experiments and profiles. `reports/` and `artifacts/` contain experiment reports
 and intermediate objects; new runs write their outputs under the chosen run
-directory. Software test inputs and expected outputs are in `tests/fixtures/`.
+directory. [The report index](reports/index.json) identifies report groups and
+preserved reference records by their source and status. Software test inputs
+and expected outputs are in `tests/fixtures/`.
 
 ```bash
 python3 -m pytest -q

@@ -1,0 +1,52 @@
+{
+  "status": "released_generator_index_example",
+  "family_index": 47,
+  "counterpart_family_id": "phase11_systematicity_v2:train:family_00047",
+  "historical_MS_047_identity": "not established; do not attach the paper-reported metrics to these inputs",
+  "source": "data/processed/phase11_systematicity_v2.jsonl",
+  "source_sha256": "92b95cb4674b569951b60f9f3ad62f2ba69b66d1d4baf8ca514814d03c043920",
+  "items": [
+    {
+      "item_id": "phase11_systematicity_v2:train:family_00047:rescue_donor",
+      "counterpart_type": "rescue_donor",
+      "input_text": "The gentle Caleb contacted the steady Opal.",
+      "target_form": "contact(agent=caleb,theme=opal,agent_mod=gentle,theme_mod=steady)"
+    },
+    {
+      "item_id": "phase11_systematicity_v2:train:family_00047:rescue_target",
+      "counterpart_type": "rescue_target",
+      "input_text": "The gentle Caleb who visited the guide contacted the steady Opal.",
+      "target_form": "contact(agent=caleb,theme=opal,agent_mod=gentle,theme_mod=steady)"
+    },
+    {
+      "item_id": "phase11_systematicity_v2:train:family_00047:role_swap",
+      "counterpart_type": "role_swap",
+      "input_text": "The steady Opal who visited the guide contacted the gentle Caleb.",
+      "target_form": "contact(agent=opal,theme=caleb,agent_mod=steady,theme_mod=gentle)"
+    },
+    {
+      "item_id": "phase11_systematicity_v2:train:family_00047:agent_swap",
+      "counterpart_type": "agent_swap",
+      "input_text": "The gentle Nolan who visited the guide contacted the steady Opal.",
+      "target_form": "contact(agent=nolan,theme=opal,agent_mod=gentle,theme_mod=steady)"
+    },
+    {
+      "item_id": "phase11_systematicity_v2:train:family_00047:theme_swap",
+      "counterpart_type": "theme_swap",
+      "input_text": "The gentle Caleb who visited the guide contacted the steady Hazel.",
+      "target_form": "contact(agent=caleb,theme=hazel,agent_mod=gentle,theme_mod=steady)"
+    },
+    {
+      "item_id": "phase11_systematicity_v2:train:family_00047:filler_swap",
+      "counterpart_type": "filler_swap",
+      "input_text": "The gentle Nolan who visited the guide contacted the steady Hazel.",
+      "target_form": "contact(agent=nolan,theme=hazel,agent_mod=gentle,theme_mod=steady)"
+    },
+    {
+      "item_id": "phase11_systematicity_v2:train:family_00047:modifier_swap",
+      "counterpart_type": "modifier_swap",
+      "input_text": "The steady Caleb who visited the guide contacted the gentle Opal.",
+      "target_form": "contact(agent=caleb,theme=opal,agent_mod=steady,theme_mod=gentle)"
+    }
+  ]
+}

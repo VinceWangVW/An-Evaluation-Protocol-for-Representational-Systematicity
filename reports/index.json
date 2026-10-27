@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "report_groups": [
+    {
+      "path": "reports/behavior_runs",
+      "kind": "behavior_evaluation",
+      "description": "Checkpoint evaluation summaries."
+    },
+    {
+      "path": "reports/protocol_runs",
+      "kind": "protocol_evaluation",
+      "description": "Generation intervention and control summaries."
+    },
+    {
+      "path": "reports/family_closure",
+      "kind": "geometry_closure",
+      "description": "Frozen-basis closure outputs."
+    },
+    {
+      "path": "reports/release/paper_reported_summary.json",
+      "kind": "publication_reference",
+      "description": "Preserved reference ledger with its original source and status fields."
+    },
+    {
+      "path": "reports/walkthrough",
+      "kind": "reference_records",
+      "description": "Preserved reference records; each record retains its source and status."
+    },
+    {
+      "path": "tests/fixtures/analysis/expected",
+      "kind": "software_test_outputs",
+      "description": "Expected outputs for synthetic software test inputs."
+    },
+    {
+      "path": "data/walkthrough",
+      "kind": "declared_experiment_inputs",
+      "description": "Configured seven-input walkthrough panel and exact pairs."
+    }
+  ],
+  "audit_output_contract": {
+    "directory": "User-selected run directory",
+    "records": ["baseline_predictions.jsonl", "span_vectors.jsonl", "raw_operations.jsonl", "L1_per_set.jsonl", "L2_decisions.jsonl", "summary.json"],
+    "provenance": "Each run identifies its checkpoint, data hash, seed, configuration and decision profile."
+  }
+}
