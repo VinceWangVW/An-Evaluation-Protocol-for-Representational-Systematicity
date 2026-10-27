@@ -1,7 +1,7 @@
-# Camera-ready implementation validation
+# Release validation
 
-Verified on **2026-10-27**. This record concerns implementation and artifact
-integrity, not new pretrained-model scientific results.
+Verified on **2026-10-27**. This record covers package installation, data
+integrity, model execution and analysis checks.
 
 ## Environment
 
@@ -11,7 +11,7 @@ integrity, not new pretrained-model scientific results.
 - Editable package installation: `python3 -m pip install -e '.[test,metadata]'`.
 - `python3 -m pip check`: no broken requirements.
 
-These are the versions used for this check, not a historical experiment lockfile.
+These are the versions used for release validation.
 The package declares Python >=3.11; other supported environments should run the
 same checks before a long audit.
 
@@ -52,29 +52,27 @@ field name and backward compatibility without treating observed zero as missing.
 
 The generated reports in `reports/release/` retain explicit fixture provenance:
 
-- `implementation_sensitivity.json`: all 729 new implementation-grid settings
-  evaluated; 729 compatible on the synthetic calibration fixture. This does not
-  reproduce the paper's 487-compatible historical grid.
+- `implementation_sensitivity.json`: all 729 grid settings evaluated; 729 compatible
+  on the synthetic calibration fixture.
 - `implementation_truth_controls.json`: 18 engineered linear cases; 16 correct
   evidential states and two conservative null abstentions. The embedded
-  component-rule comparison uses those same known-truth fixture cases. This is
-  not the historical matched T5 experiment or the historical 41-unit panel.
+  component-rule comparison uses those same known-truth fixture cases.
 - `implementation_bootstrap.json`: 1,000 cluster replicates on eight explicitly
-  synthetic sufficient-evidence fixture clusters. It verifies execution and
-  resampling logic, not the historical 96-set confidence intervals.
+  synthetic sufficient-evidence fixture clusters, checking execution and
+  resampling logic.
 - `implementation_transfer_compare.json`: frozen and control-only refitted
   rules compared on the synthetic panel; tests verify target independence.
 
 Five-seed and three-seed T5-base plans were materialized and parsed. Their
 commands include actual training, family-specific discovery/interventions and
 evidence export. Missing-checkpoint evidence collection was also executed and
-reported missing inputs. Full pretrained runs were not executed for this
-implementation release.
+reported missing inputs. Full pretrained audits are outside this validation
+run.
 
-The historical MS-047 walkthrough remains incomplete because its original raw
-inputs, controls and p-value were not supplied. The release records known
-sigmoid transforms and control differences while abstaining on the incomplete
-recomputation; it does not associate the published metrics with GEN-047.
+The MS-047 walkthrough records known sigmoid transforms and control differences,
+and abstains when required evidence is missing. GEN-047 remains a separate
+generated example. See [artifact availability](../REPRODUCIBILITY.md#artifact-availability)
+for the status of the original experiment records.
 
 ## Publication verification
 

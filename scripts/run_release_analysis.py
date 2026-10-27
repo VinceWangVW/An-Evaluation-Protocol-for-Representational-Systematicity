@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run implementation-facing analyses; expensive model runs require --execute."""
+"""Run BOUNDED-RS analyses; model runs require --execute."""
 from __future__ import annotations
 
 import argparse

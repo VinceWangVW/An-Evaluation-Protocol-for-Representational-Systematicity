@@ -1,6 +1,6 @@
 {
   "version": "camera-ready-implementation-v1",
-  "provenance": "Explicit implementation profile; not the unavailable historical scorer.",
+  "provenance": "Versioned decision profile; see docs/ANALYSIS_GUIDE.md for scope and formulas.",
   "features": {
     "b0_gen_clause_f1": {
       "boundary": 0.570312,

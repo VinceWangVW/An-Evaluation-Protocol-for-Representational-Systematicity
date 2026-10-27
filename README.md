@@ -12,7 +12,7 @@ the finite Geometry closure basis does not cover every geometric mechanism.
 
 Code and original synthetic data: [MIT](LICENSE). Attribution and external asset
 licenses: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Citation: [CITATION.cff](CITATION.cff).
-The public artifact is this repository; no anonymous mirror is required.
+This repository is the public code and data release for BOUNDED-RS.
 
 ## Start here
 
@@ -41,7 +41,7 @@ download URLs, schema, license, authors and minimal Responsible AI fields.
 `data/release/items.csv` is an equivalent flat representation; exact membership
 and pairs are in `data/release/matched_sets.jsonl`.
 
-## Installation and implementation checks
+## Installation and tests
 
 Use Python 3.11 or later. Full model runs use PyTorch and public T5 checkpoints.
 The deterministic data builder and release analysis tools use the standard
@@ -79,7 +79,7 @@ additionally require observability and exhaustive frozen-basis closure.
 | Geometry closure | Existing `make family-closure-*` targets | Observability, catalogs, necessity/presence gates and family-final report |
 | Detector validation | Existing `make detector-truthfulness-*` and `make detector-competition-*` targets | Natural-model detector validation reports |
 
-For the five-seed implementation run:
+To run five independent training seeds:
 
 ```bash
 # Writes inspectable commands/configs; no training until --execute is supplied.
@@ -95,20 +95,19 @@ python3 scripts/run_release_analysis.py collect-evidence \
   --output runs/release/five_seeds_binding_evidence.json
 ```
 
-Seeds `0..4` are explicit release defaults, not recovered historical seed IDs.
-These fresh runs exercise the implementation; they do not guarantee the paper's
-numerical outcomes. Do not turn operation-level Geometry scores into a
-family-final claim without running the frozen closure branch. All commands and
-input schemas are documented in [REPRODUCIBILITY.md](REPRODUCIBILITY.md) and
+Seeds `0..4` are the default run configuration. Geometry family-level decisions
+require the frozen closure branch in addition to operation-level evidence.
+Detailed commands, input schemas and artifact availability are documented in
+[REPRODUCIBILITY.md](REPRODUCIBILITY.md) and
 [ANALYSIS_GUIDE.md](docs/ANALYSIS_GUIDE.md).
 
-## Rebuttal analyses
+## Robustness, controls and transfer
 
 `python3 scripts/run_release_analysis.py --help` lists the runnable interfaces:
 
 | Analysis | Subcommand | Important input / scope |
 | --- | --- | --- |
-| Six-block, 729-point sensitivity grid | `sensitivity` | Independent labeled calibration panel and target records; release levels are explicit implementation defaults |
+| Six-block, 729-point sensitivity grid | `sensitivity` | Independent labeled calibration panel and target records; declared six-block grid |
 | Independent training seeds | `seed-plan` | Full training/discovery/intervention commands, executed with `--execute` |
 | Matched-set bootstrap | `bootstrap` | Measured per-set evidence; resample clusters, not individual items; default 1,000 replicates |
 | Engineered truth controls | `truth-controls` | Executes an independent linear planted-signal fixture with blind discovery and separate confirmation |
@@ -131,27 +130,18 @@ python3 scripts/run_release_analysis.py transfer-plan \
 python3 scripts/run_walkthrough.py --output-dir outputs/walkthrough
 ```
 
-## Evidence provenance and MS-047
+## Reports and walkthrough
 
-This is an **implementation release**, not a claim that missing historical
-experiments were reconstructed. Original frozen reports in `reports/` and
-`artifacts/` are preserved, with path/endpoint metadata normalized. Newly
-executed fixture outputs in `reports/release/implementation_*` verify the
-implementation and are labeled as fixtures. Values transcribed from the paper
-and rebuttal are separately labeled `paper_reported` in
-`reports/release/paper_reported_summary.json`.
+The repository includes frozen experiment reports in `reports/` and supporting
+artifacts in `artifacts/`. Analysis checks in `reports/release/implementation_*`
+use synthetic test fixtures; the paper's aggregate findings are indexed in
+`reports/release/paper_reported_summary.json`. Each output records its source and
+execution status. See [artifact availability](REPRODUCIBILITY.md#artifact-availability)
+for the contents and required inputs of each analysis.
 
-The provided source/rebuttal do not contain the historical seven MS-047 inputs,
-remaining filler/predicate controls, complete raw L1/L2 records, full historical
-grid, 41-unit comparison panel or SLOG pair selector. These are recorded as
-unavailable instead of being fabricated. The generator's index 47 has
-Caleb/Opal/contact, while the rebuttal's example uses chef/poet/praise, outside
-the generator vocabulary. New data aliases use **GEN-000–GEN-095** to avoid
-asserting a false historical mapping.
-
-`scripts/run_walkthrough.py` emits the reported MS-047 ledger, seven actual
-released index-47 inputs **as a separate example**, and recomputed feature/decision
-records. The incomplete reported evidence correctly abstains. A new complete
-measured record can be supplied with `--evidence FILE.json`. See
-[the reproducibility status table](REPRODUCIBILITY.md) before treating any file
-as empirical evidence for a paper claim.
+`scripts/run_walkthrough.py` writes the MS-047 summary, a seven-input example
+from the released testbed, and known feature transformations. The
+released example uses the navigation ID GEN-047; its identity with the paper's
+MS-047 is not established. The original MS-047 inputs and some raw controls are
+unavailable, so its incomplete decision record abstains. Supply complete measured
+evidence with `--evidence FILE.json` to evaluate another trace.

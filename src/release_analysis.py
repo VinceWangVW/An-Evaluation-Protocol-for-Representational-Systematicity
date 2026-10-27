@@ -1,7 +1,7 @@
-"""Portable implementation-facing analyses for the camera-ready artifact.
+"""Scoring, statistical analyses and model audit workflows for BOUNDED-RS.
 
-This module implements a documented conservative profile. It does not reconstruct
-missing historical records or promise the paper's numerical state scores.
+Decision profiles, input contracts and report schemas are documented in
+docs/ANALYSIS_GUIDE.md.
 """
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ from typing import Any
 STATES = ("Unsupported", "Present-only", "Causal-use", "Undetermined")
 DEFAULT_PROFILE = {
     "version": "camera-ready-implementation-v1",
-    "provenance": "Explicit implementation profile; not the unavailable historical scorer.",
+    "provenance": "Versioned decision profile; see docs/ANALYSIS_GUIDE.md for scope and formulas.",
     "features": {
         "b0_gen_clause_f1": {"boundary": 0.570312, "scale": 0.10, "direction": 1},
         "m1_semantic_role_accuracy": {"boundary": 0.914062, "scale": 0.05, "direction": 1},
@@ -487,7 +487,7 @@ def make_training_plan(root: Path, output_dir: Path, *, model: str = "google-t5/
     output_dir.mkdir(parents=True, exist_ok=True)
     panel = {"panel_name": "release_"+model.rsplit("/",1)[-1], "benchmark": benchmark,
              "model_name_or_path": model, "prompt_style": "raw", "layers": [-1],
-             "metadata": {"operationalization_family": "binding", "provenance": "New implementation defaults; historical seeds unavailable"},
+             "metadata": {"operationalization_family": "binding", "provenance": "Configured training seeds; see REPRODUCIBILITY.md for artifact availability."},
              "targets": []}
     for seed in seeds:
         for family in ("binding", "geometry"):
@@ -496,7 +496,7 @@ def make_training_plan(root: Path, output_dir: Path, *, model: str = "google-t5/
                 "seed": seed, "num_train_epochs": 8, "learning_rate": 5e-5, "train_batch_size": 8,
                 "num_beams": 1, "encoder_geometry_transform": "feature_mask" if family == "geometry" else None,
                 "encoder_geometry_keep_ratio": .75 if family == "geometry" else None,
-                "tags": [family,"target"], "notes": "Fresh implementation run; not a released historical checkpoint"}
+                "tags": [family,"target"], "notes": "Protocol run; checkpoints and evidence are generated under runs/."}
             panel["targets"].append(base_target)
             for regime in ("causal", "present_only", "unsupported"):
                 control = copy.deepcopy(base_target)

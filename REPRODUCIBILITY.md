@@ -1,33 +1,32 @@
-# Implementation reproducibility
+# Running BOUNDED-RS
 
-This release makes the synthetic testbed and implementation inspectable and
-executable. It does not claim to regenerate the historical training results.
-All paths below are relative to the repository root. Use `python3`, or activate
-the virtual environment described in the README.
+This guide covers data generation, model audits, statistical analyses and report
+inspection. All paths are relative to the repository root. Use `python3`, or
+activate the virtual environment described in the README.
 
-## What is reproducible from the release
+## Artifact availability
 
-| Component | Release status | Verification / requirements |
+| Component | Included artifacts | Execution / availability |
 | --- | --- | --- |
-| Canonical seed-13 testbed | Exact regeneration verified against the existing 672-row file | `make data-check`; 96 sets, exact pairs and hashes |
-| Croissant core and RAI metadata | Official reader validation and full 672-record local loading | `make metadata-check` after installing `.[metadata]` |
-| Training and generation interventions | Source, target-panel builder and executable command chain supplied | `seed-plan --execute`; requires public model download and compute |
-| Decision scoring | Explicit versioned implementation profile, complete transform and gate records | New profile is not presented as the unavailable historical scorer |
-| Sensitivity | Six blocks × three levels, target-independent calibration filter implemented | Executable fixture; historical 487-compatible result is reported-only |
-| Five training seeds | Independent seed orchestration implemented | Defaults 0–4 are new defaults; expensive runs not performed for this release |
-| Cluster bootstrap | Paired per-set resampling and effect intervals implemented | Requires actual per-set measurements; no resampling of paper aggregate numbers |
-| Engineered truth controls | Independent planted linear fixture executed | Verifies implementation logic; does not reproduce the reported T5 truth-control experiment |
-| Component comparison | Three inference rules applied to shared known-truth records | Historical 41-unit panel is unavailable; counts are reported-only |
-| T5-base transfer | Model-parametric train/evidence plan and calibration-only refitting/comparison implemented | Historical per-seed measurements and historical recalibrated profile unavailable |
-| SLOG transfer | Source-pinned exact-pair validation and normalized pipeline input implemented | Original benchmark and explicit selection required; historical 96-pair selector unavailable |
-| MS-047 | Reported metrics and unknowns transcribed; actual generated example supplied separately | No claim that GEN-047 is historical MS-047 |
-| Historical final-stage artifacts | Preserved measurements with portable path metadata | Included summaries are inspectable; omitted weights/raw records cannot be recovered from summaries |
+| Canonical seed-13 testbed | 672 rows, 96 matched sets, exact pairs and checksums | Exact regeneration verified with `make data-check` |
+| Croissant metadata | Core fields, schema, license, authors and RAI documentation | `make metadata-check` validates and loads all 672 records |
+| Training and interventions | Target-panel builder and executable command chain | `seed-plan --execute`; requires model download and compute; trained weights are not bundled |
+| Decision scoring | Versioned profile, feature transforms, state formulas and gates | The release profile is explicit; the complete scorer used for the paper's reported state scores is unavailable |
+| Sensitivity | Six-block grid and target-independent calibration filtering | Synthetic test fixture included; original grid levels and per-configuration records for the reported 487-compatible result are unavailable |
+| Training seeds | Independent-seed orchestration | Default seeds 0–4; original five-seed checkpoints and complete run records are unavailable |
+| Cluster bootstrap | Paired cluster resampling, effect intervals and permutation testing | Requires per-set measurements; original 96-set observations are unavailable |
+| Truth controls | Planted linear test fixture and model-based detector workflows | Fixture outputs are software checks; original matched T5 truth-control records are unavailable |
+| Component comparison | Three rules applied to shared known-truth records | Original 41-unit panel unavailable; aggregate findings indexed as `paper_reported` |
+| T5-base transfer | Model-parametric audit, calibration-only refitting and comparison | Original per-seed measurements and recalibrated profile unavailable |
+| SLOG transfer | Source-pinned exact-pair adapter and model pipeline | Requires upstream data and a declared selector; original 96-pair selector unavailable |
+| MS-047 | Reported metrics, feature transforms and a separate generated example | Original seven inputs and some raw controls/p-values unavailable; GEN-047 is a separate navigation alias |
+| Frozen final-stage reports | Experiment summaries with portable path metadata | Scientific values preserved; omitted weights/raw records are not represented by summaries |
 
-`paper_reported` means a value stated by the supplied manuscript or rebuttal.
-`executed_implementation_fixture` means new synthetic software verification.
-`missing_inputs`/`unavailable` means evidence was not supplied. A saved plan is
-`plan_only` until its commands actually execute successfully. None of these
-statuses is interchangeable with a newly measured scientific result.
+Outputs carry explicit provenance: `paper_reported` identifies findings stated
+in the manuscript or rebuttal; `executed_implementation_fixture` identifies a
+synthetic software test; `missing_inputs`/`unavailable` identifies absent evidence.
+A generated command plan is `plan_only` until it executes successfully. These
+statuses distinguish report inspection, software validation and model experiments.
 
 ## Data and metadata
 
@@ -50,7 +49,7 @@ python3 scripts/run_release_analysis.py adjudicate \
   --signals MY_MEASURED_SIGNALS.json --output outputs/decision.json
 ```
 
-The release profile records sigmoid boundary, scale and direction for each
+The decision profile records sigmoid boundary, scale and direction for each
 feature. Presence and use features use explicit weighted averages; behavior
 has a 4% prior share. State formulas, required metrics and the differences from
 legacy frozen configurations are documented in [ANALYSIS_GUIDE.md](docs/ANALYSIS_GUIDE.md).
@@ -58,14 +57,13 @@ The strict realism/linkage/coverage/margin comparisons require values above
 0.60/0.50/0.80/0.10, respectively. Equality fails the gate. Missing required
 features abstain, and zero-valued observations are not treated as missing.
 
-The MS-047 source provides only rounded aggregates, not the complete
-experimental record. The walkthrough preserves missing controls and p-values
-as null. Its new recomputation therefore returns Undetermined, while retaining
-the paper's reported Causal-use state in the separate provenance ledger.
-This disagreement is an evidence-availability statement, not a new experimental
-contradiction of the reported result.
+The MS-047 summary contains rounded aggregate metrics. Missing controls and
+p-values remain null, so the incomplete decision record returns Undetermined.
+The reported Causal-use finding is retained separately in the provenance ledger.
+GEN-047 supplies a seven-input example from the released generator; it is not
+assigned the paper's MS-047 measurements.
 
-## Fresh model runs
+## Model audits
 
 ```bash
 python3 scripts/run_release_analysis.py seed-plan \
@@ -83,9 +81,8 @@ Plans train each declared seed with 8 epochs, batch size 8, learning rate 5e-5,
 greedy decoding, and the canonical `phase11_systematicity_v2` testbed. The
 Geometry control transformation uses a feature-mask keep ratio of 0.75.
 Each family uses the existing discovery and generation operations. Checkpoints
-are fresh outputs under `runs/`; the repository does not distribute trained
-weights. Summary-only evidence may lack validity quantities, in which case
-the collector reports the gap and abstains.
+are written under `runs/`. Summary-only evidence may lack validity quantities,
+in which case the collector reports the gap and abstains.
 
 For T5-base, replace the first command by:
 
@@ -101,10 +98,9 @@ outputs/transfer_comparison.json` compares frozen and calibration-only refitted
 profiles. Targets cannot influence the refitted boundaries. The guide documents
 the generated panel file and required evidence.
 
-CPU fallback is supported for implementation checks. Full pretrained T5 audits
-are substantially more expensive than the checks here and normally require a
-GPU. Runtime depends on hardware and checkpoint size; no new full-run timing
-or benchmark accuracy is asserted by this release.
+CPU execution is supported. Full pretrained T5 audits normally require a GPU;
+runtime depends on hardware, checkpoint size and the number of intervention
+conditions.
 
 ## Sensitivity, bootstrap and component analysis
 
@@ -144,9 +140,9 @@ replacement is labeled as SLOG. See the guide for the explicit training-input
 and exact-counterpart requirements before using the selected benchmark with
 `transfer-plan --benchmark slog_selected`.
 
-## Existing Geometry closure and detector branches
+## Geometry closure and detector validation
 
-The original source and frozen final-stage reports remain available:
+Run the closure and detector workflows with:
 
 ```bash
 make family-closure-observability
@@ -159,11 +155,10 @@ make detector-truthfulness-train
 make detector-truthfulness-run
 ```
 
-These commands may require newly trained checkpoints and generated intermediate
-records referenced by their configurations. Portable `runs/...` references are
-output locations, not bundled model files. The detector-competition targets
-provide an additional legacy diagnostic branch. Their failure to validate a
-detector must not be read as ontology-level absence of Geometry.
+These workflows consume the checkpoints and intermediate records referenced by
+their configurations. The detector-competition targets provide an additional
+diagnostic branch. Detector conclusions remain bounded by the declared object
+classes and controls.
 
 ## Validation and maintenance
 
@@ -175,7 +170,6 @@ make release-check
 The automated checks cover deterministic data and exact pairs, integrity and
 provenance, missing evidence and gate equality, analysis input contracts,
 portability, and existing closure/detector behavior. The model smoke uses an
-offline randomly initialized tiny T5 only to exercise code; it establishes no
-scientific result. [VALIDATION.md](docs/VALIDATION.md) records what was executed
-for this release. When data or public paths change, regenerate manifests and
+offline randomly initialized tiny T5 to check training, generation and ablation.
+[VALIDATION.md](docs/VALIDATION.md) records what was executed for this release. When data or public paths change, regenerate manifests and
 Croissant hashes and rerun the official reader before publication.

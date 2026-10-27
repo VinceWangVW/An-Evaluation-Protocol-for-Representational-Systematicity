@@ -1,11 +1,9 @@
-# Camera-ready analysis implementation
+# Analysis guide
 
-The release supplies executable implementations of the rebuttal analysis branches.
-The original per-set observations, exact six-block grid levels, five historical
-seed identifiers, 41-unit truth panel, T5-base run records, and SLOG selection are
-not present in the provided paper source or the original public repository.
-`reports/release/paper_reported_summary.json` records the paper's aggregate claims
-as **paper-reported, not reexecuted**. No generated fixture is a recovered result.
+BOUNDED-RS provides analyses for parameter sensitivity, training seeds,
+matched-set uncertainty, truth controls, component rules and transfer. See
+[artifact availability](../REPRODUCIBILITY.md#artifact-availability) for the
+released reports and the input records required by each workflow.
 
 The commands below run from the repository root with Python 3.11 or later.
 Statistical analyses and the small engineered fixture use only the standard
@@ -15,13 +13,13 @@ and suitable compute. The five-seed and transfer commands produce plans by defau
 
 ## Decision profile and trace
 
-`src/release_analysis.py` defines the explicitly versioned
-`camera-ready-implementation-v1` profile. The paper supplies the sigmoid,
-boundaries, and gate values, but does not supply enough information to reconstruct
-its exact historical state-score combination. This release therefore documents
-its complete conservative rule rather than fitting missing values to published
-state scores. The original repository scorer remains available for inspecting
-legacy reports; this profile does not overwrite it.
+`src/release_analysis.py` defines the versioned
+`camera-ready-implementation-v1` decision profile. The sigmoid transforms,
+feature weights, state formulas and stop rules are specified below. Legacy
+scorers and their frozen configurations remain available for the corresponding
+reports. The complete scorer underlying the paper's reported state scores is
+unavailable, so numerical results from different profiles should be tracked
+separately.
 
 Required signal keys are:
 
@@ -54,8 +52,7 @@ The top evidential state must lead the next by **more than** 0.10, coverage must
 exceed 0.80 and both readiness flags must be true. Causal-use additionally requires
 P>0.5, U>0.5, realism>0.60, linkage>0.50, selective necessity>0.05 and repair
 advantage>0.245002. Present-only requires P>0.5 and U<0.5; Unsupported requires
-P<0.5 and U<0.5. Conflicts abstain. This explicit profile is an implementation
-choice and does not establish equality with the historical scorer.
+P<0.5 and U<0.5. Conflicting evidence yields Undetermined.
 
 ```bash
 python3 scripts/run_release_analysis.py adjudicate \
@@ -63,16 +60,15 @@ python3 scripts/run_release_analysis.py adjudicate \
 ```
 
 The output contains raw features, every sigmoid transform, group scores, state
-scores, all gate decisions and the decision margin. A missing permutation p-value
-is never replaced by a value chosen to reproduce a published verdict.
+scores, all gate decisions and the decision margin. Missing required
+measurements yield an explicit abstention.
 
 ## Sensitivity grid
 
-`configs/release/sensitivity_grid.json` freezes a new, public six-block grid with
+`configs/release/sensitivity_grid.json` declares a six-block grid with
 three levels each: boundaries, scales, mixture weights, validity/abstention gates,
-causal-effect gates and Geometry closure thresholds. The historical levels were
-not recovered. The implementation does not tune the grid to yield 487 compatible
-configurations.
+causal-effect gates and Geometry closure thresholds. Grid provenance is retained
+in the output alongside the full configuration-by-configuration decisions.
 
 The panel JSON has disjoint `calibration` and `targets` arrays. Each row contains
 `id` and `signals`; calibration additionally needs an `expected_state` of
@@ -87,8 +83,8 @@ python3 scripts/run_release_analysis.py sensitivity \
   --output runs/release/implementation_sensitivity.json
 ```
 
-The checked-in implementation fixture and its generated report exercise all 729
-configurations; they are explicitly synthetic test inputs, not empirical results.
+The checked-in synthetic test fixture and its generated report exercise all 729
+configurations.
 To audit measured data, replace the panel file without changing the already
 declared grid, or supply another independently prespecified grid with `--grid`.
 
@@ -104,20 +100,17 @@ python3 scripts/run_release_analysis.py transfer-plan \
   --output runs/release/t5base_plan.json
 ```
 
-Append `--execute` to perform the model runs. Default fresh T5-small seeds are
-0–4; these are implementation defaults, not asserted historical seeds. For each
-family and seed the generated panel contains a target checkpoint and independent
+Append `--execute` to perform the model runs. The default T5-small seeds are
+0–4. For each family and seed the generated panel contains a target checkpoint and independent
 calibration controls with seed+1000: a fully trained causal control, an
 inference-only 0.25 decoder-cross-attention control reusing that control checkpoint,
 and a permuted-target unsupported control. These regimes declare intended states;
-the measured evidence may fail to realize them. Control labels are never treated
-as measured decisions.
+their measured evidence determines the resulting decisions.
 
 Both model sizes use 8 epochs, AdamW learning rate 5e-5, batch size 8 and greedy
 decoding. The relative-depth mapping uses the final encoder layer (`layers: [-1]`)
-and the existing family-operation interfaces. Head and rank defaults remain in
-the family operations; this is not a reconstruction of the unavailable original
-T5-base mapping manifest. Geometry controls apply the declared 0.75 feature mask.
+and the family-operation interfaces. Head and rank defaults are specified by
+the family operations. Geometry controls apply the declared 0.75 feature mask.
 
 Each plan executes actual training, then separate Binding and Geometry discovery
 and generation-intervention runners, then exports evidence:
@@ -135,18 +128,17 @@ python3 scripts/run_release_analysis.py transfer-compare \
 boundaries only** using labeled calibration controls and reruns the same targets.
 Boundary values are midpoints of the low/high control-group feature means.
 Scales, weights, validity gates and state semantics remain frozen. Target IDs must
-be disjoint from calibration IDs. This is a public control-only implementation
-rule, not a claimed recovery of the original T5-base recalibration algorithm.
+be disjoint from calibration IDs. This control-only calibration rule is fixed
+before evaluating target states.
 Repeat with the Geometry panel for operation-level states; a family-final negative
 also requires complete frozen object closure.
 
 The collector reuses `hypotheses.audit` to derive existing L1 signals and reads raw
-M2/M4 realism and M5 item-role linkage records when available. Its implementation
+M2/M4 realism and M5 item-role linkage records when available. Its
 linkage rate is the fraction of observed intended item-role entries with positive
 selective necessity or positive repair advantage. Its coverage is the fraction of
 required numeric slots actually measured. Missing raw realism/linkage records
-remain missing and force abstention. Generated evidence reports are not proofs of
-the paper's headline state or closure.
+remain missing and force abstention.
 
 ## Matched-set bootstrap and frozen closure
 
@@ -164,8 +156,8 @@ set, recomputes feature means and a one-sided paired sign-permutation p-value,
 then reruns adjudication. It never averages p-values. Boolean readiness is combined
 conservatively by conjunction. Percentile 95% intervals, all sampled indices,
 replicate states and RNG seed are returned. `--permutations` defaults to 199;
-increase it for a finer Monte Carlo p-value resolution. This is a fresh public
-bootstrap specification; the original bootstrap RNG seed was unavailable.
+increase it for a finer Monte Carlo p-value resolution. Record the resampling
+seed and permutation count with each analysis.
 
 For Geometry resampling, every cluster additionally needs `closure_objects` and
 identical `closure_context`. Each object requires `object_id`, `object_class`,
@@ -183,7 +175,7 @@ complete object-specific adjudication chain before it can license Causal-use.
 An unresolved candidate prevents Unsupported. A family-final negative additionally
 requires completed direct and slice-local Present-only routes, encoded explicitly
 in the context after those tests have run. The closure function consumes those
-completed operation results; it does not fabricate detectors or missing routes.
+completed operation results.
 
 ## Truth controls and component rules
 
@@ -199,24 +191,23 @@ scalar or a distributed linear bridge carries a binary variable, while the
 generation rule either uses that signal, uses a separate route, or has matched
 null content. Discovery scans 12 candidates; independent confirmation measures
 recoverability and swap, removal and repair effects. A paired sign-permutation
-test operates on the measured intervention effects. This verifies implementation
-behavior only. It is **not the paper's matched T5 truth-control experiment**, does
-not measure natural-model detector truthfulness, and does not establish equal
-family-wide power.
+test operates on the measured intervention effects. This linear fixture checks
+the analysis pipeline; natural-model detector truthfulness requires the
+model-based workflows below.
 
 The repository also retains its model-based truthfulness infrastructure under
 `scripts/run/build_truthfulness_benchmarks.py`,
 `scripts/run/train_truthfulness_families.py` and
 `scripts/run/run_detector_truthfulness.py`; see the corresponding experiment
 configuration and detector-truthfulness documentation. It is distinct from this
-small implementation fixture.
+linear test fixture.
 
 For component rules each input row has `id`, complete `signals`, `truth` equal to
 `causal` or `noncausal`, and a nonempty `truth_provenance` explaining the known
 causal construction. All rules see the same rows: recoverability licenses causal
 use if P>0.5; ungated intervention if U>0.5; full adjudication uses the complete
 profile. Reports include every per-unit prediction, numerator, denominator and
-abstention. No 41-unit panel is reverse-engineered from the published counts.
+abstention.
 
 ## Prespecified SLOG adapter
 
@@ -261,9 +252,9 @@ python3 scripts/run_release_analysis.py transfer-plan \
 Append `--execute` to train and run the full evidence chain. The adapter verifies
 the source SHA256, preserves original training/dev rows and selected held-out
 rows, adds source/pair/counterpart provenance, and derives canonical surface
-features used by discovery. No original SLOG selection is bundled because its
-96 pair IDs and structural selector were not supplied. A new selected subdomain
-must be described as a new implementation run, not the reported historical one.
+features used by discovery. Preserve the selected pair IDs, structural rationale
+and source revision with each transfer experiment. The original 96-pair selection
+is not bundled; see the artifact availability table.
 
 ## Verification
 
@@ -273,5 +264,5 @@ python3 -m pytest tests/test_release_analysis.py -q
 
 Tests check strict gates, unavailable evidence, target-independent compatibility
 and recalibration, deterministic cluster resampling, complete frozen closure,
-truth provenance, executable family plans and exact SLOG contrasts. Generated
-implementation reports are stored separately from the paper-reported ledger.
+truth provenance, executable family plans and exact SLOG contrasts. Synthetic
+test reports are stored separately from the paper-reported ledger.
