@@ -1,0 +1,367 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "sc": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "dct": "http://purl.org/dc/terms/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "conformsTo": "dct:conformsTo",
+    "citeAs": "cr:citeAs",
+    "recordSet": "cr:recordSet",
+    "field": "cr:field",
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "source": "cr:source",
+    "fileObject": "cr:fileObject",
+    "extract": "cr:extract",
+    "column": "cr:column",
+    "key": "cr:key",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "equivalentProperty": "cr:equivalentProperty",
+    "fileProperty": "cr:fileProperty",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "separator": "cr:separator",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "BOUNDED-RS controlled semantic-parsing testbed",
+  "description": "96 synthetic seven-item matched sets (672 rows), with exact role/filler/modifier contrasts and repair pairs for bounded representational-systematicity audits. See docs/DATA_CARD.md for construction and limits.",
+  "url": "https://github.com/VinceWangVW/An-Evaluation-Protocol-for-Representational-Systematicity/tree/main/data/release",
+  "version": "1.0.0",
+  "license": "https://spdx.org/licenses/MIT.html",
+  "datePublished": "2026-10-27",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Boyu Cao"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Wenshuo Wang"
+    }
+  ],
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "BOUNDED-RS authors"
+  },
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "keywords": [
+    "systematicity",
+    "semantic parsing",
+    "synthetic data",
+    "mechanistic interpretability"
+  ],
+  "citeAs": "@misc{boundedrs2026, author={Boyu Cao and Wenshuo Wang}, title={BOUNDED-RS: A Bounded Evaluation Protocol and Testbed for Representational Systematicity}, year={2026}, url={https://github.com/VinceWangVW/An-Evaluation-Protocol-for-Representational-Systematicity}}",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "data/release/items.csv",
+      "name": "items.csv",
+      "description": "Canonical 672-item testbed, seed 13.",
+      "contentUrl": "https://raw.githubusercontent.com/VinceWangVW/An-Evaluation-Protocol-for-Representational-Systematicity/main/data/release/items.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "f7b20e5a2ee9c9128935fc24d64f330a8f15f20cad16aa4b3dc35dd9bc3f2131",
+      "contentSize": "206565 B"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "data/processed/phase11_systematicity_v2.jsonl",
+      "name": "phase11_systematicity_v2.jsonl",
+      "description": "Canonical 672-item testbed, seed 13.",
+      "contentUrl": "https://raw.githubusercontent.com/VinceWangVW/An-Evaluation-Protocol-for-Representational-Systematicity/main/data/processed/phase11_systematicity_v2.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "92b95cb4674b569951b60f9f3ad62f2ba69b66d1d4baf8ca514814d03c043920",
+      "contentSize": "783784 B"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "items",
+      "name": "items",
+      "description": "672 canonical items; matched_set_id defines the 96 clusters.",
+      "key": [
+        {
+          "@id": "items/item_id"
+        }
+      ],
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "items/item_id",
+          "name": "item_id",
+          "description": "Unique canonical item identifier.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "item_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/matched_set_id",
+          "name": "matched_set_id",
+          "description": "Original counterpart-family identifier and bootstrap cluster key.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "matched_set_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/release_index_id",
+          "name": "release_index_id",
+          "description": "New zero-based generator-order alias; not a historical walkthrough identifier.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "release_index_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/split",
+          "name": "split",
+          "description": "Item-level train, dev or gen split; gen easy donors are in dev.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "split"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/family_split",
+          "name": "family_split",
+          "description": "Family assignment before gen easy donors are moved to dev.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "family_split"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/counterpart_type",
+          "name": "counterpart_type",
+          "description": "rescue_donor, rescue_target, agent_swap, theme_swap, role_swap, filler_swap or modifier_swap.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "counterpart_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/construction_family",
+          "name": "construction_family",
+          "description": "Hard-target active/passive voice crossed with relative-clause depth 0/1.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "construction_family"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/voice",
+          "name": "voice",
+          "description": "Actual item voice, active or passive.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "voice"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/embedding_depth",
+          "name": "embedding_depth",
+          "description": "Actual item relative-clause depth, 0 or 1.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "embedding_depth"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/input_text",
+          "name": "input_text",
+          "description": "Canonical shortest validated English template realization.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "input_text"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/target_form",
+          "name": "target_form",
+          "description": "Gold logical form containing predicate, role fillers and modifier attachments.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "target_form"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/predicate",
+          "name": "predicate",
+          "description": "Predicate lemma.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "predicate"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/agent",
+          "name": "agent",
+          "description": "Synthetic agent filler.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "agent"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/theme",
+          "name": "theme",
+          "description": "Synthetic theme filler.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "theme"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/agent_modifier",
+          "name": "agent_modifier",
+          "description": "Agent-attached adjective.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "agent_modifier"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/theme_modifier",
+          "name": "theme_modifier",
+          "description": "Theme-attached adjective.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "data/release/items.csv"
+            },
+            "extract": {
+              "column": "theme_modifier"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "rai:dataLimitations": "Finite English templates, 16 invented name tokens, 5 main predicates and a role-filler logical-form schema. Not representative of natural language, all geometric mechanisms, other architectures or general model ability. Historical model evidence is separate from this deterministic dataset.",
+  "rai:dataBiases": "The construction explicitly privileges exact discrete role/filler contrasts; fixed names, adjectives, syntactic templates and omitted phenomena can favor the tested Binding operations. No population sampling or demographic balance is claimed.",
+  "rai:personalSensitiveInformation": "No personal or sensitive information. Names are synthetic filler tokens and do not identify human subjects.",
+  "rai:dataUseCases": "Intended for matched behavioral contrasts, generation-time intervention/repair development and bounded evidence-to-claim audits. Not validated for model ranking, fairness/safety certification or naturalistic language performance.",
+  "rai:dataSocialImpact": "Can support more qualified causal claims and transparent negative results. Overgeneralizing finite template results or unvalidated detectors could mislead; keep family, task, architecture and closure-basis limits explicit.",
+  "rai:hasSyntheticData": true,
+  "prov:wasDerivedFrom": "https://raw.githubusercontent.com/VinceWangVW/An-Evaluation-Protocol-for-Representational-Systematicity/main/src/data/systematicity_schema.py",
+  "prov:wasGeneratedBy": {
+    "@type": "prov:Activity",
+    "description": "Programmatic semantic designs with random.Random(13), 64/16/16 train/dev/gen families, three deterministic templates each, rule-based validation, shortest-valid selection. Labels come directly from semantic designs; no human annotation or language-model generation. Command: python3 scripts/build_release_data.py --seed 13. See data/release/manifest.json and docs/DATA_CARD.md."
+  }
+}

@@ -10,7 +10,7 @@
     "geometry_h1_familyA_promote_seed41_top034",
     "geometry_h1_familyA_promote_seed41_alt034"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 13 R2 promotion sweep for Family A.",
     "This panel thickens the low-access Family A corridor with deterministic layer policies rather than another keep-ratio micro-sweep."

@@ -8,10 +8,10 @@
     "G1_binding": "H0"
   },
   "model_name_or_path": "google-t5/t5-small",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_shortcut_h2_easy_only_parser_e8",
+  "trained_model_path": "runs/phase11_controls/phase11_shortcut_h2_easy_only_parser_e8",
   "family": "seq2seq_lm",
   "prompt_style": "raw",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "training": {
     "trained": true,
     "epochs": 8,
@@ -34,7 +34,7 @@
     "precision": "bf16",
     "num_beams": 1,
     "decoder_cross_attention_scale": null,
-    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_shortcut_h2_easy_only_parser_e8"
+    "save_directory": "runs/phase11_controls/phase11_shortcut_h2_easy_only_parser_e8"
   },
   "training_filter_summary": {
     "panel_benchmark": "phase11_systematicity_v1",
@@ -63,7 +63,7 @@
     "num_train_epochs": 8,
     "seed": 17,
     "notes": "Shortcut-dominant candidate trained only on surface-easy constructions.",
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_shortcut_h2_easy_only_parser_e8",
+    "trained_model_path": "runs/phase11_controls/phase11_shortcut_h2_easy_only_parser_e8",
     "evaluation": {
       "overall": {
         "count": 160,

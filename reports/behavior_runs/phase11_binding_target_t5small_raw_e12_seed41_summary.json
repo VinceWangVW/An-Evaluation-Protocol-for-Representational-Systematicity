@@ -4,10 +4,10 @@
   "target_id": "binding_target_t5small_e12_seed41",
   "run_name": "phase11_binding_target_t5small_raw_e12_seed41",
   "model_name_or_path": "google-t5/t5-small",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41",
+  "trained_model_path": "runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41",
   "family": "seq2seq_lm",
   "prompt_style": "raw",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "training": {
     "trained": true,
     "epochs": 12,
@@ -34,7 +34,7 @@
     "precision": "bf16",
     "num_beams": 1,
     "decoder_cross_attention_scale": null,
-    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41"
+    "save_directory": "runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41"
   },
   "training_filter_summary": {
     "panel_benchmark": "phase11_systematicity_v2",
@@ -59,7 +59,7 @@
       "target"
     ],
     "notes": "Stronger checkpoint family: t5-small with more epochs on the same training regime.",
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41",
+    "trained_model_path": "runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41",
     "evaluation": {
       "overall": {
         "count": 224,

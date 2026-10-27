@@ -7,10 +7,10 @@
     "G2_distributed_geometry": "H0"
   },
   "model_name_or_path": "google-t5/t5-small",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h0_permuted_seed29",
+  "trained_model_path": "runs/phase12_controls/phase12_geometry_h0_permuted_seed29",
   "family": "seq2seq_lm",
   "prompt_style": "parser_instruction",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "precision": "auto",
   "num_beams": 1,
   "decoder_cross_attention_scale": null,
@@ -44,7 +44,7 @@
     "encoder_geometry_seed": 129,
     "encoder_geometry_keep_ratio": 0.75,
     "encoder_geometry_noise_std": null,
-    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h0_permuted_seed29"
+    "save_directory": "runs/phase12_controls/phase12_geometry_h0_permuted_seed29"
   },
   "training_filter_summary": {
     "panel_benchmark": "phase11_systematicity_v2",
@@ -76,7 +76,7 @@
     "num_train_epochs": 8,
     "seed": 29,
     "notes": "Held-out H0 geometry control trained independently on permuted targets.",
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h0_permuted_seed29",
+    "trained_model_path": "runs/phase12_controls/phase12_geometry_h0_permuted_seed29",
     "evaluation": {
       "overall": {
         "count": 224,

@@ -1,0 +1,138 @@
+{
+  "version": "implementation-grid-v1",
+  "provenance": "New declared implementation grid, not recovered historical grid; does not target 487 compatible configurations.",
+  "blocks": [
+    {
+      "name": "score_boundaries",
+      "levels": [
+        {
+          "features.b0_gen_clause_f1.boundary": 0.545312,
+          "features.m1_semantic_role_accuracy.boundary": 0.9015620000000001,
+          "features.m1_surface_control_gap.boundary": -0.098438,
+          "features.m2_advantage_mean.boundary": 0.232502,
+          "features.m2_permutation_p_value.boundary": 0.0475
+        },
+        {
+          "features.b0_gen_clause_f1.boundary": 0.570312,
+          "features.m1_semantic_role_accuracy.boundary": 0.914062,
+          "features.m1_surface_control_gap.boundary": -0.085938,
+          "features.m2_advantage_mean.boundary": 0.245002,
+          "features.m2_permutation_p_value.boundary": 0.05
+        },
+        {
+          "features.b0_gen_clause_f1.boundary": 0.5953120000000001,
+          "features.m1_semantic_role_accuracy.boundary": 0.926562,
+          "features.m1_surface_control_gap.boundary": -0.073438,
+          "features.m2_advantage_mean.boundary": 0.257502,
+          "features.m2_permutation_p_value.boundary": 0.052500000000000005
+        }
+      ]
+    },
+    {
+      "name": "score_scales",
+      "levels": [
+        {
+          "features.b0_gen_clause_f1.scale": 0.08000000000000002,
+          "features.m1_semantic_role_accuracy.scale": 0.04000000000000001,
+          "features.m1_surface_control_gap.scale": 0.04000000000000001,
+          "features.m2_advantage_mean.scale": 0.04000000000000001,
+          "features.m2_permutation_p_value.scale": 0.008
+        },
+        {
+          "features.b0_gen_clause_f1.scale": 0.1,
+          "features.m1_semantic_role_accuracy.scale": 0.05,
+          "features.m1_surface_control_gap.scale": 0.05,
+          "features.m2_advantage_mean.scale": 0.05,
+          "features.m2_permutation_p_value.scale": 0.01
+        },
+        {
+          "features.b0_gen_clause_f1.scale": 0.12,
+          "features.m1_semantic_role_accuracy.scale": 0.06,
+          "features.m1_surface_control_gap.scale": 0.06,
+          "features.m2_advantage_mean.scale": 0.06,
+          "features.m2_permutation_p_value.scale": 0.012
+        }
+      ]
+    },
+    {
+      "name": "mixture_weights",
+      "levels": [
+        {
+          "weights.presence_role": 0.5,
+          "weights.use_effect": 0.5,
+          "weights.behavior": 0.02
+        },
+        {
+          "weights.presence_role": 0.6,
+          "weights.use_effect": 0.6,
+          "weights.behavior": 0.04
+        },
+        {
+          "weights.presence_role": 0.7,
+          "weights.use_effect": 0.7,
+          "weights.behavior": 0.06
+        }
+      ]
+    },
+    {
+      "name": "validity_and_abstention_gates",
+      "levels": [
+        {
+          "gates.realism": 0.575,
+          "gates.linkage": 0.475,
+          "gates.coverage": 0.775,
+          "gates.margin": 0.07500000000000001
+        },
+        {
+          "gates.realism": 0.6,
+          "gates.linkage": 0.5,
+          "gates.coverage": 0.8,
+          "gates.margin": 0.1
+        },
+        {
+          "gates.realism": 0.625,
+          "gates.linkage": 0.525,
+          "gates.coverage": 0.8250000000000001,
+          "gates.margin": 0.125
+        }
+      ]
+    },
+    {
+      "name": "causal_effect_gates",
+      "levels": [
+        {
+          "gates.necessity": 0.04000000000000001,
+          "gates.repair": 0.1960016
+        },
+        {
+          "gates.necessity": 0.05,
+          "gates.repair": 0.245002
+        },
+        {
+          "gates.necessity": 0.06,
+          "gates.repair": 0.2940024
+        }
+      ]
+    },
+    {
+      "name": "geometry_closure",
+      "levels": [
+        {
+          "closure.discovery_gap": 0.04000000000000001,
+          "closure.necessity_gap": 0.04000000000000001,
+          "closure.null_max": 0.125
+        },
+        {
+          "closure.discovery_gap": 0.05,
+          "closure.necessity_gap": 0.05,
+          "closure.null_max": 0.1
+        },
+        {
+          "closure.discovery_gap": 0.06,
+          "closure.necessity_gap": 0.06,
+          "closure.null_max": 0.08333333333333334
+        }
+      ]
+    }
+  ]
+}

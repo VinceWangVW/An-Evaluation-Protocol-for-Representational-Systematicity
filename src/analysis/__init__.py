@@ -1,43 +1,6 @@
-from .phase6 import (
-    build_cross_run_differences,
-    build_run_overview,
-    build_signal_dashboard_rows,
-    build_support_long_table,
-    load_phase5_bundle,
-    render_signal_dashboard_svg,
-    render_support_heatmap_svg,
-    summarize_robustness,
-)
-from .phase9 import (
-    build_panel_membership,
-    build_phase9_run_overview,
-    build_protocol_observation_rows,
-    build_pairwise_flip_explanations,
-    freeze_signature_spec,
-    load_panel_config,
-    load_phase9_bundle,
-    summarize_explanatory_robustness,
-    summarize_protocol_observations,
-    validate_panel_config,
-)
+"""Analysis modules for the released BOUNDED-RS artifact.
 
-__all__ = [
-    "build_cross_run_differences",
-    "build_run_overview",
-    "build_signal_dashboard_rows",
-    "build_support_long_table",
-    "load_phase5_bundle",
-    "render_signal_dashboard_svg",
-    "render_support_heatmap_svg",
-    "summarize_robustness",
-    "build_panel_membership",
-    "build_phase9_run_overview",
-    "build_protocol_observation_rows",
-    "build_pairwise_flip_explanations",
-    "freeze_signature_spec",
-    "load_panel_config",
-    "load_phase9_bundle",
-    "summarize_explanatory_robustness",
-    "summarize_protocol_observations",
-    "validate_panel_config",
-]
+Import the required module explicitly, for example ``analysis.family_closure``.
+Keeping this namespace lightweight lets data and report utilities run without
+loading model dependencies or unreleased exploratory modules.
+"""

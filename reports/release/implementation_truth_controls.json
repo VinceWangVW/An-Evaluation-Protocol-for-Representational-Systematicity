@@ -1,0 +1,2035 @@
+{
+  "status": "executed_implementation_fixture",
+  "historical_result": false,
+  "design": "paired seeds, blind candidate selection, disjoint confirmation, explicit swap/removal/repair",
+  "rows": [
+    {
+      "id": "binding-0-causal",
+      "family": "binding",
+      "seed": 0,
+      "condition": "causal",
+      "planted_object": 6,
+      "selected_object": 6,
+      "discovery_correlations": [
+        0.0625,
+        0.21875,
+        0.0,
+        0.078125,
+        0.015625,
+        0.09375,
+        1.0,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.046875,
+        0.046875
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Causal-use",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 1.0,
+        "m2_permutation_p_value": 0.001,
+        "m3_selective_impairment_clause_f1": 0.4921875,
+        "m4_advantage_mean": 1.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Causal-use",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 1.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999997231971389
+          },
+          "m2_permutation_p_value": {
+            "raw": 0.001,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 0.9926084586557181
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.9970432173805707
+        },
+        "state_scores": {
+          "Causal-use": 0.9542571396938466,
+          "Present-only": 0.47709565100849877,
+          "Unsupported": 0.0457428603061534,
+          "Undetermined": 0.04574286030615338
+        },
+        "margin": 0.47716148868534786,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": true,
+          "repair": true
+        }
+      },
+      "truth": "causal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "binding-0-present_only",
+      "family": "binding",
+      "seed": 0,
+      "condition": "present_only",
+      "planted_object": 6,
+      "selected_object": 6,
+      "discovery_correlations": [
+        0.0625,
+        0.21875,
+        0.0,
+        0.078125,
+        0.015625,
+        0.09375,
+        1.0,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.046875,
+        0.046875
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Present-only",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Present-only",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.4778050747388289,
+          "Present-only": 0.9535477159635164,
+          "Unsupported": 0.5221949252611711,
+          "Undetermined": 0.046452284036483604
+        },
+        "margin": 0.43135279070234533,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "binding-0-null",
+      "family": "binding",
+      "seed": 0,
+      "condition": "null",
+      "planted_object": 6,
+      "selected_object": 5,
+      "discovery_correlations": [
+        0.09375,
+        0.0,
+        0.015625,
+        0.046875,
+        0.078125,
+        0.125,
+        0.078125,
+        0.015625,
+        0.015625,
+        0.03125,
+        0.125,
+        0.0625
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Unsupported",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 0.515625,
+        "m1_surface_control_gap": 0.015625,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Unsupported",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 0.515625,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.00034599506191442686
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.015625,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.8840403068803971
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.35382371978930754,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.21142693734642595,
+          "Present-only": 0.6871695785711136,
+          "Unsupported": 0.788573062653574,
+          "Undetermined": 0.21142693734642604
+        },
+        "margin": 0.10140348408246036,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "binding-1-causal",
+      "family": "binding",
+      "seed": 1,
+      "condition": "causal",
+      "planted_object": 2,
+      "selected_object": 2,
+      "discovery_correlations": [
+        0.046875,
+        0.03125,
+        1.0,
+        0.078125,
+        0.125,
+        0.09375,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.03125,
+        0.125,
+        0.03125
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Causal-use",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 1.0,
+        "m2_permutation_p_value": 0.001,
+        "m3_selective_impairment_clause_f1": 0.453125,
+        "m4_advantage_mean": 1.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Causal-use",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 1.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999997231971389
+          },
+          "m2_permutation_p_value": {
+            "raw": 0.001,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 0.9926084586557181
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.9970432173805707
+        },
+        "state_scores": {
+          "Causal-use": 0.9542571396938466,
+          "Present-only": 0.47709565100849877,
+          "Unsupported": 0.0457428603061534,
+          "Undetermined": 0.04574286030615338
+        },
+        "margin": 0.47716148868534786,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": true,
+          "repair": true
+        }
+      },
+      "truth": "causal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "binding-1-present_only",
+      "family": "binding",
+      "seed": 1,
+      "condition": "present_only",
+      "planted_object": 2,
+      "selected_object": 2,
+      "discovery_correlations": [
+        0.046875,
+        0.03125,
+        1.0,
+        0.078125,
+        0.125,
+        0.09375,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.03125,
+        0.125,
+        0.03125
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Present-only",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Present-only",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.4778050747388289,
+          "Present-only": 0.9535477159635164,
+          "Unsupported": 0.5221949252611711,
+          "Undetermined": 0.046452284036483604
+        },
+        "margin": 0.43135279070234533,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "binding-1-null",
+      "family": "binding",
+      "seed": 1,
+      "condition": "null",
+      "planted_object": 2,
+      "selected_object": 11,
+      "discovery_correlations": [
+        0.0625,
+        0.046875,
+        0.109375,
+        0.03125,
+        0.0625,
+        0.015625,
+        0.03125,
+        0.015625,
+        0.125,
+        0.078125,
+        0.078125,
+        0.171875
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Unsupported",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 0.546875,
+        "m1_surface_control_gap": 0.046875,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Undetermined",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 0.546875,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.0006462097486090948
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.046875,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9343957755466954
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.37414603606784363,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.22118164916012328,
+          "Present-only": 0.696924290384811,
+          "Unsupported": 0.7788183508398766,
+          "Undetermined": 0.2211816491601234
+        },
+        "margin": 0.08189406045506564,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": false,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "binding-2-causal",
+      "family": "binding",
+      "seed": 2,
+      "condition": "causal",
+      "planted_object": 0,
+      "selected_object": 0,
+      "discovery_correlations": [
+        1.0,
+        0.015625,
+        0.09375,
+        0.015625,
+        0.140625,
+        0.015625,
+        0.0625,
+        0.03125,
+        0.03125,
+        0.046875,
+        0.15625,
+        0.140625
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Causal-use",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 1.0,
+        "m2_permutation_p_value": 0.001,
+        "m3_selective_impairment_clause_f1": 0.53125,
+        "m4_advantage_mean": 1.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Causal-use",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 1.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999997231971389
+          },
+          "m2_permutation_p_value": {
+            "raw": 0.001,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 0.9926084586557181
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.9970432173805707
+        },
+        "state_scores": {
+          "Causal-use": 0.9542571396938466,
+          "Present-only": 0.47709565100849877,
+          "Unsupported": 0.0457428603061534,
+          "Undetermined": 0.04574286030615338
+        },
+        "margin": 0.47716148868534786,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": true,
+          "repair": true
+        }
+      },
+      "truth": "causal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "binding-2-present_only",
+      "family": "binding",
+      "seed": 2,
+      "condition": "present_only",
+      "planted_object": 0,
+      "selected_object": 0,
+      "discovery_correlations": [
+        1.0,
+        0.015625,
+        0.09375,
+        0.015625,
+        0.140625,
+        0.015625,
+        0.0625,
+        0.03125,
+        0.03125,
+        0.046875,
+        0.15625,
+        0.140625
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Present-only",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Present-only",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.4778050747388289,
+          "Present-only": 0.9535477159635164,
+          "Unsupported": 0.5221949252611711,
+          "Undetermined": 0.046452284036483604
+        },
+        "margin": 0.43135279070234533,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "binding-2-null",
+      "family": "binding",
+      "seed": 2,
+      "condition": "null",
+      "planted_object": 0,
+      "selected_object": 2,
+      "discovery_correlations": [
+        0.046875,
+        0.03125,
+        0.140625,
+        0.046875,
+        0.125,
+        0.078125,
+        0.015625,
+        0.078125,
+        0.046875,
+        0.046875,
+        0.078125,
+        0.015625
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Unsupported",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 0.4921875,
+        "m1_surface_control_gap": -0.0078125,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Unsupported",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 0.4921875,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.00021654621487750907
+          },
+          "m1_surface_control_gap": {
+            "raw": -0.0078125,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.8267132266600292
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.3308152183929382,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.20038285667616867,
+          "Present-only": 0.6761254979008564,
+          "Unsupported": 0.7996171433238313,
+          "Undetermined": 0.20038285667616873
+        },
+        "margin": 0.12349164542297486,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "cross_step_geometry-0-causal",
+      "family": "cross_step_geometry",
+      "seed": 0,
+      "condition": "causal",
+      "planted_object": 6,
+      "selected_object": 6,
+      "discovery_correlations": [
+        0.18750000000000006,
+        0.046875000000000014,
+        0.046875000000000014,
+        0.015625000000000003,
+        0.06250000000000001,
+        0.15625000000000003,
+        1.0000000000000002,
+        0.28125000000000006,
+        0.03125000000000001,
+        0.10937500000000003,
+        0.07812500000000001,
+        0.046875000000000014
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Causal-use",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 1.0,
+        "m2_permutation_p_value": 0.001,
+        "m3_selective_impairment_clause_f1": 0.484375,
+        "m4_advantage_mean": 1.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Causal-use",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 1.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999997231971389
+          },
+          "m2_permutation_p_value": {
+            "raw": 0.001,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 0.9926084586557181
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.9970432173805707
+        },
+        "state_scores": {
+          "Causal-use": 0.9542571396938466,
+          "Present-only": 0.47709565100849877,
+          "Unsupported": 0.0457428603061534,
+          "Undetermined": 0.04574286030615338
+        },
+        "margin": 0.47716148868534786,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": true,
+          "repair": true
+        }
+      },
+      "truth": "causal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "cross_step_geometry-0-present_only",
+      "family": "cross_step_geometry",
+      "seed": 0,
+      "condition": "present_only",
+      "planted_object": 6,
+      "selected_object": 6,
+      "discovery_correlations": [
+        0.18750000000000006,
+        0.046875000000000014,
+        0.046875000000000014,
+        0.015625000000000003,
+        0.06250000000000001,
+        0.15625000000000003,
+        1.0000000000000002,
+        0.28125000000000006,
+        0.03125000000000001,
+        0.10937500000000003,
+        0.07812500000000001,
+        0.046875000000000014
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Present-only",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Present-only",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.4778050747388289,
+          "Present-only": 0.9535477159635164,
+          "Unsupported": 0.5221949252611711,
+          "Undetermined": 0.046452284036483604
+        },
+        "margin": 0.43135279070234533,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "cross_step_geometry-0-null",
+      "family": "cross_step_geometry",
+      "seed": 0,
+      "condition": "null",
+      "planted_object": 6,
+      "selected_object": 0,
+      "discovery_correlations": [
+        0.10937500000000003,
+        0.0,
+        0.06250000000000001,
+        0.09375000000000003,
+        0.09375000000000003,
+        0.015625000000000003,
+        0.09375000000000003,
+        0.0,
+        0.07812500000000001,
+        0.0,
+        0.015625000000000003,
+        0.046875000000000014
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Unsupported",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 0.4921875,
+        "m1_surface_control_gap": -0.0078125,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Unsupported",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 0.4921875,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.00021654621487750907
+          },
+          "m1_surface_control_gap": {
+            "raw": -0.0078125,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.8267132266600292
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.3308152183929382,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.20038285667616867,
+          "Present-only": 0.6761254979008564,
+          "Unsupported": 0.7996171433238313,
+          "Undetermined": 0.20038285667616873
+        },
+        "margin": 0.12349164542297486,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "cross_step_geometry-1-causal",
+      "family": "cross_step_geometry",
+      "seed": 1,
+      "condition": "causal",
+      "planted_object": 2,
+      "selected_object": 2,
+      "discovery_correlations": [
+        0.07812499999999999,
+        0.015624999999999998,
+        0.9999999999999999,
+        0.015624999999999998,
+        0.031249999999999997,
+        0.031249999999999997,
+        0.0,
+        0.015624999999999998,
+        0.15624999999999997,
+        0.15624999999999997,
+        0.12499999999999999,
+        0.14062499999999997
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Causal-use",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 1.0,
+        "m2_permutation_p_value": 0.001,
+        "m3_selective_impairment_clause_f1": 0.4375,
+        "m4_advantage_mean": 1.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Causal-use",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 1.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999997231971389
+          },
+          "m2_permutation_p_value": {
+            "raw": 0.001,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 0.9926084586557181
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.9970432173805707
+        },
+        "state_scores": {
+          "Causal-use": 0.9542571396938466,
+          "Present-only": 0.47709565100849877,
+          "Unsupported": 0.0457428603061534,
+          "Undetermined": 0.04574286030615338
+        },
+        "margin": 0.47716148868534786,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": true,
+          "repair": true
+        }
+      },
+      "truth": "causal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "cross_step_geometry-1-present_only",
+      "family": "cross_step_geometry",
+      "seed": 1,
+      "condition": "present_only",
+      "planted_object": 2,
+      "selected_object": 2,
+      "discovery_correlations": [
+        0.07812499999999999,
+        0.015624999999999998,
+        0.9999999999999999,
+        0.015624999999999998,
+        0.031249999999999997,
+        0.031249999999999997,
+        0.0,
+        0.015624999999999998,
+        0.15624999999999997,
+        0.15624999999999997,
+        0.12499999999999999,
+        0.14062499999999997
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Present-only",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Present-only",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.4778050747388289,
+          "Present-only": 0.9535477159635164,
+          "Unsupported": 0.5221949252611711,
+          "Undetermined": 0.046452284036483604
+        },
+        "margin": 0.43135279070234533,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "cross_step_geometry-1-null",
+      "family": "cross_step_geometry",
+      "seed": 1,
+      "condition": "null",
+      "planted_object": 2,
+      "selected_object": 5,
+      "discovery_correlations": [
+        0.0,
+        0.031249999999999997,
+        0.06249999999999999,
+        0.031249999999999997,
+        0.015624999999999998,
+        0.20312499999999997,
+        0.10937499999999999,
+        0.0,
+        0.0,
+        0.031249999999999997,
+        0.14062499999999997,
+        0.015624999999999998
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Unsupported",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 0.4921875,
+        "m1_surface_control_gap": -0.0078125,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Unsupported",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 0.4921875,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.00021654621487750907
+          },
+          "m1_surface_control_gap": {
+            "raw": -0.0078125,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.8267132266600292
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.3308152183929382,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.20038285667616867,
+          "Present-only": 0.6761254979008564,
+          "Unsupported": 0.7996171433238313,
+          "Undetermined": 0.20038285667616873
+        },
+        "margin": 0.12349164542297486,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "cross_step_geometry-2-causal",
+      "family": "cross_step_geometry",
+      "seed": 2,
+      "condition": "causal",
+      "planted_object": 0,
+      "selected_object": 0,
+      "discovery_correlations": [
+        1.0,
+        0.046875,
+        0.03125,
+        0.015625,
+        0.078125,
+        0.125,
+        0.015625,
+        0.046875,
+        0.078125,
+        0.109375,
+        0.0,
+        0.15625
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Causal-use",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 1.0,
+        "m2_permutation_p_value": 0.001,
+        "m3_selective_impairment_clause_f1": 0.5078125,
+        "m4_advantage_mean": 1.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Causal-use",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 1.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999997231971389
+          },
+          "m2_permutation_p_value": {
+            "raw": 0.001,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 0.9926084586557181
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.9970432173805707
+        },
+        "state_scores": {
+          "Causal-use": 0.9542571396938466,
+          "Present-only": 0.47709565100849877,
+          "Unsupported": 0.0457428603061534,
+          "Undetermined": 0.04574286030615338
+        },
+        "margin": 0.47716148868534786,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": true,
+          "repair": true
+        }
+      },
+      "truth": "causal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "cross_step_geometry-2-present_only",
+      "family": "cross_step_geometry",
+      "seed": 2,
+      "condition": "present_only",
+      "planted_object": 0,
+      "selected_object": 0,
+      "discovery_correlations": [
+        1.0,
+        0.046875,
+        0.03125,
+        0.015625,
+        0.078125,
+        0.125,
+        0.015625,
+        0.046875,
+        0.078125,
+        0.109375,
+        0.0,
+        0.15625
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Present-only",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 1,
+        "m1_surface_control_gap": 0.5,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Present-only",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 1,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.847969047557731
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.5,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9999918603887709
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.9087781726901469,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.4778050747388289,
+          "Present-only": 0.9535477159635164,
+          "Unsupported": 0.5221949252611711,
+          "Undetermined": 0.046452284036483604
+        },
+        "margin": 0.43135279070234533,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    },
+    {
+      "id": "cross_step_geometry-2-null",
+      "family": "cross_step_geometry",
+      "seed": 2,
+      "condition": "null",
+      "planted_object": 0,
+      "selected_object": 3,
+      "discovery_correlations": [
+        0.015625,
+        0.015625,
+        0.078125,
+        0.109375,
+        0.015625,
+        0.015625,
+        0.03125,
+        0.03125,
+        0.09375,
+        0.09375,
+        0.109375,
+        0.015625
+      ],
+      "independent_confirmation_n": 128,
+      "expected_state": "Unsupported",
+      "signals": {
+        "b0_gen_clause_f1": 1.0,
+        "m1_semantic_role_accuracy": 0.5234375,
+        "m1_surface_control_gap": 0.0234375,
+        "m2_advantage_mean": 0.0,
+        "m2_permutation_p_value": 1.0,
+        "m3_selective_impairment_clause_f1": 0.0,
+        "m4_advantage_mean": 0.0,
+        "realism_pass_rate": 1.0,
+        "linkage_pass_rate": 1.0,
+        "evidence_coverage": 1.0,
+        "audit_ready": true,
+        "state_anchor_ready": true
+      },
+      "prediction": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Undetermined",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 1.0,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9865718114975538
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 0.5234375,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.000404485541041206
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.0234375,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.8991222842875854
+          },
+          "m2_advantage_mean": {
+            "raw": 0.0,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.007391247873806223
+          },
+          "m2_permutation_p_value": {
+            "raw": 1.0,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 5.5210822770285325e-42
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9865718114975538,
+          "presence": 0.35989160503965895,
+          "use": 0.004434748724283733
+        },
+        "state_scores": {
+          "Causal-use": 0.21433952226659464,
+          "Present-only": 0.6900821634912822,
+          "Unsupported": 0.7856604777334053,
+          "Undetermined": 0.2143395222665947
+        },
+        "margin": 0.09557831424212315,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": false,
+          "realism": true,
+          "linkage": true,
+          "necessity": false,
+          "repair": false
+        }
+      },
+      "truth": "noncausal",
+      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+    }
+  ],
+  "correct": 16,
+  "component_rules": {
+    "status": "executed_on_supplied_truth_records",
+    "units": 18,
+    "statistics": {
+      "recoverable_implies_causal": {
+        "false_causal": 6,
+        "noncausal_denominator": 12,
+        "causal_retained": 6,
+        "causal_denominator": 6,
+        "abstentions": 0
+      },
+      "ungated_intervention": {
+        "false_causal": 0,
+        "noncausal_denominator": 12,
+        "causal_retained": 6,
+        "causal_denominator": 6,
+        "abstentions": 0
+      },
+      "full": {
+        "false_causal": 0,
+        "noncausal_denominator": 12,
+        "causal_retained": 6,
+        "causal_denominator": 6,
+        "abstentions": 2
+      }
+    },
+    "predictions": [
+      {
+        "id": "binding-0-causal",
+        "truth": "causal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": true,
+        "full_state": "Causal-use"
+      },
+      {
+        "id": "binding-0-present_only",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": false,
+        "full_state": "Present-only"
+      },
+      {
+        "id": "binding-0-null",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": false,
+        "ungated_intervention": false,
+        "full_state": "Unsupported"
+      },
+      {
+        "id": "binding-1-causal",
+        "truth": "causal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": true,
+        "full_state": "Causal-use"
+      },
+      {
+        "id": "binding-1-present_only",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": false,
+        "full_state": "Present-only"
+      },
+      {
+        "id": "binding-1-null",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": false,
+        "ungated_intervention": false,
+        "full_state": "Undetermined"
+      },
+      {
+        "id": "binding-2-causal",
+        "truth": "causal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": true,
+        "full_state": "Causal-use"
+      },
+      {
+        "id": "binding-2-present_only",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": false,
+        "full_state": "Present-only"
+      },
+      {
+        "id": "binding-2-null",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": false,
+        "ungated_intervention": false,
+        "full_state": "Unsupported"
+      },
+      {
+        "id": "cross_step_geometry-0-causal",
+        "truth": "causal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": true,
+        "full_state": "Causal-use"
+      },
+      {
+        "id": "cross_step_geometry-0-present_only",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": false,
+        "full_state": "Present-only"
+      },
+      {
+        "id": "cross_step_geometry-0-null",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": false,
+        "ungated_intervention": false,
+        "full_state": "Unsupported"
+      },
+      {
+        "id": "cross_step_geometry-1-causal",
+        "truth": "causal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": true,
+        "full_state": "Causal-use"
+      },
+      {
+        "id": "cross_step_geometry-1-present_only",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": false,
+        "full_state": "Present-only"
+      },
+      {
+        "id": "cross_step_geometry-1-null",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": false,
+        "ungated_intervention": false,
+        "full_state": "Unsupported"
+      },
+      {
+        "id": "cross_step_geometry-2-causal",
+        "truth": "causal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": true,
+        "full_state": "Causal-use"
+      },
+      {
+        "id": "cross_step_geometry-2-present_only",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": true,
+        "ungated_intervention": false,
+        "full_state": "Present-only"
+      },
+      {
+        "id": "cross_step_geometry-2-null",
+        "truth": "noncausal",
+        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "recoverable_implies_causal": false,
+        "ungated_intervention": false,
+        "full_state": "Undetermined"
+      }
+    ]
+  }
+}

@@ -9,8 +9,7 @@ DETECTOR_COMPETITION_CONFIG := configs/experiments/detector_competition.json
 
 install:
 	$(PYTHON) -m pip install --upgrade pip
-	$(PYTHON) -m pip install -r requirements.txt
-	$(PYTHON) -m pip install -e .
+	$(PYTHON) -m pip install -e '.[test,metadata]'
 
 smoke:
 	$(PYTHON) -m pytest -q \
@@ -53,3 +52,24 @@ detector-competition-train:
 
 detector-competition-run:
 	$(PYTHON) scripts/run/run_detector_competition.py --config $(DETECTOR_COMPETITION_CONFIG)
+
+.PHONY: data data-check metadata-check walkthrough analysis-smoke release-check
+
+data:
+	$(PYTHON) scripts/build_release_data.py --seed 13
+
+data-check:
+	$(PYTHON) scripts/build_release_data.py --seed 13 --check
+	$(PYTHON) scripts/validate_release_data.py
+
+metadata-check:
+	$(PYTHON) scripts/validate_release_data.py --mlcroissant
+
+walkthrough:
+	$(PYTHON) scripts/run_walkthrough.py --output-dir outputs/walkthrough
+
+analysis-smoke:
+	$(PYTHON) scripts/run_release_analysis.py sensitivity --panel configs/release/implementation_fixture_panel.json --output outputs/implementation_sensitivity.json
+	$(PYTHON) scripts/run_release_analysis.py truth-controls --output outputs/implementation_truth_controls.json
+
+release-check: data-check metadata-check walkthrough analysis-smoke test

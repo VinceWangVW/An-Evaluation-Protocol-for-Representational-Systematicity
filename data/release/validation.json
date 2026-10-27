@@ -1,0 +1,33 @@
+{
+  "schema_record_count": 672,
+  "surface_candidate_count": 2016,
+  "valid_candidate_count": 2016,
+  "invalid_candidate_count": 0,
+  "primary_selected_count": 672,
+  "canonical_example_count": 672,
+  "selection_strategy": "shortest",
+  "family_count": 96,
+  "fully_validated_family_count": 96,
+  "exact_counterpart_coverage_rate": 1.0,
+  "usable_m2_pair_count": 192,
+  "usable_m4_pair_count": 96,
+  "validated_family_counts_by_construction": {
+    "active_depth0": 28,
+    "passive_depth0": 31,
+    "active_depth1": 31,
+    "passive_depth1": 6
+  },
+  "seed": 13,
+  "split_counts": {
+    "train": 448,
+    "dev": 128,
+    "gen": 96
+  },
+  "training_construction_counts": {
+    "active_depth0": 22,
+    "passive_depth0": 21,
+    "active_depth1": 21
+  },
+  "nonidentical_repair_pair_count": 68,
+  "artifact_status": "deterministically regenerated; canonical rows match pre-release repository data"
+}

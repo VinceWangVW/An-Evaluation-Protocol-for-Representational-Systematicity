@@ -4,11 +4,11 @@
   "target_id": "geometry_h1_familyD_barrier_seed41_keep030_scale035",
   "run_name": "phase13_geometry_h1_familyD_barrier_seed41_keep030_scale035",
   "phase11_prefix": "phase13_geometry_h1_familyD_barrier_seed41_keep030_scale035__geometryd1_lm1_p24",
-  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
+  "model_name_or_path": "runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
+  "trained_model_path": "runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
   "family": "seq2seq_lm",
   "prompt_style": "parser_instruction",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "precision": "auto",
   "num_beams": 1,
   "decoder_cross_attention_scale": null,
@@ -64,7 +64,7 @@
     "target_id": "geometry_h1_familyD_barrier_seed41_keep030_scale035",
     "run_name": "phase13_geometry_h1_familyD_barrier_seed41_keep030_scale035",
     "phase11_prefix": "phase13_geometry_h1_familyD_barrier_seed41_keep030_scale035__geometryd1_lm1_p24",
-    "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
+    "model_name_or_path": "runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
     "reuse_checkpoint_from": null,
     "train_example_count": 448,
     "eval_example_count": 224,
@@ -122,7 +122,7 @@
       "d1"
     ],
     "notes": null,
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
+    "trained_model_path": "runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
     "evaluation": {
       "overall": {
         "count": 224,

@@ -151,7 +151,9 @@ def derive_generation_audit_signals(
         {
             str(record["item_id"])
             for record in linkage_records
-            if str(record.get("stratum")) == "fail" and float(record.get("rescue_advantage_clause_f1") or 0.0) > 0.0
+            if str(record.get("stratum")) == "fail"
+            and float(record.get("rescue_vs_strongest_control_advantage_clause_f1",
+                                 record.get("rescue_advantage_clause_f1")) or 0.0) > 0.0
         }
     )
     behavior_anchor_ready = bool(

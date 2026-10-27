@@ -10,7 +10,7 @@
     "geometry_h1_familyB_subspace_seed41_keep035",
     "geometry_h1_familyB_subspace_seed41_keep045"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 13 R1 candidate sweep for a second new geometry H1 family.",
     "This family preserves encoder geometry while projecting decoder readout states away from a seeded random subspace."

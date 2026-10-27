@@ -5,10 +5,10 @@
   "run_name": "phase12_binding_target_surface_nuwa_raw_e8_seed71",
   "phase11_prefix": "phase12_binding_target_surface_nuwa_raw_e8_seed71__bindingp3_lm1_p24",
   "model_name_or_path": "google-t5/t5-small",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
+  "trained_model_path": "runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
   "family": "seq2seq_lm",
   "prompt_style": "raw",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "training": {
     "trained": true,
     "epochs": 8,
@@ -35,7 +35,7 @@
     "encoder_geometry_seed": 0,
     "encoder_geometry_keep_ratio": null,
     "encoder_geometry_noise_std": null,
-    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71"
+    "save_directory": "runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71"
   },
   "training_filter_summary": {
     "panel_benchmark": "phase12_systematicity_p3_template_longest",
@@ -82,7 +82,7 @@
       "template_longest"
     ],
     "notes": "Held-out surface-backend target trained on the longest-variant template backend of the v2 schema.",
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
+    "trained_model_path": "runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
     "evaluation": {
       "overall": {
         "count": 112,

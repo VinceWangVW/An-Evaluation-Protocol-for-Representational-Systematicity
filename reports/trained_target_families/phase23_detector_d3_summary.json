@@ -12,6 +12,6 @@
     "phase23_detector_d3_detector_h1_seed2",
     "phase23_detector_d3_detector_null_seed2"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": []
 }

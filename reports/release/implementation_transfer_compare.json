@@ -1,0 +1,194 @@
+{
+  "status": "executed_on_supplied_transfer_evidence",
+  "recalibrated_profile": {
+    "version": "camera-ready-implementation-v1-control-only-recalibration",
+    "provenance": "Explicit implementation profile; not the unavailable historical scorer.",
+    "features": {
+      "b0_gen_clause_f1": {
+        "boundary": 0.95,
+        "scale": 0.1,
+        "direction": 1
+      },
+      "m1_semantic_role_accuracy": {
+        "boundary": 0.745,
+        "scale": 0.05,
+        "direction": 1
+      },
+      "m1_surface_control_gap": {
+        "boundary": 0.0,
+        "scale": 0.05,
+        "direction": 1
+      },
+      "m2_advantage_mean": {
+        "boundary": 0.25,
+        "scale": 0.05,
+        "direction": 1
+      },
+      "m2_permutation_p_value": {
+        "boundary": 0.5005,
+        "scale": 0.01,
+        "direction": -1
+      }
+    },
+    "weights": {
+      "presence_role": 0.6,
+      "use_effect": 0.6,
+      "behavior": 0.04
+    },
+    "gates": {
+      "realism": 0.6,
+      "linkage": 0.5,
+      "coverage": 0.8,
+      "margin": 0.1,
+      "necessity": 0.05,
+      "repair": 0.245002
+    },
+    "closure": {
+      "discovery_gap": 0.05,
+      "necessity_gap": 0.05,
+      "null_max": 0.1,
+      "minimum_survivors": 8,
+      "minimum_steps": 2,
+      "minimum_templates": 2
+    }
+  },
+  "calibration_ids": [
+    "cal-causal",
+    "cal-present",
+    "cal-null"
+  ],
+  "targets": [
+    {
+      "id": "fixture-target",
+      "frozen": {
+        "profile_version": "camera-ready-implementation-v1",
+        "selected_state": "Causal-use",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 0.95,
+            "boundary": 0.570312,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.9780518536175149
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 0.99,
+            "boundary": 0.914062,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.8203558117088454
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.2,
+            "boundary": -0.085938,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9967269676526864
+          },
+          "m2_advantage_mean": {
+            "raw": 0.5,
+            "boundary": 0.245002,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9939399575804438
+          },
+          "m2_permutation_p_value": {
+            "raw": 0.001,
+            "boundary": 0.05,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 0.9926084586557181
+          }
+        },
+        "group_scores": {
+          "behavior": 0.9780518536175149,
+          "presence": 0.8909042740863817,
+          "use": 0.9934073580105536
+        },
+        "state_scores": {
+          "Causal-use": 0.9435916575512295,
+          "Present-only": 0.4699205938610981,
+          "Unsupported": 0.05640834244877045,
+          "Undetermined": 0.056408342448770465
+        },
+        "margin": 0.47367106369013146,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": true,
+          "repair": true
+        }
+      },
+      "recalibrated": {
+        "profile_version": "camera-ready-implementation-v1-control-only-recalibration",
+        "selected_state": "Causal-use",
+        "missing_features": [],
+        "feature_transforms": {
+          "b0_gen_clause_f1": {
+            "raw": 0.95,
+            "boundary": 0.95,
+            "scale": 0.1,
+            "direction": 1,
+            "score": 0.5
+          },
+          "m1_semantic_role_accuracy": {
+            "raw": 0.99,
+            "boundary": 0.745,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9926084586557181
+          },
+          "m1_surface_control_gap": {
+            "raw": 0.2,
+            "boundary": 0.0,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9820137900379085
+          },
+          "m2_advantage_mean": {
+            "raw": 0.5,
+            "boundary": 0.25,
+            "scale": 0.05,
+            "direction": 1,
+            "score": 0.9933071490757153
+          },
+          "m2_permutation_p_value": {
+            "raw": 0.001,
+            "boundary": 0.5005,
+            "scale": 0.01,
+            "direction": -1,
+            "score": 1.0
+          }
+        },
+        "group_scores": {
+          "behavior": 0.5,
+          "presence": 0.9883705912085943,
+          "use": 0.9959842894454292
+        },
+        "state_scores": {
+          "Causal-use": 0.9724903427139312,
+          "Present-only": 0.49634542484631927,
+          "Unsupported": 0.027509657286068752,
+          "Undetermined": 0.0275096572860688
+        },
+        "margin": 0.4761449178676119,
+        "gates": {
+          "audit_ready": true,
+          "coverage": true,
+          "margin": true,
+          "realism": true,
+          "linkage": true,
+          "necessity": true,
+          "repair": true
+        }
+      }
+    }
+  ],
+  "decision_agreement": 1,
+  "calibration_only": true,
+  "historical_result": false
+}

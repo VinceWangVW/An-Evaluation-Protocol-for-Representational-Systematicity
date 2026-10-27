@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this code, protocol, or synthetic testbed, please cite the BOUNDED-RS paper."
+type: software
+title: "BOUNDED-RS: A Bounded Evaluation Protocol and Testbed for Representational Systematicity"
+authors:
+  - family-names: Cao
+    given-names: Boyu
+  - family-names: Wang
+    given-names: Wenshuo
+repository-code: "https://github.com/VinceWangVW/An-Evaluation-Protocol-for-Representational-Systematicity"
+url: "https://github.com/VinceWangVW/An-Evaluation-Protocol-for-Representational-Systematicity"
+license: MIT
+version: 0.2.0
+date-released: 2026-10-27
+keywords:
+  - representational systematicity
+  - mechanistic interpretability
+  - causal evaluation

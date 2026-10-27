@@ -105,8 +105,6 @@ def main() -> None:
     discovery_summary = json.loads(summary_path.read_text(encoding="utf-8"))
     if args.hf_endpoint:
         os.environ["HF_ENDPOINT"] = args.hf_endpoint
-    elif discovery_summary.get("hf_endpoint"):
-        os.environ["HF_ENDPOINT"] = str(discovery_summary["hf_endpoint"])
 
     behavior_run = str(discovery_summary["behavior_run_name"])
     behavior_summary = json.loads(

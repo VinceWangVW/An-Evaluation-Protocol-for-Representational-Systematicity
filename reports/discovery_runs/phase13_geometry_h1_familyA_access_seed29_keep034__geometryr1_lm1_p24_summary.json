@@ -1,7 +1,7 @@
 {
   "benchmark_name": "phase11_systematicity_v2",
   "behavior_run_name": "phase13_geometry_h1_familyA_access_seed29_keep034",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "trained_model_path": "runs/phase12_controls/phase12_geometry_h2_full_seed29",
   "behavior_summary": {
     "overall": {
       "count": 224,
@@ -123,7 +123,7 @@
   "encoder_geometry_keep_ratio": 0.75,
   "encoder_geometry_noise_std": null,
   "model": {
-    "name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+    "name_or_path": "runs/phase12_controls/phase12_geometry_h2_full_seed29",
     "family": "seq2seq_lm",
     "device": "cuda",
     "prompt_style": "parser_instruction"

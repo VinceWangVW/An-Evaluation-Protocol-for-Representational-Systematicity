@@ -2,7 +2,7 @@
   "phase11_prefix": "phase11_binding_h2_full_parser_e8__bindingdev_lm1_p24",
   "discovery_prefix": "phase11_binding_h2_full_parser_e8__bindingdev_lm1_p24",
   "behavior_run_name": "phase11_binding_h2_full_parser_e8",
-  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h2_full_parser_e8",
+  "model_name_or_path": "runs/phase11_controls/phase11_binding_h2_full_parser_e8",
   "family": "seq2seq_lm",
   "prompt_style": "raw",
   "layer_index": 6,

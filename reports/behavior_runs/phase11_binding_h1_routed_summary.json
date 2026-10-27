@@ -7,11 +7,11 @@
     "G1_binding": "H1",
     "G3_shortcut": "H0"
   },
-  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h2_full",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h2_full",
+  "model_name_or_path": "runs/phase11_controls/phase11_binding_h2_full",
+  "trained_model_path": "runs/phase11_controls/phase11_binding_h2_full",
   "family": "seq2seq_lm",
   "prompt_style": "raw",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "training": {
     "trained": false,
     "epochs": 0,
@@ -27,7 +27,7 @@
     "panel_benchmark": "phase11_systematicity_v1",
     "control_id": "binding_h1_routed",
     "run_name": "phase11_binding_h1_routed",
-    "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h2_full",
+    "model_name_or_path": "runs/phase11_controls/phase11_binding_h2_full",
     "expected_states": {
       "G1_binding": "H1",
       "G3_shortcut": "H0"
@@ -50,7 +50,7 @@
     "num_train_epochs": 0,
     "seed": 11,
     "notes": "Constructive H1 candidate by degrading decoder access while keeping the encoder-side representation.",
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h2_full",
+    "trained_model_path": "runs/phase11_controls/phase11_binding_h2_full",
     "evaluation": {
       "overall": {
         "count": 160,

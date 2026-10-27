@@ -1,7 +1,7 @@
 {
   "benchmark_name": "phase11_systematicity_v1",
   "behavior_run_name": "phase11_binding_h2_full_parser_e8",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h2_full_parser_e8",
+  "trained_model_path": "runs/phase11_controls/phase11_binding_h2_full_parser_e8",
   "behavior_summary": {
     "overall": {
       "count": 160,
@@ -98,7 +98,7 @@
   "num_beams": null,
   "decoder_cross_attention_scale": null,
   "model": {
-    "name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_controls/phase11_binding_h2_full_parser_e8",
+    "name_or_path": "runs/phase11_controls/phase11_binding_h2_full_parser_e8",
     "family": "seq2seq_lm",
     "device": "cuda",
     "prompt_style": "raw"

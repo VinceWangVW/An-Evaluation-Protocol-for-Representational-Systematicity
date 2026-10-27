@@ -2,7 +2,7 @@
   "phase11_prefix": "phase12_geometry_h1_family3_readout_seed29_keep035__geometryp8alt_lm1_p24__geomops",
   "discovery_prefix": "phase12_geometry_h1_family3_readout_seed29_keep035__geometryp8alt_lm1_p24",
   "behavior_run_name": "phase12_geometry_h1_family3_readout_seed29_keep035",
-  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "model_name_or_path": "runs/phase12_controls/phase12_geometry_h2_full_seed29",
   "family": "seq2seq_lm",
   "prompt_style": "parser_instruction",
   "layer_index": 6,

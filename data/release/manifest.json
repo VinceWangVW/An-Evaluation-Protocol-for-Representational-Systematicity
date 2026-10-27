@@ -1,0 +1,36 @@
+{
+  "dataset": "BOUNDED-RS controlled semantic-parsing testbed",
+  "version": "1.0.0",
+  "seed": 13,
+  "license": "MIT",
+  "creators": [
+    "Boyu Cao",
+    "Wenshuo Wang"
+  ],
+  "generator": "scripts/build_release_data.py",
+  "generation_command": "python3 scripts/build_release_data.py --seed 13",
+  "provenance": "Existing public phase11_systematicity_v2 rows regenerated using the original schema/template code; not recovered model evidence.",
+  "release_index_ids": "GEN-000 through GEN-095 are new zero-based generator-order aliases, not a historical MS-047 identification.",
+  "files": {
+    "data/processed/phase11_systematicity_v2.jsonl": {
+      "sha256": "92b95cb4674b569951b60f9f3ad62f2ba69b66d1d4baf8ca514814d03c043920",
+      "bytes": 783784
+    },
+    "data/release/items.csv": {
+      "sha256": "f7b20e5a2ee9c9128935fc24d64f330a8f15f20cad16aa4b3dc35dd9bc3f2131",
+      "bytes": 206565
+    },
+    "data/release/matched_sets.jsonl": {
+      "sha256": "08bd83174eb896c40c46ae9f62cfcf4ad7449505a29fb95ceff46123db5493c7",
+      "bytes": 138821
+    },
+    "data/release/schema.jsonl": {
+      "sha256": "8f2bea4dfb45970ac822be4d1f734a9c922dcbf703a7fa112888e45cdff13b3c",
+      "bytes": 591077
+    },
+    "data/release/validation.json": {
+      "sha256": "65d857988aba971af735dcefbf96e614dc3e7e731bc8a7f9d048da9460df97d3",
+      "bytes": 898
+    }
+  }
+}

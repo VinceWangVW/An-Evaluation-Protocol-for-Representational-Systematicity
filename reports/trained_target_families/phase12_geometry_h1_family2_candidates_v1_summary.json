@@ -8,7 +8,7 @@
     "geometry_h1_family2_seed41_scale020",
     "geometry_h1_family2_seed41_scale025"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 12 P8 candidate sweep for a second geometry-specific H1 construction family.",
     "This family keeps encoder geometry intact and weakens decoder access through inference-time cross-attention routing controls rather than the trained_scale025 construction used in P6/P7."

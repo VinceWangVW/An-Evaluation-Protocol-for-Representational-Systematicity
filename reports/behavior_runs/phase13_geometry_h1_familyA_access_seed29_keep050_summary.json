@@ -4,11 +4,11 @@
   "target_id": "geometry_h1_familyA_access_seed29_keep050",
   "run_name": "phase13_geometry_h1_familyA_access_seed29_keep050",
   "phase11_prefix": "phase13_geometry_h1_familyA_access_seed29_keep050__geometryr1_lm1_p24",
-  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "model_name_or_path": "runs/phase12_controls/phase12_geometry_h2_full_seed29",
+  "trained_model_path": "runs/phase12_controls/phase12_geometry_h2_full_seed29",
   "family": "seq2seq_lm",
   "prompt_style": "parser_instruction",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "precision": "auto",
   "num_beams": 1,
   "decoder_cross_attention_scale": null,
@@ -50,7 +50,7 @@
     "target_id": "geometry_h1_familyA_access_seed29_keep050",
     "run_name": "phase13_geometry_h1_familyA_access_seed29_keep050",
     "phase11_prefix": "phase13_geometry_h1_familyA_access_seed29_keep050__geometryr1_lm1_p24",
-    "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+    "model_name_or_path": "runs/phase12_controls/phase12_geometry_h2_full_seed29",
     "reuse_checkpoint_from": null,
     "train_example_count": 448,
     "eval_example_count": 224,
@@ -100,7 +100,7 @@
       "phase13"
     ],
     "notes": null,
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase12_controls/phase12_geometry_h2_full_seed29",
+    "trained_model_path": "runs/phase12_controls/phase12_geometry_h2_full_seed29",
     "evaluation": {
       "overall": {
         "count": 224,

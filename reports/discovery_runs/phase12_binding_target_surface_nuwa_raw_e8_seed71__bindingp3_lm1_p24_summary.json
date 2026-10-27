@@ -1,7 +1,7 @@
 {
   "benchmark_name": "phase12_systematicity_p3_template_longest",
   "behavior_run_name": "phase12_binding_target_surface_nuwa_raw_e8_seed71",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
+  "trained_model_path": "runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
   "behavior_summary": {
     "overall": {
       "count": 112,
@@ -116,7 +116,7 @@
   "encoder_geometry_keep_ratio": null,
   "encoder_geometry_noise_std": null,
   "model": {
-    "name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
+    "name_or_path": "runs/phase11_targets/phase12_binding_target_surface_nuwa_raw_e8_seed71",
     "family": "seq2seq_lm",
     "device": "cuda",
     "prompt_style": "raw"

@@ -4,7 +4,7 @@ from pathlib import Path
 from statistics import mean
 from typing import Any
 
-from analysis.phase11 import load_phase11_binding_row, load_phase11_geometry_row
+from analysis.behavior_analysis import load_phase11_binding_row, load_phase11_geometry_row
 from utils.io import read_jsonl
 
 

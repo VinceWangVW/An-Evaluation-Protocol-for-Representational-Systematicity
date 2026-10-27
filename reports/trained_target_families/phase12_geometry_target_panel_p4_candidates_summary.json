@@ -10,7 +10,7 @@
     "geometry_target_h1_trained_scale025_seed57",
     "geometry_target_h1_trained_scale025_seed67"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 12 P4 candidate sweep for thickening the geometry weak/H1 target manifold.",
     "Focuses on one weaker audit-ready candidate, two decoder-scale reuse candidates, and two trained H1-like candidates."

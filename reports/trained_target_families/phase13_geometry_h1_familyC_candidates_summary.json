@@ -10,7 +10,7 @@
     "geometry_h1_familyC_bottleneck_seed41_keep025",
     "geometry_h1_familyC_bottleneck_seed41_keep035"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 13 R2 candidate sweep for a new geometry Family C.",
     "This family preserves encoder geometry while forcing decoder cross-attention outputs through a low-rank bottleneck."

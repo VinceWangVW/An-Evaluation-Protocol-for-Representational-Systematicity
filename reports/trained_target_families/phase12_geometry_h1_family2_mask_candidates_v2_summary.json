@@ -10,7 +10,7 @@
     "geometry_h1_family2_mask_seed41_keep040",
     "geometry_h1_family2_mask_seed41_keep045"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 12 P8 v2 candidate sweep for a genuinely new geometry-specific H1 family.",
     "This family preserves encoder geometry while masking decoder cross-attention features at inference time, instead of scaling the entire decoder routing path."

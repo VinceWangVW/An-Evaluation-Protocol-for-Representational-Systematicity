@@ -4,16 +4,28 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "behavioral-systematicity-to-causal-use"
-version = "0.1.0"
-description = "Anonymous evaluation-protocol repository for bounded representational systematicity experiments."
+version = "0.2.0"
+description = "BOUNDED-RS: a bounded evaluation protocol and synthetic testbed for representational systematicity."
 readme = "README.md"
 requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "Boyu Cao"}, {name = "Wenshuo Wang"}]
 dependencies = [
   "datasets>=2.18.0",
   "openai>=1.0.0",
   "torch>=2.2.0",
-  "transformers>=4.40.0",
+  "transformers>=4.40.0,<5",
+  "sentencepiece>=0.2.0",
+  "protobuf>=4.25.0",
 ]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0.0"]
+metadata = ["mlcroissant>=1.1.0,<2"]
+
+[project.urls]
+Repository = "https://github.com/VinceWangVW/An-Evaluation-Protocol-for-Representational-Systematicity"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

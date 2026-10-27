@@ -1,7 +1,7 @@
 {
   "benchmark_name": "phase11_systematicity_v2",
   "behavior_run_name": "phase11_binding_target_t5small_raw_e12_seed41",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41",
+  "trained_model_path": "runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41",
   "behavior_summary": {
     "overall": {
       "count": 224,
@@ -98,7 +98,7 @@
   "num_beams": null,
   "decoder_cross_attention_scale": null,
   "model": {
-    "name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41",
+    "name_or_path": "runs/phase11_targets/phase11_binding_target_t5small_raw_e12_seed41",
     "family": "seq2seq_lm",
     "device": "cuda",
     "prompt_style": "raw"

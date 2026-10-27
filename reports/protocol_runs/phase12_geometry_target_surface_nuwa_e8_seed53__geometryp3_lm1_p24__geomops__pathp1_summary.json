@@ -2,7 +2,7 @@
   "phase11_prefix": "phase12_geometry_target_surface_nuwa_e8_seed53__geometryp3_lm1_p24__geomops__pathp1",
   "discovery_prefix": "phase12_geometry_target_surface_nuwa_e8_seed53__geometryp3_lm1_p24",
   "behavior_run_name": "phase12_geometry_target_surface_nuwa_e8_seed53",
-  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_surface_nuwa_e8_seed53",
+  "model_name_or_path": "runs/phase11_targets/phase12_geometry_target_surface_nuwa_e8_seed53",
   "family": "seq2seq_lm",
   "prompt_style": "parser_instruction",
   "layer_index": 6,

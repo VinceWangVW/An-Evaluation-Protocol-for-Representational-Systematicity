@@ -10,7 +10,7 @@
     "geometry_h1_familyD_barrier_seed41_keep030_scale035",
     "geometry_h1_familyD_barrier_seed41_keep045_scale020"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 13 D1 candidate sweep for a new geometry Family D.",
     "This family preserves encoder geometry while selectively attenuating a seeded relation-bearing subspace in decoder cross-attention outputs."

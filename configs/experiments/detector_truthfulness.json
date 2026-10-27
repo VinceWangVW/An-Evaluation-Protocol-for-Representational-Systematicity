@@ -1,6 +1,6 @@
 {
   "panel_name": "detector_truthfulness",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "seed": 22,
   "materialize_max_parallel": 3,
   "family_counts": {

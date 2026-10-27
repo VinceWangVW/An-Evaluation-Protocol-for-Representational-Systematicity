@@ -6,7 +6,7 @@
     "geometry_h1_family3_readout_seed41_keep040",
     "geometry_h1_family3_readout_seed41_keep0425"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 12 P8-alt refinement around the seed41 readout-mask H1 sweet spot.",
     "This mini-panel probes whether 0.40-0.425 readout retention stabilizes a held-out H1 point between the observed H0 (0.35) and underdetermined (0.45) regimes."

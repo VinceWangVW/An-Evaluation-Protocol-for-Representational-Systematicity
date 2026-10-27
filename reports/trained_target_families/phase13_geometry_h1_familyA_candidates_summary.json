@@ -10,7 +10,7 @@
     "geometry_h1_familyA_access_seed41_keep050",
     "geometry_h1_familyA_access_seed41_keep067"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 13 R1 candidate sweep for a new geometry H1 family.",
     "This family preserves encoder geometry while blocking decoder access through a subset of cross-attention layers."

@@ -7,7 +7,7 @@
     "binding_target_t5small_seed43",
     "binding_target_t5small_e12_seed41"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Minimal Step 5 target panel for the bounded binding family.",
     "Covers seed stability and a stronger-checkpoint variant before expanding to a second model family."

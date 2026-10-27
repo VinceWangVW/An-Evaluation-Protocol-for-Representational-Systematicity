@@ -7,6 +7,6 @@
     "phase20_stageb_c3_planted_h1",
     "phase20_stageb_c3_matched_null"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": []
 }

@@ -10,7 +10,7 @@
     "binding_target_h1_routed_parser_seed59",
     "binding_target_surface_nuwa_raw_seed71"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": [
     "Phase 12 P3 heterogeneous binding target panel.",
     "Includes strong, weak-but-audit-ready, decoder-scale H1-like, routed-like intermediate, and surface-shifted targets."

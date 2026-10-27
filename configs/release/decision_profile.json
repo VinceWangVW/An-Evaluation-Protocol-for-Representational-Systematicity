@@ -1,0 +1,52 @@
+{
+  "version": "camera-ready-implementation-v1",
+  "provenance": "Explicit implementation profile; not the unavailable historical scorer.",
+  "features": {
+    "b0_gen_clause_f1": {
+      "boundary": 0.570312,
+      "scale": 0.1,
+      "direction": 1
+    },
+    "m1_semantic_role_accuracy": {
+      "boundary": 0.914062,
+      "scale": 0.05,
+      "direction": 1
+    },
+    "m1_surface_control_gap": {
+      "boundary": -0.085938,
+      "scale": 0.05,
+      "direction": 1
+    },
+    "m2_advantage_mean": {
+      "boundary": 0.245002,
+      "scale": 0.05,
+      "direction": 1
+    },
+    "m2_permutation_p_value": {
+      "boundary": 0.05,
+      "scale": 0.01,
+      "direction": -1
+    }
+  },
+  "weights": {
+    "presence_role": 0.6,
+    "use_effect": 0.6,
+    "behavior": 0.04
+  },
+  "gates": {
+    "realism": 0.6,
+    "linkage": 0.5,
+    "coverage": 0.8,
+    "margin": 0.1,
+    "necessity": 0.05,
+    "repair": 0.245002
+  },
+  "closure": {
+    "discovery_gap": 0.05,
+    "necessity_gap": 0.05,
+    "null_max": 0.1,
+    "minimum_survivors": 8,
+    "minimum_steps": 2,
+    "minimum_templates": 2
+  }
+}

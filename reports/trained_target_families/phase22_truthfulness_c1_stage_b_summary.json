@@ -10,6 +10,6 @@
     "detector_truthfulness_c1_argument_h1_stageb_seed2",
     "detector_truthfulness_c1_argument_null_stageb_seed2"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": []
 }

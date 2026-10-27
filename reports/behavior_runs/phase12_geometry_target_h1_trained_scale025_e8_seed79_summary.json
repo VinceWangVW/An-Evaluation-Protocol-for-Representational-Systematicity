@@ -5,10 +5,10 @@
   "run_name": "phase12_geometry_target_h1_trained_scale025_e8_seed79",
   "phase11_prefix": "phase12_geometry_target_h1_trained_scale025_e8_seed79__geometryp7_lm1_p24",
   "model_name_or_path": "google-t5/t5-small",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_h1_trained_scale025_e8_seed79",
+  "trained_model_path": "runs/phase11_targets/phase12_geometry_target_h1_trained_scale025_e8_seed79",
   "family": "seq2seq_lm",
   "prompt_style": "parser_instruction",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "training": {
     "trained": true,
     "epochs": 8,
@@ -35,7 +35,7 @@
     "encoder_geometry_seed": 179,
     "encoder_geometry_keep_ratio": 0.75,
     "encoder_geometry_noise_std": null,
-    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_h1_trained_scale025_e8_seed79"
+    "save_directory": "runs/phase11_targets/phase12_geometry_target_h1_trained_scale025_e8_seed79"
   },
   "training_filter_summary": {
     "panel_benchmark": "phase11_systematicity_v2",
@@ -85,7 +85,7 @@
       "p7"
     ],
     "notes": "P7 geometry H1 candidate resumed from the earlier P6 sweep.",
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_h1_trained_scale025_e8_seed79",
+    "trained_model_path": "runs/phase11_targets/phase12_geometry_target_h1_trained_scale025_e8_seed79",
     "evaluation": {
       "overall": {
         "count": 224,

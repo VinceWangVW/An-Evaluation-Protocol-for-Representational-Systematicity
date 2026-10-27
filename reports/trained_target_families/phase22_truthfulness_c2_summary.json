@@ -12,6 +12,6 @@
     "detector_truthfulness_c2_argument_h1_seed2",
     "detector_truthfulness_c2_argument_null_seed2"
   ],
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "notes": []
 }

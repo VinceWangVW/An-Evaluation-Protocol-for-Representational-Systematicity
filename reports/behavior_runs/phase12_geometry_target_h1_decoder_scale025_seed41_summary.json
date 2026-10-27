@@ -4,11 +4,11 @@
   "target_id": "geometry_target_h1_decoder_scale025_seed41",
   "run_name": "phase12_geometry_target_h1_decoder_scale025_seed41",
   "phase11_prefix": "phase12_geometry_target_h1_decoder_scale025_seed41__geometryp3_lm1_p24",
-  "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
+  "model_name_or_path": "runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
+  "trained_model_path": "runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
   "family": "seq2seq_lm",
   "prompt_style": "parser_instruction",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "training": {
     "trained": false,
     "epochs": 0,
@@ -29,7 +29,7 @@
     "target_id": "geometry_target_h1_decoder_scale025_seed41",
     "run_name": "phase12_geometry_target_h1_decoder_scale025_seed41",
     "phase11_prefix": "phase12_geometry_target_h1_decoder_scale025_seed41__geometryp3_lm1_p24",
-    "model_name_or_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
+    "model_name_or_path": "runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
     "reuse_checkpoint_from": "geometry_target_strong_seed41",
     "train_example_count": 448,
     "eval_example_count": 224,
@@ -70,7 +70,7 @@
       "template"
     ],
     "notes": "Intermediate geometry target derived from the strong checkpoint by weakening decoder access.",
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
+    "trained_model_path": "runs/phase11_targets/phase12_geometry_target_strong_e8_seed41",
     "evaluation": {
       "overall": {
         "count": 224,

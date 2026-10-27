@@ -4,10 +4,10 @@
   "target_id": "binding_target_t5small_seed43",
   "run_name": "phase11_binding_target_t5small_raw_e8_seed43",
   "model_name_or_path": "google-t5/t5-small",
-  "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase11_binding_target_t5small_raw_e8_seed43",
+  "trained_model_path": "runs/phase11_targets/phase11_binding_target_t5small_raw_e8_seed43",
   "family": "seq2seq_lm",
   "prompt_style": "raw",
-  "hf_endpoint": "https://hf-mirror.com",
+  "hf_endpoint": null,
   "training": {
     "trained": true,
     "epochs": 8,
@@ -30,7 +30,7 @@
     "precision": "bf16",
     "num_beams": 1,
     "decoder_cross_attention_scale": null,
-    "save_directory": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase11_binding_target_t5small_raw_e8_seed43"
+    "save_directory": "runs/phase11_targets/phase11_binding_target_t5small_raw_e8_seed43"
   },
   "training_filter_summary": {
     "panel_benchmark": "phase11_systematicity_v2",
@@ -55,7 +55,7 @@
       "target"
     ],
     "notes": "Held-out target model B: t5-small, full training data, seed 43.",
-    "trained_model_path": "/root/autodl-tmp/systematicity-project/runs/phase11_targets/phase11_binding_target_t5small_raw_e8_seed43",
+    "trained_model_path": "runs/phase11_targets/phase11_binding_target_t5small_raw_e8_seed43",
     "evaluation": {
       "overall": {
         "count": 224,
