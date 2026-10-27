@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from release_analysis import (
     DEFAULT_PROFILE, adjudicate, cluster_bootstrap, collect_evidence, component_rules,
     engineered_truth_controls, execute_plan, load_json, make_training_plan, read_rows,
-    sensitivity, slog_adapt, transfer_compare, write_json,
+    sensitivity, slog_adapt, transfer_compare, write_json, component_failure_panel, make_suite_plan,
 )
 
 
@@ -32,9 +32,16 @@ def main() -> None:
     p.add_argument("--permutations", type=int, default=199)
     p = sub.add_parser("component-rules", help="Compare three rules on supplied known-truth units")
     p.add_argument("--rows", required=True)
-    p = sub.add_parser("truth-controls", help="Execute independent engineered linear fixture")
+    p = sub.add_parser("truth-controls", help="Run engineered structural-model truth controls")
     p.add_argument("--seeds", type=int, nargs="+", default=[0,1,2])
     p.add_argument("--observations", type=int, default=128)
+    p = sub.add_parser("component-panel", help="Execute the prespecified 41-case failure-mode experiment")
+    p.add_argument("--seed", type=int, default=13)
+    p.add_argument("--observations", type=int, default=128)
+    p = sub.add_parser("suite-plan", help="Prepare or execute the complete model and statistical analysis suite")
+    p.add_argument("--config", default="configs/experiments/analysis_suite.json")
+    p.add_argument("--plan-dir", default="runs/experiments")
+    p.add_argument("--execute", action="store_true")
     p = sub.add_parser("seed-plan", help="Materialize and optionally execute five-seed model/evidence runs")
     p.add_argument("--model", default="google-t5/t5-small")
     p.add_argument("--seeds", type=int, nargs="+", default=[0,1,2,3,4])
@@ -47,7 +54,7 @@ def main() -> None:
     p.add_argument("--benchmark", default="phase11_systematicity_v2")
     p.add_argument("--plan-dir", default="runs/release/t5base")
     p.add_argument("--execute", action="store_true")
-    p = sub.add_parser("collect-evidence", help="Export available L1 summaries without filling missing metrics")
+    p = sub.add_parser("collect-evidence", help="Export measured L1 signals and common-profile decisions")
     p.add_argument("--panel", required=True)
     p = sub.add_parser("transfer-compare", help="Compare frozen and control-only recalibrated rules")
     p.add_argument("--panel", required=True)
@@ -59,7 +66,7 @@ def main() -> None:
         p.add_argument("--output", required=True)
         p.add_argument("--profile", help="Optional explicit decision-profile JSON")
     args = parser.parse_args()
-    if args.profile and args.analysis in ("seed-plan","transfer-plan","slog-adapt"):
+    if args.profile and args.analysis in ("seed-plan","transfer-plan","slog-adapt","suite-plan"):
         parser.error("--profile is not supported for dataset adaptation or model training plans")
     profile = load_json(args.profile) if args.profile else DEFAULT_PROFILE
     if args.analysis == "adjudicate":
@@ -73,8 +80,14 @@ def main() -> None:
         result = component_rules(read_rows(args.rows), profile)
     elif args.analysis == "truth-controls":
         if args.profile:
-            parser.error("truth-controls freezes its own explicit fixture profile; --profile is unsupported")
+            parser.error("truth-controls uses its declared decision profile; --profile is unsupported")
         result = engineered_truth_controls(args.seeds, observations=args.observations)
+    elif args.analysis == "component-panel":
+        result = component_failure_panel(seed=args.seed,observations=args.observations,cfg=profile)
+    elif args.analysis == "suite-plan":
+        result = make_suite_plan(ROOT,Path(args.plan_dir).resolve(),load_json(args.config))
+        if args.execute:
+            result = execute_plan(result,ROOT)
     elif args.analysis in ("seed-plan", "transfer-plan"):
         result = make_training_plan(ROOT, Path(args.plan_dir).resolve(), model=args.model,
             seeds=args.seeds, benchmark=args.benchmark)

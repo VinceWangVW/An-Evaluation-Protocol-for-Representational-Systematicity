@@ -1,6 +1,6 @@
 {
-  "status": "executed_implementation_fixture",
-  "historical_result": false,
+  "status": "executed_computational_control",
+  "experiment_context": "engineered_structural_model",
   "design": "paired seeds, blind candidate selection, disjoint confirmation, explicit swap/removal/repair",
   "rows": [
     {
@@ -41,7 +41,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Causal-use",
         "missing_features": [],
         "feature_transforms": {
@@ -104,7 +104,7 @@
         }
       },
       "truth": "causal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "binding-0-present_only",
@@ -144,7 +144,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Present-only",
         "missing_features": [],
         "feature_transforms": {
@@ -207,7 +207,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "binding-0-null",
@@ -247,7 +247,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Unsupported",
         "missing_features": [],
         "feature_transforms": {
@@ -310,7 +310,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "binding-1-causal",
@@ -350,7 +350,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Causal-use",
         "missing_features": [],
         "feature_transforms": {
@@ -413,7 +413,7 @@
         }
       },
       "truth": "causal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "binding-1-present_only",
@@ -453,7 +453,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Present-only",
         "missing_features": [],
         "feature_transforms": {
@@ -516,7 +516,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "binding-1-null",
@@ -556,7 +556,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Undetermined",
         "missing_features": [],
         "feature_transforms": {
@@ -619,7 +619,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "binding-2-causal",
@@ -659,7 +659,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Causal-use",
         "missing_features": [],
         "feature_transforms": {
@@ -722,7 +722,7 @@
         }
       },
       "truth": "causal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "binding-2-present_only",
@@ -762,7 +762,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Present-only",
         "missing_features": [],
         "feature_transforms": {
@@ -825,7 +825,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "binding-2-null",
@@ -865,7 +865,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Unsupported",
         "missing_features": [],
         "feature_transforms": {
@@ -928,7 +928,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "cross_step_geometry-0-causal",
@@ -968,7 +968,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Causal-use",
         "missing_features": [],
         "feature_transforms": {
@@ -1031,7 +1031,7 @@
         }
       },
       "truth": "causal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "cross_step_geometry-0-present_only",
@@ -1071,7 +1071,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Present-only",
         "missing_features": [],
         "feature_transforms": {
@@ -1134,7 +1134,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "cross_step_geometry-0-null",
@@ -1174,7 +1174,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Unsupported",
         "missing_features": [],
         "feature_transforms": {
@@ -1237,7 +1237,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "cross_step_geometry-1-causal",
@@ -1277,7 +1277,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Causal-use",
         "missing_features": [],
         "feature_transforms": {
@@ -1340,7 +1340,7 @@
         }
       },
       "truth": "causal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "cross_step_geometry-1-present_only",
@@ -1380,7 +1380,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Present-only",
         "missing_features": [],
         "feature_transforms": {
@@ -1443,7 +1443,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "cross_step_geometry-1-null",
@@ -1483,7 +1483,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Unsupported",
         "missing_features": [],
         "feature_transforms": {
@@ -1546,7 +1546,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "cross_step_geometry-2-causal",
@@ -1586,7 +1586,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Causal-use",
         "missing_features": [],
         "feature_transforms": {
@@ -1649,7 +1649,7 @@
         }
       },
       "truth": "causal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "cross_step_geometry-2-present_only",
@@ -1689,7 +1689,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Present-only",
         "missing_features": [],
         "feature_transforms": {
@@ -1752,7 +1752,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     },
     {
       "id": "cross_step_geometry-2-null",
@@ -1792,7 +1792,7 @@
         "state_anchor_ready": true
       },
       "prediction": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Undetermined",
         "missing_features": [],
         "feature_transforms": {
@@ -1855,7 +1855,7 @@
         }
       },
       "truth": "noncausal",
-      "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"
+      "truth_provenance": "engineered structural model with declared signal-use equation"
     }
   ],
   "correct": 16,
@@ -1889,7 +1889,7 @@
       {
         "id": "binding-0-causal",
         "truth": "causal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": true,
         "full_state": "Causal-use"
@@ -1897,7 +1897,7 @@
       {
         "id": "binding-0-present_only",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": false,
         "full_state": "Present-only"
@@ -1905,7 +1905,7 @@
       {
         "id": "binding-0-null",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": false,
         "ungated_intervention": false,
         "full_state": "Unsupported"
@@ -1913,7 +1913,7 @@
       {
         "id": "binding-1-causal",
         "truth": "causal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": true,
         "full_state": "Causal-use"
@@ -1921,7 +1921,7 @@
       {
         "id": "binding-1-present_only",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": false,
         "full_state": "Present-only"
@@ -1929,7 +1929,7 @@
       {
         "id": "binding-1-null",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": false,
         "ungated_intervention": false,
         "full_state": "Undetermined"
@@ -1937,7 +1937,7 @@
       {
         "id": "binding-2-causal",
         "truth": "causal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": true,
         "full_state": "Causal-use"
@@ -1945,7 +1945,7 @@
       {
         "id": "binding-2-present_only",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": false,
         "full_state": "Present-only"
@@ -1953,7 +1953,7 @@
       {
         "id": "binding-2-null",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": false,
         "ungated_intervention": false,
         "full_state": "Unsupported"
@@ -1961,7 +1961,7 @@
       {
         "id": "cross_step_geometry-0-causal",
         "truth": "causal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": true,
         "full_state": "Causal-use"
@@ -1969,7 +1969,7 @@
       {
         "id": "cross_step_geometry-0-present_only",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": false,
         "full_state": "Present-only"
@@ -1977,7 +1977,7 @@
       {
         "id": "cross_step_geometry-0-null",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": false,
         "ungated_intervention": false,
         "full_state": "Unsupported"
@@ -1985,7 +1985,7 @@
       {
         "id": "cross_step_geometry-1-causal",
         "truth": "causal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": true,
         "full_state": "Causal-use"
@@ -1993,7 +1993,7 @@
       {
         "id": "cross_step_geometry-1-present_only",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": false,
         "full_state": "Present-only"
@@ -2001,7 +2001,7 @@
       {
         "id": "cross_step_geometry-1-null",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": false,
         "ungated_intervention": false,
         "full_state": "Unsupported"
@@ -2009,7 +2009,7 @@
       {
         "id": "cross_step_geometry-2-causal",
         "truth": "causal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": true,
         "full_state": "Causal-use"
@@ -2017,7 +2017,7 @@
       {
         "id": "cross_step_geometry-2-present_only",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": true,
         "ungated_intervention": false,
         "full_state": "Present-only"
@@ -2025,7 +2025,7 @@
       {
         "id": "cross_step_geometry-2-null",
         "truth": "noncausal",
-        "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments",
+        "truth_provenance": "engineered structural model with declared signal-use equation",
         "recoverable_implies_causal": false,
         "ungated_intervention": false,
         "full_state": "Undetermined"

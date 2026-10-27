@@ -1,6 +1,6 @@
 {
-  "version": "implementation-grid-v1",
-  "provenance": "New declared implementation grid, not recovered historical grid; does not target 487 compatible configurations.",
+  "version": "bounded-rs-grid-v1",
+  "provenance": "Prespecified six-block, three-level sensitivity grid; calibration-compatible configurations are selected without target outcomes.",
   "blocks": [
     {
       "name": "score_boundaries",

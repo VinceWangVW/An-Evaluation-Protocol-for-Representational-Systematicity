@@ -1,0 +1,18 @@
+{
+  "trace_id": "MS-047",
+  "status": "prepared",
+  "item_count": 7,
+  "files": {
+    "MS-047_inputs.jsonl": "data/walkthrough/MS-047_inputs.jsonl",
+    "MS-047_schema.jsonl": "data/walkthrough/MS-047_schema.jsonl",
+    "MS-047_pairs.json": "data/walkthrough/MS-047_pairs.json",
+    "MS-047_manifest.json": "data/walkthrough/MS-047_manifest.json"
+  },
+  "operations": [
+    "interchange",
+    "necessity",
+    "repair"
+  ],
+  "model_checkpoint": null,
+  "command": "python3 scripts/run_walkthrough.py --checkpoint CHECKPOINT --output-dir outputs/walkthrough"
+}

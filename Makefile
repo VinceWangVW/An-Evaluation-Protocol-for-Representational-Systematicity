@@ -53,7 +53,7 @@ detector-competition-train:
 detector-competition-run:
 	$(PYTHON) scripts/run/run_detector_competition.py --config $(DETECTOR_COMPETITION_CONFIG)
 
-.PHONY: data data-check metadata-check walkthrough analysis-smoke release-check
+.PHONY: data data-check metadata-check walkthrough analysis-smoke experiment-plan release-check
 
 data:
 	$(PYTHON) scripts/build_release_data.py --seed 13
@@ -69,7 +69,11 @@ walkthrough:
 	$(PYTHON) scripts/run_walkthrough.py --output-dir outputs/walkthrough
 
 analysis-smoke:
-	$(PYTHON) scripts/run_release_analysis.py sensitivity --panel configs/release/implementation_fixture_panel.json --output outputs/implementation_sensitivity.json
-	$(PYTHON) scripts/run_release_analysis.py truth-controls --output outputs/implementation_truth_controls.json
+	$(PYTHON) scripts/run_release_analysis.py sensitivity --panel tests/fixtures/analysis/panel.json --output outputs/test_sensitivity.json
+	$(PYTHON) scripts/run_release_analysis.py truth-controls --output outputs/test_truth_controls.json
+	$(PYTHON) scripts/run_release_analysis.py component-panel --output outputs/test_component_panel.json
+
+experiment-plan:
+	$(PYTHON) scripts/run_release_analysis.py suite-plan --config configs/experiments/analysis_suite.json --plan-dir runs/experiments --output runs/experiments/plan.json
 
 release-check: data-check metadata-check walkthrough analysis-smoke test

@@ -1,8 +1,7 @@
-"""Inspect the reported MS-047 trace without inventing unobserved evidence.
+"""Build and run the MS-047 matched-set walkthrough.
 
-The released generator has no historical MS identifiers. Its index 47 is
-exported separately, with its original exact IDs, and is never associated
-with the published numerical trace. No model download is needed.
+The panel is generated from an explicit semantic design. Supply --checkpoint
+for generation-time interventions or --evidence to score measured L1 signals.
 """
 from __future__ import annotations
 
@@ -11,115 +10,182 @@ import hashlib
 import json
 from pathlib import Path
 import sys
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from release_analysis import DEFAULT_PROFILE, adjudicate, score_feature
+from data.systematicity_schema import (
+    REQUIRED_COUNTERPART_TYPES,
+    SystematicitySchemaRecord,
+    build_counterpart_families,
+    build_target_form,
+)
+from data.surface_templates import render_template_candidates
+from data.surface_validation import select_primary_candidates, validate_surface_candidate
+from release_analysis import adjudicate
+
+DEFAULT_CONFIG = ROOT / "configs/experiments/ms047.json"
 
 
-def reported_trace() -> dict:
-    return {
-        "trace_id": "MS-047",
-        "status": "paper_reported",
-        "source": "Supplied camera-ready source, Appendix End-to-End Walkthrough; pHtx rebuttal Q3",
-        "source_date": "2026-10-27",
-        "historical_inputs": None,
-        "historical_input_status": "unavailable; chef/poet/praise example is not in released generator vocabulary",
-        "model_checkpoint": None,
-        "metrics": {
-            "exact_match_count": 6, "item_count": 7, "clause_f1": 0.947,
-            "role_readout": 0.938, "surface_control_gap": 0.071,
-            "filler_control": None, "predicate_control": None,
-            "interchange": 0.512, "interchange_strongest_control": 0.181,
-            "interchange_remaining_controls": None,
-            "necessity": 0.276, "necessity_global_control": 0.058,
-            "repair": 0.464, "repair_strongest_control": 0.161,
-            "repair_remaining_controls": None, "permutation_p_value": None,
-            "realism": 0.714, "linkage": 0.571, "coverage": 0.857,
-        },
-        "reported_state_scores": {"Causal-use": 0.806, "Present-only": 0.592,
-                                  "Unsupported": 0.221, "Undetermined": 0.184},
-        "reported_margin": 0.214,
-        "reported_state": "Causal-use",
-        "raw_L1_status": "unavailable",
-        "raw_L2_status": "unavailable; reported rounded state scores are retained above",
-        "note": "This transcription is not a recovered experimental record or a newly measured result.",
+def _json_bytes(value: Any) -> bytes:
+    return (json.dumps(value, indent=2, ensure_ascii=True, allow_nan=False) + "\n").encode()
+
+
+def _jsonl_bytes(rows: list[dict]) -> bytes:
+    return "".join(json.dumps(row, ensure_ascii=True, allow_nan=False) + "\n" for row in rows).encode()
+
+
+def _load_design(config_path: Path) -> dict:
+    cfg = json.loads(config_path.read_text())
+    design = cfg["semantic_design"]
+    for key in ("agent", "theme", "alternate_agent", "alternate_theme", "agent_modifier", "theme_modifier"):
+        if not isinstance(design.get(key), str) or not design[key].strip():
+            raise ValueError(f"Semantic design requires a nonempty {key}")
+    fillers = [design[key].lower() for key in ("agent", "theme", "alternate_agent", "alternate_theme")]
+    if len(set(fillers)) != 4:
+        raise ValueError("The four role fillers must be distinct")
+    if design["agent_modifier"] == design["theme_modifier"]:
+        raise ValueError("Modifier-swap requires two distinct modifiers")
+    for key in ("lemma", "past", "participle"):
+        if not design.get("predicate", {}).get(key):
+            raise ValueError(f"Predicate requires {key}")
+    if design["target_voice"] not in ("active", "passive") or design["target_embedding_depth"] not in (0, 1):
+        raise ValueError("Target construction requires supported voice and depth")
+    if not cfg.get("trace_id") or not cfg.get("benchmark_name"):
+        raise ValueError("Walkthrough requires trace_id and benchmark_name")
+    return cfg
+
+
+def build_panel(config_path: Path = DEFAULT_CONFIG) -> dict:
+    """Render seven controlled inputs and exact intervention/repair relations."""
+    cfg = _load_design(config_path)
+    design = cfg["semantic_design"]
+    agent, theme = design["agent"], design["theme"]
+    alt_agent, alt_theme = design["alternate_agent"], design["alternate_theme"]
+    amod, tmod = design["agent_modifier"], design["theme_modifier"]
+    voice, depth = design["target_voice"], design["target_embedding_depth"]
+    construction = f"{voice}_depth{depth}"
+    predicate = design["predicate"]
+    context = design["context"]
+    base = dict(agent=agent, theme=theme, agent_modifier=amod, theme_modifier=tmod, voice=voice, depth=depth)
+    specs = {
+        "rescue_donor": {**base, "voice": "active", "depth": 0},
+        "rescue_target": dict(base),
+        "agent_swap": {**base, "agent": alt_agent},
+        "theme_swap": {**base, "theme": alt_theme},
+        "role_swap": {**base, "agent": theme, "theme": agent, "agent_modifier": tmod, "theme_modifier": amod},
+        "filler_swap": {**base, "agent": alt_agent, "theme": alt_theme},
+        "modifier_swap": {**base, "agent_modifier": tmod, "theme_modifier": amod},
     }
+    schema = []
+    for counterpart_type in REQUIRED_COUNTERPART_TYPES:
+        spec = specs[counterpart_type]
+        item_id = f"{cfg['trace_id']}:{counterpart_type}"
+        schema.append(SystematicitySchemaRecord(
+            item_id=item_id, benchmark_name=cfg["benchmark_name"],
+            split="dev" if counterpart_type == "rescue_donor" else "gen",
+            raw_split="walkthrough", schema_id=item_id,
+            counterpart_family_id=cfg["trace_id"], counterpart_type=counterpart_type,
+            construction_family=construction, voice=spec["voice"], embedding_depth=spec["depth"],
+            predicate_lemma=predicate["lemma"], predicate_past=predicate["past"], predicate_participle=predicate["participle"],
+            context_predicate_lemma=context["predicate_lemma"], context_predicate_past=context["predicate_past"],
+            agent=spec["agent"], theme=spec["theme"], agent_modifier=spec["agent_modifier"], theme_modifier=spec["theme_modifier"],
+            context_filler=context["filler"],
+            target_form=build_target_form(predicate_lemma=predicate["lemma"], agent=spec["agent"], theme=spec["theme"],
+                                          agent_modifier=spec["agent_modifier"], theme_modifier=spec["theme_modifier"]),
+            metadata={"family_split": "walkthrough", "allowed_delta": counterpart_type,
+                      "provenance": "programmatic semantic design", "trace_id": cfg["trace_id"], "no_forced_h2": True},
+        ))
+    candidates = [validate_surface_candidate(record, candidate) for record in schema
+                  for candidate in render_template_candidates(record, num_candidates=3)]
+    _, examples, validation = select_primary_candidates(schema_records=schema, validated_candidates=candidates)
+    rows = [example.to_dict() for example in examples]
+    if len(rows) != 7 or any(not candidate["valid"] for candidate in candidates):
+        raise ValueError("Every walkthrough counterpart must have valid template realizations")
+    family = build_counterpart_families(schema)[0]
+    return {"config": cfg, "rows": rows, "schema": [r.to_dict() for r in schema],
+            "pairs": family, "validation": validation, "config_sha256": hashlib.sha256(config_path.read_bytes()).hexdigest()}
 
 
-def reported_signals() -> dict:
-    """Arithmetic on reported values; no invented p-value or control values."""
-    return {
-        "b0_gen_clause_f1": 0.947,
-        "m1_semantic_role_accuracy": 0.938,
-        "m1_surface_control_gap": 0.071,
-        "m2_advantage_mean": 0.512 - 0.181,
-        "m2_permutation_p_value": None,
-        "m3_selective_impairment_clause_f1": 0.276 - 0.058,
-        "m4_advantage_mean": 0.464 - 0.161,
-        "realism_pass_rate": 0.714,
-        "linkage_pass_rate": 0.571,
-        "evidence_coverage": 0.857,
-        "audit_ready": True,
-        "state_anchor_ready": True,
-    }
-
-
-def build_walkthrough(output: Path, evidence_path: Path | None = None) -> dict:
-    canonical = ROOT / "data/processed/phase11_systematicity_v2.jsonl"
-    rows = [json.loads(line) for line in canonical.read_text().splitlines() if line]
-    families = list(dict.fromkeys(row["metadata"]["counterpart_family_id"] for row in rows))
-    family_id = families[47]
-    release_rows = [row for row in rows if row["metadata"]["counterpart_family_id"] == family_id]
-    assert len(release_rows) == 7
+def write_panel(output: Path, config_path: Path = DEFAULT_CONFIG) -> tuple[dict, dict[str, str]]:
+    panel = build_panel(config_path)
     output.mkdir(parents=True, exist_ok=True)
-    inputs = {
-        "status": "released_generator_index_example",
-        "family_index": 47,
-        "counterpart_family_id": family_id,
-        "historical_MS_047_identity": "not established; do not attach the paper-reported metrics to these inputs",
-        "source": canonical.relative_to(ROOT).as_posix(),
-        "source_sha256": hashlib.sha256(canonical.read_bytes()).hexdigest(),
-        "items": [{"item_id": row["item_id"], "counterpart_type": row["metadata"]["counterpart_type"],
-                   "input_text": row["input_text"], "target_form": row["target_form"]} for row in release_rows],
+    trace_id = panel["config"]["trace_id"]
+    payloads = {
+        f"{trace_id}_inputs.jsonl": _jsonl_bytes(panel["rows"]),
+        f"{trace_id}_schema.jsonl": _jsonl_bytes(panel["schema"]),
+        f"{trace_id}_pairs.json": _json_bytes(panel["pairs"]),
     }
-    raw = json.loads(evidence_path.read_text()) if evidence_path else {"signals": reported_signals()}
-    signals = raw.get("signals", raw)
-    l2 = adjudicate(signals)
-    # Preserve every inspectable transformation even when another required
-    # feature is absent and the full decision correctly abstains.
-    l2["known_feature_transforms"] = {
-        key: {"raw": signals[key], **spec, "score": score_feature(signals[key], **spec)}
-        for key, spec in DEFAULT_PROFILE["features"].items()
-        if isinstance(signals.get(key), (int, float)) and not isinstance(signals[key], bool)
+    manifest = {
+        "trace_id": trace_id, "version": panel["config"]["version"], "license": "MIT",
+        "provenance": "programmatic semantic design",
+        "semantic_design": panel["config"]["semantic_design"], "config_sha256": panel["config_sha256"],
+        "item_count": len(panel["rows"]), "validation": panel["validation"],
+        "files": {name: {"sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)} for name, data in payloads.items()},
     }
-    l2["reported_control_arithmetic"] = {
-        "interchange_advantage": 0.512 - 0.181,
-        "selective_necessity_vs_global": 0.276 - 0.058,
-        "repair_advantage": 0.464 - 0.161,
-        "status": "arithmetic_on_rounded_paper_values; not newly measured effects",
-    }
-    l2["evidence_source"] = str(evidence_path) if evidence_path else "paper-reported rounded features; incomplete"
-    l2["result_status"] = "new_decision_profile_recomputation; not a historical rerun"
-    outputs = {
-        "paper_reported_L1.json": reported_trace(),
-        "released_index047_inputs.json": inputs,
-        "recomputed_L2.json": l2,
-    }
-    for name, payload in outputs.items():
-        (output / name).write_text(json.dumps(payload, indent=2, allow_nan=False) + "\n")
-    return {"output_directory": str(output), "released_input_count": len(release_rows),
-            "historical_MS_047_inputs": "unavailable", "recomputed_state": l2["selected_state"],
-            "missing_features": l2.get("missing_features", [])}
+    payloads[f"{trace_id}_manifest.json"] = _json_bytes(manifest)
+    paths = {}
+    for name, data in payloads.items():
+        path = output / name
+        path.write_bytes(data)
+        paths[name] = str(path)
+    return panel, paths
+
+
+def build_walkthrough(output: Path, evidence_path: Path | None = None, *, config_path: Path = DEFAULT_CONFIG,
+                      checkpoint: str | None = None, device: str | None = None, layer_index: int = -1,
+                      max_new_tokens: int = 192, permutations: int = 199, seed: int = 13,
+                      profile: dict | None = None, adapter: Any = None) -> dict:
+    if evidence_path is not None and (checkpoint is not None or adapter is not None):
+        raise ValueError("Choose a checkpoint audit or supplied evidence, not both")
+    panel, files = write_panel(output, config_path)
+    result = {"trace_id": panel["config"]["trace_id"], "status": "prepared", "item_count": 7,
+              "files": files, "operations": ["interchange", "necessity", "repair"],
+              "model_checkpoint": checkpoint,
+              "command": "python3 scripts/run_walkthrough.py --checkpoint CHECKPOINT --output-dir outputs/walkthrough"}
+    if checkpoint is not None or adapter is not None:
+        from experiments.matched_audit import audit_matched_sets, write_audit
+        if adapter is None:
+            from models.adapters import build_model_adapter
+            adapter = build_model_adapter(checkpoint, family="seq2seq_lm", device=device, prompt_style="raw")
+        payload = audit_matched_sets(panel["rows"], adapter, layer_index=layer_index, max_new_tokens=max_new_tokens,
+                                     seed=seed, permutations=permutations, profile=profile)
+        result["audit_files"] = write_audit(output, payload)
+        result["status"] = "executed"
+        result["summary"] = payload["summary"]
+    elif evidence_path is not None:
+        raw = json.loads(evidence_path.read_text())
+        signals = raw.get("signals", raw)
+        decision = adjudicate(signals, profile)
+        measured_l1 = {"trace_id": result["trace_id"], "source": str(evidence_path), "signals": signals}
+        (output / "L1_signals.json").write_bytes(_json_bytes(measured_l1))
+        (output / "L2_decision.json").write_bytes(_json_bytes(decision))
+        result.update(status="scored", selected_state=decision["selected_state"],
+                      evidence_files={"L1": str(output / "L1_signals.json"), "L2": str(output / "L2_decision.json")})
+    (output / "walkthrough.json").write_bytes(_json_bytes(result))
+    return result
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "reports/walkthrough")
-    parser.add_argument("--evidence", type=Path, help="Optional newly measured complete L1 signals; see docs/ANALYSIS_GUIDE.md")
+    parser.add_argument("--output-dir", type=Path, default=Path("outputs/walkthrough"))
+    parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    source = parser.add_mutually_exclusive_group()
+    source.add_argument("--checkpoint", help="T5 checkpoint or Hugging Face model identifier")
+    source.add_argument("--evidence", type=Path, help="Measured L1 signals JSON")
+    parser.add_argument("--device", choices=["cpu", "cuda", "mps"])
+    parser.add_argument("--layer-index", type=int, default=-1)
+    parser.add_argument("--max-new-tokens", type=int, default=192)
+    parser.add_argument("--seed", type=int, default=13)
+    parser.add_argument("--permutations", type=int, default=199)
+    parser.add_argument("--profile", type=Path, help="Decision-profile JSON")
     args = parser.parse_args()
-    print(json.dumps(build_walkthrough(args.output_dir, args.evidence), indent=2))
+    profile = json.loads(args.profile.read_text()) if args.profile else None
+    result = build_walkthrough(args.output_dir, args.evidence, config_path=args.config, checkpoint=args.checkpoint,
+                               device=args.device, layer_index=args.layer_index, max_new_tokens=args.max_new_tokens,
+                               seed=args.seed, permutations=args.permutations, profile=profile)
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-"""Execute real tiny-T5 training and interventions offline, without paper-result claims."""
+"""Execute tiny-T5 training and interventions offline."""
 import json
 import math
 from pathlib import Path

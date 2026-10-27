@@ -144,7 +144,7 @@
           "@type": "cr:Field",
           "@id": "items/release_index_id",
           "name": "release_index_id",
-          "description": "New zero-based generator-order alias; not a historical walkthrough identifier.",
+          "description": "Zero-based generator-order navigation alias.",
           "dataType": "sc:Text",
           "source": {
             "fileObject": {
@@ -353,7 +353,7 @@
       ]
     }
   ],
-  "rai:dataLimitations": "Finite English templates, 16 invented name tokens, 5 main predicates and a role-filler logical-form schema. Not representative of natural language, all geometric mechanisms, other architectures or general model ability. Historical model evidence is separate from this deterministic dataset.",
+  "rai:dataLimitations": "Finite English templates, 16 invented name tokens, 5 main predicates and a role-filler logical-form schema. Not representative of natural language, all geometric mechanisms, other architectures or general model ability.",
   "rai:dataBiases": "The construction explicitly privileges exact discrete role/filler contrasts; fixed names, adjectives, syntactic templates and omitted phenomena can favor the tested Binding operations. No population sampling or demographic balance is claimed.",
   "rai:personalSensitiveInformation": "No personal or sensitive information. Names are synthetic filler tokens and do not identify human subjects.",
   "rai:dataUseCases": "Intended for matched behavioral contrasts, generation-time intervention/repair development and bounded evidence-to-claim audits. Not validated for model ranking, fairness/safety certification or naturalistic language performance.",

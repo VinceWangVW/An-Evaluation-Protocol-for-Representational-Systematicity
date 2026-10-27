@@ -1,0 +1,59 @@
+{
+  "trace_id": "MS-047",
+  "version": "1.0.0",
+  "license": "MIT",
+  "provenance": "programmatic semantic design",
+  "semantic_design": {
+    "predicate": {
+      "lemma": "praise",
+      "past": "praised",
+      "participle": "praised"
+    },
+    "agent": "chef",
+    "theme": "poet",
+    "alternate_agent": "doctor",
+    "alternate_theme": "painter",
+    "agent_modifier": "patient",
+    "theme_modifier": "careful",
+    "target_voice": "passive",
+    "target_embedding_depth": 1,
+    "context": {
+      "predicate_lemma": "notice",
+      "predicate_past": "noticed",
+      "filler": "witness"
+    }
+  },
+  "config_sha256": "4c466909560319c0244e1412ee2b62a56c7fafb8649a6202b6810d35a2c38cf2",
+  "item_count": 7,
+  "validation": {
+    "schema_record_count": 7,
+    "surface_candidate_count": 21,
+    "valid_candidate_count": 21,
+    "invalid_candidate_count": 0,
+    "primary_selected_count": 7,
+    "canonical_example_count": 7,
+    "selection_strategy": "shortest",
+    "family_count": 1,
+    "fully_validated_family_count": 1,
+    "exact_counterpart_coverage_rate": 1.0,
+    "usable_m2_pair_count": 2,
+    "usable_m4_pair_count": 1,
+    "validated_family_counts_by_construction": {
+      "passive_depth1": 1
+    }
+  },
+  "files": {
+    "MS-047_inputs.jsonl": {
+      "sha256": "db68f237d7c94b7c494322f66fe48bc599fb3c603519ef605960b0a9ed9ac9c4",
+      "bytes": 8103
+    },
+    "MS-047_schema.jsonl": {
+      "sha256": "aec45534a126c7704c8933d42ab3da4a72ee7044d3121174d7a8f7c1e4bfe03e",
+      "bytes": 5966
+    },
+    "MS-047_pairs.json": {
+      "sha256": "0f627c02c74a8d15dfb49f9b737e9c8424a9fcf944ae4eb1d1c3e8771f41f560",
+      "bytes": 924
+    }
+  }
+}

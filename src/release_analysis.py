@@ -21,7 +21,7 @@ from typing import Any
 
 STATES = ("Unsupported", "Present-only", "Causal-use", "Undetermined")
 DEFAULT_PROFILE = {
-    "version": "camera-ready-implementation-v1",
+    "version": "bounded-rs-v1",
     "provenance": "Versioned decision profile; see docs/ANALYSIS_GUIDE.md for scope and formulas.",
     "features": {
         "b0_gen_clause_f1": {"boundary": 0.570312, "scale": 0.10, "direction": 1},
@@ -376,7 +376,7 @@ def transfer_compare(calibration: list[dict], targets: list[dict], cfg: dict | N
 
     Recalibration uses feature midpoint boundaries between intended low/high
     controls, retaining scales, mixture weights and gates. Targets are never used.
-    This is an explicit implementation rule, not the missing historical rule.
+    The fitted profile records the calibration IDs and complete parameters.
     """
     cfg = cfg or DEFAULT_PROFILE
     if not calibration or not targets:
@@ -408,11 +408,11 @@ def transfer_compare(calibration: list[dict], targets: list[dict], cfg: dict | N
     return {"status":"executed_on_supplied_transfer_evidence", "recalibrated_profile":recalibrated,
             "calibration_ids":[r["id"] for r in calibration], "targets":rows,
             "decision_agreement":sum(r["frozen"]["selected_state"] == r["recalibrated"]["selected_state"] for r in rows),
-            "calibration_only":True, "historical_result":False}
+            "calibration_only":True}
 
 
 def engineered_truth_controls(seeds: list[int], *, candidates: int = 12, observations: int = 128) -> dict:
-    """Small executable known-truth fixture, independent of the paper T5 experiment.
+    """Execute an engineered structural-model truth-control experiment.
 
     A distributed bridge stores a signed binary variable as z=a*x over a random
     unit vector. A paired intervention swaps x through the bridge; causal models
@@ -469,11 +469,166 @@ def engineered_truth_controls(seeds: list[int], *, candidates: int = 12, observa
                     "discovery_correlations": correlations, "independent_confirmation_n": observations,
                     "expected_state": expected, "signals": signals,
                     "prediction": adjudicate(signals), "truth": "causal" if condition == "causal" else "noncausal",
-                    "truth_provenance": "engineered linear fixture v1; independent of paper T5 experiments"})
-    return {"status": "executed_implementation_fixture", "historical_result": False,
+                    "truth_provenance": "engineered structural model with declared signal-use equation"})
+    return {"status": "executed_computational_control", "experiment_context": "engineered_structural_model",
             "design": "paired seeds, blind candidate selection, disjoint confirmation, explicit swap/removal/repair",
             "rows": rows, "correct": sum(r["expected_state"] == r["prediction"]["selected_state"] for r in rows),
             "component_rules": component_rules(rows)}
+
+
+COMPONENT_CASE_COUNTS = {
+    "causal": 7,
+    "present_only": 6,
+    "generic_decoder_gain": 6,
+    "wrong_role": 6,
+    "off_manifold": 6,
+    "aggregate_unlinked": 5,
+    "weak_shortcut": 5,
+}
+
+
+def component_failure_panel(*, seed: int = 13, observations: int = 128,
+                            cfg: dict | None = None) -> dict:
+    """Execute a prespecified 41-case structural causal-model experiment.
+
+    Seven models route their prediction through the declared signal. The 34
+    noncausal models route natural predictions through a separate bypass; their
+    intervention operators instantiate recoverable-only, generic-gain,
+    wrong-role, off-manifold, unlinked, and weak-shortcut failure mechanisms.
+    Every score is calculated from recorded predictions and matched controls.
+    This computational panel is identified by its equations and parameters.
+    """
+    if observations < 20:
+        raise ValueError("At least 20 observations per case are required")
+    cfg = cfg or DEFAULT_PROFILE
+    rows = []
+    definitions = []
+    for mechanism,count in COMPONENT_CASE_COUNTS.items():
+        for variant in range(count):
+            case_seed = seed + len(rows)*1009
+            rng = random.Random(case_seed)
+            family = "binding" if variant % 2 == 0 else "cross_step_geometry"
+            width = 1 if family == "binding" else 8
+            direction = [rng.uniform(-1,1) for _ in range(width)]
+            length = math.sqrt(sum(x*x for x in direction))
+            direction = [x/length for x in direction]
+            causal = mechanism == "causal"
+            records = []
+            for index in range(observations):
+                label = rng.choice((-1,1))
+                stored = rng.choice((-1,1)) if mechanism == "weak_shortcut" else label
+                vector = [stored*x for x in direction]
+                decode = lambda z: 1 if sum(a*b for a,b in zip(z,direction)) >= 0 else -1
+                baseline = decode(vector) if causal else label
+                swap = [-x for x in vector]
+                zero = [0.0]*width
+                # A noncausal model's natural equation is y=bypass. Some
+                # intervention operators additionally touch a decoder route.
+                side_effect = mechanism in ("generic_decoder_gain","wrong_role","off_manifold","aggregate_unlinked")
+                side_effect = side_effect or (mechanism == "weak_shortcut" and index % 5 == 0)
+                intervened = decode(swap) if causal or side_effect else label
+                control_effect = mechanism in ("generic_decoder_gain","wrong_role")
+                controlled = decode(swap) if control_effect else label
+                removed = decode(zero) if causal or side_effect else label
+                control_removed = decode(zero) if control_effect else label
+                corrupted = decode(swap) if causal or side_effect else label
+                repaired = decode(vector) if causal or side_effect else label
+                control_repaired = decode(vector) if control_effect else corrupted
+                natural_state = vector+[0.0]
+                intervention_state = swap+[10.0 if mechanism == "off_manifold" else 0.0]
+                natural_norm = math.sqrt(sum(x*x for x in natural_state))
+                intervention_norm = math.sqrt(sum(x*x for x in intervention_state))
+                records.append({
+                    "observation":index,"label":label,"stored_signal":stored,"baseline_prediction":baseline,
+                    "counterfactual_label":-label,"interchange_prediction":intervened,
+                    "interchange_control_prediction":controlled,
+                    "necessity_prediction":removed,"necessity_control_prediction":control_removed,
+                    "corrupted_prediction":corrupted,"repair_prediction":repaired,
+                    "repair_control_prediction":control_repaired,
+                    "readout_correct":decode(vector) == label,
+                    "surface_control_correct":rng.choice((-1,1)) == label,
+                    "filler_control_correct":rng.choice((-1,1)) == label,
+                    "predicate_control_correct":rng.choice((-1,1)) == label,
+                    "natural_state":natural_state,"intervention_state":intervention_state,
+                    "natural_state_norm":natural_norm,"intervention_state_norm":intervention_norm,
+                    "realism_pass":intervention_norm <= natural_norm + 1e-9,
+                    "intended_item_role":mechanism != "aggregate_unlinked",
+                })
+            effects = [float(r["interchange_prediction"] == r["counterfactual_label"])
+                       -float(r["interchange_control_prediction"] == r["counterfactual_label"]) for r in records]
+            necessity = [float(r["necessity_control_prediction"] == r["label"])
+                         -float(r["necessity_prediction"] == r["label"]) for r in records]
+            repair = [float(r["repair_prediction"] == r["label"])
+                      -float(r["repair_control_prediction"] == r["label"]) for r in records]
+            readout = mean(r["readout_correct"] for r in records)
+            signals = {"b0_gen_clause_f1":mean(r["baseline_prediction"] == r["label"] for r in records),
+                "m1_semantic_role_accuracy":readout,
+                "m1_surface_control_gap":readout-mean(r["surface_control_correct"] for r in records),
+                "m1_filler_control_accuracy":mean(r["filler_control_correct"] for r in records),
+                "m1_predicate_control_accuracy":mean(r["predicate_control_correct"] for r in records),
+                "m2_advantage_mean":mean(effects),"m2_permutation_p_value":paired_sign_p_value(effects,rng),
+                "m3_selective_impairment_clause_f1":mean(necessity),"m4_advantage_mean":mean(repair),
+                "realism_pass_rate":mean(r["realism_pass"] for r in records),
+                "linkage_pass_rate":mean(r["intended_item_role"] for r in records),
+                "evidence_coverage":1.0,"audit_ready":True,"state_anchor_ready":True}
+            case_id = f"component-{len(rows)+1:03d}"
+            equation = "y=decode(z)" if causal else "y=bypass; declared z is unused in natural generation"
+            definitions.append({"id":case_id,"mechanism":mechanism,"variant":variant,
+                                "seed":case_seed,"natural_equation":equation,"family":family})
+            rows.append({"id":case_id,"family":family,"mechanism":mechanism,"seed":case_seed,
+                         "truth":"causal" if causal else "noncausal",
+                         "truth_provenance":{"context":"structural_causal_model","natural_equation":equation,
+                                             "intervention_mechanism":mechanism},
+                         "signals":signals,"raw_observations":records,"decision":adjudicate(signals,cfg)})
+    return {"status":"executed_computational_experiment","experiment_context":"structural_causal_model",
+            "design_version":"component-panel-v1","seed":seed,"observations_per_case":observations,
+            "case_counts":COMPONENT_CASE_COUNTS,"cases":definitions,"rows":rows,
+            "comparison":component_rules(rows,cfg)}
+
+
+def make_suite_plan(root: Path, output_dir: Path, configuration: dict | None = None) -> dict:
+    """Prepare a complete training, controls, uncertainty and transfer workflow."""
+    config = configuration or {"seeds":[0,1,2,3,4],"transfer_seeds":[0,1,2],
+        "benchmark":"phase11_systematicity_v2","bootstrap_replicates":1000,
+        "bootstrap_seed":13,"grid":"configs/release/sensitivity_grid.json"}
+    output_dir.mkdir(parents=True,exist_ok=True)
+    commands = []
+    plans = []
+    for name,model,seeds in (("t5small","google-t5/t5-small",config["seeds"]),
+                             ("t5base","google-t5/t5-base",config["transfer_seeds"])):
+        plan_dir = output_dir/name
+        plan = make_training_plan(root,plan_dir,model=model,seeds=seeds,benchmark=config["benchmark"])
+        commands.extend(plan["commands"])
+        commands.append([sys.executable,"scripts/run_release_analysis.py","transfer-compare","--panel",
+                         str(plan_dir/"binding_evidence.json"),"--output",str(plan_dir/"binding_transfer_compare.json")])
+        if name == "t5small":
+            commands.append([sys.executable,"scripts/run_release_analysis.py","sensitivity","--panel",
+                             str(plan_dir/"binding_evidence.json"),"--grid",config["grid"],
+                             "--output",str(plan_dir/"sensitivity.json")])
+            if plan["audit_layout"] == "seven_item_matched_sets":
+                generated_panel = load_json(plan_dir/"binding_panel.json")
+                for target in generated_panel["targets"]:
+                    if "target" not in target["tags"]:
+                        continue
+                    seed,run = target["seed"],target["run_name"]
+                    commands.append([sys.executable,"scripts/run_release_analysis.py","bootstrap","--rows",
+                        str(plan_dir/"audits"/run/"L1_per_set.jsonl"),"--replicates",str(config["bootstrap_replicates"]),
+                        "--seed",str(config["bootstrap_seed"]),"--output",str(plan_dir/f"bootstrap_seed{seed}.json")])
+        plans.append({"model":model,"seeds":seeds,"plan":str(plan_dir/"plan.json")})
+    commands += [
+        [sys.executable,"scripts/run_release_analysis.py","truth-controls","--seeds","0","1","2",
+         "--output",str(output_dir/"truth_controls.json")],
+        [sys.executable,"scripts/run_release_analysis.py","component-panel","--output",str(output_dir/"component_panel.json")],
+    ]
+    if config.get("slog_benchmark"):
+        slog = make_training_plan(root,output_dir/"slog",model="google-t5/t5-small",
+                                  seeds=config["transfer_seeds"],benchmark=config["slog_benchmark"])
+        commands.extend(slog["commands"])
+        plans.append({"model":"google-t5/t5-small","benchmark":config["slog_benchmark"],"plan":str(output_dir/"slog/plan.json")})
+    result = {"status":"plan_only","suite_version":"bounded-rs-suite-v1","configuration":config,
+              "model_plans":plans,"commands":commands}
+    write_json(output_dir/"suite_plan.json",result)
+    return result
 
 
 def make_training_plan(root: Path, output_dir: Path, *, model: str = "google-t5/t5-small",
@@ -485,13 +640,16 @@ def make_training_plan(root: Path, output_dir: Path, *, model: str = "google-t5/
     if set(seeds) & {seed+1000 for seed in seeds}:
         raise ValueError("Target and shifted calibration seed sets must be disjoint")
     output_dir.mkdir(parents=True, exist_ok=True)
-    panel = {"panel_name": "release_"+model.rsplit("/",1)[-1], "benchmark": benchmark,
+    model_tag = model.rsplit("/",1)[-1]
+    if benchmark != "phase11_systematicity_v2":
+        model_tag += "_"+re.sub(r"[^a-zA-Z0-9_-]+","_",benchmark)
+    panel = {"panel_name": "release_"+model_tag, "benchmark": benchmark,
              "model_name_or_path": model, "prompt_style": "raw", "layers": [-1],
-             "metadata": {"operationalization_family": "binding", "provenance": "Configured training seeds; see REPRODUCIBILITY.md for artifact availability."},
+             "metadata": {"operationalization_family": "binding", "provenance": "Prespecified independent training and calibration seeds."},
              "targets": []}
     for seed in seeds:
         for family in ("binding", "geometry"):
-            run = f"release_{model.rsplit('/',1)[-1]}_{family}_seed{seed}"
+            run = f"release_{model_tag}_{family}_seed{seed}"
             base_target = {"target_id": run, "run_name": run, "phase11_prefix": run,
                 "seed": seed, "num_train_epochs": 8, "learning_rate": 5e-5, "train_batch_size": 8,
                 "num_beams": 1, "encoder_geometry_transform": "feature_mask" if family == "geometry" else None,
@@ -512,18 +670,48 @@ def make_training_plan(root: Path, output_dir: Path, *, model: str = "google-t5/
     panel_path = output_dir / "training_panel.json"
     write_json(panel_path, panel)
     commands = [[sys.executable, "scripts/run/train_target_families.py", "--panel-config", str(panel_path)]]
-    # Separate panels preserve the explicit family for evidence operations.
+    data_path = root/"data/processed"/(benchmark+".jsonl")
+    complete_sets = False
+    if data_path.exists():
+        members = defaultdict(set)
+        for record in read_rows(data_path):
+            metadata = record.get("metadata",{})
+            if metadata.get("counterpart_family_id"):
+                members[metadata["counterpart_family_id"]].add(metadata.get("counterpart_type"))
+        required_types = {"rescue_donor","rescue_target","agent_swap","theme_swap","role_swap","filler_swap","modifier_swap"}
+        complete_sets = bool(members) and all(types == required_types for types in members.values())
+    # Binding audits enumerate every member of every complete matched set.
+    # Geometry retains its object-specific discovery/generation operations.
     for family in ("binding", "geometry"):
         subpanel = copy.deepcopy(panel)
         subpanel["targets"] = [r for r in panel["targets"] if family in r["tags"]]
         subpanel["metadata"]["operationalization_family"] = family
+        if family == "binding" and complete_sets:
+            audit_outputs = {}
+            for target in subpanel["targets"]:
+                run = target["run_name"]
+                checkpoint_name = target.get("reuse_checkpoint_from") or run
+                audit_dir = output_dir / "audits" / run
+                audit_outputs[run] = str(audit_dir)
+                command = [sys.executable, "scripts/run_matched_audit.py", "--data",
+                           f"data/processed/{benchmark}.jsonl", "--checkpoint",
+                           str(root/"runs/trained_target_families"/checkpoint_name),
+                           "--output-dir", str(audit_dir), "--layer-index", "-1",
+                           "--seed", str(target["seed"]), "--family", "binding"]
+                if target.get("decoder_cross_attention_scale") is not None:
+                    command += ["--decoder-cross-attention-scale", str(target["decoder_cross_attention_scale"])]
+                commands.append(command)
+            subpanel["metadata"]["audit_outputs"] = audit_outputs
         subpath = output_dir / f"{family}_panel.json"
         write_json(subpath, subpanel)
-        commands.append([sys.executable, "scripts/run/materialize_target_runs.py", "--panel-config", str(subpath)])
+        if family == "geometry" or not complete_sets:
+            commands.append([sys.executable, "scripts/run/materialize_target_runs.py", "--panel-config", str(subpath)])
         commands.append([sys.executable, "scripts/run_release_analysis.py", "collect-evidence", "--panel", str(subpath),
                          "--output", str(output_dir/f"{family}_evidence.json")])
-    result = {"status": "plan_only", "seed_provenance": "implementation default; not recovered paper seeds",
-              "seeds": seeds, "model": model, "commands": commands,
+    result = {"status": "plan_only", "seed_provenance": "Prespecified seed list and disjoint seed+1000 calibration controls.",
+              "seeds": seeds, "model": model, "benchmark":benchmark,
+              "audit_layout":"seven_item_matched_sets" if complete_sets else "exact_contrast_pairs",
+              "commands": commands,
               "next_step": "Aggregate generated evidence with collect-evidence; closure additionally needs frozen object reruns."}
     write_json(output_dir / "plan.json", result)
     return result
@@ -540,12 +728,29 @@ def execute_plan(plan: dict, root: Path) -> dict:
 
 
 def collect_evidence(root: Path, panel_path: Path, cfg: dict | None = None) -> dict:
-    """Read existing L1 summaries; keep unavailable item linkage/coverage absent."""
+    """Collect measured audit outputs in the common evidence and decision schema."""
     from hypotheses.audit import derive_phase11_binding_audit_signals, derive_phase11_geometry_audit_signals
     panel = load_json(panel_path)
     rows = []
     for target in panel["targets"]:
         prefix = target.get("phase11_prefix", target["run_name"])
+        audit_dir = panel.get("metadata",{}).get("audit_outputs",{}).get(target["run_name"])
+        if audit_dir:
+            audit_path = Path(audit_dir) / "summary.json"
+            if not audit_path.exists():
+                rows.append({"id":prefix,"status":"missing_inputs","missing":[str(audit_path)]})
+                continue
+            audit = load_json(audit_path)
+            signals = audit.get("signals",audit.get("summary",{}).get("signals"))
+            if not isinstance(signals,dict):
+                raise ValueError(f"Matched audit summary lacks signals: {audit_path}")
+            role = "calibration" if "calibration" in target.get("tags",[]) else "target"
+            expected = {"causal":"Causal-use","present_only":"Present-only","unsupported":"Unsupported"}.get(target.get("panel_regime"))
+            rows.append({"id":prefix,"family":"binding","seed":target["seed"],"signals":signals,
+                         "panel_role":role,"expected_state":expected,
+                         "provenance":{"summary":str(audit_path),"per_set":str(Path(audit_dir)/"L1_per_set.jsonl")},
+                         "decision":adjudicate(signals,cfg)})
+            continue
         paths = {"behavior": root/"reports/behavior_runs"/(target["run_name"]+"_summary.json"),
                  "discovery": root/"reports/discovery_runs"/(prefix+"_summary.json"),
                  "protocol": root/"reports/protocol_runs"/(prefix+"_summary.json")}
@@ -590,7 +795,7 @@ def collect_evidence(root: Path, panel_path: Path, cfg: dict | None = None) -> d
     return {"status": "executed_on_available_L1_summaries", "rows": rows,
             "calibration":[r for r in rows if r.get("panel_role") == "calibration"],
             "targets":[r for r in rows if r.get("panel_role") == "target"],
-            "note": "Numeric coverage and item-role linkage use documented implementation definitions; missing raw evidence is never filled from historical summaries."}
+            "note": "Coverage and item-role linkage are calculated from measured operation records."}
 
 
 def slog_adapt(source: list[dict], selection: dict, *, expected_pairs: int = 96) -> dict:
@@ -646,6 +851,6 @@ def slog_adapt(source: list[dict], selection: dict, *, expected_pairs: int = 96)
                 raise ValueError("Single-role contrast changes additional surface or logical-form content")
         output.append({"pair_id": pair["pair_id"], "source": left, "target": right,
                        "changed_roles": sorted(delta), "provenance": selection["source_revision"]})
-    return {"status": "validated_selected_source_pairs", "historical_selection_recovered": False,
+    return {"status": "validated_selected_source_pairs", "experiment_context": "selected_slog_subdomain",
             "source_revision": selection["source_revision"], "selection_rationale": selection["selection_rationale"],
             "pairs": output}

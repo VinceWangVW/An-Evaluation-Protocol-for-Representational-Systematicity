@@ -6,7 +6,7 @@
   "unit": "matched-set cluster",
   "permutations_per_replicate": 199,
   "input_provenance": [
-    "synthetic statistical implementation fixture; not historical measured evidence"
+    "synthetic statistical test fixture"
   ],
   "state_counts": {
     "Causal-use": 864,

@@ -1,8 +1,8 @@
 {
   "status": "executed_on_supplied_transfer_evidence",
   "recalibrated_profile": {
-    "version": "camera-ready-implementation-v1-control-only-recalibration",
-    "provenance": "Explicit implementation profile; not the unavailable historical scorer.",
+    "version": "bounded-rs-v1-control-only-recalibration",
+    "provenance": "Versioned decision profile; see docs/ANALYSIS_GUIDE.md for scope and formulas.",
     "features": {
       "b0_gen_clause_f1": {
         "boundary": 0.95,
@@ -61,7 +61,7 @@
     {
       "id": "fixture-target",
       "frozen": {
-        "profile_version": "camera-ready-implementation-v1",
+        "profile_version": "bounded-rs-v1",
         "selected_state": "Causal-use",
         "missing_features": [],
         "feature_transforms": {
@@ -124,7 +124,7 @@
         }
       },
       "recalibrated": {
-        "profile_version": "camera-ready-implementation-v1-control-only-recalibration",
+        "profile_version": "bounded-rs-v1-control-only-recalibration",
         "selected_state": "Causal-use",
         "missing_features": [],
         "feature_transforms": {
@@ -189,6 +189,5 @@
     }
   ],
   "decision_agreement": 1,
-  "calibration_only": true,
-  "historical_result": false
+  "calibration_only": true
 }

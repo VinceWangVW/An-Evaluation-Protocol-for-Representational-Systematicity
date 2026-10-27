@@ -1,5 +1,5 @@
 {
-  "provenance": "Explicit synthetic implementation fixture; no historical measured results.",
+  "provenance": "Synthetic analysis test panel.",
   "calibration": [
     {
       "id": "cal-causal",

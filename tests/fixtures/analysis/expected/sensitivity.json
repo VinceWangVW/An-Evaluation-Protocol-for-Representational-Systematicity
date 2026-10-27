@@ -1,7 +1,7 @@
 {
   "status": "executed_on_supplied_records",
-  "profile_version": "camera-ready-implementation-v1",
-  "grid_provenance": "New declared implementation grid, not recovered historical grid; does not target 487 compatible configurations.",
+  "profile_version": "bounded-rs-v1",
+  "grid_provenance": "Prespecified six-block, three-level sensitivity grid; calibration-compatible configurations are selected without target outcomes.",
   "configurations": 729,
   "compatible_count": 729,
   "rows": [

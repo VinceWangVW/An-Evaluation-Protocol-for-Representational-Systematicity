@@ -1,0 +1,8 @@
+{
+  "seeds": [0, 1, 2, 3, 4],
+  "transfer_seeds": [0, 1, 2],
+  "benchmark": "phase11_systematicity_v2",
+  "bootstrap_replicates": 1000,
+  "bootstrap_seed": 13,
+  "grid": "configs/release/sensitivity_grid.json"
+}

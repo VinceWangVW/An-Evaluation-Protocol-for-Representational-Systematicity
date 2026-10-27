@@ -1,5 +1,5 @@
 {
-  "version": "camera-ready-implementation-v1",
+  "version": "bounded-rs-v1",
   "provenance": "Versioned decision profile; see docs/ANALYSIS_GUIDE.md for scope and formulas.",
   "features": {
     "b0_gen_clause_f1": {

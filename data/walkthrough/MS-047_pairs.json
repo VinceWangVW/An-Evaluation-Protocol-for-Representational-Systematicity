@@ -1,0 +1,32 @@
+{
+  "counterpart_family_id": "MS-047",
+  "benchmark_name": "bounded_rs_walkthrough",
+  "construction_family": "passive_depth1",
+  "required_counterpart_coverage": true,
+  "members": {
+    "rescue_donor": "MS-047:rescue_donor",
+    "rescue_target": "MS-047:rescue_target",
+    "agent_swap": "MS-047:agent_swap",
+    "theme_swap": "MS-047:theme_swap",
+    "role_swap": "MS-047:role_swap",
+    "filler_swap": "MS-047:filler_swap",
+    "modifier_swap": "MS-047:modifier_swap"
+  },
+  "m2_pairs": [
+    {
+      "source_item_id": "MS-047:rescue_target",
+      "counterpart_item_id": "MS-047:agent_swap",
+      "relation": "agent_swap"
+    },
+    {
+      "source_item_id": "MS-047:rescue_target",
+      "counterpart_item_id": "MS-047:theme_swap",
+      "relation": "theme_swap"
+    }
+  ],
+  "m4_pair": {
+    "target_item_id": "MS-047:rescue_target",
+    "donor_item_id": "MS-047:rescue_donor"
+  },
+  "donor_target_lf_match": true
+}

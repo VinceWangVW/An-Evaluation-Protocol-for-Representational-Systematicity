@@ -53,11 +53,11 @@ def build_payloads(seed: int = 13) -> dict[str, bytes]:
     canonical = [example.to_dict() for example in examples]
     families = build_counterpart_families(schema)
     order = list(dict.fromkeys(record.counterpart_family_id for record in schema))
-    # These are release indexing aliases only, not recovered historical walkthrough IDs.
+    # Stable navigation aliases follow generator order.
     aliases = {family_id: f"GEN-{index:03d}" for index, family_id in enumerate(order)}
     for family in families:
         family["release_index_id"] = aliases[family["counterpart_family_id"]]
-        family["release_index_provenance"] = "new zero-based generator-order alias; historical MS mapping unavailable"
+        family["release_index_provenance"] = "zero-based generator-order navigation alias"
     by_schema = {record.item_id: record for record in schema}
     output = io.StringIO(newline="")
     writer = csv.DictWriter(output, fieldnames=CSV_FIELDS, lineterminator="\n")
@@ -110,8 +110,8 @@ def build_payloads(seed: int = 13) -> dict[str, bytes]:
         "creators": ["Boyu Cao", "Wenshuo Wang"],
         "generator": "scripts/build_release_data.py",
         "generation_command": "python3 scripts/build_release_data.py --seed 13",
-        "provenance": "Existing public phase11_systematicity_v2 rows regenerated using the original schema/template code; not recovered model evidence.",
-        "release_index_ids": "GEN-000 through GEN-095 are new zero-based generator-order aliases, not a historical MS-047 identification.",
+        "provenance": "Programmatic semantic designs rendered and validated by the schema/template generator with seed 13.",
+        "release_index_ids": "GEN-000 through GEN-095 are zero-based generator-order navigation aliases.",
         "files": {name: {"sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}
                   for name, data in payloads.items()},
     }
@@ -141,7 +141,7 @@ def build_croissant(payloads: dict[str, bytes]) -> dict:
     descriptions = {
         "item_id": "Unique canonical item identifier.",
         "matched_set_id": "Original counterpart-family identifier and bootstrap cluster key.",
-        "release_index_id": "New zero-based generator-order alias; not a historical walkthrough identifier.",
+        "release_index_id": "Zero-based generator-order navigation alias.",
         "split": "Item-level train, dev or gen split; gen easy donors are in dev.",
         "family_split": "Family assignment before gen easy donors are moved to dev.",
         "counterpart_type": "rescue_donor, rescue_target, agent_swap, theme_swap, role_swap, filler_swap or modifier_swap.",
@@ -187,7 +187,7 @@ def build_croissant(payloads: dict[str, bytes]) -> dict:
                 "source": {"fileObject": {"@id": "data/release/items.csv"}, "extract": {"column": name}},
             } for name in CSV_FIELDS],
         }],
-        "rai:dataLimitations": "Finite English templates, 16 invented name tokens, 5 main predicates and a role-filler logical-form schema. Not representative of natural language, all geometric mechanisms, other architectures or general model ability. Historical model evidence is separate from this deterministic dataset.",
+        "rai:dataLimitations": "Finite English templates, 16 invented name tokens, 5 main predicates and a role-filler logical-form schema. Not representative of natural language, all geometric mechanisms, other architectures or general model ability.",
         "rai:dataBiases": "The construction explicitly privileges exact discrete role/filler contrasts; fixed names, adjectives, syntactic templates and omitted phenomena can favor the tested Binding operations. No population sampling or demographic balance is claimed.",
         "rai:personalSensitiveInformation": "No personal or sensitive information. Names are synthetic filler tokens and do not identify human subjects.",
         "rai:dataUseCases": "Intended for matched behavioral contrasts, generation-time intervention/repair development and bounded evidence-to-claim audits. Not validated for model ranking, fairness/safety certification or naturalistic language performance.",

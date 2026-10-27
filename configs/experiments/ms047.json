@@ -1,0 +1,18 @@
+{
+  "trace_id": "MS-047",
+  "benchmark_name": "bounded_rs_walkthrough",
+  "version": "1.0.0",
+  "provenance": "programmatic semantic design",
+  "semantic_design": {
+    "predicate": {"lemma": "praise", "past": "praised", "participle": "praised"},
+    "agent": "chef",
+    "theme": "poet",
+    "alternate_agent": "doctor",
+    "alternate_theme": "painter",
+    "agent_modifier": "patient",
+    "theme_modifier": "careful",
+    "target_voice": "passive",
+    "target_embedding_depth": 1,
+    "context": {"predicate_lemma": "notice", "predicate_past": "noticed", "filler": "witness"}
+  }
+}

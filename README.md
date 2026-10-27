@@ -1,147 +1,129 @@
 # BOUNDED-RS
 
 **A Bounded Evaluation Protocol and Testbed for Representational Systematicity**
-Boyu Cao and Wenshuo Wang — NeurIPS 2026 Evaluations and Datasets Track
 
-BOUNDED-RS distinguishes a recoverable internal signal from one that causally
-supports systematic generation. Its three layers are a matched semantic-parsing
-testbed, family-specific recoverability/interchange/necessity/repair operations,
-and evidence-to-claim adjudication into **Unsupported, Present-only, Causal-use,
-or Undetermined**. Binding and Geometry denote the declared operationalizations;
-the finite Geometry closure basis does not cover every geometric mechanism.
+Boyu Cao and Wenshuo Wang · NeurIPS 2026 Evaluations and Datasets Track
 
-Code and original synthetic data: [MIT](LICENSE). Attribution and external asset
-licenses: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Citation: [CITATION.cff](CITATION.cff).
-This repository is the public code and data release for BOUNDED-RS.
+BOUNDED-RS evaluates whether a recoverable internal signal causally supports
+systematic generation. The protocol combines matched semantic-parsing examples,
+recoverability readouts, interchange, necessity, repair and validity controls,
+then assigns one of four states: **Unsupported, Present-only, Causal-use,
+Undetermined**. Binding and Geometry specify the representational objects being
+tested; Geometry family-level decisions additionally use a declared closure basis.
 
-## Start here
+Code and synthetic data are distributed under [MIT](LICENSE).
+See [CITATION.cff](CITATION.cff) and [third-party attribution](THIRD_PARTY_NOTICES.md).
 
-The main testbed is **`data/processed/phase11_systematicity_v2.jsonl`**, already
-checked in: **96 complete sets × 7 = 672 items**, generated with **seed 13**.
-It has 448 training, 128 development and 96 generalization items, 192 interchange
-pairs and 96 repair pairs. Passive relative-clause constructions are held out
-from training. The earlier 480-item `v1` and COGS configurations are legacy
-experiments; they are not the paper's main testbed.
+## Installation
 
-The data can be inspected and regenerated without a GPU or ML dependencies:
+Use Python 3.11 or later:
 
 ```bash
 git clone https://github.com/VinceWangVW/An-Evaluation-Protocol-for-Representational-Systematicity.git
 cd An-Evaluation-Protocol-for-Representational-Systematicity
-python3 scripts/build_release_data.py --seed 13 --check
-python3 scripts/validate_release_data.py
-# To rebuild files explicitly:
-python3 scripts/build_release_data.py --seed 13
-```
-
-[The data card](docs/DATA_CARD.md) describes construction, exact contrasts,
-splits, intended use and limitations. [The manifest](data/release/manifest.json)
-records SHA-256 hashes. [Croissant metadata](croissant.json) includes the public
-download URLs, schema, license, authors and minimal Responsible AI fields.
-`data/release/items.csv` is an equivalent flat representation; exact membership
-and pairs are in `data/release/matched_sets.jsonl`.
-
-## Installation and tests
-
-Use Python 3.11 or later. Full model runs use PyTorch and public T5 checkpoints.
-The deterministic data builder and release analysis tools use the standard
-library; the complete test suite also exercises model code.
-
-```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install -e '.[test,metadata]'
-python3 -m pytest -q
-python3 scripts/validate_release_data.py --mlcroissant
-make release-check
 ```
 
-The `metadata` extra installs the official Croissant reader. Its check validates
-the metadata and loads all 672 records using the matching local CSV. Public URL
-availability is a separate network check. Model runs download the original T5
-assets from Hugging Face unless a local checkpoint is supplied. No mirror or
-private training-server path is required. [Portability notes](docs/PORTABILITY.md)
-describe normalization of path metadata in historical reports.
+Model runs accept public Hugging Face identifiers or local checkpoints. T5-small
+and T5-base are supported through the same encoder–decoder interfaces. The data
+builder and statistical analysis tools can run without a GPU.
 
-## Paper workflow and rerun entry points
+## Testbed
 
-The main model setup is T5-small, 8 epochs, AdamW learning rate `5e-5`, batch size
-8 and greedy decoding. Training is followed by candidate discovery, generation
-interventions, validity checks, and adjudication; Geometry family negatives
-additionally require observability and exhaustive frozen-basis closure.
-
-| Stage | Implementation / command | Output |
-| --- | --- | --- |
-| Data | `python3 scripts/build_release_data.py --seed 13` | Canonical JSONL, CSV, matched pairs, manifest, Croissant |
-| Train and collect intervention evidence | `seed-plan` with `--execute` below | Fresh checkpoints in `runs/`, behavior/discovery/protocol summaries and raw intermediate records |
-| Export decision evidence | `collect-evidence` below | L1 signals, provenance, missing-feature list, L2 trace |
-| Score a supplied record | `adjudicate --signals INPUT.json --output OUTPUT.json` | Raw feature transforms, group/state scores, strict gates and final decision |
-| Geometry closure | Existing `make family-closure-*` targets | Observability, catalogs, necessity/presence gates and family-final report |
-| Detector validation | Existing `make detector-truthfulness-*` and `make detector-competition-*` targets | Natural-model detector validation reports |
-
-To run five independent training seeds:
+The primary testbed is [phase11_systematicity_v2.jsonl](data/processed/phase11_systematicity_v2.jsonl):
+**96 complete matched sets and 672 items**, generated with **seed 13**. Each set
+contains an easy source, a hard target and five controlled semantic contrasts.
+There are 448 training, 128 development and 96 generalization items, 192
+interchange pairs and 96 repair pairs. Passive relative-clause constructions
+are held out from training.
 
 ```bash
-# Writes inspectable commands/configs; no training until --execute is supplied.
-python3 scripts/run_release_analysis.py seed-plan \
-  --seeds 0 1 2 3 4 --plan-dir runs/release/five_seeds \
-  --output runs/release/five_seeds_plan.json
-# Execute the generated train -> discovery -> intervention chain:
-python3 scripts/run_release_analysis.py seed-plan \
-  --seeds 0 1 2 3 4 --plan-dir runs/release/five_seeds \
-  --output runs/release/five_seeds_plan.json --execute
-python3 scripts/run_release_analysis.py collect-evidence \
-  --panel runs/release/five_seeds/binding_panel.json \
-  --output runs/release/five_seeds_binding_evidence.json
+python3 scripts/build_release_data.py --seed 13
+python3 scripts/build_release_data.py --seed 13 --check
+python3 scripts/validate_release_data.py --mlcroissant
 ```
 
-Seeds `0..4` are the default run configuration. Geometry family-level decisions
-require the frozen closure branch in addition to operation-level evidence.
-Detailed commands, input schemas and artifact availability are documented in
-[REPRODUCIBILITY.md](REPRODUCIBILITY.md) and
-[ANALYSIS_GUIDE.md](docs/ANALYSIS_GUIDE.md).
+[The data card](docs/DATA_CARD.md) documents construction, split semantics, uses
+and limitations. [Croissant metadata](croissant.json), [checksums](data/release/manifest.json),
+flat CSV and exact pair membership are included in `data/release/`.
+
+## Run a Binding audit
+
+Training uses 8 epochs, AdamW learning rate `5e-5`, batch size 8 and greedy
+decoding. A Binding checkpoint audit records baseline outputs, role/filler readouts,
+every intervention and its controls, per-set L1 evidence, and L2 decisions.
+
+```bash
+python3 scripts/run_matched_audit.py \
+  --data data/processed/phase11_systematicity_v2.jsonl \
+  --checkpoint PATH_TO_CHECKPOINT --output-dir runs/audit
+```
+
+Repair is evaluated on the declared source–target pairs. Reports include both
+the full pair count and the subset with a baseline target error. Interchange,
+necessity and repair effects are computed against their measured controls;
+all scores and gates are saved with the decision profile.
+
+## MS-047 walkthrough
+
+The [MS-047 design](configs/experiments/ms047.json) defines a seven-item panel
+using chef/poet/praise, role and filler substitutions, modifier attachment and
+an active-to-passive relative-clause contrast. Its inputs, gold logical forms
+and exact pairs are distributed in [data/walkthrough](data/walkthrough).
+
+```bash
+# Prepare the panel and execution plan.
+python3 scripts/run_walkthrough.py --output-dir outputs/walkthrough
+# Execute the same audit and scoring chain on a checkpoint.
+python3 scripts/run_walkthrough.py --checkpoint PATH_TO_CHECKPOINT \
+  --output-dir runs/walkthrough
+```
 
 ## Robustness, controls and transfer
 
-`python3 scripts/run_release_analysis.py --help` lists the runnable interfaces:
-
-| Analysis | Subcommand | Important input / scope |
+| Experiment | Entry point | Main outputs |
 | --- | --- | --- |
-| Six-block, 729-point sensitivity grid | `sensitivity` | Independent labeled calibration panel and target records; declared six-block grid |
-| Independent training seeds | `seed-plan` | Full training/discovery/intervention commands, executed with `--execute` |
-| Matched-set bootstrap | `bootstrap` | Measured per-set evidence; resample clusters, not individual items; default 1,000 replicates |
-| Engineered truth controls | `truth-controls` | Executes an independent linear planted-signal fixture with blind discovery and separate confirmation |
-| Component-rule comparison | `component-rules` | Supplied known-truth units and shared evidence for all three rules |
-| T5-base / selected SLOG transfer | `transfer-plan` | Same training/evidence interfaces, explicit model and benchmark |
-| Frozen vs. recalibrated transfer rules | `transfer-compare` | Refit boundaries on independent calibration controls only, then compare target states |
-| SLOG exact-contrast adapter | `slog-adapt` | Original normalized SLOG records plus a hash-pinned, prespecified pair selector |
-
-Small executable examples:
+| Six-block sensitivity grid | `sensitivity` | All 729 configurations, calibration compatibility, target decisions |
+| Five training seeds | `seed-plan --seeds 0 1 2 3 4` | Independent checkpoints and complete audit records |
+| Matched-set bootstrap | `bootstrap --replicates 1000` | Sampled clusters, effect intervals and decision distributions |
+| Engineered truth controls | `truth-controls` | Controlled causal/present/null conditions and measured decisions |
+| 41-case component comparison | `component-panel` | Known-truth cases, raw control effects and three rule comparisons |
+| T5-base transfer | `transfer-plan --model google-t5/t5-base` | Audits through the same model/evidence interfaces |
+| Frozen and recalibrated rules | `transfer-compare` | Control-only calibration and paired target decisions |
+| SLOG transfer | `slog-adapt`, then `transfer-plan` | Source-pinned exact contrasts and benchmark audit |
+| Geometry closure | `make family-closure-*` | Observability, object catalogs, gates and family-final decision |
 
 ```bash
-python3 scripts/run_release_analysis.py sensitivity \
-  --panel configs/release/implementation_fixture_panel.json \
-  --output outputs/implementation_sensitivity.json
-python3 scripts/run_release_analysis.py truth-controls \
-  --output outputs/implementation_truth_controls.json
+python3 scripts/run_release_analysis.py seed-plan \
+  --seeds 0 1 2 3 4 --plan-dir runs/five_seeds \
+  --output runs/five_seeds/plan.json
 python3 scripts/run_release_analysis.py transfer-plan \
-  --model google-t5/t5-base --seeds 0 1 2 \
-  --plan-dir runs/release/t5base --output runs/release/t5base_plan.json
-python3 scripts/run_walkthrough.py --output-dir outputs/walkthrough
+  --model google-t5/t5-base --seeds 0 1 2 --plan-dir runs/t5base \
+  --output runs/t5base/plan.json
 ```
 
-## Reports and walkthrough
+Plans expose the commands and configurations before execution. Add `--execute`
+to run them. `make experiment-plan` prepares the experiment suite in
+`configs/experiments/analysis_suite.json`. Geometry uses its object-matched
+operations and closure workflow. See [Running BOUNDED-RS](REPRODUCIBILITY.md) and the
+[analysis guide](docs/ANALYSIS_GUIDE.md) for the full experiment suite, schemas,
+scoring formulas and output layout.
 
-The repository includes frozen experiment reports in `reports/` and supporting
-artifacts in `artifacts/`. Analysis checks in `reports/release/implementation_*`
-use synthetic test fixtures; the paper's aggregate findings are indexed in
-`reports/release/paper_reported_summary.json`. Each output records its source and
-execution status. See [artifact availability](REPRODUCIBILITY.md#artifact-availability)
-for the contents and required inputs of each analysis.
+## Repository layout and tests
 
-`scripts/run_walkthrough.py` writes the MS-047 summary, a seven-input example
-from the released testbed, and known feature transformations. The
-released example uses the navigation ID GEN-047; its identity with the paper's
-MS-047 is not established. The original MS-047 inputs and some raw controls are
-unavailable, so its incomplete decision record abstains. Supply complete measured
-evidence with `--evidence FILE.json` to evaluate another trace.
+`src/` contains data, model, intervention and decision code. `configs/` declares
+experiments and profiles. `reports/` and `artifacts/` contain experiment reports
+and intermediate objects; new runs write their outputs under the chosen run
+directory. Software test inputs and expected outputs are in `tests/fixtures/`.
+
+```bash
+python3 -m pytest -q
+make release-check
+```
+
+Tests cover exact semantic pairs, data integrity, real CPU T5 execution and
+targeted intervention, control bookkeeping, shared scoring, calibration,
+cluster resampling and closure. See [validation](docs/VALIDATION.md) for the
+verification environment.
